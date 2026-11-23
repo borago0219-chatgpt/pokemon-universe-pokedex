@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "PokéVerse",
-  "last_research_run": null,
-  "last_successful_write": null,
+  "last_research_run": "2026-11-23",
+  "last_successful_write": "2026-11-23",
   "daily_limits": {
     "new_guide_drafts": 2,
     "existing_guide_rechecks": 2,
@@ -19,16 +19,22 @@
       "national_id": 25,
       "game": "pokemon-go",
       "kind": "capture",
-      "status": "pending",
-      "attempts": 0
+      "status": "awaiting_review",
+      "attempts": 1,
+      "last_checked_at": "2026-11-23",
+      "result_key": "25:pokemon-go:capture",
+      "note": "Draft saved with URLs; not displayed as reviewed guide"
     },
     {
       "task_id": "025-pokemon-go-moves",
       "national_id": 25,
       "game": "pokemon-go",
       "kind": "moveset",
-      "status": "pending",
-      "attempts": 0
+      "status": "awaiting_review",
+      "attempts": 1,
+      "last_checked_at": "2026-11-23",
+      "result_key": "25:pokemon-go:moveset",
+      "note": "Draft saved with URLs; not displayed as reviewed guide"
     },
     {
       "task_id": "133-scarlet-violet-capture",
@@ -55,7 +61,49 @@
       "attempts": 0
     }
   ],
-  "image_queue": [],
-  "history": [],
-  "blockers": []
+  "image_queue": [
+    {
+      "key": "25:pokemon-go:artwork",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "status": "pending_rights_review",
+      "created_at": "2026-11-23",
+      "brief": "一幅原創風格的電屬性寶可夢皮卡丘圖鑑場景插畫：森林傍晚的暖色環境、可愛但有動感的電光氛圍；不仿製官方構圖、Logo、卡面或既有官方插畫。僅做候選企劃，生成前先確認角色使用權利和展示授權。",
+      "generated_asset": null,
+      "rights_review": "required"
+    }
+  ],
+  "history": [
+    {
+      "run_id": "2026-11-23-pikachu-go-01",
+      "date": "2026-11-23",
+      "action": "research_and_save",
+      "added_drafts": [
+        "25:pokemon-go:capture",
+        "25:pokemon-go:moveset"
+      ],
+      "rechecked": [],
+      "image_briefs": 1,
+      "notes": "Official sources verify historical event encounters only; current Pikachu wild availability remains unverified. Community sources support move suggestions, not official rankings.",
+      "write_commit": "fc5cefd9dbb0dd3d0378448061325288bc2f4ccc"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "pikachu-go-current-encounters",
+      "date": "2026-11-23",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "issue": "查到的官方資料是歷史活動，無法驗證 2026-11-23 台灣一般皮卡丘野外當季出現率；先保持未確認，不宣稱當前可捕捉",
+      "status": "open"
+    },
+    {
+      "id": "pikachu-go-limited-moves",
+      "date": "2026-11-23",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "issue": "Surf/衝浪屬限定或歷史招式，當前取得途徑與 Elite TM 條件待查",
+      "status": "open"
+    }
+  ]
 }
