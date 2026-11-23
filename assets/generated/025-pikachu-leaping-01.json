@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "key": "25:pokemon-go:artwork",
+  "national_id": 25,
+  "name": "Pikachu",
+  "generated_at": "2026-11-23",
+  "tool": "Leonardo.Ai",
+  "model": "Lucid Origin",
+  "plan": "free",
+  "image_count": 1,
+  "free_tokens_spent": 8,
+  "prompt": "A single Pikachu (Pokémon #025), unmistakably Pikachu: bright yellow body, long black-tipped pointed ears, red cheek patches, brown back stripes, and a zigzag lightning-bolt tail. Pikachu leaps sideways over a mossy log in a warm dusk forest, looking back over one shoulder, one forepaw raised, playful electric sparks trailing behind. Original PokéVerse field-guide illustration style: delicate watercolor texture, clean readable silhouette, natural botanical details, soft amber and teal lighting, square composition, one full-body character. Invent a fresh pose and framing; do not reproduce any existing official illustration, card layout, logo, text, or watermark.",
+  "pose": "leaping sideways over a mossy log, looking back",
+  "source_url": "https://app.leonardo.ai/generation/image/single-pikachu-pok%C3%A9mon-025-unmistakably-bright-c80d9ab5-37e0-4ba4-a952-4c5dd34685a3",
+  "asset": "assets/generated/025-pikachu-leaping-01.jpg",
+  "mime_type": "image/jpeg",
+  "resolution": "1024x1024",
+  "status": "generated_pending_rights_review",
+  "rights_review": "required",
+  "website_use": "not_approved",
+  "notes": "Candidate original composition; character rights and public display require human review."
+}

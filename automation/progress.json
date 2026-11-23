@@ -104,11 +104,19 @@
       "key": "25:pokemon-go:artwork",
       "national_id": 25,
       "game": "pokemon-go",
-      "status": "pending_rights_review",
+      "status": "generated_pending_rights_review",
       "created_at": "2026-11-23",
       "brief": "一幅原創風格的電屬性寶可夢皮卡丘圖鑑場景插畫：森林傍晚的暖色環境、可愛但有動感的電光氛圍；不仿製官方構圖、Logo、卡面或既有官方插畫。僅做候選企劃，生成前先確認角色使用權利和展示授權。",
-      "generated_asset": null,
-      "rights_review": "required"
+      "generated_asset": "assets/generated/025-pikachu-leaping-01.jpg",
+      "rights_review": "required",
+      "metadata_file": "assets/generated/025-pikachu-leaping-01.json",
+      "generated_at": "2026-11-23",
+      "tool": "Leonardo.Ai",
+      "model": "Lucid Origin",
+      "pose": "leaping sideways over a mossy log, looking back",
+      "prompt": "A single Pikachu (Pokémon #025), unmistakably Pikachu: bright yellow body, long black-tipped pointed ears, red cheek patches, brown back stripes, and a zigzag lightning-bolt tail. Pikachu leaps sideways over a mossy log in a warm dusk forest, looking back over one shoulder, one forepaw raised, playful electric sparks trailing behind. Original PokéVerse field-guide illustration style: delicate watercolor texture, clean readable silhouette, natural botanical details, soft amber and teal lighting, square composition, one full-body character. Invent a fresh pose and framing; do not reproduce any existing official illustration, card layout, logo, text, or watermark.",
+      "source_url": "https://app.leonardo.ai/generation/image/single-pikachu-pok%C3%A9mon-025-unmistakably-bright-c80d9ab5-37e0-4ba4-a952-4c5dd34685a3",
+      "website_use": "not_approved"
     },
     {
       "key": "133:scarlet-violet:artwork",
@@ -147,6 +155,20 @@
       "image_briefs": 1,
       "notes": "Official SV announcement confirmed 2023 limited event only. Serebii and Bulbapedia support regular wild locations; GO official balance and Elite TM rules checked, community recommendations labeled. Cloud browser observed source pages. Website display and artwork generation remain pending review.",
       "write_commit": "07ea4da2b02a33b800dc11a4def435fce9afff8d"
+    },
+    {
+      "run_id": "2026-11-23-leonardo-pikachu-leaping-01",
+      "date": "2026-11-23",
+      "action": "image_generated_and_saved",
+      "image_queue_key": "25:pokemon-go:artwork",
+      "asset": "assets/generated/025-pikachu-leaping-01.jpg",
+      "metadata_file": "assets/generated/025-pikachu-leaping-01.json",
+      "tool": "Leonardo.Ai",
+      "model": "Lucid Origin",
+      "free_tokens_spent": 8,
+      "rights_review": "required",
+      "website_use": "not_approved",
+      "notes": "One actual 1024x1024 JPEG generated in Work cloud browser, downloaded, and saved as candidate asset. No official art reference used; public website use awaits human rights review."
     }
   ],
   "blockers": [
