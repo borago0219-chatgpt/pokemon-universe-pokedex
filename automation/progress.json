@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "project": "PokéVerse",
+  "last_research_run": null,
+  "last_successful_write": null,
+  "daily_limits": {
+    "new_guide_drafts": 2,
+    "existing_guide_rechecks": 2,
+    "image_prompts": 1,
+    "image_generation_paid_requests": 0
+  },
+  "priority_games": [
+    "pokemon-go",
+    "scarlet-violet"
+  ],
+  "queue": [
+    {
+      "task_id": "025-pokemon-go-capture",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "kind": "capture",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "025-pokemon-go-moves",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "kind": "moveset",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "133-scarlet-violet-capture",
+      "national_id": 133,
+      "game": "scarlet-violet",
+      "kind": "capture",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "133-pokemon-go-moves",
+      "national_id": 133,
+      "game": "pokemon-go",
+      "kind": "moveset",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "094-scarlet-violet-capture",
+      "national_id": 94,
+      "game": "scarlet-violet",
+      "kind": "capture",
+      "status": "pending",
+      "attempts": 0
+    }
+  ],
+  "image_queue": [],
+  "history": [],
+  "blockers": []
+}
