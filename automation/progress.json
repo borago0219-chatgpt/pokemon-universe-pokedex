@@ -41,21 +41,59 @@
       "national_id": 133,
       "game": "scarlet-violet",
       "kind": "capture",
-      "status": "pending",
-      "attempts": 0
+      "status": "awaiting_review",
+      "attempts": 1,
+      "last_checked_at": "2026-11-23",
+      "result_key": "133:scarlet-violet:capture",
+      "note": "Draft saved with official and community URLs; pending human review; not shown on site"
     },
     {
       "task_id": "133-pokemon-go-moves",
       "national_id": 133,
       "game": "pokemon-go",
       "kind": "moveset",
-      "status": "pending",
-      "attempts": 0
+      "status": "awaiting_review",
+      "attempts": 1,
+      "last_checked_at": "2026-11-23",
+      "result_key": "133:pokemon-go:moveset",
+      "note": "Draft saved with official and community URLs; pending human review; not shown on site"
     },
     {
       "task_id": "094-scarlet-violet-capture",
       "national_id": 94,
       "game": "scarlet-violet",
+      "kind": "capture",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "133-pokemon-go-capture",
+      "national_id": 133,
+      "game": "pokemon-go",
+      "kind": "capture",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "094-pokemon-go-moveset",
+      "national_id": 94,
+      "game": "pokemon-go",
+      "kind": "moveset",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "149-pokemon-go-moveset",
+      "national_id": 149,
+      "game": "pokemon-go",
+      "kind": "moveset",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "task_id": "001-pokemon-go-capture",
+      "national_id": 1,
+      "game": "pokemon-go",
       "kind": "capture",
       "status": "pending",
       "attempts": 0
@@ -69,6 +107,16 @@
       "status": "pending_rights_review",
       "created_at": "2026-11-23",
       "brief": "一幅原創風格的電屬性寶可夢皮卡丘圖鑑場景插畫：森林傍晚的暖色環境、可愛但有動感的電光氛圍；不仿製官方構圖、Logo、卡面或既有官方插畫。僅做候選企劃，生成前先確認角色使用權利和展示授權。",
+      "generated_asset": null,
+      "rights_review": "required"
+    },
+    {
+      "key": "133:scarlet-violet:artwork",
+      "national_id": 133,
+      "game": "scarlet-violet",
+      "status": "pending_rights_review",
+      "created_at": "2026-11-23",
+      "brief": "原創圖鑑場景需求：帕底亞橄欖田晨光中，一隻伊布在野花旁回望；柔和水彩與清晰輪廓，原創構圖，不仿官方圖、卡牌版面、商標。僅是候選需求，角色使用與展示權利先由人審核。",
       "generated_asset": null,
       "rights_review": "required"
     }
@@ -86,6 +134,19 @@
       "image_briefs": 1,
       "notes": "Official sources verify historical event encounters only; current Pikachu wild availability remains unverified. Community sources support move suggestions, not official rankings.",
       "write_commit": "fc5cefd9dbb0dd3d0378448061325288bc2f4ccc"
+    },
+    {
+      "run_id": "2026-11-23-eevee-sv-go-01",
+      "date": "2026-11-23",
+      "action": "research_and_save",
+      "added_drafts": [
+        "133:scarlet-violet:capture",
+        "133:pokemon-go:moveset"
+      ],
+      "rechecked": [],
+      "image_briefs": 1,
+      "notes": "Official SV announcement confirmed 2023 limited event only. Serebii and Bulbapedia support regular wild locations; GO official balance and Elite TM rules checked, community recommendations labeled. Cloud browser observed source pages. Website display and artwork generation remain pending review.",
+      "write_commit": "07ea4da2b02a33b800dc11a4def435fce9afff8d"
     }
   ],
   "blockers": [
@@ -103,6 +164,14 @@
       "national_id": 25,
       "game": "pokemon-go",
       "issue": "Surf/衝浪屬限定或歷史招式，當前取得途徑與 Elite TM 條件待查",
+      "status": "open"
+    },
+    {
+      "id": "eevee-go-legacy-moves",
+      "date": "2026-11-23",
+      "national_id": 133,
+      "game": "pokemon-go",
+      "issue": "珍藏與泰山壓頂在個別伊布目前的精英特殊招式學習器選單是否可取得，未逐一驗證",
       "status": "open"
     }
   ]
