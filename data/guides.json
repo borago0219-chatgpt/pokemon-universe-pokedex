@@ -120,6 +120,158 @@
       ],
       "checked_at": "2026-11-23",
       "status": "draft"
+    },
+    {
+      "key": "133:scarlet-violet:capture",
+      "national_id": 133,
+      "game": "scarlet-violet",
+      "topic": "capture",
+      "content": {
+        "display_name": "伊布 Eevee",
+        "game_version": "Pokémon Scarlet / Pokémon Violet（帕底亞本篇；兩版本）",
+        "current_availability": "base_game_wild_locations_community_verified",
+        "overview": "《朱／紫》本篇的帕底亞野外可尋找伊布；兩版本資料庫均列南第2區與西第3區。官方曾推出的 2023 年 7 星太晶團體戰及大量出現活動已結束，不當作現行取得途徑。",
+        "methods": [
+          {
+            "method": "野外相遇",
+            "locations": [
+              "南第2區：圓模鎮（Cortondo）附近橄欖田",
+              "西第3區：錦匯鎮（Medali）附近"
+            ],
+            "scope": "朱／紫本篇兩版本",
+            "verification": "Serebii 地點表與 Bulbapedia 區域細節交叉核對；實際出現受地點與生成機制影響"
+          },
+          {
+            "method": "固定出現點",
+            "locations": [
+              "南第5區"
+            ],
+            "scope": "朱／紫本篇兩版本",
+            "verification": "Serebii 地點表列示；精確座標與刷新條件待確認"
+          }
+        ],
+        "historical_event": {
+          "method": "7 星太晶團體戰／大量出現",
+          "period": "2023-11-16 16:00 至 2023-11-20 15:59 PST",
+          "status": "ended",
+          "note": "官方 2023 年公告，不能當作 2026-11-23 的現行活動"
+        },
+        "verification_required": [
+          "太晶團體戰星級、每日輪替與當前可出現性需遊戲內或最新活動核對",
+          "固定出現點南第5區的精確位置和重生機制"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.pokemon.com/us/news/search-out-eevee-in-7-star-tera-raid-battles-and-mass-outbreaks",
+          "title": "The Pokémon Company：2023 伊布活動公告（歷史）",
+          "type": "official_announcement",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/eevee/",
+          "title": "Serebii：Eevee《朱／紫》地點表",
+          "type": "community_game_database",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/South_Province_Area_Two",
+          "title": "Bulbapedia：南第2區伊布生成細節",
+          "type": "community_wiki",
+          "checked_at": "2026-11-23"
+        }
+      ],
+      "checked_at": "2026-11-23",
+      "status": "draft"
+    },
+    {
+      "key": "133:pokemon-go:moveset",
+      "national_id": 133,
+      "game": "pokemon-go",
+      "topic": "moveset",
+      "content": {
+        "display_name": "伊布 Eevee",
+        "game_version": "Pokémon GO；2026-11-23 查核",
+        "scope": "一般伊布；不將極巨化、超極巨化或進化型混入",
+        "pve": {
+          "context": "一般道館／團體戰",
+          "community_calculator_best": {
+            "fast_move": "Quick Attack（電光一閃）",
+            "charged_move": "Last Resort（珍藏）",
+            "qualification": "GO Hub 的伊布自身組合傷害排序；珍藏標為舊招式，取得條件另核"
+          },
+          "regular_move_example": {
+            "fast_move": "Tackle（撞擊）",
+            "charged_move": "Swift（高速星星）",
+            "qualification": "資料庫列示的一般招式組合；僅供未有舊招式時使用，不代表伊布是泛用強力團體戰輸出"
+          },
+          "recommendation": "實戰團體戰應評估進化型與對手屬性；此處僅比較未進化伊布的招式"
+        },
+        "pvp": {
+          "context": "GO 對戰聯盟超級聯盟",
+          "community_suggested": {
+            "fast_move": "Quick Attack（電光一閃）",
+            "charged_moves": [
+              "Swift（高速星星）",
+              "Dig（挖洞）"
+            ]
+          },
+          "caution": "GO Hub 模擬頁面列 F Tier，配招為社群模擬建議，非官方保證勝率；其他聯盟或特殊盃須分別評估"
+        },
+        "move_availability": {
+          "listed_fast": [
+            "Quick Attack",
+            "Tackle"
+          ],
+          "listed_charged": [
+            "Dig",
+            "Swift",
+            "Body Slam（舊招式）",
+            "Last Resort（舊招式）"
+          ],
+          "limited_note": "GO Hub 標示泰山壓頂與珍藏為舊招式。官方說明精英特殊招式學習器可選部分歷史活動招式，但尚未逐一核實伊布這兩招在當前 Elite TM 選單可否選取。"
+        },
+        "balance_check": "官方 2026 Twilight Trails 賽季公告將泰山壓頂的訓練家對戰威力由 55 調為 65，並增加能量需求；GO Hub 目前顯示 65 威力／40 能量。未假設未來賽季不變。",
+        "verification_required": [
+          "伊布的珍藏、泰山壓頂目前個別能否用精英特殊招式學習器選取",
+          "GO 對戰聯盟新賽季可能再次調整招式；PvP 建議應定期重算",
+          "一般型態和極巨化／超極巨化招式表需分開查核"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemongo.com/news/go-battle-league-twilight-trails",
+          "title": "Pokémon GO 官方：2026 Twilight Trails 招式調整",
+          "type": "official_announcement",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://scopelyexplore.helpshift.com/hc/en/5-pokemon-go/faq/1236-what-are-elite-tms/",
+          "title": "Pokémon GO 官方支援：精英招式學習器",
+          "type": "official_help",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/133/moves",
+          "title": "Pokémon GO Hub：伊布招式與團體戰組合",
+          "type": "community_moves_database",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/133/pvp",
+          "title": "Pokémon GO Hub：伊布 PvP 模擬與建議",
+          "type": "community_pvp_database",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Eevee_(GO)",
+          "title": "Bulbapedia：Pokémon GO 伊布招式表",
+          "type": "community_wiki",
+          "checked_at": "2026-11-23"
+        }
+      ],
+      "checked_at": "2026-11-23",
+      "status": "draft"
     }
   ]
 }
