@@ -1,5 +1,125 @@
 {
   "schema_version": 1,
-  "updated_at": null,
-  "guides": []
+  "updated_at": "2026-11-23",
+  "guides": [
+    {
+      "key": "25:pokemon-go:capture",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "topic": "capture",
+      "content": {
+        "display_name": "皮卡丘 Pikachu",
+        "current_availability": "unverified",
+        "overview": "2026 年官方公告曾確認特定服裝皮卡丘可透過限時活動的團體戰、調查或野外相遇取得；這些活動已結束，不能據此保證 2026-11-23 在台灣野外有皮卡丘。普通皮卡丘當季野外出現率尚未由官方資料確認。",
+        "confirmed_historical_methods": [
+          {
+            "method": "一星團體戰／限時調查獎勵",
+            "variant": "戴帽子與披肩的皮卡丘",
+            "start": "2026-10-27",
+            "end": "2026-11-01",
+            "note": "2026 萬聖節 Part I，官方公告；限時研究必須於 11/1 10:00 當地時間前領取，已結束"
+          },
+          {
+            "method": "野外／限時調查／拍照驚喜相遇",
+            "variant": "穿峇迪衫的皮卡丘",
+            "start": "2026-10-02",
+            "end": "2026-10-02",
+            "region": "印尼指定活動",
+            "note": "Wild Patterns 活動主日；限時調查另有 9/28–10/10 期限，已結束，並非台灣常駐獲取方式"
+          }
+        ],
+        "general_catching_tips": "可用附近的寶可夢列表與圖鑑通知功能尋找目標；如果實際在地圖遇見皮卡丘，使用更好的精靈球、莓果、旋轉球與較準確投球提升捕捉機率。以上為 Pokémon GO 通則，不代表皮卡丘此刻正在生成。",
+        "verification_required": [
+          "2026-11-23 當季台灣野外是否常駐出現普通皮卡丘",
+          "目前是否有任務或團體戰提供皮卡丘",
+          "特殊服裝皮卡丘不可直接概括為普通皮卡丘"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemongo.com/en/news/halloween-part-1-2026",
+          "title": "Pokémon GO Halloween 2026 Part I",
+          "type": "official_announcement",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://pokemongo.com/news/patterns-of-the-wild-2026",
+          "title": "Pokémon GO Patterns of the Wild 2026",
+          "type": "official_announcement",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://niantic.helpshift.com/hc/zh-hant/6-pokemon-go/faq/2345-how-do-i-find-specific-pokemon/",
+          "title": "Pokémon GO 官方說明：如何找到特定寶可夢",
+          "type": "official_help",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://niantic.helpshift.com/hc/en/6-pokemon-go/faq/102-finding-catching-wild-pokemon/",
+          "title": "Pokémon GO 官方說明：Finding & Catching Wild Pokémon",
+          "type": "official_help",
+          "checked_at": "2026-11-23"
+        }
+      ],
+      "checked_at": "2026-11-23",
+      "status": "draft"
+    },
+    {
+      "key": "25:pokemon-go:moveset",
+      "national_id": 25,
+      "game": "pokemon-go",
+      "topic": "moveset",
+      "content": {
+        "display_name": "皮卡丘 Pikachu",
+        "scope": "一般型態皮卡丘（非特殊裝扮招式型態）",
+        "pve": {
+          "context": "道館與團體戰；第三方計算器比較組合",
+          "fast_move": "Thunder Shock（電擊）",
+          "charged_move": "Wild Charge（瘋狂伏特）",
+          "recommendation": "Pokémon GO Hub 的一般皮卡丘團體戰分析首選組合；但皮卡丘本身沒有被列入其頂級團體戰攻擊手排名，不宜當作最強電系泛用攻擊手。"
+        },
+        "pvp": {
+          "context": "GO 對戰聯盟；需考慮聯盟限制與招式特殊效果",
+          "fast_move": "Thunder Shock（電擊）",
+          "charged_move": "Wild Charge（瘋狂伏特）",
+          "alternative": "Surf（衝浪）列為限定／舊招式；是否能取得及使用何種招式學習器需另行查核",
+          "caution": "瘋狂伏特會降低使用者防禦；第三方模擬對皮卡丘的超級聯盟勝率很低，僅可視為實驗性配招，不應保證適合一般排名對戰。"
+        },
+        "move_availability": "一般型態能學 Thunder Shock 與 Wild Charge 的資料由兩個社群資料庫交叉列示；衝浪為歷史／限定招式，當前取得條件未驗證。",
+        "verification_required": [
+          "官方當季招式平衡更新是否影響建議",
+          "限定招式衝浪的可取得方式／Elite TM 限制",
+          "各特殊裝扮或特殊型態皮卡丘可能有不同招式表"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://db.pokemongohub.net/pokemon/25/moves",
+          "title": "Pokémon GO Hub: Pikachu best raid moves and move list",
+          "type": "community_moves_database",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/25/pvp",
+          "title": "Pokémon GO Hub: Pikachu PvP guide",
+          "type": "community_pvp_database",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://www.pokebattler.com/pvp/pokemon/pikachu",
+          "title": "Pokebattler: Pikachu Great League simulations",
+          "type": "community_simulation",
+          "checked_at": "2026-11-23"
+        },
+        {
+          "url": "https://pokemondb.net/go/pokedex",
+          "title": "Pokémon Database: GO Pokédex and Pikachu moves",
+          "type": "community_moves_database",
+          "checked_at": "2026-11-23"
+        }
+      ],
+      "checked_at": "2026-11-23",
+      "status": "draft"
+    }
+  ]
 }
