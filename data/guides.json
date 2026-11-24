@@ -658,7 +658,7 @@
       "topic": "capture",
       "content": {
         "display_name": "妙蛙種子 Bulbasaur",
-        "current_availability": "unverified",
+        "current_availability": "Taiwan_unverified; Japan_specific_airport_raids_announced",
         "confirmed_historical": [
           {
             "method": "野外大量出現",
@@ -666,15 +666,34 @@
             "region": "全球",
             "event": "Community Day Classic",
             "status": "ended"
+          },
+          {
+            "method": "指定場地野外與薰香較常出現",
+            "region": "台灣台中／高雄／新北指定 Pokémon RUN 30 場地",
+            "dates": [
+              "2026-10-17/18",
+              "2026-10-31–11-01",
+              "2026-11-14/15"
+            ],
+            "status": "ended",
+            "note": "官方公告；今日 11/24 不再當作台灣現行活動。"
           }
         ],
         "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
         "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
         "note": "2022 社群日為歷史活動，不能保證 2026-11-24 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
         "verification_required": [
-          "2026-11-24 台灣野外是否出現",
-          "當季孵蛋、團體戰及田野／特殊調查渠道",
-          "暗影與極巨型態各自取得條件"
+          "2026-11-24 台灣一般野外生成及當季任務／團體戰",
+          "日本 ANA 合作機場最新參與地點與活動條件",
+          "孵蛋、暗影、極巨形態獨立渠道"
+        ],
+        "confirmed_regional_current": [
+          {
+            "method": "指定機場團體戰",
+            "region": "日本 ANA 合作機場",
+            "period": "2026-09-18 至 2027-08-31",
+            "note": "官方公告妙蛙種子團體戰及特別背景；僅指定日本機場，不代表台灣可打。"
+          }
         ]
       },
       "sources": [
@@ -690,6 +709,20 @@
           "title": "Serebii 妙蛙種子 GO 圖鑑",
           "type": "community_game_database",
           "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/pokemon-run-30-2026",
+          "title": "Pokémon GO 官方 Pokémon RUN 30 場地活動",
+          "type": "official_announcement",
+          "version": "Pokémon GO Taiwan historical",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/2026_ana_green",
+          "title": "Pokémon GO 官方 ANA 綠色寶可夢飛機合作",
+          "type": "official_announcement",
+          "version": "Pokémon GO Japan regional current",
           "checked_at": "2026-11-24"
         }
       ]
@@ -840,6 +873,219 @@
           "title": "Serebii 第 1 代妙蛙種子招式表",
           "type": "community_game_database",
           "version": "Red/Green/Blue/Yellow",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "needs_review"
+    },
+    {
+      "key": "1:lets-go:capture",
+      "national_id": 1,
+      "game": "lets-go",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Let's Go, Pikachu!",
+          "Let's Go, Eevee!"
+        ],
+        "methods": [
+          {
+            "type": "wild",
+            "location": "常青森林",
+            "condition": "低機率特殊出現；官方確認可在森林遇見",
+            "status": "verified"
+          },
+          {
+            "type": "gift",
+            "location": "華藍市寶可夢中心旁民宅",
+            "condition": "需累計捕獲至少 30 隻寶可夢；社群資料在「30 或以上」與「超過 30」措詞有差異，臨界值待遊戲內覆核",
+            "level": 12,
+            "status": "needs_review"
+          }
+        ],
+        "verification_required": [
+          "野生生成率與連鎖捕捉影響",
+          "贈送門檻 30 的臨界判定"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
+          "title": "官方《Let's Go》試玩指南",
+          "type": "official_game_guide",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Gift_Pok%C3%A9mon",
+          "title": "Bulbapedia 贈送寶可夢表",
+          "type": "community_game_database",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/letsgopikachueevee/gift.shtml",
+          "title": "Serebii《Let's Go》贈送表",
+          "type": "community_game_database",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "draft"
+    },
+    {
+      "key": "1:bdsp:capture",
+      "national_id": 1,
+      "game": "bdsp",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Brilliant Diamond",
+          "Shining Pearl"
+        ],
+        "method": "取得全國圖鑑後，於地下大洞窟寶可夢棲息地遇見並捕捉。",
+        "locations": [
+          "草原空洞",
+          "日光洞窟",
+          "沼澤空洞",
+          "河岸空洞",
+          "靜水空洞",
+          "泥濘洞窟"
+        ],
+        "location_note": "官方指南直接列草原、日光、河岸與靜水類棲息地有妙蛙種子；完整六處由 Serebii 版本表補充。",
+        "level_range": "Serebii 列 16–63；等級依進度變化，實際生成率未核。",
+        "verification_required": [
+          "各棲息地的生成率／進度差異",
+          "六個繁中地名與遊戲內官方譯名核對"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://diamondpearl.pokemon.com/en-us/trainersguide/grandunderground/",
+          "title": "官方地下大洞窟指南",
+          "type": "official_game_guide",
+          "version": "BDSP",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/locations.shtml",
+          "title": "Serebii BDSP 妙蛙種子地點表",
+          "type": "community_game_database",
+          "version": "BDSP",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "draft"
+    },
+    {
+      "key": "1:sword-shield:capture",
+      "national_id": 1,
+      "game": "sword-shield",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Sword",
+          "Shield"
+        ],
+        "methods": [
+          {
+            "type": "dlc_gift",
+            "location": "《鎧之孤島》武館",
+            "condition": "武館劇情中獲得一次性妙蛙種子選擇；有超極巨化資質，與後續妙蛙花相關，不代表妙蛙種子本身可超極巨化。",
+            "status": "community_verified"
+          },
+          {
+            "type": "home_or_trade",
+            "condition": "與相容來源經 Pokémon HOME 或玩家交換取得；需符合遊戲更新及相容限制。",
+            "status": "community_verified"
+          },
+          {
+            "type": "historical_event",
+            "condition": "曠野地帶新聞／HOME 贈送曾提供，不能作為固定現行方法。",
+            "status": "historical"
+          }
+        ],
+        "verification_required": [
+          "武館贈送精確劇情前置條件",
+          "歷史活動日期和區域",
+          "版號與 HOME 相容限制"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/",
+          "title": "Serebii《劍／盾》妙蛙種子地點",
+          "type": "community_game_database",
+          "version": "Sword/Shield",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://swordshield.pokemon.com/en-us/expansionpass/the-isle-of-armor/",
+          "title": "官方《鎧之孤島》介紹",
+          "type": "official_product",
+          "version": "Sword/Shield",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "draft"
+    },
+    {
+      "key": "1:legends-za:capture",
+      "national_id": 1,
+      "game": "legends-za",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Legends: Z-A"
+        ],
+        "methods": [
+          {
+            "type": "gift",
+            "location": "密阿雷市寶可夢研究所",
+            "condition": "支線任務 22 向瑪琍葉取得，是否可重複及色違限制待細核",
+            "status": "community_verified"
+          },
+          {
+            "type": "wild",
+            "location": "野生區域 20",
+            "condition": "可遇見；生成時段及機率待核",
+            "status": "community_verified"
+          },
+          {
+            "type": "dlc_wild",
+            "location": "《超次元爆湧》超次元密阿雷的草／毒型區域",
+            "condition": "依星級及掃描條件；細節待核",
+            "status": "needs_review"
+          }
+        ],
+        "mechanics_note": "《傳說 Z-A》戰鬥及招式機制與回合制作品不同，配招需獨立研究。",
+        "verification_required": [
+          "支線前置、色違與一次性限制",
+          "野生區域 20 的時段／刷新",
+          "DLC 星級與掃描要求"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur",
+          "title": "Bulbapedia 主系列地點表",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子《傳說 Z-A》地點",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
           "checked_at": "2026-11-24"
         }
       ],
