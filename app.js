@@ -38,7 +38,7 @@ function renderGuide(guide){
 }
 function details(p){
  if(!p)return;
- const relevant=guideRecords.filter(g=>g.national_id===p.id);
+ const relevant=p.id===1?guideRecords.filter(g=>g.national_id===1):[];
  const games=[...new Set(relevant.map(g=>g.game))];
  const tabs=games.map((game,i)=>'<button class="guide-tab" type="button" data-game="'+escapeHTML(game)+'" aria-selected="'+(i===0?'true':'false')+'">'+escapeHTML(guideLabels[game]||game)+'</button>').join('');
  const guideBody=relevant.length?'<div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content"></div>':
