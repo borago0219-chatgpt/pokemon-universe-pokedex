@@ -65,3 +65,11 @@
 - 本次僅在程式中對應 #001、指定檔案路徑及 metadata 所列 blob SHA；其他角色不受影響。未修改生圖 metadata，因此該檔仍標示 rights_review=required、website_use=not_approved，與使用者新確認存在狀態差異；請負責權利紀錄的審核流程核實並協調，勿把原紀錄當成已同步更新。metadata 的 blob_sha 是宣告值，執行時未對圖片位元組重新計算 Git blob SHA。
 - [雲端 Chromium 測試 45415897801](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45415897801) 通過桌面/手機既有測試；伺服器記錄兩次 JPG 及 metadata HTTP 200。既有測試沒有斷言圖片解碼、正確畫面或視覺布局，不能視為完整圖片畫面驗收。
 - 本輪未變動 main、Cloudflare Access 或生圖紀錄。正式上線仍需處理上述權利狀態差異、針對圖片功能的獨立審核及正式網址存取保護確認；使用者要求其他 main 內容不要改，合格後只整合必要圖片顯示修改。
+
+
+## 2026-11-24：正式記錄使用者批准及圖片實測
+
+- 管理者已明確批准 #001 畫面品質和私人圖鑑使用；此決定已同步至 main 的正式圖片 metadata：[2a00e89](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/2a00e89a33f7f2d7e90a778b2936d7b5416a7591)。不再要求重複品質或專案批准。正式紀錄分離 project_approval 與 third_party_rights，未聲稱權利人已授權。
+- 官方 Pokémon 支援頁要求不要在專案使用或關聯其角色、名稱與設計；其日本權利聲明亦指出其使用 fan art 不授予超出私人非商業居家使用的權利。這是權利人政策，不等於本紀錄認定本項私人網站必然違法。Leonardo 的生成授權不等於 Pokémon 角色授權。
+- 最新測試分支 workflow 成功：[45416666847](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45416666847)。Chromium 桌面與手機視窗分別斷言圖片可見、已完成解碼、自然尺寸 1024×1024，皆通過。未登入正式網址自動請求回傳 HTTP 403，未能確認是否為 Access 登入保護或其策略。
+- 正式圖片顯示程式沒有合併；main metadata-only 提交可能觸發 Workers Build，建置／部署另查。待釐清適當使用權利以及 Access 實際保護、獨立功能審核後，只整合必要圖片顯示功能，不帶其他功能。圖片本身早已在公開 GitHub repo；Cloudflare Access 不會保護 GitHub。
