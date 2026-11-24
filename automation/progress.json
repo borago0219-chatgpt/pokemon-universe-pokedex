@@ -135,12 +135,20 @@
       "key": "1:main:artwork",
       "national_id": 1,
       "game": "main",
-      "status": "pending_rights_review",
+      "status": "generated_pending_quality_and_rights_review",
       "created_at": "2026-11-24",
       "brief": "妙蛙種子 #001 原創場景插畫候選需求：可辨認的妙蛙種子與背部種子，在清晨林間的植物旁，以不模仿既有官方構圖的清晰全身視角呈現；不使用 Logo、卡面或官方圖稿。須實際生成與保存，供權利審查及合規預覽；此處僅為需求，尚未生圖。",
-      "generated_asset": null,
+      "generated_asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
       "rights_review": "required",
-      "website_use": "not_approved"
+      "website_use": "not_approved",
+      "metadata_file": "assets/generated/001-bulbasaur-stepping-01.json",
+      "generated_at": "2026-11-24",
+      "tool": "Leonardo.Ai",
+      "model": "Lucid Origin",
+      "pose": "stepping through a dawn woodland clearing",
+      "prompt": "A single Bulbasaur (Pokémon #001), unmistakably Bulbasaur: a small four-legged blue-green creature with darker teal patches, large red eyes, short pointed ears, and one prominent unopened green seed bulb growing on its back, not a flower. Bulbasaur is taking a curious step through a dew-covered woodland clearing at dawn, head turned gently toward a tiny fern, with all four legs and the entire bulb visible. Original PokéVerse field-guide illustration style: delicate watercolor and ink texture, clear readable character anatomy, lush botanical details, soft golden morning light, gentle forest greens, square composition. Invent a natural new pose and framing; do not copy any official illustration, card layout, logo, text, or watermark.",
+      "source_url": "https://app.leonardo.ai/generation/image/single-bulbasaur-pok%C3%A9mon-001-unmistakably-small-5a2b5dee-8036-45dc-8061-707d70d3e80d",
+      "quality_review": "required"
     }
   ],
   "history": [
@@ -228,6 +236,20 @@
       "image_briefs": 0,
       "rechecked": [],
       "notes": "User asked for more complete work. Expanded only #001, kept website prototype on unpublished branch; no actual image or independent review claimed."
+    },
+    {
+      "run_id": "2026-11-24-leonardo-bulbasaur-001-stepping-01",
+      "date": "2026-11-24",
+      "action": "image_candidate_generated_and_saved",
+      "national_id": 1,
+      "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
+      "metadata_file": "assets/generated/001-bulbasaur-stepping-01.json",
+      "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
+      "tool": "Leonardo.Ai",
+      "free_tokens_spent": 8,
+      "rights_review": "required",
+      "quality_review": "required",
+      "notes": "One actual 1024x1024 JPEG generated and downloaded in Work cloud browser; candidate pending quality and rights review; no website publication."
     }
   ],
   "blockers": [
@@ -271,7 +293,7 @@
     "status": "incomplete",
     "completed": false,
     "research_status": "expanded_39_version_matrix_11_guides",
-    "image_status": "missing",
+    "image_status": "candidate_generated_pending_quality_and_rights_review",
     "preview_status": "not_verified",
     "review_status": "pending",
     "publication_status": "not_published",
@@ -325,8 +347,23 @@
         ]
       },
       "image": {
-        "status": "pending",
-        "last_updated_at": null
+        "status": "candidate_saved_pending_review",
+        "last_updated_at": "2026-11-24",
+        "national_id": 1,
+        "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
+        "metadata_file": "assets/generated/001-bulbasaur-stepping-01.json",
+        "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
+        "source_url": "https://app.leonardo.ai/generation/image/single-bulbasaur-pok%C3%A9mon-001-unmistakably-small-5a2b5dee-8036-45dc-8061-707d70d3e80d",
+        "format": "JPEG",
+        "resolution": "1024x1024",
+        "tool": "Leonardo.Ai",
+        "model": "Lucid Origin",
+        "free_tokens_spent": 8,
+        "quality_note": "畫面可辨認妙蛙種子；背部種子偏黃綠、背景較提示詞簡化，待獨立品質審核判定是否合格。",
+        "rights_review": "required",
+        "website_use": "not_approved",
+        "for_review": "22:00 品質審核請核對真實圖檔、角色特徵、畫質與權利狀態；建設者次日核實後再更新完成門檻。",
+        "for_preview": "僅供建設者在合規私人預覽中評估，未核准前不得放入正式網站。"
       },
       "review": {
         "status": "pending",

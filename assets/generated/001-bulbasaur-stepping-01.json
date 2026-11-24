@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "national_id": 1,
+  "name_zh": "妙蛙種子",
+  "name_en": "Bulbasaur",
+  "date": "2026-11-24",
+  "tool": "Leonardo.Ai",
+  "model": "Lucid Origin",
+  "plan": "free",
+  "free_tokens_spent": 8,
+  "prompt": "A single Bulbasaur (Pokémon #001), unmistakably Bulbasaur: a small four-legged blue-green creature with darker teal patches, large red eyes, short pointed ears, and one prominent unopened green seed bulb growing on its back, not a flower. Bulbasaur is taking a curious step through a dew-covered woodland clearing at dawn, head turned gently toward a tiny fern, with all four legs and the entire bulb visible. Original PokéVerse field-guide illustration style: delicate watercolor and ink texture, clear readable character anatomy, lush botanical details, soft golden morning light, gentle forest greens, square composition. Invent a natural new pose and framing; do not copy any official illustration, card layout, logo, text, or watermark.",
+  "pose": "stepping through a dawn woodland clearing",
+  "source_url": "https://app.leonardo.ai/generation/image/single-bulbasaur-pok%C3%A9mon-001-unmistakably-small-5a2b5dee-8036-45dc-8061-707d70d3e80d",
+  "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
+  "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
+  "mime_type": "image/jpeg",
+  "resolution": "1024x1024",
+  "status": "generated_pending_quality_and_rights_review",
+  "quality_review": "required",
+  "quality_note": "畫面可辨認妙蛙種子；背部種子偏黃綠、背景較提示詞簡化，待獨立品質審核判定是否合格。",
+  "rights_review": "required",
+  "website_use": "not_approved"
+}
