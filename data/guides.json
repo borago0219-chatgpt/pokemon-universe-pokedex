@@ -589,6 +589,49 @@
           "checked_at": "2026-11-24"
         }
       ]
+    },
+    {
+      "key": "1:scarlet-violet:moveset",
+      "national_id": 1,
+      "game": "scarlet-violet",
+      "topic": "moveset",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "《朱／紫》含《藍之圓盤》；單人劇情／休閒單打草稿，非賽事定論。",
+        "proposed_moves": [
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Giga Drain（終極吸取）",
+          "Protect（守住）"
+        ],
+        "rationale": "催眠粉干擾、寄生種子與終極吸取續航、守住爭取回合；四招均見該作品招式表。",
+        "ability": "茂盛；日照隊可另評估隱藏特性葉綠素，但取得條件待核。",
+        "item_nature_evs": "待核實",
+        "competitive_status": "Smogon 頁面目前沒有已發表的標準配招；本組合是本專案依合法招式所作推論，尚待實戰審核。",
+        "verification_required": [
+          "單打／雙打各自適用的道具、性格、努力值",
+          "隱藏特性取得及實戰效用",
+          "不可跨版本沿用"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii《朱／紫》妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.smogon.com/dex/sv/pokemon/bulbasaur/",
+          "title": "Smogon SV 招式與策略頁",
+          "type": "community_competitive_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "needs_review"
     }
   ]
 }
