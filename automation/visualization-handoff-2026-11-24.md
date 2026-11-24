@@ -57,3 +57,11 @@
 - Leonardo 官方價格頁稱免費使用者享有非專屬使用授權；其服務條款不保證無第三方智慧財產權侵害。請權利審核依照實際使用與相關權利人條款判斷，不能將 Leonardo 對生成圖的授權當成已取得寶可夢角色權利的證據。
 - GitHub Actions [45415452225](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45415452225) 測試成功（兩種視窗的既有介面測試），但測試期間目前圖片受限未顯示；模擬中待審顯示 0 張、假設審核通過顯示 1 張、編號或路徑錯誤顯示 0 張。這不是實際圖片瀏覽器顯示驗收。正式網站和 Cloudflare Access 狀態本輪未驗證，main 未修改。
 - 下一步：取得權利狀態明確決定，再在受保護環境實際檢查圖片載入、尺寸與卡片，經獨立功能審核和 Access 確認後，只將使用者批准的圖片功能整合至 main；不可把其他測試分支功能一併合併。
+
+
+## 使用者確認展示 — 測試分支啟用
+
+- 2026-11-24 使用者回覆「我確認通過」，指前述 #001 圖片的展示待審；依該明確確認，在測試分支提交 [f67abfc](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/f67abfc71ac8885eea8592ad295d89f61f596e7b) 啟用該圖片。此為使用者核准的紀錄，並非已核實任天堂或其他第三方權利人授權的證明。
+- 本次僅在程式中對應 #001、指定檔案路徑及 metadata 所列 blob SHA；其他角色不受影響。未修改生圖 metadata，因此該檔仍標示 rights_review=required、website_use=not_approved，與使用者新確認存在狀態差異；請負責權利紀錄的審核流程核實並協調，勿把原紀錄當成已同步更新。metadata 的 blob_sha 是宣告值，執行時未對圖片位元組重新計算 Git blob SHA。
+- [雲端 Chromium 測試 45415897801](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45415897801) 通過桌面/手機既有測試；伺服器記錄兩次 JPG 及 metadata HTTP 200。既有測試沒有斷言圖片解碼、正確畫面或視覺布局，不能視為完整圖片畫面驗收。
+- 本輪未變動 main、Cloudflare Access 或生圖紀錄。正式上線仍需處理上述權利狀態差異、針對圖片功能的獨立審核及正式網址存取保護確認；使用者要求其他 main 內容不要改，合格後只整合必要圖片顯示修改。
