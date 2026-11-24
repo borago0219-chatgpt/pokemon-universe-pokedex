@@ -48,3 +48,5 @@ dialog{background:#141f3b;color:#fff;border:1px solid #51607e;border-radius:22px
 .draft-count{display:inline-block;color:#ffdd9f;font-size:11px;margin-top:12px}
 @media(max-width:680px){.profile-facts{grid-template-columns:repeat(2,1fr)}#detail{padding:22px}.stat-row{gap:7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.poke-image{width:100%;height:100%;object-fit:cover}.poke-image[hidden],.mark[hidden]{display:none}
