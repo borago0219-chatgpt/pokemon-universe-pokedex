@@ -15,9 +15,25 @@
   "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
   "mime_type": "image/jpeg",
   "resolution": "1024x1024",
-  "status": "generated_pending_quality_and_rights_review",
-  "quality_review": "required",
-  "quality_note": "畫面可辨認妙蛙種子；背部種子偏黃綠、背景較提示詞簡化，待獨立品質審核判定是否合格。",
-  "rights_review": "required",
-  "website_use": "not_approved"
+  "status": "quality_and_private_project_use_approved_third_party_rights_not_cleared",
+  "quality_review": "approved",
+  "quality_note": "專案管理者及品質審核 AI 已批准品質；背部顏色與捲曲為可接受風格差異。",
+  "rights_review": "not_cleared",
+  "website_use": "not_approved",
+  "project_approval": {
+    "quality": "approved",
+    "private_pokedex_use": "approved",
+    "approved_by": "PokéVerse 專案管理者",
+    "approved_on": "2026-11-24",
+    "scope": "此 #001 圖片於專案私人圖鑑網站使用",
+    "evidence": "專案管理者於本對話明確確認"
+  },
+  "third_party_rights": {
+    "status": "no_permission_verified",
+    "reviewed_on": "2026-11-24",
+    "owner_policy": "Pokémon 官方支援頁要求不要在專案中使用或關聯其角色、名稱和設計；本專案尚未確認權利人個別授權。",
+    "owner_source": "https://support.pokemon.com/hc/en-us/articles/360000634094-Can-I-use-Pok%C3%A9mon-images-or-materials",
+    "generator_policy": "Leonardo 免費方案說明生成內容使用授權；其授權本身不確認第三方角色權利。",
+    "generator_source": "https://leonardo.ai/terms-of-service"
+  }
 }
