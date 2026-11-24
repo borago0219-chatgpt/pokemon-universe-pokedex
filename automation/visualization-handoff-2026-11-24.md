@@ -48,3 +48,12 @@
 
 - 使用者於本對話表示「我親自審核通過圖片」；對象為目前討論的 #0001 候選圖 assets/generated/001-bulbasaur-stepping-01.jpg，blob SHA bd82571241715f5f9c1c29dff978cb60dab347bf。記錄為使用者對圖片品質的審核通過。
 - 這句話未具體說明展示權利依據；原 metadata 的 rights_review=required、website_use=not_approved 尚未變更。須確認適當展示權利後才依原發布規則接入；本交接不修改生圖 metadata，也不代替法律或授權證據。
+
+
+## 圖片顯示接入：準備中
+
+- 使用者明確要求在網站顯示 #001 圖片；品質審核報告已接受該圖品質。程式 [4147d41](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/4147d41b600d28b299dc1b6e8b9dd414029d956c) 在測試分支準備圖片卡片，含延遲載入、替代文字及載入錯誤回退。
+- 程式依 metadata 只有 national_id=1、檔案路徑完全相符、rights_review=approved 且 website_use=approved 時才顯示；當前 metadata 仍為 required / not_approved，因此目前仍顯示占位。不得把使用者的品質通過誤記為第三方權利審核通過，不擅自改生圖 metadata。
+- Leonardo 官方價格頁稱免費使用者享有非專屬使用授權；其服務條款不保證無第三方智慧財產權侵害。請權利審核依照實際使用與相關權利人條款判斷，不能將 Leonardo 對生成圖的授權當成已取得寶可夢角色權利的證據。
+- GitHub Actions [45415452225](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45415452225) 測試成功（兩種視窗的既有介面測試），但測試期間目前圖片受限未顯示；模擬中待審顯示 0 張、假設審核通過顯示 1 張、編號或路徑錯誤顯示 0 張。這不是實際圖片瀏覽器顯示驗收。正式網站和 Cloudflare Access 狀態本輪未驗證，main 未修改。
+- 下一步：取得權利狀態明確決定，再在受保護環境實際檢查圖片載入、尺寸與卡片，經獨立功能審核和 Access 確認後，只將使用者批准的圖片功能整合至 main；不可把其他測試分支功能一併合併。
