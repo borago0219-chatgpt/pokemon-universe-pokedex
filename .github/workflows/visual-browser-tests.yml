@@ -45,6 +45,15 @@ jobs:
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
                   page.locator("#q").fill("妙蛙種子")
                   assert page.locator(".poke").count() == 1, "Search must find #001"
+                  image = page.locator('.poke[data-id="1"] .poke-image')
+                  assert image.is_visible(), "Approved artwork should be visible"
+                  image.scroll_into_view_if_needed()
+                  page.wait_for_function("""() => {
+                    const image = document.querySelector('.poke[data-id="1"] .poke-image');
+                    return image && image.complete && image.naturalWidth > 0 && image.naturalHeight > 0;
+                  }""")
+                  size = image.evaluate("(image) => ({width:image.naturalWidth,height:image.naturalHeight})")
+                  assert size["width"] == 1024 and size["height"] == 1024, f"Unexpected image size: {size}"
                   page.locator(".poke").first.click()
                   assert page.locator("#detail").is_visible(), "Details should open"
                   assert "#0001" in page.locator("#detailbody").inner_text()
@@ -62,4 +71,19 @@ jobs:
                   page.close()
               browser.close()
           server.shutdown()
+          PY
+      - name: Check unauthenticated site response
+        run: |
+          python - <<'PY'
+          from urllib.request import build_opener
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urlparse
+          url = "https://pokemon-universe-pokedex.boragodragonfruit.workers.dev/"
+          try:
+              response = build_opener().open(url, timeout=20)
+              final = urlparse(response.geturl())
+              print("ACCESS_OBSERVATION final_host=" + str(final.hostname) + " status=" + str(response.status))
+              print("ACCESS_OBSERVATION login_host=" + str(bool(final.hostname and final.hostname.endswith(".cloudflareaccess.com"))).lower())
+          except (HTTPError, URLError, TimeoutError) as error:
+              print("ACCESS_OBSERVATION unavailable=" + type(error).__name__ + " code=" + str(getattr(error, "code", "none")))
           PY
