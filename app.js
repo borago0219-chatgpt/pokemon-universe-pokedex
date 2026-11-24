@@ -10,7 +10,8 @@ if(!privatePreview)document.querySelector('.preview-banner')?.remove();
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function render(){
  const q=$('#q').value.trim().toLowerCase(),t=$('#type').value;
- const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q)))&&(!t||(p.types||[]).includes(t))).sort((a,b)=>Number(a.id)-Number(b.id));
+ const idQuery=/^#?0*\d+$/.test(q)?Number(q.replace(/^#/,'')):null;
+ const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q))||(idQuery!==null&&Number(p.id)===idQuery))&&(!t||(p.types||[]).includes(t))).sort((a,b)=>Number(a.id)-Number(b.id));
  $('#grid').innerHTML=found.map(p=>`<button class="poke" data-id="${Number(p.id)}" style="--accent:${colors[(p.types||[])[0]]||'#6b9ca7'}"><div class="art" style="--shade:${colors[(p.types||[])[0]]||'#6b9ca7'}33"><span class="mark" aria-label="插畫尚未核准展示">✦</span></div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${(p.types||[]).map(x=>`<span class="tag">${escapeHTML(typeNames[x]||x)}</span>`).join('')}</div>${privatePreview&&guidesFor(p.id).length?`<span class="draft-count">${guidesFor(p.id).length} 筆待審指南</span>`:''}</button>`).join('');
  $('#empty').hidden=found.length>0;
  document.querySelectorAll('.poke').forEach(b=>b.addEventListener('click',()=>details(records.find(p=>p.id===Number(b.dataset.id)))));
