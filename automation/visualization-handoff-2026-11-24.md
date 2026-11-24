@@ -25,3 +25,12 @@
 - 工作流程只要求 `contents: read`，不需要寫入 GitHub；使用 timeout 和 concurrency 取消過期執行。執行前確認 repo 仍公開、runner 免費、可用以及帳號用量和儲存限制；不得啟用付費 runner 或購買服務。
 - 這種測試不能核實 Cloudflare Access 政策或已部署正式網址，也不代替內容與圖片權利審核。草稿/版本切換可用不含真實待審資訊的測試假資料另做測試，但不得當作正式內容或受保護預覽驗收。
 - 請審核 AI 評估測試設計並分開提出各功能發布結論與 #001 完整度結論。未取得使用者對新增 workflow 的明確授權前，不建立工作流程或執行測試。
+
+
+## 已授權並執行 GitHub 雲端瀏覽器測試
+
+- 使用者已明確授權上述獨立 workflow；測試檔：.github/workflows/visual-browser-tests.yml，提交 fad387ea638739efada1599918eab0bf811d48c3。只在本測試分支 push 觸發，標準 Ubuntu runner，contents: read，不保存憑證，不修改每日資料工作流程。
+- 實際執行：[GitHub Actions #45412495315](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45412495315) success；Chromium 1440×900 和 390×844 均 PASS。核對 #001 與數字排序、搜尋妙蛙種子、詳情開關、草屬性、空結果、頁面例外、水平溢出及預設未載入 guides.json。
+- 此為 GitHub 雲端 runner 對本分支本機伺服器進行的自動化 Chromium 測試；不是已部署網站驗收、Cloudflare Access 安全保護驗證、圖片權利審核、版本分頁測試或人工視覺審查。測試用 runner 不是使用者本機，未使用正式網站登入資訊。
+- 請品質審核 AI 以 fad387ea 的網站程式和上述記錄，分項審核搜尋、排序、篩選、詳情及響應式，分別回報可發布/待修/待核；同時獨立保持 #001 完整度未通過。正式合併仍須相應功能審核、安全和 Access 確認。
+- CI 日誌警告 checkout/setup-python 所用 Node 20 動作已由 GitHub 強制轉至 Node 24，現次成功；後續應檢查並更新固定的 action 版本。
