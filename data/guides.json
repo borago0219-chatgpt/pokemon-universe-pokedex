@@ -632,6 +632,39 @@
       ],
       "checked_at": "2026-11-24",
       "status": "needs_review"
+    },
+    {
+      "key": "1:red-blue-yellow:moveset",
+      "national_id": 1,
+      "game": "red-blue-yellow",
+      "topic": "moveset",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "第 1 代《紅／綠／藍／皮卡丘》劇情向原創草稿；按第 1 代招式表，不能套用其他世代。",
+        "proposed_moves": [
+          "Razor Leaf（飛葉快刀）",
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Growth（生長）"
+        ],
+        "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長在第 1 代強化單一特殊能力。",
+        "caution": "需依各版本及進化時點確認招式習得等級；此處未核實對戰環境、道具、性格和努力值（第 1 代不存在現代特性與性格機制）。",
+        "verification_required": [
+          "逐版本招式習得等級與進化時點",
+          "正式對戰環境與替代配招"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex/001.shtml",
+          "title": "Serebii 第 1 代妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Red/Green/Blue/Yellow",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "needs_review"
     }
   ]
 }
