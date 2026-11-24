@@ -345,31 +345,185 @@
     {
       "national_id": 1,
       "checked_at": "2026-11-24",
-      "status": "draft",
+      "status": "needs_review",
       "key": "1:main-series:availability",
       "game": "main-series",
       "topic": "availability",
       "content": {
         "display_name": "妙蛙種子 Bulbasaur",
-        "coverage": "僅已逐項查核的版本；第 2～8 代、Let's Go、BDSP、劍盾、傳說 阿爾宙斯及傳說 Z-A 等仍待逐版查核，不以缺項推論不出現。",
+        "coverage": "按目前已發售主系列作品逐版整理；細節以資料庫交叉核對，非所有版本取得條件均由官方逐項確認。歷史活動、跨代轉入、交換、野生、贈送和不支援分開標示。",
         "verified_versions": [
           {
             "generation": 1,
             "versions": [
               "Red",
-              "Green",
-              "Blue"
+              "Green (Japan)",
+              "Blue (Japan/International)"
             ],
-            "availability": "初始寶可夢三選一",
-            "source": "Serebii 第一代圖鑑"
+            "method": "真新鎮大木博士提供的三選一初始寶可夢",
+            "availability": "in_game_gift",
+            "status": "verified_community"
           },
           {
             "generation": 1,
             "versions": [
               "Yellow"
             ],
-            "availability": "華藍市 NPC 贈送；需皮卡丘心情良好",
-            "source": "Serebii Yellow Gift Pokémon"
+            "method": "華藍市居民贈送；夥伴皮卡丘親密度至少 147",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 2,
+            "versions": [
+              "Gold",
+              "Silver",
+              "Crystal"
+            ],
+            "method": "與第 1 代透過時光膠囊交換；歷史活動另計，遊戲內沒有一般野生捕捉",
+            "availability": "transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 3,
+            "versions": [
+              "Ruby",
+              "Sapphire",
+              "Emerald"
+            ],
+            "method": "與相容遊戲交換或歷史活動；沒有已核實的本篇野生點",
+            "availability": "trade_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 3,
+            "versions": [
+              "FireRed",
+              "LeafGreen"
+            ],
+            "method": "真新鎮大木博士提供的三選一初始寶可夢",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 4,
+            "versions": [
+              "Diamond",
+              "Pearl",
+              "Platinum"
+            ],
+            "method": "與相容作品交換；跨世代移入可經帕爾公園，非本篇野生",
+            "availability": "trade_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 4,
+            "versions": [
+              "HeartGold",
+              "SoulSilver"
+            ],
+            "method": "擊敗赤紅後，於真新鎮接受大木博士贈送的關都初始寶可夢之一",
+            "availability": "postgame_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 5,
+            "versions": [
+              "Black",
+              "White"
+            ],
+            "method": "歷史 Global Link 贈送活動有紀錄；當前常規本地捕捉未查到，跨代轉入條件待細核",
+            "availability": "historical_event_or_transfer",
+            "status": "needs_review"
+          },
+          {
+            "generation": 5,
+            "versions": [
+              "Black 2",
+              "White 2"
+            ],
+            "method": "寶可傳送從前代移入；歷史活動另計，非本篇野生",
+            "availability": "transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 6,
+            "versions": [
+              "X",
+              "Y"
+            ],
+            "method": "密阿雷市布拉塔諾博士贈送關都初始寶可夢之一",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 6,
+            "versions": [
+              "Omega Ruby",
+              "Alpha Sapphire"
+            ],
+            "method": "與相容作品交換或歷史活動；無已核實本地野生點",
+            "availability": "trade_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Sun",
+              "Moon"
+            ],
+            "method": "與相容作品交換／轉入；非已核實野生捕捉",
+            "availability": "trade_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Ultra Sun",
+              "Ultra Moon"
+            ],
+            "method": "週五於美樂美樂島 2 號道路使用島嶼掃描遇見",
+            "availability": "island_scan_wild",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Let's Go, Pikachu!",
+              "Let's Go, Eevee!"
+            ],
+            "method": "常青森林野生；華藍市可另獲一次贈送",
+            "availability": "wild_and_gift",
+            "status": "official_wild_community_gift"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Sword",
+              "Shield"
+            ],
+            "method": "《鎧之孤島》武館一次性贈送；可經相容 HOME／交換轉入；曠野地帶新聞和 HOME 贈送屬歷史活動",
+            "availability": "dlc_gift_transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Brilliant Diamond",
+              "Shining Pearl"
+            ],
+            "method": "取得全國圖鑑後，地下大洞窟的草原空洞、日光洞窟、沼澤／河岸／靜水等空洞可遇見",
+            "availability": "postgame_wild",
+            "status": "official_and_community"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Legends: Arceus"
+            ],
+            "method": "該作不可取得妙蛙種子；不能因其他作品可移入 HOME 就推定可進入本作",
+            "availability": "unsupported",
+            "status": "cross_checked_community"
           },
           {
             "generation": 9,
@@ -377,45 +531,71 @@
               "Scarlet",
               "Violet"
             ],
-            "availability": "《藍之圓盤》DLC 解鎖海岸區生物多樣性後可在野外遇見；亦可經 HOME 或玩家交換轉入",
-            "source": "Serebii 朱／紫圖鑑與 DLC 官方介紹"
+            "method": "《藍之圓盤》海岸區生物多樣性升級後，在海岸區及火把迷宮野生遇見；亦可在相容條件下交換／HOME 轉入",
+            "availability": "dlc_wild_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 9,
+            "versions": [
+              "Legends: Z-A"
+            ],
+            "method": "支線任務 22 可在寶可夢研究所獲贈；野生區域 20 可遇見；《超次元爆湧》另有特定超次元區域",
+            "availability": "gift_wild_and_dlc",
+            "status": "verified_community"
           }
         ],
         "not_yet_verified": [
-          "第 2～8 代所有主系列版本及重製版",
-          "Let's Go、Brilliant Diamond/Shining Pearl、Sword/Shield DLC",
-          "Legends: Arceus、Legends: Z-A 與已發售 DLC 的精確可取得性",
-          "各版本交換、HOME、活動與不支援狀態"
+          "《黑／白》的寶可傳送與歷史 Global Link 版本細節",
+          "各版本活動贈送的有效期間與地區",
+          "第 2～7 代硬體／服務現況及跨世代交換可行性",
+          "地下大洞窟各空洞的具體生成條件／機率",
+          "《傳說 Z-A》DLC 精確掃描條件",
+          "每一版本的專屬配招與玩法"
         ],
-        "version_count_verified": 6
+        "version_count_verified": 39
       },
       "sources": [
         {
-          "url": "https://www.serebii.net/pokedex/001.shtml",
-          "title": "Serebii 第一代妙蛙種子地點",
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur",
+          "title": "Bulbapedia：妙蛙種子主系列遊戲地點表",
           "type": "community_game_database",
-          "version": "Red/Green/Blue/Yellow",
+          "version": "Generations I–IX",
           "checked_at": "2026-11-24"
         },
         {
-          "url": "https://www.serebii.net/yellow/gift.shtml",
-          "title": "Serebii 黃版贈送寶可夢",
+          "url": "https://pokemondb.net/pokedex/bulbasaur",
+          "title": "Pokémon Database：各版本取得地點交叉核對",
           "type": "community_game_database",
-          "version": "Yellow",
+          "version": "Generations I–IX",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/",
+          "title": "Serebii：《劍／盾》與地下大洞窟地點",
+          "type": "community_game_database",
+          "version": "Sword/Shield, BDSP",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://diamondpearl.pokemon.com/en-us/trainersguide/grandunderground/",
+          "title": "官方《晶燦鑽石／明亮珍珠》地下大洞窟指南",
+          "type": "official_game_guide",
+          "version": "Brilliant Diamond/Shining Pearl",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
+          "title": "官方《Let's Go》常青森林妙蛙種子介紹",
+          "type": "official_game_guide",
+          "version": "Let's Go Pikachu/Eevee",
           "checked_at": "2026-11-24"
         },
         {
           "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
-          "title": "Serebii 朱／紫地點",
+          "title": "Serebii：《朱／紫》與《傳說 Z-A》地點",
           "type": "community_game_database",
-          "version": "Scarlet/Violet",
-          "checked_at": "2026-11-24"
-        },
-        {
-          "url": "https://www.pokemon.com/uk/pokemon-video-games/pokemon-scarlet-and-pokemon-violet",
-          "title": "官方《朱／紫》及 DLC 介紹",
-          "type": "official_product",
-          "version": "Scarlet/Violet",
+          "version": "Scarlet/Violet, Legends: Z-A",
           "checked_at": "2026-11-24"
         }
       ]
