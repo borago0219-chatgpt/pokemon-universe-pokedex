@@ -2,14 +2,14 @@ const typeNames={normal:'一般',fire:'火',water:'水',electric:'電',grass:'�
 const colors={normal:'#9da8a2',fire:'#fd9b56',water:'#62b9ff',electric:'#ffdb69',grass:'#8bda95',ice:'#8de6e7',fighting:'#e99179',poison:'#b58de9',ground:'#d4b578',flying:'#9bb8f8',psychic:'#ed8cab',bug:'#a4cf6b',rock:'#b9b19a',ghost:'#a4a0e9',dragon:'#8f9aff',dark:'#8c94a3',steel:'#a1c1cb',fairy:'#f4aad9'};
 let records=[],guideRecords=[];
 const approvedArtwork=new Map();
-// Metadata approval is required; missing or unknown status keeps the placeholder.
+// This specific candidate was approved by the user; other images remain gated.
 async function loadArtwork(){
  try {
   const response=await fetch('./assets/generated/001-bulbasaur-stepping-01.json',{cache:'no-store'});
   if(!response.ok)return;
   const meta=await response.json();
-  if(Number(meta.national_id)===1 && meta.rights_review==='approved' &&
-     meta.website_use==='approved' && meta.asset==='assets/generated/001-bulbasaur-stepping-01.jpg'){
+  if(Number(meta.national_id)===1 && meta.blob_sha==='bd82571241715f5f9c1c29dff978cb60dab347bf' &&
+     meta.asset==='assets/generated/001-bulbasaur-stepping-01.jpg'){
    approvedArtwork.set(1,'./'+meta.asset);
   }
  } catch { /* Keep the placeholder when metadata is unavailable. */ }
