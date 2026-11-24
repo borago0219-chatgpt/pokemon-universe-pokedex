@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-24",
   "guides": [
     {
       "key": "25:pokemon-go:capture",
@@ -272,6 +272,323 @@
       ],
       "checked_at": "2026-11-23",
       "status": "draft"
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-24",
+      "status": "draft",
+      "key": "1:main:profile",
+      "game": "main",
+      "topic": "profile",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "national_id": 1,
+        "name_zh": "妙蛙種子",
+        "name_en": "Bulbasaur",
+        "name_ja": "フシギダネ",
+        "category": "種子寶可夢",
+        "types": [
+          "草",
+          "毒"
+        ],
+        "height_m": 0.7,
+        "weight_kg": 6.9,
+        "abilities": {
+          "regular": [
+            "茂盛 Overgrow"
+          ],
+          "hidden": [
+            "葉綠素 Chlorophyll"
+          ]
+        },
+        "base_stats_from_generation_2": {
+          "hp": 45,
+          "attack": 49,
+          "defense": 49,
+          "special_attack": 65,
+          "special_defense": 65,
+          "speed": 45,
+          "total": 318
+        },
+        "generation_1_stat_note": "第 1 代只有單一「特殊」種族值 65，不應套用現行特攻／特防雙欄。",
+        "evolution": "妙蛙種子等級 16 進化妙蛙草；妙蛙草等級 32 進化妙蛙花（主系列常規規則）。",
+        "form_note": "本身沒有單獨核實的地區型態；妙蛙花的超級進化／超極巨化不能當作妙蛙種子的型態。",
+        "verification_required": [
+          "繁中官方名稱與分類的頁面來源逐項補齊",
+          "各版本特性與型態例外"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.pokemon.com/us/pokedex/bulbasaur",
+          "title": "官方 Bulbasaur 圖鑑",
+          "type": "official_pokedex",
+          "version": "national",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子資料",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://assets.pokemon.com/assets/cms/pdf/op/tcg_champ_series/2011-2012/WC12_Battle_Dictionary.pdf",
+          "title": "官方寶可夢名稱對照",
+          "type": "official_reference",
+          "version": "Japanese",
+          "checked_at": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-24",
+      "status": "draft",
+      "key": "1:main-series:availability",
+      "game": "main-series",
+      "topic": "availability",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "coverage": "僅已逐項查核的版本；第 2～8 代、Let's Go、BDSP、劍盾、傳說 阿爾宙斯及傳說 Z-A 等仍待逐版查核，不以缺項推論不出現。",
+        "verified_versions": [
+          {
+            "generation": 1,
+            "versions": [
+              "Red",
+              "Green",
+              "Blue"
+            ],
+            "availability": "初始寶可夢三選一",
+            "source": "Serebii 第一代圖鑑"
+          },
+          {
+            "generation": 1,
+            "versions": [
+              "Yellow"
+            ],
+            "availability": "華藍市 NPC 贈送；需皮卡丘心情良好",
+            "source": "Serebii Yellow Gift Pokémon"
+          },
+          {
+            "generation": 9,
+            "versions": [
+              "Scarlet",
+              "Violet"
+            ],
+            "availability": "《藍之圓盤》DLC 解鎖海岸區生物多樣性後可在野外遇見；亦可經 HOME 或玩家交換轉入",
+            "source": "Serebii 朱／紫圖鑑與 DLC 官方介紹"
+          }
+        ],
+        "not_yet_verified": [
+          "第 2～8 代所有主系列版本及重製版",
+          "Let's Go、Brilliant Diamond/Shining Pearl、Sword/Shield DLC",
+          "Legends: Arceus、Legends: Z-A 與已發售 DLC 的精確可取得性",
+          "各版本交換、HOME、活動與不支援狀態"
+        ],
+        "version_count_verified": 6
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex/001.shtml",
+          "title": "Serebii 第一代妙蛙種子地點",
+          "type": "community_game_database",
+          "version": "Red/Green/Blue/Yellow",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/yellow/gift.shtml",
+          "title": "Serebii 黃版贈送寶可夢",
+          "type": "community_game_database",
+          "version": "Yellow",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 朱／紫地點",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.com/uk/pokemon-video-games/pokemon-scarlet-and-pokemon-violet",
+          "title": "官方《朱／紫》及 DLC 介紹",
+          "type": "official_product",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-24",
+      "status": "draft",
+      "key": "1:scarlet-violet:capture",
+      "game": "scarlet-violet",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Scarlet",
+          "Violet"
+        ],
+        "base_game": "本篇沒有已核實的野生捕捉點；可由相容來源經 Pokémon HOME 轉入或與其他玩家交換。",
+        "dlc": "《零之秘寶 後篇：藍之圓盤》",
+        "method": "解鎖海岸區生物多樣性後，在藍莓學園生態巨蛋的海岸區／火把迷宮尋找野生妙蛙種子。",
+        "unlock": "社群攻略記載聯盟社海岸區升級需 3000 BP；此數字尚未經官方頁面獨立核實。",
+        "location_note": "Serebii 同時列海岸區與火把迷宮；細部生成條件、等級、機率及天氣尚待逐項核實。",
+        "status_note": "DLC 野生取得與 HOME／交換為不同方法，不能把原版轉入當作本篇野生。",
+        "verification_required": [
+          "官方或遊戲內驗證 3000 BP 與升級先決條件",
+          "逐地點生成條件和機率",
+          "特殊太晶／活動取得是否另有例外"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子《朱／紫》地點",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.com/uk/pokemon-video-games/pokemon-scarlet-and-pokemon-violet",
+          "title": "官方《朱／紫》DLC 與 HOME 支援",
+          "type": "official_product",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.gamepur.com/GUIDES/ALL-LEAGUE-CLUB-SUPPORT-BOARD-REWARDS-BP-COSTS-IN-POKEMON-INDIGO-DISK",
+          "title": "Gamepur 聯盟社升級成本",
+          "type": "community_guide",
+          "version": "Indigo Disk",
+          "checked_at": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-24",
+      "status": "draft",
+      "key": "1:pokemon-go:capture",
+      "game": "pokemon-go",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "current_availability": "unverified",
+        "confirmed_historical": [
+          {
+            "method": "野外大量出現",
+            "date": "2022-01-22",
+            "region": "全球",
+            "event": "Community Day Classic",
+            "status": "ended"
+          }
+        ],
+        "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
+        "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
+        "note": "2022 社群日為歷史活動，不能保證 2026-11-24 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
+        "verification_required": [
+          "2026-11-24 台灣野外是否出現",
+          "當季孵蛋、團體戰及田野／特殊調查渠道",
+          "暗影與極巨型態各自取得條件"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
+          "title": "官方 2022 妙蛙種子社群日經典回顧",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/001.shtml",
+          "title": "Serebii 妙蛙種子 GO 圖鑑",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-24",
+      "status": "draft",
+      "key": "1:pokemon-go:moveset",
+      "game": "pokemon-go",
+      "topic": "moveset",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "一般妙蛙種子；暗影／淨化招式另列",
+        "fast_attacks": [
+          "Vine Whip（藤鞭）",
+          "Tackle（撞擊）"
+        ],
+        "charged_attacks": [
+          "Seed Bomb（種子炸彈）",
+          "Power Whip（強力鞭打）",
+          "Sludge Bomb（污泥炸彈）"
+        ],
+        "special_form_moves": {
+          "shadow": "Frustration（遷怒）",
+          "purified": "Return（報恩）"
+        },
+        "pve": {
+          "community_suggested": "藤鞭＋強力鞭打，僅是妙蛙種子自身的草系輸出組合；未進化形態不宜當作頂級團體戰攻擊手。",
+          "source_scope": "GO Hub 計算器"
+        },
+        "pvp": {
+          "community_suggested": "藤鞭＋種子炸彈＋污泥炸彈（PvPoke 的一般超級聯盟組合）；特殊盃規則及季節平衡可能改變。",
+          "scope": "超級聯盟參考，排名未核實；無法據此推薦高級聯盟或大師聯盟。"
+        },
+        "limited_move_caution": "瘋狂植物是 2022 活動期間進化為妙蛙花的招式，並非妙蛙種子可學的招式。",
+        "verification_required": [
+          "2026 年當季招式平衡與各聯盟排名",
+          "暗影、淨化與極巨化差異",
+          "普通與特殊招式當前取得及招式學習器限制"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(GO)",
+          "title": "Bulbapedia GO 招式表",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/001.shtml",
+          "title": "Serebii GO 招式表",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pvpoke.com/rankings/all/1500/overall/bulbasaur/",
+          "title": "PvPoke 超級聯盟配招模擬",
+          "type": "community_simulation",
+          "version": "Pokémon GO Great League",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/1",
+          "title": "Pokémon GO Hub 妙蛙種子 PvE 組合",
+          "type": "community_calculator",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
+          "title": "官方 2022 社群日限定招式說明",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
+          "checked_at": "2026-11-24"
+        }
+      ]
     }
   ]
 }
