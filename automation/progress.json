@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "PokéVerse",
-  "last_research_run": "2026-11-23",
-  "last_successful_write": "2026-11-23",
+  "last_research_run": "2026-11-24",
+  "last_successful_write": "2026-11-24",
   "daily_limits": {
     "max_distinct_national_ids": 1,
     "image_prompts_per_focus": 1,
@@ -95,8 +95,11 @@
       "national_id": 1,
       "game": "pokemon-go",
       "kind": "capture",
-      "status": "pending",
-      "attempts": 0
+      "status": "awaiting_review",
+      "attempts": 1,
+      "last_checked_at": "2026-11-24",
+      "result_key": "1:pokemon-go:capture",
+      "note": "只核對 2022 歷史活動；2026 台灣現況仍待確認"
     }
   ],
   "image_queue": [
@@ -190,6 +193,24 @@
       "rechecked": [],
       "image_briefs": 1,
       "notes": "User-directed sequential main flow starts at #001. Pre-existing #025/#133 records remain historical drafts/backlog and are not main-flow completion. This operation sets shared focus and handoff only; no research, generation, preview, or review claimed."
+    },
+    {
+      "run_id": "2026-11-24-work-build-bulbasaur-001",
+      "date": "2026-11-24",
+      "action": "partial_research_saved",
+      "national_id": 1,
+      "added_drafts": [
+        "1:main:profile",
+        "1:main-series:availability",
+        "1:scarlet-violet:capture",
+        "1:pokemon-go:capture",
+        "1:pokemon-go:moveset",
+        "1:scarlet-violet:moveset",
+        "1:red-blue-yellow:moveset"
+      ],
+      "rechecked": [],
+      "image_briefs": 0,
+      "notes": "使用 Work 雲端瀏覽器檢視官方圖鑑；GitHub 保存 #001 的 7 筆草稿及來源。網站私人預覽、實圖與獨立審核尚缺，不換號。"
     }
   ],
   "blockers": [
@@ -225,27 +246,43 @@
     "name_en": "Bulbasaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "not_started",
+    "research_status": "partial_drafts_saved",
     "image_status": "missing",
     "preview_status": "not_verified",
     "review_status": "pending",
     "publication_status": "not_published",
     "missing_sections": [
-      "完整基本資料與進化／型態差異",
-      "各代主機遊戲出現方式及版本可取得性矩陣",
-      "各版本捕捉／取得方法與條件",
-      "按版本與玩法核實的推薦配招",
-      "Pokémon GO 取得方式、可學招式及 PvE／PvP 用途",
-      "至少一張實際生成並保存的 #001 圖片",
-      "網頁圖鑑正確顯示 #001 資料與合規圖片",
-      "當日獨立審核完成且無重大缺漏"
+      "基本資料：已記錄官方屬性、身高體重、分類及社群種族值；繁中名稱原始來源、版本型態例外仍待逐項核對",
+      "各代主機遊戲：只核對第 1 代與《朱／紫》共 6 個版本；其餘世代、重製、Let's Go、Legends 及 DLC 尚未逐版完成",
+      "各版本取得方式：已核對第 1 代與《朱／紫》部分方法；其他版本及精確條件未完成",
+      "主系列配招：第 1 代及《朱／紫》只有依合法招式建立的推論草稿；各版本／玩法的實戰、道具、性格與努力值未完成",
+      "Pokémon GO：已核對一般妙蛙種子招式及 2022 歷史活動；2026-11-24 台灣現況、各取得渠道、型態與完整 PvE／PvP 用途未完成",
+      "至少一張實際生成並保存的 #001 圖片尚無；image_queue 僅有需求，交由 21:00 生圖任務",
+      "網站仍只載入 data/pokemon.json，未接入 #001 guides.json；尚未在 Work 私人預覽驗證搜尋、詳細頁、版本切換與合規圖片",
+      "當日 22:00 獨立審核尚未完成；建設者須次日讀 reviews/ 報告核實"
     ],
-    "source_checked_at": null,
+    "source_checked_at": "2026-11-24",
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
     "handoff": {
       "construction": {
-        "status": "pending",
-        "last_updated_at": "2026-11-24"
+        "status": "partial_saved",
+        "last_updated_at": "2026-11-24",
+        "guide_keys": [
+          "1:main:profile",
+          "1:main-series:availability",
+          "1:scarlet-violet:capture",
+          "1:pokemon-go:capture",
+          "1:pokemon-go:moveset",
+          "1:scarlet-violet:moveset",
+          "1:red-blue-yellow:moveset"
+        ],
+        "verified_versions": 6,
+        "notes": "已在 Work 雲端瀏覽器實際讀取官方 Bulbasaur 圖鑑，並以官方及社群來源保存 7 筆 #001 草稿。兩筆配招標 needs_review；未逐版核對的內容不算完成。",
+        "commits": [
+          "887fad03d4bcad2a621d27a5b26671b05307a677",
+          "e185c49730f60e6ebd34b05980d1eab0bc285a90",
+          "a1f98e5250e7314336fdf1e25bee65a1a0d4a90a"
+        ]
       },
       "image": {
         "status": "pending",
@@ -255,7 +292,7 @@
         "status": "pending",
         "last_updated_at": null
       },
-      "next_day_action": "未滿全部完成條件就持續 #001；審核結果見 reviews/ 當日報告，建設者隔天讀取並更新 progress"
+      "next_day_action": "延續 #001；先讀 22:00 reviews/ 報告並核實，再逐代補齊版本矩陣、取得條件和配招；追蹤圖片與私人頁面預覽，全部通過後才於下一台灣日期換 #002。"
     }
   },
   "focus_policy": {
