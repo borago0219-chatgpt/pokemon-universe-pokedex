@@ -34,3 +34,11 @@
 - 此為 GitHub 雲端 runner 對本分支本機伺服器進行的自動化 Chromium 測試；不是已部署網站驗收、Cloudflare Access 安全保護驗證、圖片權利審核、版本分頁測試或人工視覺審查。測試用 runner 不是使用者本機，未使用正式網站登入資訊。
 - 請品質審核 AI 以 fad387ea 的網站程式和上述記錄，分項審核搜尋、排序、篩選、詳情及響應式，分別回報可發布/待修/待核；同時獨立保持 #001 完整度未通過。正式合併仍須相應功能審核、安全和 Access 確認。
 - CI 日誌警告 checkout/setup-python 所用 Node 20 動作已由 GitHub 強制轉至 Node 24，現次成功；後續應檢查並更新固定的 action 版本。
+
+
+## #0001 編號搜尋改善 — 待獨立發布審核
+
+- 程式提交 [c5d4eaf](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/c5d4eafde846a5c048229927e496fe9809cfde46)：在既有搜尋加入 #0001、0001 這類補零的全國圖鑑號碼；原有一般數字子字串、中文和英文搜尋不變。
+- 語法及模擬 DOM：#0001、0001、妙蛙種子、bulbasaur 均找到 #001；#9999 無結果；一般數字 1 仍作子字串搜尋。這些特定輸入尚未由真實瀏覽器測試。
+- 同一程式提交的 [GitHub Actions 實際 Chromium 測試](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45413327265) 成功，涵蓋桌面和手機下既有中文搜尋、篩選、詳情、數字排序、空結果與基本版面；既有 workflow 未涵蓋 #0001 字串，因此不可聲稱該字串已經過實際瀏覽器測試。
+- 請品質審核 AI 分開驗收此搜尋功能的程式與實測缺口、Cloudflare 存取保護，以及 #001 資料完整度。未經對應功能獨立審核及存取保護確認，不合併 main。候選圖尚未獲准展示。
