@@ -4,9 +4,9 @@
   "last_research_run": "2026-11-23",
   "last_successful_write": "2026-11-23",
   "daily_limits": {
-    "new_guide_drafts": 2,
-    "existing_guide_rechecks": 2,
-    "image_prompts": 1,
+    "max_distinct_national_ids": 1,
+    "image_prompts_per_focus": 1,
+    "image_generations_per_focus": 1,
     "image_generation_paid_requests": 0
   },
   "priority_games": [
@@ -127,6 +127,17 @@
       "brief": "原創圖鑑場景需求：帕底亞橄欖田晨光中，一隻伊布在野花旁回望；柔和水彩與清晰輪廓，原創構圖，不仿官方圖、卡牌版面、商標。僅是候選需求，角色使用與展示權利先由人審核。",
       "generated_asset": null,
       "rights_review": "required"
+    },
+    {
+      "key": "1:main:artwork",
+      "national_id": 1,
+      "game": "main",
+      "status": "pending_rights_review",
+      "created_at": "2026-11-24",
+      "brief": "妙蛙種子 #001 原創場景插畫候選需求：可辨認的妙蛙種子與背部種子，在清晨林間的植物旁，以不模仿既有官方構圖的清晰全身視角呈現；不使用 Logo、卡面或官方圖稿。須實際生成與保存，供權利審查及合規預覽；此處僅為需求，尚未生圖。",
+      "generated_asset": null,
+      "rights_review": "required",
+      "website_use": "not_approved"
     }
   ],
   "history": [
@@ -169,6 +180,16 @@
       "rights_review": "required",
       "website_use": "not_approved",
       "notes": "One actual 1024x1024 JPEG generated in Work cloud browser, downloaded, and saved as candidate asset. No official art reference used; public website use awaits human rights review."
+    },
+    {
+      "run_id": "2026-11-24-focus-policy-001",
+      "date": "2026-11-24",
+      "action": "focus_policy_initialized",
+      "national_id": 1,
+      "added_drafts": [],
+      "rechecked": [],
+      "image_briefs": 1,
+      "notes": "User-directed sequential main flow starts at #001. Pre-existing #025/#133 records remain historical drafts/backlog and are not main-flow completion. This operation sets shared focus and handoff only; no research, generation, preview, or review claimed."
     }
   ],
   "blockers": [
@@ -196,5 +217,57 @@
       "issue": "珍藏與泰山壓頂在個別伊布目前的精英特殊招式學習器選單是否可取得，未逐一驗證",
       "status": "open"
     }
-  ]
+  ],
+  "daily_focus": {
+    "date": "2026-11-24",
+    "national_id": 1,
+    "name_zh": "妙蛙種子",
+    "name_en": "Bulbasaur",
+    "status": "incomplete",
+    "completed": false,
+    "research_status": "not_started",
+    "image_status": "missing",
+    "preview_status": "not_verified",
+    "review_status": "pending",
+    "publication_status": "not_published",
+    "missing_sections": [
+      "完整基本資料與進化／型態差異",
+      "各代主機遊戲出現方式及版本可取得性矩陣",
+      "各版本捕捉／取得方法與條件",
+      "按版本與玩法核實的推薦配招",
+      "Pokémon GO 取得方式、可學招式及 PvE／PvP 用途",
+      "至少一張實際生成並保存的 #001 圖片",
+      "網頁圖鑑正確顯示 #001 資料與合規圖片",
+      "當日獨立審核完成且無重大缺漏"
+    ],
+    "source_checked_at": null,
+    "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
+    "handoff": {
+      "construction": {
+        "status": "pending",
+        "last_updated_at": "2026-11-24"
+      },
+      "image": {
+        "status": "pending",
+        "last_updated_at": null
+      },
+      "review": {
+        "status": "pending",
+        "last_updated_at": null
+      },
+      "next_day_action": "未滿全部完成條件就持續 #001；審核結果見 reviews/ 當日報告，建設者隔天讀取並更新 progress"
+    }
+  },
+  "focus_policy": {
+    "timezone": "Asia/Taipei",
+    "first_national_id": 1,
+    "max_distinct_national_ids_per_day": 1,
+    "sequence": "ascending_national_pokedex_without_skips",
+    "last_completed_national_id": 0,
+    "locked_until_all_completion_checks_pass": true,
+    "advance_only_on_next_taiwan_calendar_day": true,
+    "on_unfinished_next_day": "carry_same_national_id",
+    "on_finished_same_day": "stop_without_selecting_next",
+    "backfill_rule": "舊寶可夢因版本更新而需修訂時，只記入 update_backfill 待辦，保留原始主流程編號；三個主流程排程不得因此跳號或同日處理第二隻。回補需另行安排不破壞主流程的處理時段。"
+  }
 }
