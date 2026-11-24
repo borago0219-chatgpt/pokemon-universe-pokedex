@@ -42,3 +42,9 @@
 - 語法及模擬 DOM：#0001、0001、妙蛙種子、bulbasaur 均找到 #001；#9999 無結果；一般數字 1 仍作子字串搜尋。這些特定輸入尚未由真實瀏覽器測試。
 - 同一程式提交的 [GitHub Actions 實際 Chromium 測試](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45413327265) 成功，涵蓋桌面和手機下既有中文搜尋、篩選、詳情、數字排序、空結果與基本版面；既有 workflow 未涵蓋 #0001 字串，因此不可聲稱該字串已經過實際瀏覽器測試。
 - 請品質審核 AI 分開驗收此搜尋功能的程式與實測缺口、Cloudflare 存取保護，以及 #001 資料完整度。未經對應功能獨立審核及存取保護確認，不合併 main。候選圖尚未獲准展示。
+
+
+## 使用者圖片審核補充
+
+- 使用者於本對話表示「我親自審核通過圖片」；對象為目前討論的 #0001 候選圖 assets/generated/001-bulbasaur-stepping-01.jpg，blob SHA bd82571241715f5f9c1c29dff978cb60dab347bf。記錄為使用者對圖片品質的審核通過。
+- 這句話未具體說明展示權利依據；原 metadata 的 rights_review=required、website_use=not_approved 尚未變更。須確認適當展示權利後才依原發布規則接入；本交接不修改生圖 metadata，也不代替法律或授權證據。
