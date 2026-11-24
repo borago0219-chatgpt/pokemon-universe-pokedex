@@ -16,3 +16,20 @@ footer{padding:28px 7vw;font-size:12px;color:#7f8da8;line-height:2}footer a,.sma
 dialog{background:#141f3b;color:#fff;border:1px solid #51607e;border-radius:22px;width:min(650px,92vw);max-height:85vh;padding:35px;box-shadow:0 20px 80px #000b}dialog::backdrop{background:#020711c9}.close{float:right;border:0;background:#34425c;color:white;font-size:26px;border-radius:50%;width:35px;height:35px;cursor:pointer}
 #detailbody h2 small{color:#8f9cb5;font-size:16px}.detailnote{padding:14px;background:#24314a;border-radius:11px;color:#b2c1da;line-height:1.7}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.detailgrid div{padding:15px;border:1px solid #394660;border-radius:12px}.detailgrid p{color:#b2bfd5;font-size:13px;line-height:1.7}.small{font-size:12px;color:#8a9ab8}
 @media(max-width:680px){.hero{padding:75px 6vw}.stats{gap:24px}.section{padding:50px 5vw}.sectionhead{align-items:start;flex-direction:column}.controls{flex-wrap:wrap}.search{flex-basis:100%}.controls select{height:44px;flex:1;min-width:0}.features{grid-template-columns:1fr}.top nav{gap:12px}.brand small{display:none}.detailgrid{grid-template-columns:1fr}}
+.preview-banner{padding:12px 7vw;background:#263b39;color:#d0f4e9;font-size:13px;border-bottom:1px solid #3b766a}
+#detail{width:min(1000px,94vw)}
+.guide-tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0 18px}
+.guide-tab{flex:none;border:1px solid #425371;border-radius:999px;background:#1c2a46;color:#d4e8ef;padding:9px 13px;cursor:pointer}
+.guide-tab[aria-selected="true"]{background:#72e8e0;color:#122239;border-color:#72e8e0}
+.guide-card{border:1px solid #3a4b6c;border-radius:14px;padding:18px;margin:12px 0;background:#182643}
+.guide-card h3{margin:0 0 12px}
+.guide-card h3 small{font-size:12px;color:#9db3c8;margin-left:8px}
+.guide-fields{display:grid;grid-template-columns:minmax(110px,25%) 1fr;gap:9px 14px;font-size:13px;line-height:1.6}
+.guide-fields dt{font-weight:700;color:#a4c6cf}.guide-fields dd{margin:0;overflow-wrap:anywhere}
+.guide-fields .guide-fields{display:block;margin:0}.guide-fields .guide-fields dt{margin-top:8px}
+.guide-list{margin:0;padding-left:20px}.guide-list li{margin:4px 0}
+.matrix-scroll{overflow-x:auto}.version-matrix{width:100%;border-collapse:collapse;font-size:12px}
+.version-matrix th,.version-matrix td{border-bottom:1px solid #394967;padding:9px;vertical-align:top;text-align:left}
+.version-matrix th{color:#8be4da;position:sticky;top:0;background:#182643}
+.guide-card a{color:#8be4da}.guide-card details{font-size:13px}
+@media(max-width:680px){.guide-fields{grid-template-columns:1fr}.guide-fields dt{margin-top:8px}}
