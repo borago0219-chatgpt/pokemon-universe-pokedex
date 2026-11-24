@@ -211,6 +211,23 @@
       "rechecked": [],
       "image_briefs": 0,
       "notes": "使用 Work 雲端瀏覽器檢視官方圖鑑；GitHub 保存 #001 的 7 筆草稿及來源。網站私人預覽、實圖與獨立審核尚缺，不換號。"
+    },
+    {
+      "run_id": "2026-11-24-work-build-bulbasaur-001-followup",
+      "date": "2026-11-24",
+      "action": "expanded_same_focus_research_and_preview_prototype",
+      "national_id": 1,
+      "guide_keys_added": [
+        "1:lets-go:capture",
+        "1:bdsp:capture",
+        "1:sword-shield:capture",
+        "1:legends-za:capture"
+      ],
+      "version_count": 39,
+      "preview_branch": "work/bulbasaur-001-private-preview-20261124",
+      "image_briefs": 0,
+      "rechecked": [],
+      "notes": "User asked for more complete work. Expanded only #001, kept website prototype on unpublished branch; no actual image or independent review claimed."
     }
   ],
   "blockers": [
@@ -237,6 +254,13 @@
       "game": "pokemon-go",
       "issue": "珍藏與泰山壓頂在個別伊布目前的精英特殊招式學習器選單是否可取得，未逐一驗證",
       "status": "open"
+    },
+    {
+      "id": "001-work-preview-visual",
+      "date": "2026-11-24",
+      "national_id": 1,
+      "issue": "未部署分支原型通過 Node 語法及資料載入模擬，但 Work 雲端瀏覽器連本機測試伺服器回報 ERR_CONNECTION_REFUSED；桌面截圖被自動審查拒絕，尚無可核實畫面預覽。",
+      "status": "open"
     }
   ],
   "daily_focus": {
@@ -246,26 +270,26 @@
     "name_en": "Bulbasaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "partial_drafts_saved",
+    "research_status": "expanded_39_version_matrix_11_guides",
     "image_status": "missing",
     "preview_status": "not_verified",
     "review_status": "pending",
     "publication_status": "not_published",
     "missing_sections": [
-      "基本資料：已記錄官方屬性、身高體重、分類及社群種族值；繁中名稱原始來源、版本型態例外仍待逐項核對",
-      "各代主機遊戲：只核對第 1 代與《朱／紫》共 6 個版本；其餘世代、重製、Let's Go、Legends 及 DLC 尚未逐版完成",
-      "各版本取得方式：已核對第 1 代與《朱／紫》部分方法；其他版本及精確條件未完成",
-      "主系列配招：第 1 代及《朱／紫》只有依合法招式建立的推論草稿；各版本／玩法的實戰、道具、性格與努力值未完成",
-      "Pokémon GO：已核對一般妙蛙種子招式及 2022 歷史活動；2026-11-24 台灣現況、各取得渠道、型態與完整 PvE／PvP 用途未完成",
-      "至少一張實際生成並保存的 #001 圖片尚無；image_queue 僅有需求，交由 21:00 生圖任務",
-      "網站仍只載入 data/pokemon.json，未接入 #001 guides.json；尚未在 Work 私人預覽驗證搜尋、詳細頁、版本切換與合規圖片",
+      "基本資料：已有官方屬性、身高體重與社群種族值及進化；繁中官方名稱、型態及版本例外仍待逐項覆核",
+      "各代主系列：已建立第 1～9 代共 39 個版本的可取得性矩陣；部分歷史活動、跨代轉入及《黑／白》細節仍標 needs_review",
+      "各版本取得：39 版本有方法摘要，另補《Let's Go》、BDSP、《劍／盾》、《傳說 Z-A》細節；生成機率、時段、活動與轉入條件仍未逐一完成",
+      "主系列配招：第 1 代及《朱／紫》僅有需審核的推論草稿；其他適用版本、單雙打、道具、性格與努力值仍缺",
+      "Pokémon GO：已補官方森林生態區通則、2024 極巨歷史、2026 台灣已結束活動及日本限定現行團體戰；台灣當季生成、各渠道、暗影／極巨與完整 PvE／PvP 待核",
+      "至少一張實際生成並保存的 #001 圖片尚無；僅有既存插圖需求，交由 21:00 生圖任務",
+      "網站只在未部署分支完成 #001 草稿版本頁原型並通過語法與資料載入模擬；Work 雲端瀏覽器無法連本機伺服器，實際私人視覺預覽與合規圖片仍未驗證",
       "當日 22:00 獨立審核尚未完成；建設者須次日讀 reviews/ 報告核實"
     ],
     "source_checked_at": "2026-11-24",
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
     "handoff": {
       "construction": {
-        "status": "partial_saved",
+        "status": "expanded_partial_saved",
         "last_updated_at": "2026-11-24",
         "guide_keys": [
           "1:main:profile",
@@ -274,14 +298,30 @@
           "1:pokemon-go:capture",
           "1:pokemon-go:moveset",
           "1:scarlet-violet:moveset",
-          "1:red-blue-yellow:moveset"
+          "1:red-blue-yellow:moveset",
+          "1:lets-go:capture",
+          "1:bdsp:capture",
+          "1:sword-shield:capture",
+          "1:legends-za:capture"
         ],
         "verified_versions": 6,
-        "notes": "已在 Work 雲端瀏覽器實際讀取官方 Bulbasaur 圖鑑，並以官方及社群來源保存 7 筆 #001 草稿。兩筆配招標 needs_review；未逐版核對的內容不算完成。",
+        "notes": "同日補齊全世代版本矩陣及四個取得細節主題。GO 區分台灣歷史、日本現行地區限定與台灣未驗證。網站僅未部署分支，候選圖不展示；真實視覺預覽仍待。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
           "a1f98e5250e7314336fdf1e25bee65a1a0d4a90a"
+        ],
+        "version_count": 39,
+        "preview_branch": "work/bulbasaur-001-private-preview-20261124",
+        "preview_test": "node --check passed; simulated search/detail/version tabs loaded 11 guides and 19 grouped matrix rows; no real Work browser rendering verified",
+        "new_commits": [
+          "f663c240d325f52d852aae313af961394e3484f4",
+          "fc9cd65a0cf02273a5a44918c44698e27d05b9ac",
+          "87d7fc604cb96e516ead64d2d3dd89545db38c22",
+          "ca1a602ac1cdc118f3aef337271bbe13d2e982bd",
+          "fb246666d5b815c7e5e4580c42b61a1a5ccaa8fd",
+          "d22bd3fdf9f70ec30b8ae41af27698b569148446",
+          "22ec5c402d3a3a8baa99f5363855aa7f51445313"
         ]
       },
       "image": {
@@ -292,7 +332,7 @@
         "status": "pending",
         "last_updated_at": null
       },
-      "next_day_action": "延續 #001；先讀 22:00 reviews/ 報告並核實，再逐代補齊版本矩陣、取得條件和配招；追蹤圖片與私人頁面預覽，全部通過後才於下一台灣日期換 #002。"
+      "next_day_action": "延續 #001；先讀 22:00 reviews/ 報告並核實、檢查 21:00 圖片狀態；補齊各版本配招與精確條件，在可用 Work 私人瀏覽器中驗證頁面與合規圖片。未滿八項不得換 #002。"
     }
   },
   "focus_policy": {
