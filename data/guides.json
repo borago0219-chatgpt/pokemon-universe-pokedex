@@ -658,7 +658,7 @@
       "topic": "capture",
       "content": {
         "display_name": "妙蛙種子 Bulbasaur",
-        "current_availability": "Taiwan_unverified; Japan_specific_airport_raids_announced",
+        "current_availability": "官方通則列森林生態區有機會遇見；台灣當季實際生成仍未核實。日本指定 ANA 合作機場團體戰活動公告延續至 2027-08-31，不能視為台灣常駐。",
         "confirmed_historical": [
           {
             "method": "野外大量出現",
@@ -683,9 +683,9 @@
         "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
         "note": "2022 社群日為歷史活動，不能保證 2026-11-24 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
         "verification_required": [
-          "2026-11-24 台灣一般野外生成及當季任務／團體戰",
-          "日本 ANA 合作機場最新參與地點與活動條件",
-          "孵蛋、暗影、極巨形態獨立渠道"
+          "2026-11-24 台灣一般野外生成、任務、孵蛋、團體戰及極巨對戰輪替",
+          "日本 ANA 合作機場最新參與地點與條件",
+          "暗影妙蛙種子當前來源與招式限制"
         ],
         "confirmed_regional_current": [
           {
@@ -693,6 +693,15 @@
             "region": "日本 ANA 合作機場",
             "period": "2026-09-18 至 2027-08-31",
             "note": "官方公告妙蛙種子團體戰及特別背景；僅指定日本機場，不代表台灣可打。"
+          }
+        ],
+        "forest_biome_guidance": "官方說明把妙蛙種子列為森林生態區可見的草系寶可夢例子；季節、天氣及活動會影響生成，不能據此保證 2026-11-24 台灣任一森林地點必定出現。可用遊戲內「附近」或圖鑑提醒實際確認。",
+        "dynamax_history": [
+          {
+            "method": "一星極巨對戰",
+            "period": "2024-09-10 至 2024-09-15",
+            "status": "ended",
+            "note": "官方公告妙蛙種子極巨化初登場；只從極巨對戰獲得的相容個體可極巨化，不把一般野生個體當作極巨個體。"
           }
         ]
       },
@@ -723,6 +732,20 @@
           "title": "Pokémon GO 官方 ANA 綠色寶可夢飛機合作",
           "type": "official_announcement",
           "version": "Pokémon GO Japan regional current",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://niantic.helpshift.com/hc/en/6-pokemon-go/faq/2345-how-do-i-find-specific-pokemon/",
+          "title": "Pokémon GO 官方支援：附近、森林生態區與圖鑑提醒",
+          "type": "official_help",
+          "version": "Pokémon GO general",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/go-big-dynamax",
+          "title": "Pokémon GO 官方：2024 極巨化首度登場",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
           "checked_at": "2026-11-24"
         }
       ]
