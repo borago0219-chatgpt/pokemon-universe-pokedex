@@ -46,5 +46,42 @@
         }
       ]
     }
+  ],
+  "facts": [
+    {
+      "national_id": 1,
+      "guide_key": "1:pokemon-go:capture",
+      "guide_checked_at": "2026-11-24",
+      "game": "pokemon-go",
+      "match_path": "confirmed_historical.0",
+      "match_value": {
+        "method": "野外大量出現",
+        "date": "2022-01-22",
+        "region": "全球",
+        "event": "Community Day Classic",
+        "status": "ended"
+      },
+      "label": "歷史取得",
+      "text": "2022 年 1 月 22 日社群日經典回顧，妙蛙種子於活動時段較常在野外出現。活動已結束，不能視為台灣目前的取得方式。",
+      "source_url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
+      "verified_at": "2026-11-25"
+    },
+    {
+      "national_id": 1,
+      "guide_key": "1:lets-go:capture",
+      "guide_checked_at": "2026-11-24",
+      "game": "lets-go",
+      "match_path": "methods.0",
+      "match_value": {
+        "type": "wild",
+        "location": "常青森林",
+        "condition": "低機率特殊出現；官方確認可在森林遇見",
+        "status": "verified"
+      },
+      "label": "野外取得",
+      "text": "《Let's Go, Pikachu!／Eevee!》的常青森林有機會遇見野生妙蛙種子；實際出現機率與贈送取得條件仍待查核。",
+      "source_url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
+      "verified_at": "2026-11-25"
+    }
   ]
 }

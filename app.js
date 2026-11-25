@@ -1,6 +1,6 @@
 const typeNames={normal:'一般',fire:'火',water:'水',electric:'電',grass:'草',ice:'冰',fighting:'格鬥',poison:'毒',ground:'地面',flying:'飛行',psychic:'超能力',bug:'蟲',rock:'岩石',ghost:'幽靈',dragon:'龍',dark:'惡',steel:'鋼',fairy:'妖精'};
 const colors={normal:'#9da8a2',fire:'#fd9b56',water:'#62b9ff',electric:'#ffdb69',grass:'#8bda95',ice:'#8de6e7',fighting:'#e99179',poison:'#b58de9',ground:'#d4b578',flying:'#9bb8f8',psychic:'#ed8cab',bug:'#a4cf6b',rock:'#b9b19a',ghost:'#a4a0e9',dragon:'#8f9aff',dark:'#8c94a3',steel:'#a1c1cb',fairy:'#f4aad9'};
-let records=[],guideRecords=[],displayEntries=[];
+let records=[],guideRecords=[],displayEntries=[],displayFacts=[];
 let bulbasaurArt=false;
 async function loadApprovedArtwork(){
  try{
@@ -52,6 +52,14 @@ function renderProfile(p){
  const sources=(entry.source_urls||[]).map(s=>{const url=safeUrl(s);return url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(new URL(url).hostname)+'</a>':''}).filter(Boolean).join(' · ');
  return '<section class="profile-section"><div class="section-title"><h3>基本資料</h3><span class="review-pill">選定欄位已核對</span></div><div class="profile-facts"><div><span>身高</span><strong>'+escapeHTML(c.height_m)+' m</strong></div><div><span>體重</span><strong>'+escapeHTML(c.weight_kg)+' kg</strong></div><div><span>一般特性</span><strong>'+escapeHTML((c.abilities.regular||[]).join('、'))+'</strong></div><div><span>隱藏特性</span><strong>'+escapeHTML((c.abilities.hidden||[]).join('、'))+'</strong></div></div><div class="section-title"><h3>種族值</h3><span class="small">現行六項制 · 合計 '+escapeHTML(stats.total)+'</span></div><div class="stats-panel"><div class="stat-bars">'+bars+'</div><svg class="stat-radar" viewBox="0 0 220 220" role="img" aria-label="種族值雷達圖：'+keys.map((k,i)=>statNames[k]+values[i]).join('，')+'"><polygon points="110,32 177.5,71 177.5,149 110,188 42.5,149 42.5,71" fill="none" stroke="#647694"/><polygon points="'+points+'" fill="#8bda9580" stroke="#89e6b1" stroke-width="2"/></svg></div><div class="section-title"><h3>進化路線</h3></div><div class="evolution-line">'+evo+'</div><p class="small">進化等級與版本例外待完整審核。欄位核對：'+escapeHTML(entry.verified_at)+'；來源：'+sources+'。</p></section>';
 }
+
+function getPath(value,path){return String(path).split('.').reduce((v,k)=>v==null?undefined:v[k],value)}
+function renderFact(f){
+ const guide=guideRecords.find(g=>g.key===f.guide_key&&Number(g.national_id)===Number(f.national_id)&&g.checked_at===f.guide_checked_at);
+ if(!guide||JSON.stringify(getPath(guide.content,f.match_path))!==JSON.stringify(f.match_value))return '';
+ const url=safeUrl(f.source_url);
+ return '<article class="guide-card verified-fact"><h4>'+escapeHTML(f.label)+'</h4><p>'+escapeHTML(f.text)+'</p><p class="small">核對：'+escapeHTML(f.verified_at)+'；'+(url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">查看來源</a>':'來源待補')+'</p></article>';
+}
 function details(p){
  if(!p)return;
  const relevant=guideRecords.filter(g=>Number(g.national_id)===Number(p.id)&&g.topic!=='profile');
@@ -62,7 +70,8 @@ function details(p){
  const show=game=>{
   document.querySelectorAll('.guide-tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.game===game)));
   const list=relevant.filter(g=>g.game===game),approved=list.filter(g=>['approved','verified','reviewed'].includes(g.status));
-  $('#guide-content').innerHTML=approved.map(renderApprovedGuide).join('')+'<p class="guide-pending">'+(list.length>approved.length?'已有 '+(list.length-approved.length)+' 筆研究草稿等待審核。':'')+(approved.length?'':'目前沒有可公開確認的取得方式或配招；未知與不適用仍待釐清。')+'</p>';
+  const facts=displayFacts.filter(f=>Number(f.national_id)===Number(p.id)&&f.game===game).map(renderFact).filter(Boolean);
+  $('#guide-content').innerHTML=facts.join('')+approved.map(renderApprovedGuide).join('')+'<p class="guide-pending">'+(list.length>approved.length?'另有 '+(list.length-approved.length)+' 筆研究草稿等待審核。':'')+(facts.length||approved.length?'其餘取得方式、當期狀態與配招仍待查核。':'目前沒有可公開確認的取得方式或配招；未知與不適用仍待釐清。')+'</p>';
  };
  document.querySelectorAll('.guide-tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.game)));
  document.querySelectorAll('.evo-stage').forEach(b=>b.addEventListener('click',()=>details(records.find(r=>Number(r.id)===Number(b.dataset.evo)))));
@@ -78,7 +87,7 @@ async function init(){
   await loadApprovedArtwork();
   try{
    const [gr,dr]=await Promise.all([fetch('./data/guides.json',{cache:'no-store'}),fetch('./data/display-index.json',{cache:'no-store'})]);
-   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];}
+   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];}
   }catch{guideRecords=[];displayEntries=[];}
   $('#total').textContent=records.length;
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');

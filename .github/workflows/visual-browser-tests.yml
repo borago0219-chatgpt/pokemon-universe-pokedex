@@ -70,7 +70,10 @@ jobs:
                   assert page.locator(".evo-stage").count() == 3
                   page.locator('.guide-tab[data-game="pokemon-go"]').click()
                   assert "研究草稿等待審核" in page.locator("#guide-content").inner_text()
+                  assert "2022 年 1 月 22 日" in page.locator("#guide-content").inner_text(), "Verified historical GO event should appear"
                   assert "藤鞭" not in page.locator("#guide-content").inner_text(), "Draft advice should not be published"
+                  page.locator('.guide-tab[data-game="lets-go"]').click()
+                  assert "常青森林" in page.locator("#guide-content").inner_text(), "Verified Let's Go location should appear"
                   page.locator('.guide-tab[data-game="scarlet-violet"]').click()
                   assert "研究草稿等待審核" in page.locator("#guide-content").inner_text()
                   page.locator(".evo-stage[data-evo='2']").click()
