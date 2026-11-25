@@ -94,10 +94,13 @@ jobs:
                   page.locator("#q").fill("")
                   page.locator("#type").select_option("grass")
                   assert page.locator('.poke[data-id="1"]').count() == 1, "Grass should include #001"
+                  assert page.locator('.poke[data-id="2"] .poke-artwork').count() == 0, "Unapproved #002 art must remain hidden"
                   page.locator("#q").fill("no-such-pokemon-987654")
                   assert page.locator("#empty").is_visible(), "Empty search should be visible"
                   assert any("/data/guides.json" in u for u in requests), "Guides should be loaded by national ID"
                   assert any("/data/display-index.json" in u for u in requests), "Verified field index must load"
+                  assert any("/assets/generated/001-bulbasaur-stepping-01.json" in u for u in requests), "Approved metadata must load"
+                  assert not any("/assets/generated/002-ivysaur-climbing-01.json" in u for u in requests), "Unapproved art metadata must not load"
                   assert not errors, f"Page errors: {errors}"
                   assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Unexpected horizontal overflow"
                   print(f"PASS viewport {width}x{height}")
