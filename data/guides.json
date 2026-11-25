@@ -927,9 +927,10 @@
         "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長提升單一特殊能力，但飛葉快刀暴擊時不吃此增益。",
         "caution": "此四招為保持妙蛙種子未進化時，第 1 代可在 Lv.7／27／34／41 分別學到的招式；若 16 級進化為妙蛙草，不能直接沿用妙蛙種子的 Lv.41 習得表。第 1 代飛葉快刀高暴擊，暴擊傷害會忽略自身「生長」帶來的能力提升，因此兩者搭配效益有限。此為劇情草稿，不是已驗證的對戰標準配招；第 1 代沒有現代特性、性格或現代 EV 制度。",
         "verification_required": [
-          "逐版本招式習得等級與進化時點",
-          "正式對戰環境與替代配招"
-        ]
+          "日版《綠》相對《紅／藍／皮卡丘》的招式習得差異仍須版本表核對；本篇先維持現有《紅／藍／皮卡丘》來源範圍",
+          "正式對戰配招、替代招式與規則環境需另有社群戰術來源；此篇只供未進化 #001 劇情向參考"
+        ],
+        "evolution_timing": "第 1 代妙蛙種子本體於 Lv.7 學寄生種子、Lv.27 學飛葉快刀、Lv.34 學生長、Lv.41 學催眠粉；這套要以本體等到 Lv.41。若 Lv.16 即進化為妙蛙草，進化形態的升級表在 Lv.30 學飛葉快刀、Lv.38 學生長、Lv.46 學催眠粉（《紅／藍／皮卡丘》資料表），不可套用本體時點；日版《綠》逐版差異尚待獨立核。"
       },
       "sources": [
         {
@@ -950,6 +951,13 @@
           "url": "https://www.smogon.com/rb/articles/rby_mechanics_guide",
           "title": "Smogon 第 1 代暴擊與能力變化機制",
           "type": "community_mechanics_guide",
+          "version": "Red/Blue/Yellow",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/ivysaur/moves/1",
+          "title": "Pokémon Database 第 1 代進化形態招式表",
+          "type": "community_game_database",
           "version": "Red/Blue/Yellow",
           "checked_at": "2026-11-25"
         }
@@ -1316,9 +1324,9 @@
         "rationale": "原創劇情向組合：飛葉快刀輸出、催眠粉控場、寄生種子及光合作用續航；是否為各版本最佳組合尚未驗證。",
         "mechanics_note": "第 2 代沒有現代特性與性格；努力值與現代分配機制不同。道具及對戰環境推薦待單獨研究。",
         "verification_required": [
-          "進化時點及進化形態招式的交互影響",
-          "持有道具、對戰格式與替代招式建議"
-        ]
+          "持有道具及正式競技格式：本篇僅為未進化 #001 劇情向組合，尚無依特定對戰規則核實的道具／替代招式方案；需指定規則及社群戰術來源後另評，不作已推薦對戰配招"
+        ],
+        "evolution_timing": "此配招以不進化的 #001 為對象：本體 Lv.7 寄生種子、Lv.15 催眠粉、Lv.20 飛葉快刀、Lv.39 光合作用。若在 Lv.16 進化，前兩招可在進化前學到；妙蛙草的升級表則是 Lv.22 飛葉快刀、Lv.47 光合作用（《金／銀／水晶》），不能照搬本體 Lv.20／39 的時點。"
       },
       "sources": [
         {
@@ -1331,6 +1339,20 @@
         {
           "url": "https://www.serebii.net/pokedex-gs/001.shtml",
           "title": "Serebii 第 2 代妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/ivysaur/moves/2",
+          "title": "Pokémon Database 第 2 代進化形態招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-gs/002.shtml",
+          "title": "Serebii 第 2 代進化形態招式表",
           "type": "community_game_database",
           "version": "Gold/Silver/Crystal",
           "checked_at": "2026-11-25"
