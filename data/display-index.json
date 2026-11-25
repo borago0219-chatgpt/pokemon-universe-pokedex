@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-25",
+  "entries": [
+    {
+      "national_id": 1,
+      "guide_key": "1:main:profile",
+      "guide_checked_at": "2026-11-24",
+      "display_status": "selected_fields_verified",
+      "fields": [
+        "height_m",
+        "weight_kg",
+        "abilities",
+        "base_stats_from_generation_2"
+      ],
+      "evolution_ids": [
+        1,
+        2,
+        3
+      ],
+      "verified_at": "2026-11-25",
+      "source_urls": [
+        "https://www.pokemon.com/br/pokedex/0001",
+        "https://www.serebii.net/pokedex-sv/bulbasaur/"
+      ],
+      "note": "僅選列已對照來源的基本欄位；原指南仍為草稿，版本攻略與進化等級未獨立審核。"
+    }
+  ]
+}
