@@ -5,7 +5,7 @@
     {
       "national_id": 1,
       "guide_key": "1:main:profile",
-      "guide_checked_at": "2026-11-24",
+      "guide_checked_at": "2026-11-25",
       "display_status": "selected_fields_verified",
       "fields": [
         "height_m",
@@ -23,7 +23,7 @@
         "https://www.pokemon.com/br/pokedex/0001",
         "https://www.serebii.net/pokedex-sv/bulbasaur/"
       ],
-      "note": "僅選列已對照來源的基本欄位；原指南仍為草稿，版本攻略與進化等級未獨立審核。",
+      "note": "官方與資料庫核對基本欄位；整篇基本資料於 2026-11-25 由獨立審核 AI 判定通過。",
       "verified_values": [
         0.7,
         6.9,
@@ -51,7 +51,7 @@
     {
       "national_id": 1,
       "guide_key": "1:pokemon-go:capture",
-      "guide_checked_at": "2026-11-24",
+      "guide_checked_at": "2026-11-25",
       "game": "pokemon-go",
       "match_path": "confirmed_historical.0",
       "match_value": {
@@ -82,6 +82,125 @@
       "text": "《Let's Go, Pikachu!／Eevee!》的常青森林有機會遇見野生妙蛙種子；實際出現機率與贈送取得條件仍待查核。",
       "source_url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
       "verified_at": "2026-11-25"
+    }
+  ],
+  "reviewed_guides": [
+    {
+      "national_id": 1,
+      "key": "1:main:profile",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "5714548b:1251"
+    },
+    {
+      "national_id": 1,
+      "key": "1:scarlet-violet:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "42e530bb:1115"
+    },
+    {
+      "national_id": 1,
+      "key": "1:pokemon-go:moveset",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "7f5ec754:1659"
+    },
+    {
+      "national_id": 1,
+      "key": "1:red-blue-yellow:moveset",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "2b7d7e8b:1100"
+    },
+    {
+      "national_id": 1,
+      "key": "1:lets-go:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "20108f45:979"
+    },
+    {
+      "national_id": 1,
+      "key": "1:bdsp:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "1295a759:773"
+    },
+    {
+      "national_id": 1,
+      "key": "1:sword-shield:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "d1ce231b:902"
+    },
+    {
+      "national_id": 1,
+      "key": "1:legends-za:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "ed5eb226:1413"
+    },
+    {
+      "national_id": 1,
+      "key": "1:gold-silver-crystal:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "ff7354f9:1025"
+    },
+    {
+      "national_id": 1,
+      "key": "1:gold-silver-crystal:moveset",
+      "decision": "passed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "fingerprint": "0f88b3ee:923"
+    },
+    {
+      "national_id": 1,
+      "key": "1:main-series:availability",
+      "decision": "failed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "reason": "39 個版本項仍未逐版核實。",
+      "fingerprint": "3a13a6ce:4615"
+    },
+    {
+      "national_id": 1,
+      "key": "1:pokemon-go:capture",
+      "decision": "failed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "reason": "台灣當期取得渠道未核實；已核歷史活動另外顯示。",
+      "fingerprint": "edeee27d:2539"
+    },
+    {
+      "national_id": 1,
+      "key": "1:scarlet-violet:moveset",
+      "decision": "failed",
+      "reviewed_at": "2026-11-25",
+      "review_ref": "reviews/2026-11-25.md",
+      "reason": "推薦配招缺少道具及玩法論證。",
+      "fingerprint": "c521f8a0:847"
     }
   ]
 }
