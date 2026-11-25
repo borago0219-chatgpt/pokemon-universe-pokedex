@@ -45,11 +45,11 @@ jobs:
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
                   page.locator("#q").fill("妙蛙種子")
                   assert page.locator(".poke").count() == 1, "Search must find #001"
-                  image = page.locator('.poke[data-id="1"] .poke-image')
+                  image = page.locator('.poke[data-id="1"] .poke-artwork')
                   assert image.is_visible(), "Approved artwork should be visible"
                   image.scroll_into_view_if_needed()
                   page.wait_for_function("""() => {
-                    const image = document.querySelector('.poke[data-id="1"] .poke-image');
+                    const image = document.querySelector('.poke[data-id="1"] .poke-artwork');
                     return image && image.complete && image.naturalWidth > 0 && image.naturalHeight > 0;
                   }""")
                   size = image.evaluate("(image) => ({width:image.naturalWidth,height:image.naturalHeight})")
