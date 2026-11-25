@@ -342,7 +342,7 @@
     "missing_sections": [
       "基本資料：台灣官方 #001 欄位及本體數值已有來源；跨版本特性、進化與型態例外仍待逐版核。",
       "主系列可取得性：第 1～9 代 19 組、拆開日本／國際《藍》後共 40 個列舉版本標籤；這是清單數，尚未逐版獨立核實。黑／白歷史 Global Link、活動期限與轉入服務仍缺。",
-      "各版本捕捉／取得：已有 11／19 組獨立取得指南（含第 1 代紅綠藍及皮卡丘兩組）；其餘 8 組仍缺獨立地點、前置、版本差異與活動／轉入核對。新指南待獨立審核。",
+      "各版本捕捉／取得：11／19 組已有獨立指南，8 組尚缺。原 key 朱／紫、劍／盾、Let's Go 的審核缺口已逐篇補來源和界線；朱／紫逐點生成率／特殊活動、劍／盾曠野地帶活動與當前 HOME 相容、Let's Go 30 整贈送臨界仍需具體證據。新 blob 待獨立審核。",
       "主系列配招：第 1 代兩組、第 2 代及朱／紫已有草稿；其他適用作品及玩法仍缺，朱／紫推薦的道具、性格、努力值與單／雙打論證仍未完成。",
       "Pokémon GO：當季社群田野調查表列「強化寶可夢 3 次」可能遇 #001，台灣實際補給站須遊戲內確認；台灣當日野外、蛋、一般團體戰、極巨與暗影渠道及招式學習器限制仍缺。已核歷史活動與日本指定機場另列。",
       "網站及展示：main 程式與 display-index 有資料顯示邏輯，索引目前的 profile／GO 歷史查核日已同步；最新 Z-A 與 GO 指南內容變更需重新核指紋。通過卡仍會混入工作清單，交視覺化任務修顯示語意。正式 Work 網址先前只到 Cloudflare Access 登入頁，登入後頁面未實測；公開 GitHub 圖片的權利與私人條件未達展示門檻。",
@@ -352,7 +352,7 @@
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
     "handoff": {
       "construction": {
-        "status": "expanded_partial_saved_17_guides",
+        "status": "review_gaps_existing_capture_keys_updated_partial",
         "last_updated_at": "2026-11-25",
         "guide_keys": [
           "1:main:profile",
@@ -374,7 +374,7 @@
           "1:x-y:capture"
         ],
         "verified_versions": "11_of_19_groups_capture_guides_partial",
-        "notes": "同號 #001：本輪按審核報告補 Z-A 支線／野生／DLC 條件，拆日本及國際《藍》，修正 GO 過期語句並增當季田野調查線索；新增第 1 代、FRLG、HGSS、XY 四組取得指南。40 為列舉標籤而非已核 40 版。原審核 10／13 過是舊 blob，最新變更待複核。",
+        "notes": "沿用 #001；比對最新 reviews/ 與現行攻略後，修既有 1:scarlet-violet:capture、1:sword-shield:capture、1:lets-go:capture。3,000 BP 與首試煉／2021 HOME 活動已有版本資料；Let’s Go 30／31 分歧未冒充已解。其他已通過且未變動的原 key 不重審，未解欄位在原 key 精確留證據需求。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
@@ -394,15 +394,29 @@
           "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581",
           "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
           "9cbd1976ccf26566c7f04cae6be92e12ef53172d",
-          "2ab0d0521484055917a63b4868541dac19f5ac8e"
+          "2ab0d0521484055917a63b4868541dac19f5ac8e",
+          "638968dbc61ff23250f3381e51dfaa661118805e",
+          "9c1c250391e2451b2c59c140792885a36acac6f5"
         ],
-        "guide_commit": "2ab0d0521484055917a63b4868541dac19f5ac8e",
+        "guide_commit": "638968dbc61ff23250f3381e51dfaa661118805e",
         "source_checked_at": "2026-11-25",
         "publication_items": {
           "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
           "bulbasaur_guides": "10_of_13_prior_blob_passed_3_failed_latest_17_guides_need_fingerprint_review",
           "bulbasaur_image": "internal_quality_approved_public_github_and_rights_block_display"
-        }
+        },
+        "review_gap_keys_updated": [
+          "1:scarlet-violet:capture",
+          "1:sword-shield:capture",
+          "1:lets-go:capture"
+        ],
+        "review_gap_keys_pending": [
+          "1:pokemon-go:moveset",
+          "1:red-blue-yellow:moveset",
+          "1:bdsp:capture",
+          "1:gold-silver-crystal:moveset"
+        ],
+        "review_gap_note": "待審核員針對最新指南 blob 52d1068323eaa185222982e30482e2f7af804fb4 核對；已解欄位不沿用舊報告待辦。"
       },
       "image": {
         "status": "candidate_saved_pending_review",
@@ -432,7 +446,7 @@
         ],
         "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
       },
-      "next_day_action": "維持 #001；審核員先以 guides blob a9e0ebe19a6381a3c4457fc748e7e4d20de912c7 重審新增／改動欄位。建設任務續補未覆蓋 8 組取得及 15 組配招、GO 台灣現況；視覺化任務修通過卡與工作清單分區及最新資料指紋，並依既有授權測正式私人畫面。八項未齊不得換 #002。"
+      "next_day_action": "維持 #001；先依最新 reviews/ 對照原 key 與 guide blob，接續 4 個尚未逐篇修補的既有 key（GO 配招、初代配招、BDSP 取得、金銀水晶配招）的具體缺口；再補其餘 8 組取得及未覆蓋配招。視覺化端區分目前可靠方法與 needs_review 欄位，驗證私人網站；獨立審核最新 SHA。"
     },
     "completion_checks": {
       "profile": "partial",
