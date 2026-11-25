@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Taipei",
+  "updated_on": "2026-11-25",
+  "next_national_id": 2,
+  "completed_contiguous": [
+    {
+      "national_id": 1,
+      "name_zh": "妙蛙種子",
+      "name_en": "Bulbasaur",
+      "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
+      "metadata": "assets/generated/001-bulbasaur-stepping-01.json",
+      "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
+      "mime_type": "image/jpeg",
+      "verified_on": "2026-11-25",
+      "note": "Stored real image; quality and private project use approved by project manager. Public display rights remain not cleared."
+    }
+  ],
+  "preexisting_out_of_sequence": [
+    25
+  ],
+  "daily_runs": [
+    {
+      "date": "2026-11-25",
+      "national_id": 2,
+      "name_zh": "妙蛙草",
+      "name_en": "Ivysaur",
+      "status": "blocked_before_generation_public_visibility_and_rights",
+      "generated": false,
+      "downloaded": false,
+      "uploaded": false,
+      "free_tokens_spent": 0,
+      "blocker": {
+        "github_visibility": "public",
+        "leonardo_plan": "free",
+        "leonardo_private_mode": "off_premium_feature",
+        "detail": "Leonardo free creations are publicly available by default. The requested named Pokémon character would be public on the generation service, and the designated GitHub repository is public. Existing approval for #001 covers quality and private project use, not this public distribution. No verified basis for public storage of #002 was found. No generation or upload attempted.",
+        "needed": "A documented basis supporting public generation and repository storage, or an allowed private generation and storage configuration within the user's no-payment constraint. Do not change repository visibility without separate authorization."
+      },
+      "sources": [
+        "https://leonardo.ai/privacy-policy",
+        "https://leonardo.ai/terms-of-service",
+        "https://support.pokemon.com/hc/en-us/articles/360000634094-Can-I-use-Pok%C3%A9mon-images-or-materials"
+      ]
+    }
+  ]
+}
