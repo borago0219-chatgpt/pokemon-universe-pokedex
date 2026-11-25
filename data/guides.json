@@ -346,7 +346,7 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "needs_review",
       "key": "1:main-series:availability",
       "game": "main-series",
@@ -360,7 +360,8 @@
             "versions": [
               "Red",
               "Green (Japan)",
-              "Blue (Japan/International)"
+              "Blue (Japan)",
+              "Blue (International)"
             ],
             "method": "真新鎮大木博士提供的三選一初始寶可夢",
             "availability": "in_game_gift",
@@ -553,9 +554,10 @@
           "第 2～7 代硬體／服務現況及跨世代交換可行性",
           "地下大洞窟各空洞的具體生成條件／機率",
           "《傳說 Z-A》DLC 精確掃描條件",
-          "每一版本的專屬配招與玩法"
+          "每一版本的專屬配招與玩法",
+          "40 個列舉版本標籤是清單計數，並非 40 版已逐項獨立核實；日本／國際《藍》已拆列，仍須逐版核來源與服務相容性。"
         ],
-        "version_count_verified": 39
+        "version_count_listed": 40
       },
       "sources": [
         {
@@ -678,7 +680,7 @@
               "2026-11-14/15"
             ],
             "status": "ended",
-            "note": "官方公告；今日 11/24 不再當作台灣現行活動。"
+            "note": "官方公告所列台灣指定場地活動均已結束；不可當作當前台灣取得渠道。"
           }
         ],
         "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
@@ -1090,28 +1092,24 @@
           {
             "type": "gift",
             "location": "密阿雷市寶可夢研究所",
-            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽的階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所由妙蛙種子／小火龍／傑尼龜三選一，所選為 Lv.5。是否可重複及色違限制待核。",
+            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所從妙蛙種子／小火龍／傑尼龜中選一隻 Lv.5。這是一次三選一的贈送，該禮物不能是色違；野生妙蛙種子另可出現色違，不與贈送混同。",
             "status": "community_verified"
           },
           {
             "type": "wild",
             "location": "野生區域 20",
-            "condition": "可遇見；生成時段及機率待核",
+            "condition": "野生區域 20 於主線任務 39 開始開放；資料庫列妙蛙種子 Lv.53–54，頭目出現機率 5%（不是妙蛙種子總生成率）。未列僅限日或夜；一般固定點可飛離再返回或坐長椅切換日夜刷新，捕獲後有較長的實際時間冷卻，不保證每次刷新都出現。",
             "status": "community_verified"
           },
           {
             "type": "dlc_wild",
             "location": "《超次元爆湧》超次元密阿雷的草／毒型區域",
-            "condition": "依星級及掃描條件；細節待核",
+            "condition": "《超次元爆湧》一般毒系異次元野生區 1／3 星、草系 2／3／5 星的相應生成組合可見妙蛙種子；需按當輪區域與生成組合核對，不保證每次出現。支線 188 後每 25,000 點的「特殊掃描」是另一種特別區域機制，非上述一般區域遇見妙蛙種子的共同前置。",
             "status": "needs_review"
           }
         ],
         "mechanics_note": "《傳說 Z-A》戰鬥及招式機制與回合制作品不同，配招需獨立研究。",
-        "verification_required": [
-          "支線贈送是否可重複及色違限制",
-          "野生區域 20 的時段／刷新",
-          "DLC 星級與掃描要求"
-        ]
+        "verification_required": []
       },
       "sources": [
         {
@@ -1140,6 +1138,48 @@
           "title": "Serebii 支線任務 22 前置與三選一",
           "type": "community_game_database",
           "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Pok%C3%A9mon_Legends%3A_Z-A",
+          "title": "Bulbapedia Z-A 支線贈送與色違限制",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/wildzones.shtml",
+          "title": "Serebii 野生區域 20 開放條件",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/lumiosecity/wildzone20.shtml",
+          "title": "Serebii 野生區域 20 妙蛙種子等級與頭目率",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/wildpokemon.shtml",
+          "title": "Serebii 野生刷新機制",
+          "type": "community_mechanics_guide",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子 Z-A DLC 星級地點表",
+          "type": "community_game_database",
+          "version": "Legends: Z-A Mega Dimension",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/hyperspacelumiose.shtml",
+          "title": "Serebii 特殊掃描與一般異次元區域區分",
+          "type": "community_mechanics_guide",
+          "version": "Legends: Z-A Mega Dimension",
           "checked_at": "2026-11-25"
         }
       ],
