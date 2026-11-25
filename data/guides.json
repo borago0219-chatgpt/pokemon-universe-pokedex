@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24",
+  "updated_at": "2026-11-25",
   "guides": [
     {
       "key": "25:pokemon-go:capture",
@@ -275,7 +275,7 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "draft",
       "key": "1:main:profile",
       "game": "main",
@@ -314,9 +314,11 @@
         "evolution": "妙蛙種子等級 16 進化妙蛙草；妙蛙草等級 32 進化妙蛙花（主系列常規規則）。",
         "form_note": "本身沒有單獨核實的地區型態；妙蛙花的超級進化／超極巨化不能當作妙蛙種子的型態。",
         "verification_required": [
-          "繁中官方名稱與分類的頁面來源逐項補齊",
-          "各版本特性與型態例外"
-        ]
+          "各版本特性、進化與型態例外逐版核實"
+        ],
+        "field_verification": {
+          "official_taiwan_pokedex": "編號、繁中名稱、草／毒、分類、身高體重、茂盛、進化鏈及無不同樣子已核；隱藏特性、種族值與進化等級依社群資料，仍待逐版本覆核"
+        }
       },
       "sources": [
         {
@@ -334,11 +336,11 @@
           "checked_at": "2026-11-24"
         },
         {
-          "url": "https://assets.pokemon.com/assets/cms/pdf/op/tcg_champ_series/2011-2012/WC12_Battle_Dictionary.pdf",
-          "title": "官方寶可夢名稱對照",
-          "type": "official_reference",
-          "version": "Japanese",
-          "checked_at": "2026-11-24"
+          "url": "https://tw.portal-pokemon.com/pokedex/0001/",
+          "title": "台灣寶可夢官方圖鑑 #0001",
+          "type": "official_pokedex",
+          "version": "national/Taiwan",
+          "checked_at": "2026-11-25"
         }
       ]
     },
@@ -651,7 +653,7 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "draft",
       "key": "1:pokemon-go:capture",
       "game": "pokemon-go",
@@ -681,9 +683,9 @@
         ],
         "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
         "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
-        "note": "2022 社群日為歷史活動，不能保證 2026-11-24 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
+        "note": "2022 社群日與 2024 極巨首登場均為歷史活動，不能保證 2026-11-25 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
         "verification_required": [
-          "2026-11-24 台灣一般野外生成、任務、孵蛋、團體戰及極巨對戰輪替",
+          "2026-11-25 台灣一般野外生成、任務、孵蛋、團體戰及極巨對戰輪替",
           "日本 ANA 合作機場最新參與地點與條件",
           "暗影妙蛙種子當前來源與招式限制"
         ],
@@ -701,7 +703,8 @@
             "method": "一星極巨對戰",
             "period": "2024-09-10 至 2024-09-15",
             "status": "ended",
-            "note": "官方公告妙蛙種子極巨化初登場；只從極巨對戰獲得的相容個體可極巨化，不把一般野生個體當作極巨個體。"
+            "note": "官方公告確認 2024 年活動中，從極巨對戰相遇並捕獲的妙蛙種子及其進化形可於極巨對戰中極巨化；此公告未排除後續其他取得途徑，亦不能把普通野生個體自動視為極巨個體。",
+            "other_confirmed_historical_method": "同一 2024-09-10 至 2024-09-15 活動的田野調查可遇妙蛙種子；這是歷史活動，不代表目前台灣田野調查。"
           }
         ]
       },
@@ -746,13 +749,13 @@
           "title": "Pokémon GO 官方：2024 極巨化首度登場",
           "type": "official_announcement",
           "version": "Pokémon GO historical",
-          "checked_at": "2026-11-24"
+          "checked_at": "2026-11-25"
         }
       ]
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "draft",
       "key": "1:pokemon-go:moveset",
       "game": "pokemon-go",
@@ -778,12 +781,12 @@
           "source_scope": "GO Hub 計算器"
         },
         "pvp": {
-          "community_suggested": "藤鞭＋種子炸彈＋污泥炸彈（PvPoke 的一般超級聯盟組合）；特殊盃規則及季節平衡可能改變。",
-          "scope": "超級聯盟參考，排名未核實；無法據此推薦高級聯盟或大師聯盟。"
+          "community_suggested": "GO Hub 當前超級聯盟社群模擬建議：藤鞭＋強力鞭打＋種子炸彈。屬會隨招式平衡與賽季變動的社群模型，非官方保證；原先標為 PvPoke 的藤鞭＋種子炸彈＋污泥炸彈組合已撤回。",
+          "scope": "超級聯盟參考；GO Hub 頁面目前未列妙蛙種子為高級或大師聯盟的 PvPoke 排名，不能推導為這兩個聯盟的推薦；特殊盃需依當期規則另核。"
         },
         "limited_move_caution": "瘋狂植物是 2022 活動期間進化為妙蛙花的招式，並非妙蛙種子可學的招式。",
         "verification_required": [
-          "2026 年當季招式平衡與各聯盟排名",
+          "2026 年當季招式平衡、各聯盟與特殊盃用途",
           "暗影、淨化與極巨化差異",
           "普通與特殊招式當前取得及招式學習器限制"
         ]
@@ -804,13 +807,6 @@
           "checked_at": "2026-11-24"
         },
         {
-          "url": "https://pvpoke.com/rankings/all/1500/overall/bulbasaur/",
-          "title": "PvPoke 超級聯盟配招模擬",
-          "type": "community_simulation",
-          "version": "Pokémon GO Great League",
-          "checked_at": "2026-11-24"
-        },
-        {
           "url": "https://db.pokemongohub.net/pokemon/1",
           "title": "Pokémon GO Hub 妙蛙種子 PvE 組合",
           "type": "community_calculator",
@@ -823,6 +819,13 @@
           "type": "official_announcement",
           "version": "Pokémon GO historical",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/1/pvp",
+          "title": "GO Hub 妙蛙種子 PvP 招式與聯盟分析",
+          "type": "community_simulation",
+          "version": "Pokémon GO Great League",
+          "checked_at": "2026-11-25"
         }
       ]
     },
@@ -883,8 +886,8 @@
           "Leech Seed（寄生種子）",
           "Growth（生長）"
         ],
-        "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長在第 1 代強化單一特殊能力。",
-        "caution": "需依各版本及進化時點確認招式習得等級；此處未核實對戰環境、道具、性格和努力值（第 1 代不存在現代特性與性格機制）。",
+        "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長提升單一特殊能力，但飛葉快刀暴擊時不吃此增益。",
+        "caution": "此四招為保持妙蛙種子未進化時，第 1 代可在 Lv.7／27／34／41 分別學到的招式；若 16 級進化為妙蛙草，不能直接沿用妙蛙種子的 Lv.41 習得表。第 1 代飛葉快刀高暴擊，暴擊傷害會忽略自身「生長」帶來的能力提升，因此兩者搭配效益有限。此為劇情草稿，不是已驗證的對戰標準配招；第 1 代沒有現代特性、性格或現代 EV 制度。",
         "verification_required": [
           "逐版本招式習得等級與進化時點",
           "正式對戰環境與替代配招"
@@ -897,9 +900,23 @@
           "type": "community_game_database",
           "version": "Red/Green/Blue/Yellow",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/1",
+          "title": "Pokémon Database 第 1 代妙蛙種子習得表",
+          "type": "community_game_database",
+          "version": "Red/Blue/Yellow",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.smogon.com/rb/articles/rby_mechanics_guide",
+          "title": "Smogon 第 1 代暴擊與能力變化機制",
+          "type": "community_mechanics_guide",
+          "version": "Red/Blue/Yellow",
+          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "needs_review"
     },
     {
@@ -1073,7 +1090,7 @@
           {
             "type": "gift",
             "location": "密阿雷市寶可夢研究所",
-            "condition": "支線任務 22 向瑪琍葉取得，是否可重複及色違限制待細核",
+            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽的階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所由妙蛙種子／小火龍／傑尼龜三選一，所選為 Lv.5。是否可重複及色違限制待核。",
             "status": "community_verified"
           },
           {
@@ -1091,7 +1108,7 @@
         ],
         "mechanics_note": "《傳說 Z-A》戰鬥及招式機制與回合制作品不同，配招需獨立研究。",
         "verification_required": [
-          "支線前置、色違與一次性限制",
+          "支線贈送是否可重複及色違限制",
           "野生區域 20 的時段／刷新",
           "DLC 星級與掃描要求"
         ]
@@ -1110,10 +1127,112 @@
           "type": "community_game_database",
           "version": "Legends: Z-A",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.co.jp/ex/legends_z-a/tc/characters/250722_03/",
+          "title": "《寶可夢傳說 Z-A》官方繁中人物頁：茉蜜姬",
+          "type": "official_character_page",
+          "version": "Legends: Z-A Traditional Chinese",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/sidemissions/acallfrommable.shtml",
+          "title": "Serebii 支線任務 22 前置與三選一",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "status": "needs_review"
+    },
+    {
+      "key": "1:gold-silver-crystal:capture",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "capture",
+      "checked_at": "2026-11-25",
+      "status": "draft",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Gold",
+          "Silver",
+          "Crystal"
+        ],
+        "normal_wild_capture": "三版均未列一般野生捕捉；可由第 1 代紅／綠／藍／皮卡丘透過時光膠囊交換取得。歷史活動另列，不能冒稱現況。",
+        "time_capsule_unlock": "在圓朱市寶可夢中心遇見阿正（Bill）後，按遊戲內時間等待約 24 小時開啟時光膠囊；交換時須遵守第 1／2 代相容規則。",
+        "availability_type": "historical_cross_generation_trade",
+        "historical_event_note": "資料庫另記歷史活動，但活動地區、期限與領取條件尚未逐項核實，未列為常規取得。",
+        "verification_required": [
+          "原版與虛擬主機版的現行硬體／交換相容性逐項核實",
+          "歷史活動配布的地區、日期與條件"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子三版取得表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/gs/timecapsule.shtml",
+          "title": "Serebii 時光膠囊開啟與限制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Time_Capsule",
+          "title": "Bulbapedia 時光膠囊機制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "key": "1:gold-silver-crystal:moveset",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "moveset",
+      "checked_at": "2026-11-25",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "第 2 代金／銀／水晶劇情向妙蛙種子本體；未經正式競技環境評分，不套用現代機制。",
+        "proposed_moves": [
+          "Razor Leaf（飛葉快刀）",
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Synthesis（光合作用）"
+        ],
+        "legality_note": "兩份第 2 代習得表支持妙蛙種子本體在 Lv.7 學寄生種子、Lv.15 學催眠粉、Lv.20 學飛葉快刀、Lv.39 學光合作用；若提早進化，須另查進化形態的習得等級，不能直接沿用本體表。",
+        "rationale": "原創劇情向組合：飛葉快刀輸出、催眠粉控場、寄生種子及光合作用續航；是否為各版本最佳組合尚未驗證。",
+        "mechanics_note": "第 2 代沒有現代特性與性格；努力值與現代分配機制不同。道具及對戰環境推薦待單獨研究。",
+        "verification_required": [
+          "進化時點及進化形態招式的交互影響",
+          "持有道具、對戰格式與替代招式建議"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/2",
+          "title": "Pokémon Database 第 2 代三版等級招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
     }
   ]
 }

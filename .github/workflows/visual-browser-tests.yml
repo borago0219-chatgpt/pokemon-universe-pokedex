@@ -45,6 +45,8 @@ jobs:
                   page.wait_for_selector(".poke")
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  page.locator("#q").fill("#0001")
+                  assert page.locator(".poke").count() == 1, "Padded ID search must find #001"
                   page.locator("#q").fill("妙蛙種子")
                   assert page.locator(".poke").count() == 1, "Search must find #001"
                   image = page.locator('.poke[data-id="1"] .poke-artwork')
@@ -69,13 +71,22 @@ jobs:
                   assert page.locator(".stat-radar").count() == 1
                   assert page.locator(".evo-stage").count() == 3
                   page.locator('.guide-tab[data-game="pokemon-go"]').click()
-                  assert "研究草稿等待審核" in page.locator("#guide-content").inner_text()
-                  assert "2022 年 1 月 22 日" in page.locator("#guide-content").inner_text(), "Verified historical GO event should appear"
-                  assert "藤鞭" not in page.locator("#guide-content").inner_text(), "Draft advice should not be published"
+                  go_text = page.locator("#guide-content").inner_text()
+                  assert "2022 年 1 月 22 日" in go_text, "Verified historical GO event should appear"
+                  assert "藤鞭" in go_text and "PvP" in go_text, "Approved GO moveset should appear"
+                  assert "未通過 1 篇" in go_text, "Unapproved current capture guide must stay separate"
+                  assert "ANA 合作機場" not in go_text, "Failed capture guide body must not appear"
                   page.locator('.guide-tab[data-game="lets-go"]').click()
-                  assert "常青森林" in page.locator("#guide-content").inner_text(), "Verified Let's Go location should appear"
+                  assert "常青森林" in page.locator("#guide-content").inner_text()
+                  assert "內容審核：過" in page.locator("#guide-content").inner_text()
                   page.locator('.guide-tab[data-game="scarlet-violet"]').click()
-                  assert "研究草稿等待審核" in page.locator("#guide-content").inner_text()
+                  sv_text = page.locator("#guide-content").inner_text()
+                  assert "海岸區" in sv_text and "未通過 1 篇" in sv_text
+                  assert "Sleep Powder" not in sv_text, "Unapproved moveset must not appear"
+                  page.locator('.guide-tab[data-game="main-series"]').click()
+                  assert "未通過 1 篇" in page.locator("#guide-content").inner_text()
+                  page.locator('.guide-tab[data-game="gold-silver-crystal"]').click()
+                  assert page.locator("#guide-content .approved-guide").count() == 2
                   page.locator(".evo-stage[data-evo='2']").click()
                   assert "#0002" in page.locator("#detailbody").inner_text()
                   page.locator("#close").click()
