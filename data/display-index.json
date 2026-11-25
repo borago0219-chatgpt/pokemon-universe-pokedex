@@ -202,5 +202,15 @@
       "reason": "推薦配招缺少道具及玩法論證。",
       "fingerprint": "c521f8a0:847"
     }
+  ],
+  "artworks": [
+    {
+      "national_id": 1,
+      "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
+      "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
+      "approval": "owner_private_project_use",
+      "approved_on": "2026-11-24",
+      "note": "專案內部使用批准；第三方權利狀態另見圖片 metadata。"
+    }
   ]
 }
