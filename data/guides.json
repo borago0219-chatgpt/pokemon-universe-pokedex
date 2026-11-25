@@ -1145,6 +1145,94 @@
       ],
       "checked_at": "2026-11-25",
       "status": "needs_review"
+    },
+    {
+      "key": "1:gold-silver-crystal:capture",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "capture",
+      "checked_at": "2026-11-25",
+      "status": "draft",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Gold",
+          "Silver",
+          "Crystal"
+        ],
+        "normal_wild_capture": "三版均未列一般野生捕捉；可由第 1 代紅／綠／藍／皮卡丘透過時光膠囊交換取得。歷史活動另列，不能冒稱現況。",
+        "time_capsule_unlock": "在圓朱市寶可夢中心遇見阿正（Bill）後，按遊戲內時間等待約 24 小時開啟時光膠囊；交換時須遵守第 1／2 代相容規則。",
+        "availability_type": "historical_cross_generation_trade",
+        "historical_event_note": "資料庫另記歷史活動，但活動地區、期限與領取條件尚未逐項核實，未列為常規取得。",
+        "verification_required": [
+          "原版與虛擬主機版的現行硬體／交換相容性逐項核實",
+          "歷史活動配布的地區、日期與條件"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子三版取得表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/gs/timecapsule.shtml",
+          "title": "Serebii 時光膠囊開啟與限制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Time_Capsule",
+          "title": "Bulbapedia 時光膠囊機制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "key": "1:gold-silver-crystal:moveset",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "moveset",
+      "checked_at": "2026-11-25",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "第 2 代金／銀／水晶劇情向妙蛙種子本體；未經正式競技環境評分，不套用現代機制。",
+        "proposed_moves": [
+          "Razor Leaf（飛葉快刀）",
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Synthesis（光合作用）"
+        ],
+        "legality_note": "兩份第 2 代習得表支持妙蛙種子本體在 Lv.7 學寄生種子、Lv.15 學催眠粉、Lv.20 學飛葉快刀、Lv.39 學光合作用；若提早進化，須另查進化形態的習得等級，不能直接沿用本體表。",
+        "rationale": "原創劇情向組合：飛葉快刀輸出、催眠粉控場、寄生種子及光合作用續航；是否為各版本最佳組合尚未驗證。",
+        "mechanics_note": "第 2 代沒有現代特性與性格；努力值與現代分配機制不同。道具及對戰環境推薦待單獨研究。",
+        "verification_required": [
+          "進化時點及進化形態招式的交互影響",
+          "持有道具、對戰格式與替代招式建議"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/2",
+          "title": "Pokémon Database 第 2 代三版等級招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
     }
   ]
 }
