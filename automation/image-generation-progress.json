@@ -25,17 +25,14 @@
       "national_id": 2,
       "name_zh": "妙蛙草",
       "name_en": "Ivysaur",
-      "status": "blocked_before_generation_public_visibility_and_rights",
+      "status": "awaiting_platform_use_confirmation_before_generation",
       "generated": false,
       "downloaded": false,
       "uploaded": false,
       "free_tokens_spent": 0,
       "blocker": {
-        "github_visibility": "public",
-        "leonardo_plan": "free",
-        "leonardo_private_mode": "off_premium_feature",
-        "detail": "Leonardo free creations are publicly available by default. The requested named Pokémon character would be public on the generation service, and the designated GitHub repository is public. Existing approval for #001 covers quality and private project use, not this public distribution. No verified basis for public storage of #002 was found. No generation or upload attempted.",
-        "needed": "A documented basis supporting public generation and repository storage, or an allowed private generation and storage configuration within the user's no-payment constraint. Do not change repository visibility without separate authorization."
+        "detail": "Previous public-visibility precondition was superseded by the user's latest instruction. The free generation workflow is available, but an applicable Leonardo.Ai account-use requirement needs confirmation before submitting a new generation. No image generated, downloaded, or uploaded in this attempt.",
+        "needed": "Confirm the account meets Leonardo.Ai's applicable eligibility terms; then continue #0002, at most one image for this Taiwan date."
       },
       "sources": [
         "https://leonardo.ai/privacy-policy",
