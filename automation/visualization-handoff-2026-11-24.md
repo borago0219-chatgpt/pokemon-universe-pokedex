@@ -73,3 +73,13 @@
 - 官方 Pokémon 支援頁要求不要在專案使用或關聯其角色、名稱與設計；其日本權利聲明亦指出其使用 fan art 不授予超出私人非商業居家使用的權利。這是權利人政策，不等於本紀錄認定本項私人網站必然違法。Leonardo 的生成授權不等於 Pokémon 角色授權。
 - 最新測試分支 workflow 成功：[45416666847](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45416666847)。Chromium 桌面與手機視窗分別斷言圖片可見、已完成解碼、自然尺寸 1024×1024，皆通過。未登入正式網址自動請求回傳 HTTP 403，未能確認是否為 Access 登入保護或其策略。
 - 正式圖片顯示程式沒有合併；main metadata-only 提交可能觸發 Workers Build，建置／部署另查。待釐清適當使用權利以及 Access 實際保護、獨立功能審核後，只整合必要圖片顯示功能，不帶其他功能。圖片本身早已在公開 GitHub repo；Cloudflare Access 不會保護 GitHub。
+
+
+## 2026-11-25 單項發布與私人條件查核
+
+- daily_focus 仍為 2026-11-24 #001、未完成，今日未見新焦點；維持原號，不自行設定或推進。建設及插圖最新交接尚未顯示今日更新。
+- #001 圖片已獲管理者品質及私人用途批准，正式 metadata 112233e0bcc3cb3bf97606947c9da4e55eb45d09 已記錄；沿用 [Chromium 圖片解碼與桌面/手機測試 45416666847](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45416666847)，不重複要求批准或測試。
+- 限制：GitHub repo 目前公開、#001 JPEG 可讀，Leonardo 預設免費生成可見性及正式/預覽/直接素材 URL 保護未能完整核實；正式網址雲端未登入探測得到 HTTP 403，但無法歸因 Access。不能以已確認私人使用為前提將圖片部署；不聲稱該政策等同法律結論。
+- 已隔離獨立 #0001 搜尋候選 [999154f](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/999154f01f59a99e85461077422a07a45487d6b7)，分支 work/visual-dex-search-release-20261124，僅 app.js、無圖片與草稿，模擬 #0001/0001/中文/英文搜尋通過；原有相同搜尋邏輯在 c5d4eaf 上的 Chromium 介面測試通過，但此單獨分支未被該 workflow 直接測試，#0001 字串也未被該 workflow 實測。請按最新規則判斷功能批准與必要測試；未經確認 Access 保護前不部署。
+- 可行替代：Pokémon 官方媒體站的素材有可撤銷的非商業資訊/編輯用途授權；須找到實際適合的 #001 原始圖片、確認本私人圖鑑用途是否屬於所列範圍並遵守不可修改、不得暗示官方關係等規定，不能把該授權擴及 Leonardo 圖片。https://press.pokemon.com/en/Assets-Use-Terms
+- Work 雲端環境清單回覆 MCP -32000；不使用使用者本機。最小解除條件：確認正式網址和直接素材網址無登入時受 Access 限制，以及本人登入可訪問；確認 GitHub/Leonardo 是否具備使用者要求的私人範圍；如無法私人化，使用符合條件的來源素材或排除該圖片。禁止繞過登入、額度或更改保護。
