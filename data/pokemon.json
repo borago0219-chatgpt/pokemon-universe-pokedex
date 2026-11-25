@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24",
+  "updated_at": "2026-11-25",
   "pokemon": [
     {
       "id": 1,
@@ -78,6 +78,15 @@
       "updated_at": "2026-11-24"
     },
     {
+      "id": 9,
+      "name_zh": "Blastoise",
+      "name_en": "Blastoise",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-25"
+    },
+    {
       "id": 10,
       "name_zh": "綠毛蟲",
       "name_en": "Caterpie",
@@ -85,6 +94,45 @@
         "bug"
       ],
       "updated_at": "2026-11-23"
+    },
+    {
+      "id": 11,
+      "name_zh": "Metapod",
+      "name_en": "Metapod",
+      "types": [
+        "bug"
+      ],
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": 12,
+      "name_zh": "Butterfree",
+      "name_en": "Butterfree",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": 13,
+      "name_zh": "Weedle",
+      "name_en": "Weedle",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": 14,
+      "name_zh": "Kakuna",
+      "name_en": "Kakuna",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "updated_at": "2026-11-25"
     },
     {
       "id": 16,
