@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Taipei",
   "updated_on": "2026-11-25",
-  "next_national_id": 2,
+  "next_national_id": 3,
   "completed_contiguous": [
     {
       "national_id": 1,
@@ -14,6 +14,17 @@
       "mime_type": "image/jpeg",
       "verified_on": "2026-11-25",
       "note": "Stored real image; quality and private project use approved by project manager. Public display rights remain not cleared."
+    },
+    {
+      "national_id": 2,
+      "name_zh": "妙蛙草",
+      "name_en": "Ivysaur",
+      "asset": "assets/generated/002-ivysaur-climbing-01.jpg",
+      "metadata": "assets/generated/002-ivysaur-climbing-01.json",
+      "blob_sha": "9debb308399ec300690905a9009d63ac50db42dc",
+      "mime_type": "image/jpeg",
+      "verified_on": "2026-11-25",
+      "note": "Saved and SHA-verified as a candidate; public website use not approved."
     }
   ],
   "preexisting_out_of_sequence": [
@@ -25,20 +36,23 @@
       "national_id": 2,
       "name_zh": "妙蛙草",
       "name_en": "Ivysaur",
-      "status": "awaiting_platform_use_confirmation_before_generation",
-      "generated": false,
-      "downloaded": false,
-      "uploaded": false,
-      "free_tokens_spent": 0,
-      "blocker": {
-        "detail": "Previous public-visibility precondition was superseded by the user's latest instruction. The free generation workflow is available, but an applicable Leonardo.Ai account-use requirement needs confirmation before submitting a new generation. No image generated, downloaded, or uploaded in this attempt.",
-        "needed": "Confirm the account meets Leonardo.Ai's applicable eligibility terms; then continue #0002, at most one image for this Taiwan date."
-      },
-      "sources": [
-        "https://leonardo.ai/privacy-policy",
-        "https://leonardo.ai/terms-of-service",
-        "https://support.pokemon.com/hc/en-us/articles/360000634094-Can-I-use-Pok%C3%A9mon-images-or-materials"
-      ]
+      "status": "uploaded_verified_candidate",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "free_tokens_spent": 8,
+      "asset": "assets/generated/002-ivysaur-climbing-01.jpg",
+      "metadata": "assets/generated/002-ivysaur-climbing-01.json",
+      "blob_sha": "9debb308399ec300690905a9009d63ac50db42dc",
+      "mime_type": "image/jpeg",
+      "resolution": "1024x1024",
+      "bytes": 313057,
+      "source_url": "https://app.leonardo.ai/generation/image/single-ivysaur-pok%C3%A9mon-002-unmistakably-sturdy-af330881-8ac3-4f5b-b48a-76000ea6290f",
+      "generation_visibility": "public_free_plan",
+      "repository_visibility": "public",
+      "rights_review": "third_party_character_rights_not_verified",
+      "website_use": "not_approved",
+      "note": "Real generated candidate, recognizable as Ivysaur. Signature-like AI artifact at lower right needs downstream display decision."
     }
   ]
 }
