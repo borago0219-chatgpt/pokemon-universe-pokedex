@@ -606,8 +606,8 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-24",
-      "status": "draft",
+      "checked_at": "2026-11-25",
+      "status": "needs_review",
       "key": "1:scarlet-violet:capture",
       "game": "scarlet-violet",
       "topic": "capture",
@@ -620,13 +620,12 @@
         "base_game": "本篇沒有已核實的野生捕捉點；可由相容來源經 Pokémon HOME 轉入或與其他玩家交換。",
         "dlc": "《零之秘寶 後篇：藍之圓盤》",
         "method": "解鎖海岸區生物多樣性後，在藍莓學園生態巨蛋的海岸區／火把迷宮尋找野生妙蛙種子。",
-        "unlock": "社群攻略記載聯盟社海岸區升級需 3000 BP；此數字尚未經官方頁面獨立核實。",
-        "location_note": "Serebii 同時列海岸區與火把迷宮；細部生成條件、等級、機率及天氣尚待逐項核實。",
+        "unlock": "《藍之圓盤》進入聯盟社並可使用支援板後，選「海岸區增加最初夥伴寶可夢」升級，社群版本資料表列費用 3,000 BP。完成該區升級後，妙蛙種子可在生態巨蛋海岸區野生出現；官方個別數字頁面尚未核得。",
+        "location_note": "Serebii 同時列海岸區及火把迷宮；兩個地點的生成機率、等級、時間／天氣差異未取得可靠逐格資料，不推定相同或固定數值。",
         "status_note": "DLC 野生取得與 HOME／交換為不同方法，不能把原版轉入當作本篇野生。",
         "verification_required": [
-          "官方或遊戲內驗證 3000 BP 與升級先決條件",
-          "逐地點生成條件和機率",
-          "特殊太晶／活動取得是否另有例外"
+          "海岸區／火把迷宮各點位生成率、等級與環境差異：需遊戲內紀錄或具數值的版本資料；目前只主張可出現",
+          "是否存在特殊太晶或活動的額外取得例外：須有具體活動與期限來源才另列，不作現行常駐方法"
         ]
       },
       "sources": [
@@ -650,6 +649,20 @@
           "type": "community_guide",
           "version": "Indigo Disk",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/scarletviolet/terariumstarters.shtml",
+          "title": "Serebii 生態巨蛋最初夥伴與海岸區",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/scarletviolet/leagueclub.shtml",
+          "title": "Serebii 聯盟社支援板費用",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-25"
         }
       ]
     },
@@ -965,14 +978,14 @@
           {
             "type": "gift",
             "location": "華藍市寶可夢中心旁民宅",
-            "condition": "需累計捕獲至少 30 隻寶可夢；社群資料在「30 或以上」與「超過 30」措詞有差異，臨界值待遊戲內覆核",
+            "condition": "華藍市寶可夢中心旁民宅，需達累計捕捉門檻；Serebii 贈送總表寫「超過 30」，其華藍市地點表寫「捕捉 30 隻」。故 30 整是否可領尚未證實，建議累計至少 31 隻再嘗試，並以遊戲內 30／31 臨界測試定稿。",
             "level": 12,
             "status": "needs_review"
           }
         ],
         "verification_required": [
-          "野生生成率與連鎖捕捉影響",
-          "贈送門檻 30 的臨界判定"
+          "贈送門檻：同一資料庫兩頁對 30 整的措詞不一，需實機以 30 與 31 隻各測或官方逐字門檻",
+          "常青森林野生生成率及連鎖捕捉對特殊出現的影響：需版本資料或實測；目前只主張可遇見"
         ]
       },
       "sources": [
@@ -996,10 +1009,17 @@
           "type": "community_game_database",
           "version": "Let's Go",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/kanto/ceruleancity.shtml",
+          "title": "Serebii 華藍市地點表（30 隻措詞）",
+          "type": "community_game_database",
+          "version": "Let's Go Pikachu/Eevee",
+          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-24",
-      "status": "draft"
+      "checked_at": "2026-11-25",
+      "status": "needs_review"
     },
     {
       "key": "1:bdsp:capture",
@@ -1062,7 +1082,7 @@
           {
             "type": "dlc_gift",
             "location": "《鎧之孤島》武館",
-            "condition": "武館劇情中獲得一次性妙蛙種子選擇；有超極巨化資質，與後續妙蛙花相關，不代表妙蛙種子本身可超極巨化。",
+            "condition": "持有《鎧之孤島》擴充內容，完成馬士德武館第一項試煉後由蜜葉提供妙蛙種子與傑尼龜二選一；獲得的妙蛙種子帶超極巨化因子，待進化到妙蛙花後才可超極巨化。",
             "status": "community_verified"
           },
           {
@@ -1072,14 +1092,13 @@
           },
           {
             "type": "historical_event",
-            "condition": "曠野地帶新聞／HOME 贈送曾提供，不能作為固定現行方法。",
+            "condition": "2021-06-17 至 2021-06-30 全球 Pokémon HOME 更新紀念配布曾提供帶超極巨化因子的妙蛙種子；這是已結束的歷史贈送，不是目前固定取得方式。另有曠野地帶新聞紀錄，但本篇尚未核實具體活動區域與日期，不將其列成已確認的捕捉途徑。",
             "status": "historical"
           }
         ],
         "verification_required": [
-          "武館贈送精確劇情前置條件",
-          "歷史活動日期和區域",
-          "版號與 HOME 相容限制"
+          "曠野地帶新聞涉及妙蛙種子的確切活動日期、區域及遭遇條件：找到原活動頁後才能增列",
+          "目前 HOME→《劍／盾》的版號、連線與來源相容條件：查官方 HOME 支援或實機後補，不把 2021 配布當現行"
         ]
       },
       "sources": [
@@ -1096,10 +1115,31 @@
           "type": "official_product",
           "version": "Sword/Shield",
           "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/swordshield/gift.shtml",
+          "title": "Serebii 武館第一試煉贈送",
+          "type": "community_game_database",
+          "version": "Sword/Shield Isle of Armor",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/galar/masterdojo.shtml",
+          "title": "Serebii 武館蜜葉贈送表",
+          "type": "community_game_database",
+          "version": "Sword/Shield Isle of Armor",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokemonhome/giftpokemon.shtml",
+          "title": "Serebii HOME 歷史贈送期間",
+          "type": "community_game_database",
+          "version": "Sword/Shield historical 2021",
+          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-24",
-      "status": "draft"
+      "checked_at": "2026-11-25",
+      "status": "needs_review"
     },
     {
       "key": "1:legends-za:capture",
