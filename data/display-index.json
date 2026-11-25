@@ -23,7 +23,28 @@
         "https://www.pokemon.com/br/pokedex/0001",
         "https://www.serebii.net/pokedex-sv/bulbasaur/"
       ],
-      "note": "僅選列已對照來源的基本欄位；原指南仍為草稿，版本攻略與進化等級未獨立審核。"
+      "note": "僅選列已對照來源的基本欄位；原指南仍為草稿，版本攻略與進化等級未獨立審核。",
+      "verified_values": [
+        0.7,
+        6.9,
+        {
+          "regular": [
+            "茂盛 Overgrow"
+          ],
+          "hidden": [
+            "葉綠素 Chlorophyll"
+          ]
+        },
+        {
+          "hp": 45,
+          "attack": 49,
+          "defense": 49,
+          "special_attack": 65,
+          "special_defense": 65,
+          "speed": 45,
+          "total": 318
+        }
+      ]
     }
   ]
 }

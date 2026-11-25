@@ -44,7 +44,7 @@ function renderApprovedGuide(g){
 function renderProfile(p){
  const entry=displayEntries.find(e=>Number(e.national_id)===Number(p.id)&&e.display_status==='selected_fields_verified');
  const g=guideRecords.find(g=>g.key===entry?.guide_key&&Number(g.national_id)===Number(p.id)&&g.topic==='profile'&&g.checked_at===entry.guide_checked_at);
- if(!entry||!g||!Array.isArray(entry.fields)||!entry.fields.every(k=>Object.hasOwn(g.content||{},k)))return '<p class="detailnote">身高、體重、特性與種族值尚待核對。</p>';
+ if(!entry||!g||!Array.isArray(entry.fields)||!entry.fields.every(k=>Object.hasOwn(g.content||{},k))||JSON.stringify(entry.fields.map(k=>g.content[k]))!==JSON.stringify(entry.verified_values))return '<p class="detailnote">身高、體重、特性與種族值尚待核對。</p>';
  const c=g.content,stats=c.base_stats_from_generation_2||{},keys=Object.keys(statNames),values=keys.map(k=>Math.max(0,Math.min(255,Number(stats[k])||0)));
  const bars=keys.map((k,i)=>'<div class="stat-row"><span>'+statNames[k]+'</span><div class="stat-track"><span style="width:'+Math.min(100,values[i]/160*100).toFixed(1)+'%"></span></div><b>'+values[i]+'</b></div>').join('');
  const points=values.map((v,i)=>{const a=-Math.PI/2+i*Math.PI/3;return (110+v/160*78*Math.cos(a)).toFixed(1)+','+(110+v/160*78*Math.sin(a)).toFixed(1)}).join(' ');
