@@ -263,6 +263,18 @@
       ],
       "image_briefs": 0,
       "notes": "Five #001 guides corrected; real image gate acknowledged; Work cloud browser observed Access login only; role boundaries maintained."
+    },
+    {
+      "run_id": "2026-11-25-work-build-bulbasaur-001-gsc",
+      "date": "2026-11-25",
+      "action": "same_focus_gsc_capture_moveset_drafts",
+      "national_id": 1,
+      "guide_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
+      "guide_keys_added": [
+        "1:gold-silver-crystal:capture",
+        "1:gold-silver-crystal:moveset"
+      ],
+      "notes": "Gold/Silver/Crystal time capsule and Gen 2 move legality researched from Serebii, Pokémon Database, Bulbapedia; still drafts/review needed."
     }
   ],
   "blockers": [
@@ -305,7 +317,7 @@
     "name_en": "Bulbasaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "review_feedback_corrected_5_guides_11_still_not_fully_approved",
+    "research_status": "review_feedback_corrected_5_guides_gsc_capture_and_moveset_added_13_guides_total",
     "image_status": "candidate_generated_pending_quality_and_rights_review",
     "preview_status": "work_cloud_browser_reached_cloudflare_access_login_only",
     "review_status": "2026-11-24_report_verified_incomplete_2026-11-25_early_report_read",
@@ -313,11 +325,11 @@
     "missing_sections": [
       "基本資料：官方繁中 #001、屬性、分類、身高體重已映射；跨版本特性、進化與型態例外仍待逐版核。",
       "主系列可取得性：第 1～9 代的 19 組、39 個列舉版本項僅核對基本途徑；黑／白歷史服務、事件期限及跨硬體轉入相容性未逐版查完，不能稱 39 版全面驗證。",
-      "各版本捕捉／取得：目前只有朱／紫、Let's Go、BDSP、劍／盾、Z-A 五組獨立指南；其餘版本的具體地點、前置及僅交換／轉入等仍待核，已列細節仍有部分 needs_review。",
-      "主系列配招：僅第 1 代與朱／紫兩組草稿；第 1 代暴擊和進化時點警語已補，其他適用版本、玩法及合法性未完成。",
+      "各版本捕捉／取得：新增金／銀／水晶三版的時光膠囊獨立指南；其餘多數版本仍只有總表摘要，具體地點、前置及僅交換／轉入等仍待核，已列細節仍有部分 needs_review。",
+      "主系列配招：第 1 代、金／銀／水晶與朱／紫有草稿；第 1 代暴擊和進化時點警語已補，第 2 代配招已標劇情草稿，其他適用版本、玩法及合法性未完成。",
       "Pokémon GO：已修正極巨歷史的排他語句與超級聯盟社群配招來源；台灣當前各取得渠道、招式學習器、暗影／極巨及 PvE／PvP 各聯盟用途仍待核。",
       "網站及展示：main 程式可讀 guides、display-index 與圖片 metadata，但 Work 雲端正式網址只到 Cloudflare Access 登入頁；登入後搜尋、詳情、版本切換與圖片均未實測。GitHub repo 目前 public，現有圖片的私人存取／第三方權利依據未滿足可發布條件，維持占位或暫緩該圖。",
-      "獨立審核：2026-11-24 報告與 2026-11-25 提前補審均判 11 篇未整篇通過；本輪修正五篇後，須由審核員再核最新 SHA，尚無當日無重大缺漏的完整報告。"
+      "獨立審核：2026-11-24 報告與 2026-11-25 提前補審針對舊 11 篇均判未整篇通過；本輪修正五篇並新增兩篇後，須由審核員再核最新 SHA，尚無當日無重大缺漏的完整報告。"
     ],
     "source_checked_at": "2026-11-25",
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
@@ -336,10 +348,12 @@
           "1:lets-go:capture",
           "1:bdsp:capture",
           "1:sword-shield:capture",
-          "1:legends-za:capture"
+          "1:legends-za:capture",
+          "1:gold-silver-crystal:capture",
+          "1:gold-silver-crystal:moveset"
         ],
         "verified_versions": "19_groups_39_listed_partial_only",
-        "notes": "已依 reviews/2026-11-25.md 修正 5 篇的具體問題：Z-A 茉蜜姬與前置、GO 極巨歷史排他說法、GO PvP 社群來源、繁中官方基本資料來源、第 1 代配招警語。#001 實圖存在且品質／私人專案用途已由使用者批准；不重複索取。圖片展示權利及私人存取另待證據。",
+        "notes": "已依 reviews/2026-11-25.md 修正 5 篇的具體問題：Z-A 茉蜜姬與前置、GO 極巨歷史排他說法、GO PvP 社群來源、繁中官方基本資料來源、第 1 代配招警語。#001 實圖存在且品質／私人專案用途已由使用者批准；不重複索取。圖片展示權利及私人存取另待證據。 另新增金／銀／水晶三版時光膠囊取得及第 2 代劇情向配招草稿，待獨立審核。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
@@ -355,9 +369,11 @@
           "ca1a602ac1cdc118f3aef337271bbe13d2e982bd",
           "fb246666d5b815c7e5e4580c42b61a1a5ccaa8fd",
           "d22bd3fdf9f70ec30b8ae41af27698b569148446",
-          "22ec5c402d3a3a8baa99f5363855aa7f51445313"
+          "22ec5c402d3a3a8baa99f5363855aa7f51445313",
+          "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581",
+          "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
         ],
-        "guide_commit": "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581",
+        "guide_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
         "source_checked_at": "2026-11-25",
         "publication_items": {
           "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
@@ -391,7 +407,7 @@
           "reviews/2026-11-24.md",
           "reviews/2026-11-25.md"
         ],
-        "needs_recheck_commit": "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581"
+        "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
       },
       "next_day_action": "延續 #001；審核員按指南新 SHA 複核修正；主建設繼續補未覆蓋版本取得與配招、GO 台灣當期資料。視覺化任務獨立驗證可發布介面與私人 Access；候選圖保留，勿把內部批准當第三方授權。八項未齊不得換 #002。"
     },
