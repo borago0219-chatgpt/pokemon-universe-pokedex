@@ -343,7 +343,7 @@
       "基本資料：台灣官方 #001 欄位及本體數值已有來源；跨版本特性、進化與型態例外仍待逐版核。",
       "主系列可取得性：第 1～9 代 19 組、拆開日本／國際《藍》後共 40 個列舉版本標籤；這是清單數，尚未逐版獨立核實。黑／白歷史 Global Link、活動期限與轉入服務仍缺。",
       "各版本捕捉／取得：11／19 組已有獨立指南，8 組尚缺。原 key 朱／紫、劍／盾、Let's Go 的審核缺口已逐篇補來源和界線；朱／紫逐點生成率／特殊活動、劍／盾曠野地帶活動與當前 HOME 相容、Let's Go 30 整贈送臨界仍需具體證據。新 blob 待獨立審核。",
-      "主系列配招：第 1 代兩組、第 2 代及朱／紫已有草稿；其他適用作品及玩法仍缺，朱／紫推薦的道具、性格、努力值與單／雙打論證仍未完成。",
+      "主系列配招：第 1 代兩組、第 2 代、朱／紫有草稿；已修第 1、2 代未進化與 Lv.16 進化後的習得時點，日版《綠》的獨立差異及正式競技規則／替代配招仍缺；其他 15／19 組仍無獨立版本配招，朱／紫道具、性格、努力值、單雙打仍待核。",
       "Pokémon GO：當季社群田野調查表列「強化寶可夢 3 次」可能遇 #001，台灣實際補給站須遊戲內確認；台灣當日野外、蛋、一般團體戰、極巨與暗影渠道及招式學習器限制仍缺。已核歷史活動與日本指定機場另列。",
       "網站及展示：main 程式與 display-index 有資料顯示邏輯，索引目前的 profile／GO 歷史查核日已同步；最新 Z-A 與 GO 指南內容變更需重新核指紋。通過卡仍會混入工作清單，交視覺化任務修顯示語意。正式 Work 網址先前只到 Cloudflare Access 登入頁，登入後頁面未實測；公開 GitHub 圖片的權利與私人條件未達展示門檻。",
       "獨立審核：2026-11-25 報告對舊指南 blob 判過 10／13、沒過 3／13；本輪已改 Z-A、GO、總矩陣且新增 4 篇，須按最新 SHA 重審。全角色無當日無重大缺漏的完整通過報告。"
@@ -374,7 +374,7 @@
           "1:x-y:capture"
         ],
         "verified_versions": "11_of_19_groups_capture_guides_partial",
-        "notes": "沿用 #001；比對最新 reviews/ 與現行攻略後，修既有 1:scarlet-violet:capture、1:sword-shield:capture、1:lets-go:capture。3,000 BP 與首試煉／2021 HOME 活動已有版本資料；Let’s Go 30／31 分歧未冒充已解。其他已通過且未變動的原 key 不重審，未解欄位在原 key 精確留證據需求。",
+        "notes": "沿用 #001；比對最新 reviews/ 與現行攻略後，修既有 1:scarlet-violet:capture、1:sword-shield:capture、1:lets-go:capture。3,000 BP 與首試煉／2021 HOME 活動已有版本資料；Let’s Go 30／31 分歧未冒充已解。其他已通過且未變動的原 key 不重審，未解欄位在原 key 精確留證據需求。；另補原 key 1:red-blue-yellow:moveset 與 1:gold-silver-crystal:moveset 的進化時點、留日版綠及競技格式未核。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
@@ -396,9 +396,10 @@
           "9cbd1976ccf26566c7f04cae6be92e12ef53172d",
           "2ab0d0521484055917a63b4868541dac19f5ac8e",
           "638968dbc61ff23250f3381e51dfaa661118805e",
-          "9c1c250391e2451b2c59c140792885a36acac6f5"
+          "9c1c250391e2451b2c59c140792885a36acac6f5",
+          "3bac5ce293ab0ae907b72552f4cd6390c38d25d3"
         ],
-        "guide_commit": "638968dbc61ff23250f3381e51dfaa661118805e",
+        "guide_commit": "3bac5ce293ab0ae907b72552f4cd6390c38d25d3",
         "source_checked_at": "2026-11-25",
         "publication_items": {
           "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
@@ -408,15 +409,15 @@
         "review_gap_keys_updated": [
           "1:scarlet-violet:capture",
           "1:sword-shield:capture",
-          "1:lets-go:capture"
+          "1:lets-go:capture",
+          "1:red-blue-yellow:moveset",
+          "1:gold-silver-crystal:moveset"
         ],
         "review_gap_keys_pending": [
           "1:pokemon-go:moveset",
-          "1:red-blue-yellow:moveset",
-          "1:bdsp:capture",
-          "1:gold-silver-crystal:moveset"
+          "1:bdsp:capture"
         ],
-        "review_gap_note": "待審核員針對最新指南 blob 52d1068323eaa185222982e30482e2f7af804fb4 核對；已解欄位不沿用舊報告待辦。"
+        "review_gap_note": "原有五篇 key 已更新；第 1、2 代補本體與 Lv.16 進化後習得時點，競技配招仍缺規則環境與來源。最新 guides blob d3f6bbe22661b5676fda447a29bcedb933e28515 待獨立審核。"
       },
       "image": {
         "status": "candidate_saved_pending_review",
@@ -446,7 +447,7 @@
         ],
         "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
       },
-      "next_day_action": "維持 #001；先依最新 reviews/ 對照原 key 與 guide blob，接續 4 個尚未逐篇修補的既有 key（GO 配招、初代配招、BDSP 取得、金銀水晶配招）的具體缺口；再補其餘 8 組取得及未覆蓋配招。視覺化端區分目前可靠方法與 needs_review 欄位，驗證私人網站；獨立審核最新 SHA。"
+      "next_day_action": "維持 #001；先對照最新 reviews/ 與 guide blob，優先原 key 1:pokemon-go:moveset 的當季 TM／特殊形態和 1:bdsp:capture 的地名／生成細節；已修五篇原 key 不照舊報告重開。續補其餘 8 組取得、15 組配招與 GO 台灣現況。視覺化端區分可用事實、needs_review 欄位並驗私人站；審核員檢最新 SHA。"
     },
     "completion_checks": {
       "profile": "partial",
