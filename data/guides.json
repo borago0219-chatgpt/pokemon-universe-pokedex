@@ -346,7 +346,7 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-25",
+      "checked_at": "2026-11-24",
       "status": "needs_review",
       "key": "1:main-series:availability",
       "game": "main-series",
@@ -360,8 +360,7 @@
             "versions": [
               "Red",
               "Green (Japan)",
-              "Blue (Japan)",
-              "Blue (International)"
+              "Blue (Japan/International)"
             ],
             "method": "真新鎮大木博士提供的三選一初始寶可夢",
             "availability": "in_game_gift",
@@ -554,10 +553,9 @@
           "第 2～7 代硬體／服務現況及跨世代交換可行性",
           "地下大洞窟各空洞的具體生成條件／機率",
           "《傳說 Z-A》DLC 精確掃描條件",
-          "每一版本的專屬配招與玩法",
-          "40 個列舉版本標籤是清單計數，並非 40 版已逐項獨立核實；日本／國際《藍》已拆列，仍須逐版核來源與服務相容性。"
+          "每一版本的專屬配招與玩法"
         ],
-        "version_count_listed": 40
+        "version_count_verified": 39
       },
       "sources": [
         {
@@ -606,8 +604,8 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-25",
-      "status": "needs_review",
+      "checked_at": "2026-11-24",
+      "status": "draft",
       "key": "1:scarlet-violet:capture",
       "game": "scarlet-violet",
       "topic": "capture",
@@ -620,12 +618,13 @@
         "base_game": "本篇沒有已核實的野生捕捉點；可由相容來源經 Pokémon HOME 轉入或與其他玩家交換。",
         "dlc": "《零之秘寶 後篇：藍之圓盤》",
         "method": "解鎖海岸區生物多樣性後，在藍莓學園生態巨蛋的海岸區／火把迷宮尋找野生妙蛙種子。",
-        "unlock": "《藍之圓盤》進入聯盟社並可使用支援板後，選「海岸區增加最初夥伴寶可夢」升級，社群版本資料表列費用 3,000 BP。完成該區升級後，妙蛙種子可在生態巨蛋海岸區野生出現；官方個別數字頁面尚未核得。",
-        "location_note": "Serebii 同時列海岸區及火把迷宮；兩個地點的生成機率、等級、時間／天氣差異未取得可靠逐格資料，不推定相同或固定數值。",
+        "unlock": "社群攻略記載聯盟社海岸區升級需 3000 BP；此數字尚未經官方頁面獨立核實。",
+        "location_note": "Serebii 同時列海岸區與火把迷宮；細部生成條件、等級、機率及天氣尚待逐項核實。",
         "status_note": "DLC 野生取得與 HOME／交換為不同方法，不能把原版轉入當作本篇野生。",
         "verification_required": [
-          "海岸區／火把迷宮各點位生成率、等級與環境差異：需遊戲內紀錄或具數值的版本資料；目前只主張可出現",
-          "是否存在特殊太晶或活動的額外取得例外：須有具體活動與期限來源才另列，不作現行常駐方法"
+          "官方或遊戲內驗證 3000 BP 與升級先決條件",
+          "逐地點生成條件和機率",
+          "特殊太晶／活動取得是否另有例外"
         ]
       },
       "sources": [
@@ -649,20 +648,6 @@
           "type": "community_guide",
           "version": "Indigo Disk",
           "checked_at": "2026-11-24"
-        },
-        {
-          "url": "https://www.serebii.net/scarletviolet/terariumstarters.shtml",
-          "title": "Serebii 生態巨蛋最初夥伴與海岸區",
-          "type": "community_game_database",
-          "version": "Scarlet/Violet Indigo Disk",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/scarletviolet/leagueclub.shtml",
-          "title": "Serebii 聯盟社支援板費用",
-          "type": "community_game_database",
-          "version": "Scarlet/Violet Indigo Disk",
-          "checked_at": "2026-11-25"
         }
       ]
     },
@@ -675,7 +660,7 @@
       "topic": "capture",
       "content": {
         "display_name": "妙蛙種子 Bulbasaur",
-        "current_availability": "2026-11-25 查核：Pokémon GO 官方「Twilight Trails」賽季至 2026-12-01 10:00（當地時間）。Leek Duck 當季田野調查表列「強化寶可夢 3 次」的可能遭遇之一為妙蛙種子；各補給站任務與獎勵須在遊戲內確認。官方森林生態區通則不保證台灣任一地點今日野生出現；台灣當日野外、蛋、一般團體戰及極巨輪替尚無足夠地區證據。日本指定 ANA 機場團體戰活動另列，不能視為台灣現行。",
+        "current_availability": "官方通則列森林生態區有機會遇見；台灣當季實際生成仍未核實。日本指定 ANA 合作機場團體戰活動公告延續至 2027-08-31，不能視為台灣常駐。",
         "confirmed_historical": [
           {
             "method": "野外大量出現",
@@ -693,15 +678,14 @@
               "2026-11-14/15"
             ],
             "status": "ended",
-            "note": "官方公告所列台灣指定場地活動均已結束；不可當作當前台灣取得渠道。"
+            "note": "官方公告；今日 11/24 不再當作台灣現行活動。"
           }
         ],
         "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
         "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
         "note": "2022 社群日與 2024 極巨首登場均為歷史活動，不能保證 2026-11-25 台灣野外、孵蛋、團體戰或田野調查仍提供妙蛙種子。",
         "verification_required": [
-          "台灣 2026-11-25 實際野生、孵蛋、一般團體戰與極巨輪替逐渠道確認",
-          "台灣各補給站實際任務與獎勵",
+          "2026-11-25 台灣一般野外生成、任務、孵蛋、團體戰及極巨對戰輪替",
           "日本 ANA 合作機場最新參與地點與條件",
           "暗影妙蛙種子當前來源與招式限制"
         ],
@@ -722,15 +706,7 @@
             "note": "官方公告確認 2024 年活動中，從極巨對戰相遇並捕獲的妙蛙種子及其進化形可於極巨對戰中極巨化；此公告未排除後續其他取得途徑，亦不能把普通野生個體自動視為極巨個體。",
             "other_confirmed_historical_method": "同一 2024-09-10 至 2024-09-15 活動的田野調查可遇妙蛙種子；這是歷史活動，不代表目前台灣田野調查。"
           }
-        ],
-        "current_community_field_research": {
-          "task": "強化寶可夢 3 次",
-          "possible_encounter": "妙蛙種子",
-          "period": "Twilight Trails 賽季：2026-09-08 10:00 至 2026-12-01 10:00（當地時間）",
-          "scope": "Leek Duck 當季社群清單；各台灣補給站任務需實際遊戲內核對",
-          "checked_at": "2026-11-25",
-          "status": "community_current_not_official_species_confirmation"
-        }
+        ]
       },
       "sources": [
         {
@@ -773,20 +749,6 @@
           "title": "Pokémon GO 官方：2024 極巨化首度登場",
           "type": "official_announcement",
           "version": "Pokémon GO historical",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://pokemongo.com/seasons/twilight-trails",
-          "title": "Pokémon GO 官方 Twilight Trails 賽季期間",
-          "type": "official_season",
-          "version": "Pokémon GO 2026 season",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://leekduck.com/research/",
-          "title": "Leek Duck 當季田野調查獎勵表",
-          "type": "community_current_research",
-          "version": "Pokémon GO 2026 Twilight Trails",
           "checked_at": "2026-11-25"
         }
       ]
@@ -927,10 +889,9 @@
         "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長提升單一特殊能力，但飛葉快刀暴擊時不吃此增益。",
         "caution": "此四招為保持妙蛙種子未進化時，第 1 代可在 Lv.7／27／34／41 分別學到的招式；若 16 級進化為妙蛙草，不能直接沿用妙蛙種子的 Lv.41 習得表。第 1 代飛葉快刀高暴擊，暴擊傷害會忽略自身「生長」帶來的能力提升，因此兩者搭配效益有限。此為劇情草稿，不是已驗證的對戰標準配招；第 1 代沒有現代特性、性格或現代 EV 制度。",
         "verification_required": [
-          "日版《綠》相對《紅／藍／皮卡丘》的招式習得差異仍須版本表核對；本篇先維持現有《紅／藍／皮卡丘》來源範圍",
-          "正式對戰配招、替代招式與規則環境需另有社群戰術來源；此篇只供未進化 #001 劇情向參考"
-        ],
-        "evolution_timing": "第 1 代妙蛙種子本體於 Lv.7 學寄生種子、Lv.27 學飛葉快刀、Lv.34 學生長、Lv.41 學催眠粉；這套要以本體等到 Lv.41。若 Lv.16 即進化為妙蛙草，進化形態的升級表在 Lv.30 學飛葉快刀、Lv.38 學生長、Lv.46 學催眠粉（《紅／藍／皮卡丘》資料表），不可套用本體時點；日版《綠》逐版差異尚待獨立核。"
+          "逐版本招式習得等級與進化時點",
+          "正式對戰環境與替代配招"
+        ]
       },
       "sources": [
         {
@@ -951,13 +912,6 @@
           "url": "https://www.smogon.com/rb/articles/rby_mechanics_guide",
           "title": "Smogon 第 1 代暴擊與能力變化機制",
           "type": "community_mechanics_guide",
-          "version": "Red/Blue/Yellow",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://pokemondb.net/pokedex/ivysaur/moves/1",
-          "title": "Pokémon Database 第 1 代進化形態招式表",
-          "type": "community_game_database",
           "version": "Red/Blue/Yellow",
           "checked_at": "2026-11-25"
         }
@@ -986,14 +940,14 @@
           {
             "type": "gift",
             "location": "華藍市寶可夢中心旁民宅",
-            "condition": "華藍市寶可夢中心旁民宅，需達累計捕捉門檻；Serebii 贈送總表寫「超過 30」，其華藍市地點表寫「捕捉 30 隻」。故 30 整是否可領尚未證實，建議累計至少 31 隻再嘗試，並以遊戲內 30／31 臨界測試定稿。",
+            "condition": "需累計捕獲至少 30 隻寶可夢；社群資料在「30 或以上」與「超過 30」措詞有差異，臨界值待遊戲內覆核",
             "level": 12,
             "status": "needs_review"
           }
         ],
         "verification_required": [
-          "贈送門檻：同一資料庫兩頁對 30 整的措詞不一，需實機以 30 與 31 隻各測或官方逐字門檻",
-          "常青森林野生生成率及連鎖捕捉對特殊出現的影響：需版本資料或實測；目前只主張可遇見"
+          "野生生成率與連鎖捕捉影響",
+          "贈送門檻 30 的臨界判定"
         ]
       },
       "sources": [
@@ -1017,17 +971,10 @@
           "type": "community_game_database",
           "version": "Let's Go",
           "checked_at": "2026-11-24"
-        },
-        {
-          "url": "https://www.serebii.net/pokearth/kanto/ceruleancity.shtml",
-          "title": "Serebii 華藍市地點表（30 隻措詞）",
-          "type": "community_game_database",
-          "version": "Let's Go Pikachu/Eevee",
-          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-25",
-      "status": "needs_review"
+      "checked_at": "2026-11-24",
+      "status": "draft"
     },
     {
       "key": "1:bdsp:capture",
@@ -1090,7 +1037,7 @@
           {
             "type": "dlc_gift",
             "location": "《鎧之孤島》武館",
-            "condition": "持有《鎧之孤島》擴充內容，完成馬士德武館第一項試煉後由蜜葉提供妙蛙種子與傑尼龜二選一；獲得的妙蛙種子帶超極巨化因子，待進化到妙蛙花後才可超極巨化。",
+            "condition": "武館劇情中獲得一次性妙蛙種子選擇；有超極巨化資質，與後續妙蛙花相關，不代表妙蛙種子本身可超極巨化。",
             "status": "community_verified"
           },
           {
@@ -1100,13 +1047,14 @@
           },
           {
             "type": "historical_event",
-            "condition": "2021-06-17 至 2021-06-30 全球 Pokémon HOME 更新紀念配布曾提供帶超極巨化因子的妙蛙種子；這是已結束的歷史贈送，不是目前固定取得方式。另有曠野地帶新聞紀錄，但本篇尚未核實具體活動區域與日期，不將其列成已確認的捕捉途徑。",
+            "condition": "曠野地帶新聞／HOME 贈送曾提供，不能作為固定現行方法。",
             "status": "historical"
           }
         ],
         "verification_required": [
-          "曠野地帶新聞涉及妙蛙種子的確切活動日期、區域及遭遇條件：找到原活動頁後才能增列",
-          "目前 HOME→《劍／盾》的版號、連線與來源相容條件：查官方 HOME 支援或實機後補，不把 2021 配布當現行"
+          "武館贈送精確劇情前置條件",
+          "歷史活動日期和區域",
+          "版號與 HOME 相容限制"
         ]
       },
       "sources": [
@@ -1123,31 +1071,10 @@
           "type": "official_product",
           "version": "Sword/Shield",
           "checked_at": "2026-11-24"
-        },
-        {
-          "url": "https://www.serebii.net/swordshield/gift.shtml",
-          "title": "Serebii 武館第一試煉贈送",
-          "type": "community_game_database",
-          "version": "Sword/Shield Isle of Armor",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokearth/galar/masterdojo.shtml",
-          "title": "Serebii 武館蜜葉贈送表",
-          "type": "community_game_database",
-          "version": "Sword/Shield Isle of Armor",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokemonhome/giftpokemon.shtml",
-          "title": "Serebii HOME 歷史贈送期間",
-          "type": "community_game_database",
-          "version": "Sword/Shield historical 2021",
-          "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-25",
-      "status": "needs_review"
+      "checked_at": "2026-11-24",
+      "status": "draft"
     },
     {
       "key": "1:legends-za:capture",
@@ -1163,24 +1090,28 @@
           {
             "type": "gift",
             "location": "密阿雷市寶可夢研究所",
-            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所從妙蛙種子／小火龍／傑尼龜中選一隻 Lv.5。這是一次三選一的贈送，該禮物不能是色違；野生妙蛙種子另可出現色違，不與贈送混同。",
+            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽的階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所由妙蛙種子／小火龍／傑尼龜三選一，所選為 Lv.5。是否可重複及色違限制待核。",
             "status": "community_verified"
           },
           {
             "type": "wild",
             "location": "野生區域 20",
-            "condition": "野生區域 20 於主線任務 39 開始開放；資料庫列妙蛙種子 Lv.53–54，頭目出現機率 5%（不是妙蛙種子總生成率）。未列僅限日或夜；一般固定點可飛離再返回或坐長椅切換日夜刷新，捕獲後有較長的實際時間冷卻，不保證每次刷新都出現。",
+            "condition": "可遇見；生成時段及機率待核",
             "status": "community_verified"
           },
           {
             "type": "dlc_wild",
             "location": "《超次元爆湧》超次元密阿雷的草／毒型區域",
-            "condition": "《超次元爆湧》一般毒系異次元野生區 1／3 星、草系 2／3／5 星的相應生成組合可見妙蛙種子；需按當輪區域與生成組合核對，不保證每次出現。支線 188 後每 25,000 點的「特殊掃描」是另一種特別區域機制，非上述一般區域遇見妙蛙種子的共同前置。",
+            "condition": "依星級及掃描條件；細節待核",
             "status": "needs_review"
           }
         ],
         "mechanics_note": "《傳說 Z-A》戰鬥及招式機制與回合制作品不同，配招需獨立研究。",
-        "verification_required": []
+        "verification_required": [
+          "支線贈送是否可重複及色違限制",
+          "野生區域 20 的時段／刷新",
+          "DLC 星級與掃描要求"
+        ]
       },
       "sources": [
         {
@@ -1209,48 +1140,6 @@
           "title": "Serebii 支線任務 22 前置與三選一",
           "type": "community_game_database",
           "version": "Legends: Z-A",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Pok%C3%A9mon_Legends%3A_Z-A",
-          "title": "Bulbapedia Z-A 支線贈送與色違限制",
-          "type": "community_game_database",
-          "version": "Legends: Z-A",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/legendsz-a/wildzones.shtml",
-          "title": "Serebii 野生區域 20 開放條件",
-          "type": "community_game_database",
-          "version": "Legends: Z-A",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokearth/lumiosecity/wildzone20.shtml",
-          "title": "Serebii 野生區域 20 妙蛙種子等級與頭目率",
-          "type": "community_game_database",
-          "version": "Legends: Z-A",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/legendsz-a/wildpokemon.shtml",
-          "title": "Serebii 野生刷新機制",
-          "type": "community_mechanics_guide",
-          "version": "Legends: Z-A",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
-          "title": "Serebii 妙蛙種子 Z-A DLC 星級地點表",
-          "type": "community_game_database",
-          "version": "Legends: Z-A Mega Dimension",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/legendsz-a/hyperspacelumiose.shtml",
-          "title": "Serebii 特殊掃描與一般異次元區域區分",
-          "type": "community_mechanics_guide",
-          "version": "Legends: Z-A Mega Dimension",
           "checked_at": "2026-11-25"
         }
       ],
@@ -1324,9 +1213,9 @@
         "rationale": "原創劇情向組合：飛葉快刀輸出、催眠粉控場、寄生種子及光合作用續航；是否為各版本最佳組合尚未驗證。",
         "mechanics_note": "第 2 代沒有現代特性與性格；努力值與現代分配機制不同。道具及對戰環境推薦待單獨研究。",
         "verification_required": [
-          "持有道具及正式競技格式：本篇僅為未進化 #001 劇情向組合，尚無依特定對戰規則核實的道具／替代招式方案；需指定規則及社群戰術來源後另評，不作已推薦對戰配招"
-        ],
-        "evolution_timing": "此配招以不進化的 #001 為對象：本體 Lv.7 寄生種子、Lv.15 催眠粉、Lv.20 飛葉快刀、Lv.39 光合作用。若在 Lv.16 進化，前兩招可在進化前學到；妙蛙草的升級表則是 Lv.22 飛葉快刀、Lv.47 光合作用（《金／銀／水晶》），不能照搬本體 Lv.20／39 的時點。"
+          "進化時點及進化形態招式的交互影響",
+          "持有道具、對戰格式與替代招式建議"
+        ]
       },
       "sources": [
         {
@@ -1342,197 +1231,8 @@
           "type": "community_game_database",
           "version": "Gold/Silver/Crystal",
           "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://pokemondb.net/pokedex/ivysaur/moves/2",
-          "title": "Pokémon Database 第 2 代進化形態招式表",
-          "type": "community_game_database",
-          "version": "Gold/Silver/Crystal",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokedex-gs/002.shtml",
-          "title": "Serebii 第 2 代進化形態招式表",
-          "type": "community_game_database",
-          "version": "Gold/Silver/Crystal",
-          "checked_at": "2026-11-25"
         }
       ]
-    },
-    {
-      "key": "1:red-green-blue-yellow:capture",
-      "national_id": 1,
-      "game": "red-green-blue-yellow",
-      "topic": "capture",
-      "content": {
-        "display_name": "妙蛙種子 Bulbasaur",
-        "version_methods": [
-          {
-            "versions": [
-              "Red",
-              "Green (Japan)",
-              "Blue (Japan)",
-              "Blue (International)"
-            ],
-            "availability": "starter_gift",
-            "location": "真新鎮大木博士研究所",
-            "condition": "遊戲開頭從妙蛙種子／小火龍／傑尼龜中選一，妙蛙種子 Lv.5；若未選妙蛙種子，須另行交換，不能在本版一般野外捕捉。",
-            "status": "community_cross_checked"
-          },
-          {
-            "versions": [
-              "Yellow"
-            ],
-            "availability": "one_time_gift",
-            "location": "華藍市",
-            "condition": "夥伴皮卡丘親密度至少 147 時，從女子處領取 Lv.10 妙蛙種子；不是《紅／藍》那種初始三選一，亦非一般野生捕捉。",
-            "status": "community_cross_checked"
-          }
-        ],
-        "version_note": "日本《藍》與國際《藍》分開列名；上述妙蛙種子的取得大類相同，不推定其他野生分布相同。",
-        "verification_required": [
-          "原版與虛擬主機版交換現行可行性及語言限制另核"
-        ]
-      },
-      "sources": [
-        {
-          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Generation_I",
-          "title": "Bulbapedia 第 1 代遊戲內贈送",
-          "type": "community_game_database",
-          "version": "Red/Green/Blue/Yellow",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/pokedex/001.shtml",
-          "title": "Serebii 第 1 代妙蛙種子地點表",
-          "type": "community_game_database",
-          "version": "Red/Green/Blue/Yellow",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://bulbapedia.bulbagarden.net/wiki/Friendship",
-          "title": "Bulbapedia 皮卡丘版親密度門檻",
-          "type": "community_game_database",
-          "version": "Yellow",
-          "checked_at": "2026-11-25"
-        }
-      ],
-      "checked_at": "2026-11-25",
-      "status": "draft"
-    },
-    {
-      "key": "1:firered-leafgreen:capture",
-      "national_id": 1,
-      "game": "firered-leafgreen",
-      "topic": "capture",
-      "content": {
-        "display_name": "妙蛙種子 Bulbasaur",
-        "versions": [
-          "FireRed",
-          "LeafGreen"
-        ],
-        "availability": "starter_gift",
-        "location": "真新鎮大木博士研究所",
-        "condition": "遊戲開頭從三隻關都初始寶可夢中選妙蛙種子，Lv.5；若選其他初始寶可夢，須另行交換，不能在本版一般野外捕捉。",
-        "version_difference": "妙蛙種子的這項初始贈送方法兩版相同。",
-        "verification_required": [
-          "跨第三代作品交換的實際前置與現行硬體條件另核"
-        ]
-      },
-      "sources": [
-        {
-          "url": "https://www.serebii.net/fireredleafgreen/gift.shtml",
-          "title": "Serebii 火紅／葉綠贈送表",
-          "type": "community_game_database",
-          "version": "FireRed/LeafGreen",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://bulbapedia.bulbagarden.net/wiki/Kanto_first_partner_Pok%C3%A9mon",
-          "title": "Bulbapedia 關都初始寶可夢取得總表",
-          "type": "community_game_database",
-          "version": "FireRed/LeafGreen",
-          "checked_at": "2026-11-25"
-        }
-      ],
-      "checked_at": "2026-11-25",
-      "status": "draft"
-    },
-    {
-      "key": "1:heartgold-soulsilver:capture",
-      "national_id": 1,
-      "game": "heartgold-soulsilver",
-      "topic": "capture",
-      "content": {
-        "display_name": "妙蛙種子 Bulbasaur",
-        "versions": [
-          "HeartGold",
-          "SoulSilver"
-        ],
-        "availability": "postgame_gift",
-        "location": "真新鎮大木博士研究所",
-        "condition": "集齊城都與關都共 16 枚徽章、打敗赤紅後，拜訪大木博士，從妙蛙種子／小火龍／傑尼龜中選一；非野生捕捉。",
-        "version_difference": "此關都初始寶可夢贈送條件在心金／魂銀相同。",
-        "verification_required": [
-          "具體贈送等級與跨代轉入限制另核"
-        ]
-      },
-      "sources": [
-        {
-          "url": "https://www.serebii.net/heartgoldsoulsilver/gift.shtml",
-          "title": "Serebii 心金／魂銀贈送表",
-          "type": "community_game_database",
-          "version": "HeartGold/SoulSilver",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://www.serebii.net/heartgoldsoulsilver/starters.shtml",
-          "title": "Serebii 心金／魂銀初始寶可夢取得",
-          "type": "community_game_database",
-          "version": "HeartGold/SoulSilver",
-          "checked_at": "2026-11-25"
-        }
-      ],
-      "checked_at": "2026-11-25",
-      "status": "draft"
-    },
-    {
-      "key": "1:x-y:capture",
-      "national_id": 1,
-      "game": "x-y",
-      "topic": "capture",
-      "content": {
-        "display_name": "妙蛙種子 Bulbasaur",
-        "versions": [
-          "X",
-          "Y"
-        ],
-        "availability": "in_game_gift",
-        "location": "密阿雷市布拉塔諾博士處",
-        "condition": "與布拉塔諾博士對戰並取勝後，從關都初始寶可夢妙蛙種子／小火龍／傑尼龜選一，Lv.10；這與冒險起點的卡洛斯初始寶可夢是不同選擇。",
-        "version_difference": "X／Y 此贈送途徑相同；未選妙蛙種子者可另行交換，歷史配布需按地區與日期另列。",
-        "verification_required": [
-          "歷史配布與跨作品交換當前可行性另核"
-        ]
-      },
-      "sources": [
-        {
-          "url": "https://www.serebii.net/xy/gift.shtml",
-          "title": "Serebii X／Y 關都初始寶可夢贈送",
-          "type": "community_game_database",
-          "version": "X/Y",
-          "checked_at": "2026-11-25"
-        },
-        {
-          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Pok%C3%A9mon_X_and_Y",
-          "title": "Bulbapedia X／Y 贈送條件",
-          "type": "community_game_database",
-          "version": "X/Y",
-          "checked_at": "2026-11-25"
-        }
-      ],
-      "checked_at": "2026-11-25",
-      "status": "draft"
     }
   ]
 }

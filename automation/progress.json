@@ -275,23 +275,6 @@
         "1:gold-silver-crystal:moveset"
       ],
       "notes": "Gold/Silver/Crystal time capsule and Gen 2 move legality researched from Serebii, Pokémon Database, Bulbapedia; still drafts/review needed."
-    },
-    {
-      "run_id": "2026-11-25-work-build-bulbasaur-001-evening-followup",
-      "date": "2026-11-25",
-      "action": "same_focus_capture_expansion_and_review_fixes",
-      "national_id": 1,
-      "guide_commits": [
-        "9cbd1976ccf26566c7f04cae6be92e12ef53172d",
-        "2ab0d0521484055917a63b4868541dac19f5ac8e"
-      ],
-      "guide_keys_added": [
-        "1:red-green-blue-yellow:capture",
-        "1:firered-leafgreen:capture",
-        "1:heartgold-soulsilver:capture",
-        "1:x-y:capture"
-      ],
-      "notes": "17 #001 guides total; 11 of 19 game groups now have dedicated capture guides; 40 listed labels not all verified; new content pending independent review."
     }
   ],
   "blockers": [
@@ -334,25 +317,25 @@
     "name_en": "Bulbasaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "17_guides_40_version_labels_11_of_19_groups_capture_guides_partial",
+    "research_status": "review_feedback_corrected_5_guides_gsc_capture_and_moveset_added_13_guides_total",
     "image_status": "candidate_generated_pending_quality_and_rights_review",
     "preview_status": "work_cloud_browser_reached_cloudflare_access_login_only",
     "review_status": "2026-11-24_report_verified_incomplete_2026-11-25_early_report_read",
     "publication_status": "main_source_changed_live_deployment_unverified",
     "missing_sections": [
-      "基本資料：台灣官方 #001 欄位及本體數值已有來源；跨版本特性、進化與型態例外仍待逐版核。",
-      "主系列可取得性：第 1～9 代 19 組、拆開日本／國際《藍》後共 40 個列舉版本標籤；這是清單數，尚未逐版獨立核實。黑／白歷史 Global Link、活動期限與轉入服務仍缺。",
-      "各版本捕捉／取得：11／19 組已有獨立指南，8 組尚缺。原 key 朱／紫、劍／盾、Let's Go 的審核缺口已逐篇補來源和界線；朱／紫逐點生成率／特殊活動、劍／盾曠野地帶活動與當前 HOME 相容、Let's Go 30 整贈送臨界仍需具體證據。新 blob 待獨立審核。",
-      "主系列配招：第 1 代兩組、第 2 代、朱／紫有草稿；已修第 1、2 代未進化與 Lv.16 進化後的習得時點，日版《綠》的獨立差異及正式競技規則／替代配招仍缺；其他 15／19 組仍無獨立版本配招，朱／紫道具、性格、努力值、單雙打仍待核。",
-      "Pokémon GO：當季社群田野調查表列「強化寶可夢 3 次」可能遇 #001，台灣實際補給站須遊戲內確認；台灣當日野外、蛋、一般團體戰、極巨與暗影渠道及招式學習器限制仍缺。已核歷史活動與日本指定機場另列。",
-      "網站及展示：main 程式與 display-index 有資料顯示邏輯，索引目前的 profile／GO 歷史查核日已同步；最新 Z-A 與 GO 指南內容變更需重新核指紋。通過卡仍會混入工作清單，交視覺化任務修顯示語意。正式 Work 網址先前只到 Cloudflare Access 登入頁，登入後頁面未實測；公開 GitHub 圖片的權利與私人條件未達展示門檻。",
-      "獨立審核：2026-11-25 報告對舊指南 blob 判過 10／13、沒過 3／13；本輪已改 Z-A、GO、總矩陣且新增 4 篇，須按最新 SHA 重審。全角色無當日無重大缺漏的完整通過報告。"
+      "基本資料：官方繁中 #001、屬性、分類、身高體重已映射；跨版本特性、進化與型態例外仍待逐版核。",
+      "主系列可取得性：第 1～9 代的 19 組、39 個列舉版本項僅核對基本途徑；黑／白歷史服務、事件期限及跨硬體轉入相容性未逐版查完，不能稱 39 版全面驗證。",
+      "各版本捕捉／取得：新增金／銀／水晶三版的時光膠囊獨立指南；其餘多數版本仍只有總表摘要，具體地點、前置及僅交換／轉入等仍待核，已列細節仍有部分 needs_review。",
+      "主系列配招：第 1 代、金／銀／水晶與朱／紫有草稿；第 1 代暴擊和進化時點警語已補，第 2 代配招已標劇情草稿，其他適用版本、玩法及合法性未完成。",
+      "Pokémon GO：已修正極巨歷史的排他語句與超級聯盟社群配招來源；台灣當前各取得渠道、招式學習器、暗影／極巨及 PvE／PvP 各聯盟用途仍待核。",
+      "網站及展示：main 程式可讀 guides、display-index 與圖片 metadata，但 Work 雲端正式網址只到 Cloudflare Access 登入頁；登入後搜尋、詳情、版本切換與圖片均未實測。GitHub repo 目前 public，現有圖片的私人存取／第三方權利依據未滿足可發布條件，維持占位或暫緩該圖。",
+      "獨立審核：2026-11-24 報告與 2026-11-25 提前補審針對舊 11 篇均判未整篇通過；本輪修正五篇並新增兩篇後，須由審核員再核最新 SHA，尚無當日無重大缺漏的完整報告。"
     ],
     "source_checked_at": "2026-11-25",
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
     "handoff": {
       "construction": {
-        "status": "review_gaps_existing_capture_keys_updated_partial",
+        "status": "review_fixes_saved_same_focus_incomplete",
         "last_updated_at": "2026-11-25",
         "guide_keys": [
           "1:main:profile",
@@ -367,22 +350,18 @@
           "1:sword-shield:capture",
           "1:legends-za:capture",
           "1:gold-silver-crystal:capture",
-          "1:gold-silver-crystal:moveset",
-          "1:red-green-blue-yellow:capture",
-          "1:firered-leafgreen:capture",
-          "1:heartgold-soulsilver:capture",
-          "1:x-y:capture"
+          "1:gold-silver-crystal:moveset"
         ],
-        "verified_versions": "11_of_19_groups_capture_guides_partial",
-        "notes": "沿用 #001；比對最新 reviews/ 與現行攻略後，修既有 1:scarlet-violet:capture、1:sword-shield:capture、1:lets-go:capture。3,000 BP 與首試煉／2021 HOME 活動已有版本資料；Let’s Go 30／31 分歧未冒充已解。其他已通過且未變動的原 key 不重審，未解欄位在原 key 精確留證據需求。；另補原 key 1:red-blue-yellow:moveset 與 1:gold-silver-crystal:moveset 的進化時點、留日版綠及競技格式未核。",
+        "verified_versions": "19_groups_39_listed_partial_only",
+        "notes": "已依 reviews/2026-11-25.md 修正 5 篇的具體問題：Z-A 茉蜜姬與前置、GO 極巨歷史排他說法、GO PvP 社群來源、繁中官方基本資料來源、第 1 代配招警語。#001 實圖存在且品質／私人專案用途已由使用者批准；不重複索取。圖片展示權利及私人存取另待證據。 另新增金／銀／水晶三版時光膠囊取得及第 2 代劇情向配招草稿，待獨立審核。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
           "a1f98e5250e7314336fdf1e25bee65a1a0d4a90a"
         ],
-        "version_count": "40_listed_not_verified",
+        "version_count": 39,
         "preview_branch": "work/bulbasaur-001-private-preview-20261124",
-        "preview_test": "沿用同日 Work 雲端瀏覽器觀察：正式站只見 Cloudflare Access 登入，沒有登入後畫面；main/index 版本已變，不能套用舊瀏覽器驗收。",
+        "preview_test": "Work 雲端瀏覽器實際打開正式 Workers 網址，導向 Cloudflare Access 登入頁；未取得登入後私人預覽，沒有聲稱畫面成功。",
         "new_commits": [
           "f663c240d325f52d852aae313af961394e3484f4",
           "fc9cd65a0cf02273a5a44918c44698e27d05b9ac",
@@ -392,32 +371,15 @@
           "d22bd3fdf9f70ec30b8ae41af27698b569148446",
           "22ec5c402d3a3a8baa99f5363855aa7f51445313",
           "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581",
-          "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
-          "9cbd1976ccf26566c7f04cae6be92e12ef53172d",
-          "2ab0d0521484055917a63b4868541dac19f5ac8e",
-          "638968dbc61ff23250f3381e51dfaa661118805e",
-          "9c1c250391e2451b2c59c140792885a36acac6f5",
-          "3bac5ce293ab0ae907b72552f4cd6390c38d25d3"
+          "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
         ],
-        "guide_commit": "3bac5ce293ab0ae907b72552f4cd6390c38d25d3",
+        "guide_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
         "source_checked_at": "2026-11-25",
         "publication_items": {
           "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
-          "bulbasaur_guides": "10_of_13_prior_blob_passed_3_failed_latest_17_guides_need_fingerprint_review",
-          "bulbasaur_image": "internal_quality_approved_public_github_and_rights_block_display"
-        },
-        "review_gap_keys_updated": [
-          "1:scarlet-violet:capture",
-          "1:sword-shield:capture",
-          "1:lets-go:capture",
-          "1:red-blue-yellow:moveset",
-          "1:gold-silver-crystal:moveset"
-        ],
-        "review_gap_keys_pending": [
-          "1:pokemon-go:moveset",
-          "1:bdsp:capture"
-        ],
-        "review_gap_note": "原有五篇 key 已更新；第 1、2 代補本體與 Lv.16 進化後習得時點，競技配招仍缺規則環境與來源。最新 guides blob d3f6bbe22661b5676fda447a29bcedb933e28515 待獨立審核。"
+          "bulbasaur_guides": "partial_fields_only_not_full_publication_approved",
+          "bulbasaur_image": "internal_quality_approved_third_party_rights_and_public_storage_block_live_use"
+        }
       },
       "image": {
         "status": "candidate_saved_pending_review",
@@ -447,17 +409,17 @@
         ],
         "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
       },
-      "next_day_action": "維持 #001；先對照最新 reviews/ 與 guide blob，優先原 key 1:pokemon-go:moveset 的當季 TM／特殊形態和 1:bdsp:capture 的地名／生成細節；已修五篇原 key 不照舊報告重開。續補其餘 8 組取得、15 組配招與 GO 台灣現況。視覺化端區分可用事實、needs_review 欄位並驗私人站；審核員檢最新 SHA。"
+      "next_day_action": "延續 #001；審核員按指南新 SHA 複核修正；主建設繼續補未覆蓋版本取得與配招、GO 台灣當期資料。視覺化任務獨立驗證可發布介面與私人 Access；候選圖保留，勿把內部批准當第三方授權。八項未齊不得換 #002。"
     },
     "completion_checks": {
       "profile": "partial",
-      "main_series_availability": "partial_19_groups_40_labels_not_all_verified",
-      "version_capture": "partial_11_of_19_groups_independent_guides",
-      "main_series_movesets": "partial_4_of_19_groups_draft_coverage",
-      "pokemon_go": "partial_current_community_research_not_taiwan_full_channels",
+      "main_series_availability": "partial_39_listed_not_all_verified",
+      "version_capture": "partial",
+      "main_series_movesets": "partial",
+      "pokemon_go": "partial",
       "generated_image": "passed_candidate_exists_quality_approved_blob_bd82571241715f5f9c1c29dff978cb60dab347bf",
-      "website_private_preview": "blocked_access_login_only_and_latest_content_not_verified",
-      "independent_review": "pending_recheck_latest_17_guides"
+      "website_private_preview": "blocked_access_login_only",
+      "independent_review": "failed_11_guides_incomplete"
     }
   },
   "focus_policy": {
