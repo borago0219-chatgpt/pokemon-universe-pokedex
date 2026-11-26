@@ -45,6 +45,10 @@ jobs:
                   page.wait_for_selector(".poke")
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  page.locator("#order").select_option("desc")
+                  descending = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
+                  assert descending == sorted(ids, reverse=True), "Descending order should reverse all card IDs"
+                  page.locator("#order").select_option("asc")
                   page.locator("#q").fill("#0001")
                   assert page.locator(".poke").count() == 1, "Padded ID search must find #001"
                   page.locator("#q").fill("妙蛙種子")

@@ -1,0 +1,23 @@
+{
+  "national_id": 3,
+  "name_zh": "妙蛙花",
+  "name_en": "Venusaur",
+  "tool": "Leonardo.Ai",
+  "model": "Lucid Origin",
+  "prompt": "Venusaur, Pokémon number 003, final evolution of Bulbasaur. A large heavy blue-green quadruped with bumpy skin, red eyes, small pointed ears, and a gigantic fully OPEN flower on its back: FIVE broad flat pink petals with white spots radiate horizontally around a large golden-yellow center, supported by a thick palm-like trunk and huge green palm leaves. Show the flower from an elevated three-quarter view so the yellow center and all open petals are unmistakable. No closed flower bud. Venusaur walks through a lush woodland glade, full body visible. Original PokéVerse field guide illustration, watercolor and ink, natural pose, soft sunlight, original composition, no text, logo, watermark or signature.",
+  "generation_date": "2026-11-26",
+  "timezone": "Asia/Taipei",
+  "pose": "walking in woodland glade",
+  "asset": "assets/generated/003-venusaur-walking-01.jpg",
+  "source_url": "https://app.leonardo.ai/generation/image/venusaur-pok%C3%A9mon-number-003-final-evolution-dab17e3b-bafc-42b5-97d1-e38bb0308d17",
+  "generation_visibility": "public_free_plan",
+  "repository_visibility": "public",
+  "rights_review": "third_party_character_rights_not_verified",
+  "status": "generated_candidate_pending_display_decision",
+  "website_use": "not_approved",
+  "mime_type": "image/jpeg",
+  "resolution": "1024x1024",
+  "bytes": 347899,
+  "blob_sha": "eec6bd7b955b8c9523b28686b2ee1396df885df5",
+  "seed": 1613297719
+}

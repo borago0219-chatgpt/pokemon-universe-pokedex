@@ -20,7 +20,7 @@
 </section>
 <section id="pokedex" class="section">
 <div class="sectionhead"><div><div class="eyebrow">DATABASE</div><h2>全國圖鑑</h2><p>搜尋名稱、編號，或以屬性篩選。點選卡片查看詳細資料。</p></div><div class="last" id="updated">資料載入中…</div></div>
-<div class="controls"><label class="search">⌕ <input id="q" type="search" placeholder="搜尋：皮卡丘、Pikachu、25…" autocomplete="off"></label><select id="type"><option value="">全部屬性</option></select></div>
+<div class="controls"><label class="search">⌕ <input id="q" type="search" placeholder="搜尋：皮卡丘、Pikachu、25…" autocomplete="off"></label><select id="type" aria-label="屬性篩選"><option value="">全部屬性</option></select><select id="order" aria-label="圖鑑編號排序"><option value="asc">編號：由小到大</option><option value="desc">編號：由大到小</option></select></div>
 <div id="grid" class="grid" aria-live="polite"></div><div class="empty" id="empty" hidden>沒有符合條件的寶可夢。</div>
 </section>
 <section id="about" class="about">

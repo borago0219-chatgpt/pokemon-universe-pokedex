@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Taipei",
-  "updated_on": "2026-11-25",
-  "next_national_id": 3,
+  "updated_on": "2026-11-26",
+  "next_national_id": 4,
   "completed_contiguous": [
     {
       "national_id": 1,
@@ -25,6 +25,17 @@
       "mime_type": "image/jpeg",
       "verified_on": "2026-11-25",
       "note": "Saved and SHA-verified as a candidate; public website use not approved."
+    },
+    {
+      "national_id": 3,
+      "name_zh": "妙蛙花",
+      "name_en": "Venusaur",
+      "asset": "assets/generated/003-venusaur-walking-01.jpg",
+      "metadata": "assets/generated/003-venusaur-walking-01.json",
+      "blob_sha": "eec6bd7b955b8c9523b28686b2ee1396df885df5",
+      "mime_type": "image/jpeg",
+      "verified_on": "2026-11-26",
+      "note": "Generated candidate; public website use not approved."
     }
   ],
   "preexisting_out_of_sequence": [
@@ -53,6 +64,54 @@
       "rights_review": "third_party_character_rights_not_verified",
       "website_use": "not_approved",
       "note": "Real generated candidate, recognizable as Ivysaur. Signature-like AI artifact at lower right needs downstream display decision."
+    },
+    {
+      "date": "2026-11-26",
+      "national_id": 3,
+      "name_zh": "妙蛙花",
+      "name_en": "Venusaur",
+      "status": "generated_visual_mismatch_not_uploaded",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": false,
+      "free_tokens_spent": 8,
+      "model": "Lucid Origin",
+      "resolution": "1024x1024",
+      "downloaded_mime_type": "image/jpeg",
+      "downloaded_bytes": 286095,
+      "downloaded_blob_sha": "eae4672a5861c1b359b44137e21a553a9d784f1b",
+      "source_url": "https://app.leonardo.ai/generation/image/single-venusaur-pok%C3%A9mon-003-unmistakably-large-a2efd017-00f8-4dfb-87cb-4fdd81d58508",
+      "generation_visibility": "public_free_plan",
+      "asset": null,
+      "metadata": null,
+      "rights_review": "not_assessed_for_display",
+      "website_use": "not_approved",
+      "next_attempt_national_id": 3,
+      "blocker": "Generated image has a closed pink flower bud and bulb-like back, resembling Ivysaur rather than Venusaur's fully open flower. Signature-like mark is present. Not a valid #003 candidate; do not upload as Venusaur. Daily one-generation limit reached.",
+      "prompt": "A single Venusaur (Pokémon #003), unmistakably Venusaur: a large sturdy quadrupedal blue-green creature with darker teal patches, red eyes, short pointed ears, and a massive fully bloomed pink-red flower with yellow center rising from its back above broad tropical green leaves. The flower is open and prominent, not a closed bud. Venusaur is standing naturally on an ancient root in a sun-dappled forest clearing, turning its head toward the viewer, with all four feet, its complete body and the entire back flower visible from a slightly low three-quarter angle. Original PokéVerse field-guide illustration style: delicate watercolor and ink texture, readable anatomy and silhouette, lush botanical details, soft warm light and forest greens, square composition. Invent a fresh pose and framing; do not copy any official illustration, card layout, logo, lettering, signature, or watermark."
+    },
+    {
+      "date": "2026-11-26",
+      "national_id": 3,
+      "name_zh": "妙蛙花",
+      "name_en": "Venusaur",
+      "status": "uploaded_verified_candidate",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "free_tokens_spent": 8,
+      "asset": "assets/generated/003-venusaur-walking-01.jpg",
+      "metadata": "assets/generated/003-venusaur-walking-01.json",
+      "blob_sha": "eec6bd7b955b8c9523b28686b2ee1396df885df5",
+      "mime_type": "image/jpeg",
+      "resolution": "1024x1024",
+      "bytes": 347899,
+      "source_url": "https://app.leonardo.ai/generation/image/venusaur-pok%C3%A9mon-number-003-final-evolution-dab17e3b-bafc-42b5-97d1-e38bb0308d17",
+      "generation_visibility": "public_free_plan",
+      "repository_visibility": "public",
+      "rights_review": "third_party_character_rights_not_verified",
+      "website_use": "not_approved",
+      "note": "Retry after failed first attempt; open flower visible."
     }
   ]
 }

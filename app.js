@@ -18,9 +18,9 @@ async function loadApprovedArtwork(index){
 const $=s=>document.querySelector(s);
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function render(){
- const q=$('#q').value.trim().toLowerCase(),t=$('#type').value;
+ const q=$('#q').value.trim().toLowerCase(),t=$('#type').value,order=$('#order').value;
  const idQuery=/^#?0*\d+$/.test(q)?Number(q.replace(/^#/,'')):null;
- const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q))||(idQuery!==null&&Number(p.id)===idQuery))&&(!t||p.types.includes(t)));
+ const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q))||(idQuery!==null&&Number(p.id)===idQuery))&&(!t||p.types.includes(t))).sort((a,b)=>order==='desc'?Number(b.id)-Number(a.id):Number(a.id)-Number(b.id));
  $('#grid').innerHTML=found.map(p=>`<button class="poke" data-id="${p.id}"><div class="art" style="--shade:${colors[p.types[0]]||'#6b9ca7'}33">${artworks.has(Number(p.id))?'<img class="poke-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" loading="lazy" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'<span class="mark" aria-label="插畫尚未完成">✦</span>'}</div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${p.types.map(x=>`<span class="tag">${escapeHTML(typeNames[x]||x)}</span>`).join('')}</div></button>`).join('');
  $('#empty').hidden=found.length>0;
  document.querySelectorAll('.poke-artwork').forEach(img=>img.addEventListener('error',()=>{img.replaceWith(Object.assign(document.createElement('span'),{className:'mark',textContent:'✦'}));}));
@@ -112,6 +112,7 @@ async function init(){
 }
 $('#q').addEventListener('input',render);
 $('#type').addEventListener('change',render);
+$('#order').addEventListener('change',render);
 $('#close').addEventListener('click',()=>$('#detail').close());
 $('#detail').addEventListener('click',e=>{if(e.target===$('#detail'))$('#detail').close();});
 init();
