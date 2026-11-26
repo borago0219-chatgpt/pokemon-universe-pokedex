@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "pokemon": [
     {
       "id": 1,
@@ -135,6 +135,16 @@
       "updated_at": "2026-11-25"
     },
     {
+      "id": 15,
+      "name_zh": "Beedrill",
+      "name_en": "Beedrill",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "updated_at": "2026-11-26"
+    },
+    {
       "id": 16,
       "name_zh": "波波",
       "name_en": "Pidgey",
@@ -143,6 +153,44 @@
         "flying"
       ],
       "updated_at": "2026-11-23"
+    },
+    {
+      "id": 17,
+      "name_zh": "Pidgeotto",
+      "name_en": "Pidgeotto",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-26"
+    },
+    {
+      "id": 18,
+      "name_zh": "Pidgeot",
+      "name_en": "Pidgeot",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-26"
+    },
+    {
+      "id": 19,
+      "name_zh": "Rattata",
+      "name_en": "Rattata",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-26"
+    },
+    {
+      "id": 20,
+      "name_zh": "Raticate",
+      "name_en": "Raticate",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-26"
     },
     {
       "id": 25,
