@@ -45,6 +45,22 @@ jobs:
                   page.wait_for_selector(".poke")
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  favorite = page.locator('.favorite-button[data-favorite="1"]')
+                  favorite.click()
+                  assert favorite.get_attribute("aria-pressed") == "true"
+                  page.locator("#favorites-only").click()
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="1"]').count() == 1
+                  page.reload(wait_until="networkidle")
+                  page.wait_for_selector(".poke")
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "true", "Favorite should survive reload"
+                  page.locator('.favorite-button[data-favorite="1"]').click()
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "false"
+
+                  page.keyboard.press("/")
+                  assert page.locator("#q").evaluate("(el) => document.activeElement === el"), "Slash shortcut should focus search"
+                  page.locator("#q").press("/")
+                  assert page.locator("#q").input_value() == "/", "Typing in search must not be intercepted"
+                  page.locator("#clear-search").click()
                   page.locator("#order").select_option("desc")
                   descending = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert descending == sorted(ids, reverse=True), "Descending order should reverse all card IDs"
@@ -76,6 +92,10 @@ jobs:
                   assert size["width"] == 1024 and size["height"] == 1024, f"Unexpected image size: {size}"
                   page.locator(".poke").first.click()
                   assert page.locator("#detail").is_visible(), "Details should open"
+                  page.locator("#detail").evaluate("(el) => el.scrollTop = 200")
+                  page.locator("#detail-top").click()
+                  page.wait_for_function("document.querySelector('#detail').scrollTop < 2")
+
                   assert "#0001" in page.locator("#detailbody").inner_text()
                   detail_image = page.locator("#detailbody .detail-artwork")
                   assert detail_image.is_visible() and detail_image.evaluate("(image) => image.complete && image.naturalWidth === 1024"), "Detail artwork must decode"
