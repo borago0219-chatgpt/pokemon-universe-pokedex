@@ -37,3 +37,21 @@
 - 審核確認 #0001 具備由 11/28 建設者核實後依序換 #0002 的資格；C8 登入後正式畫面仍未驗證，單列技術待辦。本視覺化者沒有自行改 daily_focus。
 - 手機美編、收藏、快捷鍵、18 種屬性篩選等候選程式仍留在 `work/visual-polish-001-20261127`；本次沒有夾帶合併這些未驗收功能。候選索引同步 18 篇，下一次測試斷言已更新。
 - Cloudflare Workers Builds 對 main 提交 341caa5 回報 completed／success；Build ID `a96f20a9-ce4b-4452-8661-fa5f9bd43730`，Version ID `2bdd0176-5015-4b8d-a354-5e86df5f7d90`。正式登入後 Visit 畫面仍未由本輪實測，不以建置成功冒充親眼驗收。
+
+
+## 使用者截圖回報後的修正與正式發布
+
+本節取代上文「候選功能未發布、等下一次測試」的狀態。使用者指出正式站看不到收藏／18 屬性，並提供原始欄位、待補任務外露的截圖，明確要求「再查一次」。本次僅針對這次具體回報追加一輪完整驗收；沒有變更每日最多一次的長期排程規則。
+
+- 問題原因：先前便利功能只在候選分支，正式 app.js 仍是舊版本；原通用遞迴顯示器也把研究內部欄位與狀態碼直接當正文輸出。
+- 正式程式提交：[59827bbed104bc4da868b125b0d942d9b33e5f82](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/59827bbed104bc4da868b125b0d942d9b33e5f82)。只修改 app.js、index.html、style.css。逐檔讀回與通過測試來源完全一致：app `8dc369fccb5de337944d9a5365886e30fa82c0d3`、HTML `f5d5208b012d93077cc2f6b0ca4ecfb35fb5c04c`、CSS `5e5cba254ef8a4c56deab814757fc8446c0ab5f4`。
+- 介面：完整 18 種屬性篩選及收錄數（0 筆類別也保留）、屬性標籤與色點、星號收藏／只看收藏、重新整理保留收藏、搜尋清除／重設、桌面 `/` 搜尋、詳情固定關閉／回頂端、手機版本下拉與響應式版面。補出已批准 profile 的分類、日文名、第 1 代種族值與型態說明。
+- 攻略：19 組取得方法與 7 組配招改用中文卡片／招式名稱與等級；`competitive_note`、`mode`、`moves`、`story_single`、`not_applicable` 等內部鍵或值不再直接顯示。已關閉的審核工作清單不作訪客正文；仍保留真實適用限制、未知／不適用資訊、來源及日期。長期追蹤範圍改為可展開說明，沒有把未查核內容改成已核實。
+- 內容與素材：沿用既有 18 篇獨立審核及展示指紋、#0001 JPEG 與使用者既有品質／私人用途批准；不新增素材、不改第三方權利狀態、不改攻略正文、data/pokemon.json、progress、審核、生圖紀錄或 Access 設定。只操作當日 #0001，未改 daily_focus。
+- 驗收：[既有 Chromium workflow run 46021216078](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/46021216078) 對測試提交 `1d8489ba551aeaa7d77f6de987aa9c677aaa164f` completed/success，job `140581031179` 明確 PASS 1440×900 與 390×844。測試資料／圖片與 main 相同；涵蓋圖片解碼可見性、18 類別與零結果、收藏保存、快捷搜尋、版本切換、所有攻略頁的原始碼排除、19／7 組卡片、手機溢出／關閉與批准指紋隔離。
+- 截圖 artifact `visual-evidence`（ID `15206909764`，保留 3 天；digest `sha256:db191be1b4a5da716e74a7f8775183726ee1f0c711ab166aecb93fc28af244b2`）已下載並逐一查看桌面／手機收藏與配招畫面，未把自動化截圖當成正式 Visit。既有測試 workflow 僅在測試分支更新斷言及固定版本的截圖上傳；沒有合併任何 workflow 到 main 或改資料更新流程。
+- 存取：沿用同日 Work 觀察到正式站 Cloudflare Access 登入門檻，CI 本輪正式網址 HTTP 403。未登入、未繞過、未改存取政策；這些證據不等於核實登入身份名單，也不是登入後正式畫面。正式畫面未由本輪實測。
+- 建置結果待下節補記；不得以 GitHub 提交或測試成功宣稱正式畫面已親見。
+
+- Cloudflare 已對正式程式提交 `59827bbed104bc4da868b125b0d942d9b33e5f82` 回報 completed/success（check `140583544891`）。Build ID `a4470eac-75fc-41ad-bd31-82a7215fac5e`；Version ID `e0576aee-1a29-4477-af94-1ea9d0f52bab`。這是正式建置／版本證據；登入後正式畫面仍未由本輪親自實測。
+- 本次已完成使用者截圖指出的介面修正、同版測試、必要程式發布與建置核對。下輪沿用本版證據，不重開已過資料審核；若有新畫面問題只處理差異。C8 登入後畫面可另行補證，不要求建設 AI 增加遊戲研究。
