@@ -30,7 +30,10 @@ jobs:
           python - <<'PY'
           from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
           from threading import Thread
+          from pathlib import Path
           from playwright.sync_api import sync_playwright
+          evidence = Path("visual-evidence")
+          evidence.mkdir(exist_ok=True)
           
           server = ThreadingHTTPServer(("127.0.0.1", 0), SimpleHTTPRequestHandler)
           Thread(target=server.serve_forever, daemon=True).start()
@@ -45,10 +48,56 @@ jobs:
                   page.wait_for_selector(".poke")
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  import json
+                  catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  canonical_types = {"normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"}
+                  options = page.locator("#type option").evaluate_all("(els) => els.map(el => ({value:el.value,label:el.textContent}))")
+                  assert {o["value"] for o in options} == canonical_types | {""}, "All 18 type filters must exist"
+                  for option in options:
+                      if option["value"]:
+                          count = sum(option["value"] in record.get("types", []) for record in catalog)
+                          assert option["label"].endswith(f"（{count}）"), "Type count should match catalog"
+                  zero_type = next((t for t in canonical_types if not any(t in record.get("types", []) for record in catalog)), None)
+                  if zero_type:
+                      page.locator("#type").select_option(zero_type)
+                      assert page.locator(".poke").count() == 0
+                      assert "尚未收錄" in page.locator("#empty").inner_text(), "Empty type must be described as uncollected"
+                      page.locator("#type").select_option("")
+
+                  favorite = page.locator('.favorite-button[data-favorite="1"]')
+                  favorite.click()
+                  assert favorite.get_attribute("aria-pressed") == "true"
+                  page.locator("#favorites-only").click()
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="1"]').count() == 1
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"favorites-{width}.png"))
+                  page.reload(wait_until="networkidle")
+                  page.wait_for_selector(".poke")
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "true", "Favorite should survive reload"
+                  page.locator('.favorite-button[data-favorite="1"]').click()
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "false"
+
+                  page.keyboard.press("/")
+                  assert page.locator("#q").evaluate("(el) => document.activeElement === el"), "Slash shortcut should focus search"
+                  page.locator("#q").press("/")
+                  assert page.locator("#q").input_value() == "/", "Typing in search must not be intercepted"
+                  page.locator("#clear-search").click()
                   page.locator("#order").select_option("desc")
                   descending = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert descending == sorted(ids, reverse=True), "Descending order should reverse all card IDs"
                   page.locator("#order").select_option("asc")
+                  assert "顯示" in page.locator("#result-count").inner_text()
+                  page.locator("#q").fill("no-match-polish")
+                  assert page.locator("#empty").is_visible()
+                  page.locator("#clear-search").click()
+                  assert page.locator("#q").input_value() == ""
+                  assert page.locator(".poke").count() == len(ids)
+                  page.locator("#type").select_option("grass")
+                  page.locator("#order").select_option("desc")
+                  page.locator("#reset-filters").click()
+                  assert page.locator("#type").input_value() == ""
+                  assert page.locator("#order").input_value() == "asc"
+                  assert page.locator(".poke").count() == len(ids)
                   page.locator("#q").fill("#0001")
                   assert page.locator(".poke").count() == 1, "Padded ID search must find #001"
                   page.locator("#q").fill("妙蛙種子")
@@ -64,40 +113,67 @@ jobs:
                   assert size["width"] == 1024 and size["height"] == 1024, f"Unexpected image size: {size}"
                   page.locator(".poke").first.click()
                   assert page.locator("#detail").is_visible(), "Details should open"
+                  page.locator("#detail").evaluate("(el) => el.scrollTop = 200")
+                  page.locator("#detail-top").click()
+                  page.wait_for_function("document.querySelector('#detail').scrollTop < 2")
+
                   assert "#0001" in page.locator("#detailbody").inner_text()
                   detail_image = page.locator("#detailbody .detail-artwork")
                   assert detail_image.is_visible() and detail_image.evaluate("(image) => image.complete && image.naturalWidth === 1024"), "Detail artwork must decode"
                   assert page.locator(".profile-facts").is_visible(), "Verified profile should render"
+                  assert page.locator("#detailbody > .tags .type-tag").count() == 2
+                  assert page.locator("#detailbody > .tags .type-tag").all_text_contents() == ["草", "毒"]
+
                   assert "0.7 m" in page.locator(".profile-facts").inner_text()
                   assert "6.9 kg" in page.locator(".profile-facts").inner_text()
+                  assert "種子寶可夢" in page.locator(".profile-facts").inner_text()
+                  assert "フシギダネ" in page.locator(".profile-facts").inner_text()
+                  assert "第 1 代只有單一" in page.locator(".profile-section").inner_text()
+                  assert "妙蛙花的超級進化" in page.locator(".profile-section").inner_text()
                   assert page.locator(".stat-row").count() == 6
                   assert "318" in page.locator(".profile-section").inner_text()
                   assert page.locator(".stat-radar").count() == 1
                   assert page.locator(".evo-stage").count() == 3
-                  page.locator('.guide-tab[data-game="pokemon-go"]').click()
+                  page.locator("#game-select").select_option("pokemon-go")
                   go_text = page.locator("#guide-content").inner_text()
                   assert "2022-01-22" in go_text and "強化寶可夢 3 次" in go_text, "Reviewed historical and dated seasonal GO channels should appear"
                   assert "藤鞭" in go_text and "PvP" in go_text, "Approved GO moveset should appear"
                   assert page.locator("#guide-content .approved-guide").count() == 2, "Both reviewed GO guides should appear"
                   assert "僅指定日本機場" in go_text and "2026-11-26" in go_text, "Regional and date limitations must remain visible"
-                  page.locator('.guide-tab[data-game="lets-go"]').click()
+                  page.locator("#game-select").select_option("lets-go")
                   assert "常青森林" in page.locator("#guide-content").inner_text()
                   assert "內容審核：過" in page.locator("#guide-content").inner_text()
-                  page.locator('.guide-tab[data-game="scarlet-violet"]').click()
+                  page.locator("#game-select").select_option("scarlet-violet")
                   sv_text = page.locator("#guide-content").inner_text()
                   assert "海岸區" in sv_text and page.locator("#guide-content .approved-guide").count() == 2
                   assert "Sleep Powder" in sv_text and "休閒單打" in sv_text, "Reviewed SV moveset should include its purpose"
-                  page.locator('.guide-tab[data-game="main-series"]').click()
-                  assert page.locator("#guide-content .approved-guide").count() == 1 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability matrix should appear"
-                  page.locator('.guide-tab[data-game="gold-silver-crystal"]').click()
+                  page.locator("#game-select").select_option("main-series")
+                  assert page.locator("#guide-content .approved-guide").count() == 2 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability and generation movesets should appear"
+                  assert page.locator("#guide-content .version-entry").count() == 19
+                  assert page.locator("#guide-content .moveset-group").count() == 7
+                  assert "寄生種子" in page.locator("#guide-content .moveset-groups").inner_text()
+                  assert "Lv. 39" in page.locator("#guide-content .moveset-groups").inner_text()
+                  page.locator(".moveset-group").first.scroll_into_view_if_needed()
+                  assert page.locator("#close").is_visible(), "Close control must remain reachable in long guides"
+                  page.screenshot(path=str(evidence / f"guide-cards-{width}.png"))
+                  assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), "Guide must not overflow the dialog"
+                  for game in page.locator("#game-select option").evaluate_all("(els) => els.map(el => el.value)"):
+                      page.locator("#game-select").select_option(game)
+                      body = page.locator("#guide-content").inner_text()
+                      for raw in ["story_single", "not_applicable", "competitive note", "verification_required", "仍須補充", "請獨立審核"]:
+                          assert raw not in body, f"Raw/internal text {raw} remains in {game}"
+                      assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), f"Dialog overflow in {game}"
+
+                  page.locator("#game-select").select_option("gold-silver-crystal")
                   assert page.locator("#guide-content .approved-guide").count() == 2
                   for game, expected in [("red-green-blue-yellow", "147"), ("firered-leafgreen", "真新鎮"), ("heartgold-soulsilver", "赤紅"), ("x-y", "10")]:
-                      page.locator(f'.guide-tab[data-game="{game}"]').click()
+                      page.locator("#game-select").select_option(game)
                       assert page.locator("#guide-content .approved-guide").count() == 1, f"Reviewed {game} capture should appear"
                       assert expected in page.locator("#guide-content").inner_text(), f"Missing capture condition for {game}"
-                  page.locator('.guide-tab[data-game="red-blue-yellow"]').click()
-                  assert "未通過 1 篇" in page.locator("#guide-content").inner_text()
-                  assert page.locator("#guide-content .approved-guide").count() == 0, "Superseded RBY approval must not expose old body"
+                  page.locator("#game-select").select_option("red-blue-yellow")
+                  assert page.locator("#guide-content .approved-guide").count() == 1, "Corrected and reviewed RBY moveset should appear"
+                  assert "寄生種子 Lv.7、飛葉快刀 Lv.27、生長 Lv.34、催眠粉 Lv.41" in page.locator("#guide-content").inner_text()
+                  assert "未通過" not in page.locator("#guide-content").inner_text()
                   assert "等級 16" in page.locator(".profile-section").inner_text() and "等級 32" in page.locator(".profile-section").inner_text()
                   page.locator(".evo-stage[data-evo='2']").click()
                   assert "#0002" in page.locator("#detailbody").inner_text()
@@ -134,6 +210,14 @@ jobs:
               browser.close()
           server.shutdown()
           PY
+      - name: Save desktop and mobile evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: visual-evidence
+          path: visual-evidence/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Check unauthenticated site response
         run: |
           python - <<'PY'

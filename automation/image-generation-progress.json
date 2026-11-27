@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Taipei",
-  "updated_on": "2026-11-26",
-  "next_national_id": 4,
+  "updated_on": "2026-11-27",
+  "next_national_id": 5,
   "completed_contiguous": [
     {
       "national_id": 1,
@@ -36,6 +36,17 @@
       "mime_type": "image/jpeg",
       "verified_on": "2026-11-26",
       "note": "Generated candidate; public website use not approved."
+    },
+    {
+      "national_id": 4,
+      "name_zh": "小火龍",
+      "name_en": "Charmander",
+      "asset": "assets/generated/004-charmander-looking-back-01.jpg",
+      "metadata": "assets/generated/004-charmander-looking-back-01.json",
+      "blob_sha": "df8d472af1691f03b92384f2c12c7edcfb0828d9",
+      "mime_type": "image/jpeg",
+      "verified_on": "2026-11-27",
+      "note": "Signature-like text at lower right; downstream display decision needed."
     }
   ],
   "preexisting_out_of_sequence": [
@@ -112,6 +123,29 @@
       "rights_review": "third_party_character_rights_not_verified",
       "website_use": "not_approved",
       "note": "Retry after failed first attempt; open flower visible."
+    },
+    {
+      "date": "2026-11-27",
+      "national_id": 4,
+      "name_zh": "小火龍",
+      "name_en": "Charmander",
+      "status": "uploaded_verified_candidate",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "free_tokens_spent": 8,
+      "asset": "assets/generated/004-charmander-looking-back-01.jpg",
+      "metadata": "assets/generated/004-charmander-looking-back-01.json",
+      "blob_sha": "df8d472af1691f03b92384f2c12c7edcfb0828d9",
+      "mime_type": "image/jpeg",
+      "resolution": "1024x1024",
+      "bytes": 243027,
+      "source_url": "https://app.leonardo.ai/generation/image/single-charmander-pok%C3%A9mon-004-unmistakably-small-d1a65291-8ea6-41d0-a2a9-0e3be25b9034",
+      "generation_visibility": "public_free_plan",
+      "repository_visibility": "public",
+      "rights_review": "third_party_character_rights_not_verified",
+      "website_use": "not_approved",
+      "note": "Signature-like text at lower right; downstream display decision needed."
     }
   ]
 }
