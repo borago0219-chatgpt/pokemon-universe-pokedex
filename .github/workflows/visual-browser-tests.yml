@@ -143,7 +143,7 @@ jobs:
                   assert "海岸區" in sv_text and page.locator("#guide-content .approved-guide").count() == 2
                   assert "Sleep Powder" in sv_text and "休閒單打" in sv_text, "Reviewed SV moveset should include its purpose"
                   page.locator("#game-select").select_option("main-series")
-                  assert page.locator("#guide-content .approved-guide").count() == 1 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability matrix should appear"
+                  assert page.locator("#guide-content .approved-guide").count() == 2 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability and generation movesets should appear"
                   page.locator("#game-select").select_option("gold-silver-crystal")
                   assert page.locator("#guide-content .approved-guide").count() == 2
                   for game, expected in [("red-green-blue-yellow", "147"), ("firered-leafgreen", "真新鎮"), ("heartgold-soulsilver", "赤紅"), ("x-y", "10")]:
@@ -151,8 +151,9 @@ jobs:
                       assert page.locator("#guide-content .approved-guide").count() == 1, f"Reviewed {game} capture should appear"
                       assert expected in page.locator("#guide-content").inner_text(), f"Missing capture condition for {game}"
                   page.locator("#game-select").select_option("red-blue-yellow")
-                  assert "未通過 1 篇" in page.locator("#guide-content").inner_text()
-                  assert page.locator("#guide-content .approved-guide").count() == 0, "Superseded RBY approval must not expose old body"
+                  assert page.locator("#guide-content .approved-guide").count() == 1, "Corrected and reviewed RBY moveset should appear"
+                  assert "寄生種子 Lv.7、飛葉快刀 Lv.27、生長 Lv.34、催眠粉 Lv.41" in page.locator("#guide-content").inner_text()
+                  assert "未通過" not in page.locator("#guide-content").inner_text()
                   assert "等級 16" in page.locator(".profile-section").inner_text() and "等級 32" in page.locator(".profile-section").inner_text()
                   page.locator(".evo-stage[data-evo='2']").click()
                   assert "#0002" in page.locator("#detailbody").inner_text()
