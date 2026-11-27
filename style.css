@@ -111,3 +111,7 @@ dialog{padding:0;width:min(760px,94vw);border-radius:22px;scrollbar-color:#5a759
  .results-toolbar{align-items:flex-start;flex-direction:column;gap:8px}.filter-actions{width:100%;justify-content:space-between;gap:8px}
  .search-key{display:none}.dialog-actions>span{font-size:9px;letter-spacing:1px}.dialog-tools{gap:10px}.dialog-tools .quiet-button{font-size:12px}
 }
+
+/* All 18 standard types share the same readable label and color token. */
+.type-tag{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--type-color);border-color:color-mix(in srgb,var(--type-color) 45%,transparent);background:#26364b;background:color-mix(in srgb,var(--type-color) 14%,#16233b);color:#eef4ff}
+.type-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--type-color);flex:none}

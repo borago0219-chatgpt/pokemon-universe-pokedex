@@ -45,6 +45,22 @@ jobs:
                   page.wait_for_selector(".poke")
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  import json
+                  catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  canonical_types = {"normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"}
+                  options = page.locator("#type option").evaluate_all("(els) => els.map(el => ({value:el.value,label:el.textContent}))")
+                  assert {o["value"] for o in options} == canonical_types | {""}, "All 18 type filters must exist"
+                  for option in options:
+                      if option["value"]:
+                          count = sum(option["value"] in record.get("types", []) for record in catalog)
+                          assert option["label"].endswith(f"（{count}）"), "Type count should match catalog"
+                  zero_type = next((t for t in canonical_types if not any(t in record.get("types", []) for record in catalog)), None)
+                  if zero_type:
+                      page.locator("#type").select_option(zero_type)
+                      assert page.locator(".poke").count() == 0
+                      assert "尚未收錄" in page.locator("#empty").inner_text(), "Empty type must be described as uncollected"
+                      page.locator("#type").select_option("")
+
                   favorite = page.locator('.favorite-button[data-favorite="1"]')
                   favorite.click()
                   assert favorite.get_attribute("aria-pressed") == "true"
@@ -100,6 +116,9 @@ jobs:
                   detail_image = page.locator("#detailbody .detail-artwork")
                   assert detail_image.is_visible() and detail_image.evaluate("(image) => image.complete && image.naturalWidth === 1024"), "Detail artwork must decode"
                   assert page.locator(".profile-facts").is_visible(), "Verified profile should render"
+                  assert page.locator("#detailbody > .tags .type-tag").count() == 2
+                  assert page.locator("#detailbody > .tags .type-tag").all_text_contents() == ["草", "毒"]
+
                   assert "0.7 m" in page.locator(".profile-facts").inner_text()
                   assert "6.9 kg" in page.locator(".profile-facts").inner_text()
                   assert "種子寶可夢" in page.locator(".profile-facts").inner_text()
