@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "guides": [
     {
       "key": "25:pokemon-go:capture",
@@ -346,7 +346,7 @@
     },
     {
       "national_id": 1,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "status": "needs_review",
       "key": "1:main-series:availability",
       "game": "main-series",
@@ -394,9 +394,9 @@
               "Sapphire",
               "Emerald"
             ],
-            "method": "與相容遊戲交換或歷史活動；沒有已核實的本篇野生點",
-            "availability": "trade_or_historical_event",
-            "status": "verified_community"
+            "method": "《火紅／葉綠》在真新鎮取得妙蛙種子後，完成七之島交給西達的紅寶石與藍寶石任務以開通跨作交換，再經 GBA 連線交換到《紅寶石／藍寶石／綠寶石》；三作無本篇普通野生點。這是當年卡匣機制，今日硬體可行性未實測。",
+            "availability": "cross_game_trade",
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 3,
@@ -415,9 +415,9 @@
               "Pearl",
               "Platinum"
             ],
-            "method": "與相容作品交換；跨世代移入可經帕爾公園，非本篇野生",
-            "availability": "trade_or_transfer",
-            "status": "verified_community"
+            "method": "先取得全國圖鑑，再於 221 號道路帕爾公園從相容 GBA 卡匣（如《火紅／葉綠》）跨代移入並在園內接收；《鑽石／珍珠／白金》本篇無一般妙蛙種子野生點。這是當年卡匣機制，今日硬體可行性未實測。",
+            "availability": "postgame_pal_park_transfer",
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 4,
@@ -445,9 +445,9 @@
               "Black 2",
               "White 2"
             ],
-            "method": "寶可傳送從前代移入；歷史活動另計，非本篇野生",
-            "availability": "transfer_or_historical_event",
-            "status": "verified_community"
+            "method": "通關並取得全國圖鑑後，可前往 15 號道路寶可傳送研究所，使用兩台相容 DS 從《鑽石／珍珠／白金／心金／魂銀》單向移入妙蛙種子；不是本篇野生捕捉，歷史網路活動不作現行來源。當今硬體可行性未實測。",
+            "availability": "postgame_local_poke_transfer",
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 6,
@@ -465,9 +465,9 @@
               "Omega Ruby",
               "Alpha Sapphire"
             ],
-            "method": "與相容作品交換或歷史活動；無已核實本地野生點",
-            "availability": "trade_or_historical_event",
-            "status": "verified_community"
+            "method": "取得《X／Y》布拉塔諾博士贈送的妙蛙種子，再與《歐米加紅寶石／阿爾法藍寶石》相容卡匣交換；兩作無已核實的本篇普通野生點。Pokémon Bank 曾支援這些作品的存放／轉入，但 2026 年服務與下載現況未核，不作保證。",
+            "availability": "cross_game_trade",
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 7,
@@ -475,9 +475,9 @@
               "Sun",
               "Moon"
             ],
-            "method": "與相容作品交換／轉入；非已核實野生捕捉",
-            "availability": "trade_or_transfer",
-            "status": "verified_community"
+            "method": "與《究極之日／究極之月》相容卡匣交換由後者島嶼掃描取得的妙蛙種子；Pokémon Bank 歷來亦提供相容舊作轉入途徑，今日服務現況未核。《太陽／月亮》本篇未核實普通野生點，不能誤用《究極》版本的 2 號道路島嶼掃描表。",
+            "availability": "cross_game_trade_or_historical_bank_transfer",
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 7,
@@ -485,9 +485,9 @@
               "Ultra Sun",
               "Ultra Moon"
             ],
-            "method": "週五於美樂美樂島 2 號道路使用島嶼掃描遇見",
+            "method": "週五在美樂美樂島累積 100 QR 點數，對該島使用島嶼掃描，再到 2 號道路尋找 Lv.10 妙蛙種子；兩版本同法。亦可與相容作品交換；此處僅說遊戲內機制，不保證今日線上服務狀態。",
             "availability": "island_scan_wild",
-            "status": "verified_community"
+            "status": "community_source_checked_2026-11-27"
           },
           {
             "generation": 7,
@@ -557,7 +557,8 @@
           "40 個列舉版本標籤是清單計數，並非 40 版已逐項獨立核實；日本／國際《藍》已拆列，仍須逐版核來源與服務相容性。",
           "《黑／白》寶可傳送的個別卡匣與兩台主機今日能否實際運作未實機測試；網路贈送已結束，不能把官方 Wi-Fi 服務停止推成所有本地機制均停止。"
         ],
-        "version_count_listed": 40
+        "version_count_listed": 40,
+        "acquisition_preconditions_note": "G04、G06、G09、G11–G13 主要途徑已補來源與必要前置；G08《黑／白》原文已列雙 DS、15 號道路及全國圖鑑前置。共享機制不代表逐一實機測試，也不保證 2026 年停服或設備情況。"
       },
       "sources": [
         {
@@ -629,6 +630,62 @@
           "type": "official_support",
           "version": "Nintendo DS online historical",
           "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-rs/001.shtml",
+          "title": "Gen3 FRLG/RSE 妙蛙種子來源",
+          "type": "community_game_database",
+          "version": "Ruby/Sapphire/Emerald",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/fireredleafgreen/compatibility.shtml",
+          "title": "FRLG 跨作交換紅藍寶石前置",
+          "type": "community_game_database",
+          "version": "FireRed/LeafGreen → Ruby/Sapphire/Emerald",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/diamondpearl/palpark.shtml",
+          "title": "帕爾公園全國圖鑑與 221 號道路",
+          "type": "community_game_database",
+          "version": "Diamond/Pearl/Platinum",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/black2white2/compatibility.shtml",
+          "title": "B2W2 15 號道路寶可傳送",
+          "type": "community_game_database",
+          "version": "Black 2/White 2",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-xy/001.shtml",
+          "title": "ORAS 從 X/Y 交換妙蛙種子",
+          "type": "community_game_database",
+          "version": "Omega Ruby/Alpha Sapphire",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sm/001.shtml",
+          "title": "Sun/Moon 與 USUM 妙蛙種子版本來源",
+          "type": "community_game_database",
+          "version": "Sun/Moon/Ultra Sun/Ultra Moon",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/ultrasunultramoon/islandscan.shtml",
+          "title": "USUM 島嶼掃描點數與週五地點",
+          "type": "community_game_database",
+          "version": "Ultra Sun/Ultra Moon",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://www.serebii.net/bank/features.shtml",
+          "title": "Pokémon Bank 歷來作品相容功能",
+          "type": "community_game_database",
+          "version": "Generation 6–7 historical service",
+          "checked_at": "2026-11-27"
         }
       ]
     },
@@ -967,7 +1024,7 @@
           "Growth（生長）"
         ],
         "rationale": "飛葉快刀作草系輸出、催眠粉控場、寄生種子續航；生長提升單一特殊能力，但飛葉快刀暴擊時不吃此增益。",
-        "caution": "此四招為保持妙蛙種子未進化時，第 1 代可在 Lv.7／27／34／41 分別學到的招式；若 16 級進化為妙蛙草，不能直接沿用妙蛙種子的 Lv.41 習得表。第 1 代飛葉快刀高暴擊，暴擊傷害會忽略自身「生長」帶來的能力提升，因此兩者搭配效益有限。此為劇情草稿，不是已驗證的對戰標準配招；第 1 代沒有現代特性、性格或現代 EV 制度。",
+        "caution": "招式與妙蛙種子本體升級等級逐一對應：寄生種子 Lv.7、飛葉快刀 Lv.27、生長 Lv.34、催眠粉 Lv.41；要湊齊此四招須保持未進化至 Lv.41。若 Lv.16 已進化為妙蛙草，應依妙蛙草自己的習得表。第 1 代飛葉快刀高暴擊，暴擊傷害忽略自身「生長」增益，兩者搭配效益有限。此為劇情向建議，並非當期競技標準；第 1 代沒有現代特性、性格或現代 EV 制度。",
         "verification_required": [
           "日版《綠》相對《紅／藍／皮卡丘》的招式習得差異仍須版本表核對；本篇先維持現有《紅／藍／皮卡丘》來源範圍",
           "正式對戰配招、替代招式與規則環境需另有社群戰術來源；此篇只供未進化 #001 劇情向參考"
@@ -1004,7 +1061,7 @@
           "checked_at": "2026-11-25"
         }
       ],
-      "checked_at": "2026-11-25",
+      "checked_at": "2026-11-27",
       "status": "needs_review"
     },
     {
@@ -1575,6 +1632,262 @@
       ],
       "checked_at": "2026-11-25",
       "status": "draft"
+    },
+    {
+      "key": "1:main-series:moveset",
+      "national_id": 1,
+      "game": "main-series",
+      "topic": "moveset",
+      "checked_at": "2026-11-27",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "固定查核表 C4：僅未進化 #001、單機劇情向原創建議；不宣稱當期單打／雙打競技標準。升級時須保持妙蛙種子本體直到相應等級；轉入高等級個體能否補學另依遊戲招式回憶機制，未在此保證。",
+        "version_groups": [
+          {
+            "versions": [
+              "Ruby",
+              "Sapphire",
+              "Emerald",
+              "FireRed",
+              "LeafGreen"
+            ],
+            "generation": 3,
+            "moves": [
+              {
+                "name": "Leech Seed",
+                "level": 7
+              },
+              {
+                "name": "Sleep Powder",
+                "level": 15
+              },
+              {
+                "name": "Razor Leaf",
+                "level": 20
+              },
+              {
+                "name": "Synthesis",
+                "level": 39
+              }
+            ],
+            "use": "寄生與催眠控場，飛葉快刀輸出，光合作用回復；第 3 代草屬性攻擊依屬性判特殊。無本篇野生來源的版本需先依取得矩陣交換。",
+            "ability": "Overgrow",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Diamond",
+              "Pearl",
+              "Platinum",
+              "HeartGold",
+              "SoulSilver",
+              "Black",
+              "White",
+              "Black 2",
+              "White 2",
+              "X",
+              "Y",
+              "Omega Ruby",
+              "Alpha Sapphire"
+            ],
+            "generation": "4–6",
+            "moves": [
+              {
+                "name": "Leech Seed",
+                "level": 7
+              },
+              {
+                "name": "Sleep Powder",
+                "level": 13
+              },
+              {
+                "name": "Seed Bomb",
+                "level": 37
+              },
+              {
+                "name": "Synthesis",
+                "level": 33
+              }
+            ],
+            "use": "寄生／催眠增加容錯，種子炸彈為物理草輸出，光合作用續航；第 4 代起已有物理／特殊分流。依來源遊戲及該代升級表培育，不把前代已學招式當成目標版必然可重學。",
+            "ability": "Overgrow",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Sun",
+              "Moon"
+            ],
+            "generation": 7,
+            "moves": [
+              {
+                "name": "Sleep Powder",
+                "level": 13
+              },
+              {
+                "name": "Razor Leaf",
+                "level": 19
+              },
+              {
+                "name": "Growth",
+                "level": 25
+              },
+              {
+                "name": "Synthesis",
+                "level": 33
+              }
+            ],
+            "use": "催眠控場，飛葉快刀物理輸出，生長強化攻擊，光合作用續航；本組招式表以兩作表列為準，不照搬《究極》版本 Lv.7 寄生種子。",
+            "ability": "Overgrow",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Ultra Sun",
+              "Ultra Moon"
+            ],
+            "generation": 7,
+            "moves": [
+              {
+                "name": "Leech Seed",
+                "level": 7
+              },
+              {
+                "name": "Sleep Powder",
+                "level": 13
+              },
+              {
+                "name": "Seed Bomb",
+                "level": 37
+              },
+              {
+                "name": "Synthesis",
+                "level": 33
+              }
+            ],
+            "use": "以寄生／催眠拖回合，種子炸彈物理輸出，光合作用回復；可由島嶼掃描取得後保持本體培育。",
+            "ability": "Overgrow",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Let's Go, Pikachu!",
+              "Let's Go, Eevee!"
+            ],
+            "generation": 7,
+            "moves": [
+              {
+                "name": "Leech Seed",
+                "level": 9
+              },
+              {
+                "name": "Sleep Powder",
+                "level": 14
+              },
+              {
+                "name": "Razor Leaf",
+                "level": 23
+              },
+              {
+                "name": "Growth",
+                "level": 27
+              }
+            ],
+            "use": "控場與寄生搭配物理草招，生長加強輸出；此作不套用一般系列的特性、道具與培育配方。",
+            "ability": "not_applicable",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Sword",
+              "Shield",
+              "Brilliant Diamond",
+              "Shining Pearl"
+            ],
+            "generation": 8,
+            "moves": [
+              {
+                "name": "Leech Seed",
+                "level": 9
+              },
+              {
+                "name": "Sleep Powder",
+                "level": 15
+              },
+              {
+                "name": "Seed Bomb",
+                "level": 18
+              },
+              {
+                "name": "Synthesis",
+                "level": 27
+              }
+            ],
+            "use": "催眠與寄生控場，種子炸彈物理輸出，光合作用回復；《劍／盾》須先有鎧之孤島贈送或相容轉入，《晶燦鑽石／明亮珍珠》可於全國圖鑑後地下大洞窟捕捉。",
+            "ability": "Overgrow",
+            "mode": "story_single"
+          },
+          {
+            "versions": [
+              "Legends: Arceus"
+            ],
+            "generation": 8,
+            "moves": [],
+            "use": "妙蛙種子不支援本作，配招不適用。",
+            "ability": "not_applicable",
+            "mode": "not_applicable"
+          }
+        ],
+        "competitive_note": "以上是劇情向草稿，不含賽季單打／雙打推薦、性格、道具或 EV；如需競技方案須按作品規則與當時環境另查，不可把本表標成競技定論。",
+        "verification_required": [
+          "請獨立審核者對各版本組招式合法性、實際取得與用途作固定範圍 C4 驗收。"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/3",
+          "title": "Pokémon Database 第 3 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 3",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/4",
+          "title": "Pokémon Database 第 4 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 4",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/5",
+          "title": "Pokémon Database 第 5 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 5",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/6",
+          "title": "Pokémon Database 第 6 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 6",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/7",
+          "title": "Pokémon Database 第 7 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 7",
+          "checked_at": "2026-11-27"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/8",
+          "title": "Pokémon Database 第 8 代妙蛙種子各作品升級習得表",
+          "type": "community_game_database",
+          "version": "Generation 8",
+          "checked_at": "2026-11-27"
+        }
+      ]
     }
   ]
 }
