@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "pokemon": [
     {
       "id": 1,
@@ -193,6 +193,44 @@
       "updated_at": "2026-11-26"
     },
     {
+      "id": 21,
+      "name_zh": "Spearow",
+      "name_en": "Spearow",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-27"
+    },
+    {
+      "id": 22,
+      "name_zh": "Fearow",
+      "name_en": "Fearow",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-27"
+    },
+    {
+      "id": 23,
+      "name_zh": "Ekans",
+      "name_en": "Ekans",
+      "types": [
+        "poison"
+      ],
+      "updated_at": "2026-11-27"
+    },
+    {
+      "id": 24,
+      "name_zh": "Arbok",
+      "name_en": "Arbok",
+      "types": [
+        "poison"
+      ],
+      "updated_at": "2026-11-27"
+    },
+    {
       "id": 25,
       "name_zh": "皮卡丘",
       "name_en": "Pikachu",
@@ -200,6 +238,15 @@
         "electric"
       ],
       "updated_at": "2026-11-23"
+    },
+    {
+      "id": 26,
+      "name_zh": "Raichu",
+      "name_en": "Raichu",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-27"
     },
     {
       "id": 37,
