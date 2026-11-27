@@ -28,8 +28,8 @@ function render(){
 }
 
 const statNames={hp:'HP',attack:'攻擊',defense:'防禦',special_attack:'特攻',special_defense:'特防',speed:'速度'};
-const gameNames={'gold-silver-crystal':'金／銀／水晶','pokemon-go':'Pokémon GO','main-series':'主系列總覽','scarlet-violet':'朱／紫','red-blue-yellow':'紅／綠／藍／皮卡丘','lets-go':"Let's Go",bdsp:'晶燦鑽石／明亮珍珠','sword-shield':'劍／盾','legends-za':'傳說 Z-A'};
-const guideFieldNames={versions:'適用版本',base_game:'遊戲本篇',dlc:'追加內容',method:'取得方法',methods:'取得途徑',unlock:'解鎖條件',location_note:'地點補充',status_note:'版本注意',scope:'適用範圍',proposed_moves:'建議招式',rationale:'配招思路',caution:'限制與注意',verification_required:'仍須補充',fast_attacks:'一般招式',charged_attacks:'特殊招式',special_form_moves:'特殊形態招式',pve:'PvE',pvp:'PvP',limited_move_caution:'限定招式提醒',normal_wild_capture:'一般野外捕捉',time_capsule_unlock:'時光膠囊解鎖',availability_type:'取得類型',historical_event_note:'歷史活動提醒',legality_note:'合法性說明',mechanics_note:'世代機制',locations:'地點',level_range:'等級範圍',community_suggested:'社群參考',source_scope:'資料範圍',shadow:'暗影',purified:'淨化',condition:'條件',location:'地點',type:'類型',status:'狀態',note:'備註',current_availability:'目前取得',confirmed_historical:'歷史取得',forest_biome_guidance:'森林生態區通則',dynamax_history:'極巨歷史',confirmed_regional_current:'地區限定現況'};
+const gameNames={'red-green-blue-yellow':'紅／綠／藍／皮卡丘取得','firered-leafgreen':'火紅／葉綠','heartgold-soulsilver':'心金／魂銀','x-y':'X／Y','gold-silver-crystal':'金／銀／水晶','pokemon-go':'Pokémon GO','main-series':'主系列總覽','scarlet-violet':'朱／紫','red-blue-yellow':'紅／綠／藍／皮卡丘','lets-go':"Let's Go",bdsp:'晶燦鑽石／明亮珍珠','sword-shield':'劍／盾','legends-za':'傳說 Z-A'};
+const guideFieldNames={coverage:'涵蓋範圍',verified_versions:'版本取得總覽',not_yet_verified:'尚未核實',version_count_listed:'列舉版本標籤數',generation:'世代',version_methods:'各版取得方法',version_note:'版本差異',availability:'可取得性',version_difference:'版本差異',evolution:'進化條件',evolution_timing:'進化時點',other_historical_channels:'其他歷史渠道',current_community_field_research:'當季社群田野調查清單',task:'調查任務',possible_encounter:'可能遭遇',period:'適用期間',region:'適用地區',dates:'日期',date:'日期',event:'活動',checked_at:'查核日期',long_term_updates:'後續更新',ability:'特性建議',item_nature_evs:'道具、性格與努力值',competitive_status:'適用玩法與競技限制',versions:'適用版本',base_game:'遊戲本篇',dlc:'追加內容',method:'取得方法',methods:'取得途徑',unlock:'解鎖條件',location_note:'地點補充',status_note:'版本注意',scope:'適用範圍',proposed_moves:'建議招式',rationale:'配招思路',caution:'限制與注意',verification_required:'仍須補充',fast_attacks:'一般招式',charged_attacks:'特殊招式',special_form_moves:'特殊形態招式',pve:'PvE',pvp:'PvP',limited_move_caution:'限定招式提醒',normal_wild_capture:'一般野外捕捉',time_capsule_unlock:'時光膠囊解鎖',availability_type:'取得類型',historical_event_note:'歷史活動提醒',legality_note:'合法性說明',mechanics_note:'世代機制',locations:'地點',level_range:'等級範圍',community_suggested:'社群參考',source_scope:'資料範圍',shadow:'暗影',purified:'淨化',condition:'條件',location:'地點',type:'類型',status:'狀態',note:'備註',current_availability:'目前取得',confirmed_historical:'歷史取得',forest_biome_guidance:'森林生態區通則',dynamax_history:'極巨歷史',confirmed_regional_current:'地區限定現況'};
 const topicNames={capture:'捕捉與取得',moveset:'招式與配招',availability:'版本總覽',profile:'基本資料'};
 function safeUrl(s){try{const u=new URL(s);return u.protocol==='https:'?u.href:null}catch{return null}}
 function valueHtml(v,depth=0){
@@ -50,6 +50,15 @@ function approvedReview(g){
  const decision=reviewedGuides.find(r=>r.key===g.key&&Number(r.national_id)===Number(g.national_id)&&r.decision==='passed');
  return decision&&decision.fingerprint===guideFingerprint(g);
 }
+function mergeReviewedSnapshots(raw,snapshots){
+ const merged=new Map(raw.map(g=>[Number(g.national_id)+'|'+g.key,g]));
+ for(const g of Array.isArray(snapshots)?snapshots:[]){
+  const id=Number(g?.national_id);
+  if(!Number.isInteger(id)||id<1||g.key!==id+':'+g.game+':'+g.topic||!approvedReview(g))continue;
+  merged.set(id+'|'+g.key,g);
+ }
+ return [...merged.values()];
+}
 function renderProfile(p){
  const entry=displayEntries.find(e=>Number(e.national_id)===Number(p.id)&&e.display_status==='selected_fields_verified');
  const g=guideRecords.find(g=>g.key===entry?.guide_key&&Number(g.national_id)===Number(p.id)&&g.topic==='profile'&&g.checked_at===entry.guide_checked_at);
@@ -59,7 +68,7 @@ function renderProfile(p){
  const points=values.map((v,i)=>{const a=-Math.PI/2+i*Math.PI/3;return (110+v/160*78*Math.cos(a)).toFixed(1)+','+(110+v/160*78*Math.sin(a)).toFixed(1)}).join(' ');
  const evo=(entry.evolution_ids||[]).map(id=>{const r=records.find(x=>Number(x.id)===Number(id));return r?'<button type="button" class="evo-stage" data-evo="'+Number(id)+'"><small>#'+String(id).padStart(4,'0')+'</small><strong>'+escapeHTML(r.name_zh||r.name_en)+'</strong></button>':''}).filter(Boolean).join('<span class="evo-arrow" aria-hidden="true">→</span>');
  const sources=(entry.source_urls||[]).map(s=>{const url=safeUrl(s);return url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(new URL(url).hostname)+'</a>':''}).filter(Boolean).join(' · ');
- return '<section class="profile-section"><div class="section-title"><h3>基本資料</h3><span class="review-pill">基本資料審核：過</span></div><div class="profile-facts"><div><span>身高</span><strong>'+escapeHTML(c.height_m)+' m</strong></div><div><span>體重</span><strong>'+escapeHTML(c.weight_kg)+' kg</strong></div><div><span>一般特性</span><strong>'+escapeHTML((c.abilities.regular||[]).join('、'))+'</strong></div><div><span>隱藏特性</span><strong>'+escapeHTML((c.abilities.hidden||[]).join('、'))+'</strong></div></div><div class="section-title"><h3>種族值</h3><span class="small">現行六項制 · 合計 '+escapeHTML(stats.total)+'</span></div><div class="stats-panel"><div class="stat-bars">'+bars+'</div><svg class="stat-radar" viewBox="0 0 220 220" role="img" aria-label="種族值雷達圖：'+keys.map((k,i)=>statNames[k]+values[i]).join('，')+'"><polygon points="110,32 177.5,71 177.5,149 110,188 42.5,149 42.5,71" fill="none" stroke="#647694"/><polygon points="'+points+'" fill="#8bda9580" stroke="#89e6b1" stroke-width="2"/></svg></div><div class="section-title"><h3>進化路線</h3></div><div class="evolution-line">'+evo+'</div><p class="small">進化等級與版本例外待完整審核。欄位核對：'+escapeHTML(entry.verified_at)+'；來源：'+sources+'。</p></section>';
+ return '<section class="profile-section"><div class="section-title"><h3>基本資料</h3><span class="review-pill">基本資料審核：過</span></div><div class="profile-facts"><div><span>身高</span><strong>'+escapeHTML(c.height_m)+' m</strong></div><div><span>體重</span><strong>'+escapeHTML(c.weight_kg)+' kg</strong></div><div><span>一般特性</span><strong>'+escapeHTML((c.abilities.regular||[]).join('、'))+'</strong></div><div><span>隱藏特性</span><strong>'+escapeHTML((c.abilities.hidden||[]).join('、'))+'</strong></div></div><div class="section-title"><h3>種族值</h3><span class="small">現行六項制 · 合計 '+escapeHTML(stats.total)+'</span></div><div class="stats-panel"><div class="stat-bars">'+bars+'</div><svg class="stat-radar" viewBox="0 0 220 220" role="img" aria-label="種族值雷達圖：'+keys.map((k,i)=>statNames[k]+values[i]).join('，')+'"><polygon points="110,32 177.5,71 177.5,149 110,188 42.5,149 42.5,71" fill="none" stroke="#647694"/><polygon points="'+points+'" fill="#8bda9580" stroke="#89e6b1" stroke-width="2"/></svg></div><div class="section-title"><h3>進化路線</h3></div><div class="evolution-line">'+evo+'</div><p class="small">'+(approvedReview(g)?escapeHTML(c.evolution||'進化條件未列出'):'進化等級與版本例外待完整審核。')+' 欄位核對：'+escapeHTML(entry.verified_at)+'；來源：'+sources+'。</p></section>';
 }
 
 function getPath(value,path){return String(path).split('.').reduce((v,k)=>v==null?undefined:v[k],value)}
@@ -79,7 +88,7 @@ function details(p){
  const show=game=>{
   document.querySelectorAll('.guide-tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.game===game)));
   const list=relevant.filter(g=>g.game===game),approved=list.filter(approvedReview);
-  const failed=list.filter(g=>reviewedGuides.some(r=>r.key===g.key&&r.decision==='failed'&&r.fingerprint===guideFingerprint(g)));
+  const failed=list.filter(g=>reviewedGuides.some(r=>r.key===g.key&&r.decision==='failed'&&Number(r.national_id)===Number(g.national_id)&&(r.suppress_previous_versions===true||r.fingerprint===guideFingerprint(g))));
   const unknown=list.length-approved.length-failed.length;
   const facts=displayFacts.filter(f=>Number(f.national_id)===Number(p.id)&&f.game===game).map(renderFact).filter(Boolean);
   const failedNotes=failed.map(g=>{const decision=reviewedGuides.find(r=>r.key===g.key&&r.decision==='failed');return '<li>'+escapeHTML(topicNames[g.topic]||g.topic)+'：'+escapeHTML(decision.reason||'內容未通過')+'</li>'}).join('');
@@ -98,7 +107,7 @@ async function init(){
   records=Array.isArray(data.pokemon)?data.pokemon:[];
   try{
    const [gr,dr]=await Promise.all([fetch('./data/guides.json',{cache:'no-store'}),fetch('./data/display-index.json',{cache:'no-store'})]);
-   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];await loadApprovedArtwork(index);}
+   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);await loadApprovedArtwork(index);}
   }catch{guideRecords=[];displayEntries=[];displayFacts=[];reviewedGuides=[];}
   $('#total').textContent=records.length;
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');
