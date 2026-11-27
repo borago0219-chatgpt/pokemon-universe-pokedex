@@ -82,6 +82,10 @@ jobs:
                   assert page.locator(".profile-facts").is_visible(), "Verified profile should render"
                   assert "0.7 m" in page.locator(".profile-facts").inner_text()
                   assert "6.9 kg" in page.locator(".profile-facts").inner_text()
+                  assert "種子寶可夢" in page.locator(".profile-facts").inner_text()
+                  assert "フシギダネ" in page.locator(".profile-facts").inner_text()
+                  assert "第 1 代只有單一" in page.locator(".profile-section").inner_text()
+                  assert "妙蛙花的超級進化" in page.locator(".profile-section").inner_text()
                   assert page.locator(".stat-row").count() == 6
                   assert "318" in page.locator(".profile-section").inner_text()
                   assert page.locator(".stat-radar").count() == 1
