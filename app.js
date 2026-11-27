@@ -21,8 +21,11 @@ function render(){
  const q=$('#q').value.trim().toLowerCase(),t=$('#type').value,order=$('#order').value;
  const idQuery=/^#?0*\d+$/.test(q)?Number(q.replace(/^#/,'')):null;
  const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q))||(idQuery!==null&&Number(p.id)===idQuery))&&(!t||p.types.includes(t))).sort((a,b)=>order==='desc'?Number(b.id)-Number(a.id):Number(a.id)-Number(b.id));
- $('#grid').innerHTML=found.map(p=>`<button class="poke" data-id="${p.id}"><div class="art" style="--shade:${colors[p.types[0]]||'#6b9ca7'}33">${artworks.has(Number(p.id))?'<img class="poke-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" loading="lazy" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'<span class="mark" aria-label="插畫尚未完成">✦</span>'}</div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${p.types.map(x=>`<span class="tag">${escapeHTML(typeNames[x]||x)}</span>`).join('')}</div></button>`).join('');
+ $('#grid').innerHTML=found.map(p=>`<button class="poke" data-id="${p.id}" style="--accent:${colors[p.types[0]]||'#6b9ca7'}"><div class="art" style="--shade:${colors[p.types[0]]||'#6b9ca7'}33">${artworks.has(Number(p.id))?'<img class="poke-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" loading="lazy" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'<span class="mark" aria-label="插畫尚未完成">✦</span>'}</div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${p.types.map(x=>`<span class="tag">${escapeHTML(typeNames[x]||x)}</span>`).join('')}</div></button>`).join('');
  $('#empty').hidden=found.length>0;
+ $('#result-count').textContent='顯示 '+found.length+' ／ '+records.length+' 隻寶可夢';
+ $('#clear-search').hidden=$('#q').value.length===0;
+ $('#reset-filters').disabled=!$('#q').value&&!t&&order==='asc';
  document.querySelectorAll('.poke-artwork').forEach(img=>img.addEventListener('error',()=>{img.replaceWith(Object.assign(document.createElement('span'),{className:'mark',textContent:'✦'}));}));
  document.querySelectorAll('.poke').forEach(b=>b.addEventListener('click',()=>details(records.find(p=>p.id===Number(b.dataset.id)))));
 }
@@ -82,11 +85,13 @@ function details(p){
  if(!p)return;
  const relevant=guideRecords.filter(g=>Number(g.national_id)===Number(p.id)&&g.topic!=='profile');
  const games=[...new Set(['pokemon-go','main-series',...relevant.map(g=>g.game)])];
- const tabs=games.map((game,i)=>'<button type="button" class="guide-tab" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-game="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</button>').join('');
+ const tabs=games.map((game,i)=>'<button type="button" class="guide-tab" id="guide-tab-'+i+'" role="tab" aria-controls="guide-content" tabindex="'+(i===0?'0':'-1')+'" aria-selected="'+(i===0?'true':'false')+'" data-game="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</button>').join('');
+ const options=games.map(game=>'<option value="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</option>').join('');
  const image=artworks.has(Number(p.id))?'<img class="detail-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'';
- $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2>'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+(p.types||[]).map(t=>'<span class="tag">'+escapeHTML(typeNames[t]||t)+'</span>').join('')+'</div>'+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel"></div></section>';
+ $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+(p.types||[]).map(t=>'<span class="tag">'+escapeHTML(typeNames[t]||t)+'</span>').join('')+'</div>'+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
  const show=game=>{
-  document.querySelectorAll('.guide-tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.game===game)));
+  document.querySelectorAll('.guide-tab').forEach(b=>{const selected=b.dataset.game===game;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;if(selected)$('#guide-content').setAttribute('aria-labelledby',b.id);});
+  $('#game-select').value=game;
   const list=relevant.filter(g=>g.game===game),approved=list.filter(approvedReview);
   const failed=list.filter(g=>reviewedGuides.some(r=>r.key===g.key&&r.decision==='failed'&&Number(r.national_id)===Number(g.national_id)&&(r.suppress_previous_versions===true||r.fingerprint===guideFingerprint(g))));
   const unknown=list.length-approved.length-failed.length;
@@ -94,10 +99,21 @@ function details(p){
   const failedNotes=failed.map(g=>{const decision=reviewedGuides.find(r=>r.key===g.key&&r.decision==='failed');return '<li>'+escapeHTML(topicNames[g.topic]||g.topic)+'：'+escapeHTML(decision.reason||'內容未通過')+'</li>'}).join('');
   $('#guide-content').innerHTML=facts.join('')+approved.map(renderApprovedGuide).join('')+(failed.length?'<div class="guide-pending"><strong>未通過 '+failed.length+' 篇</strong><ul>'+failedNotes+'</ul></div>':'')+(unknown?'<p class="guide-pending">另有 '+unknown+' 篇尚未審核。</p>':'')+(!facts.length&&!approved.length&&!failed.length?'<p class="guide-pending">此版本尚無通過的取得方式或配招。</p>':'');
  };
- document.querySelectorAll('.guide-tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.game)));
+ $('#game-select').addEventListener('change',e=>show(e.target.value));
+ document.querySelectorAll('.guide-tab').forEach(b=>{
+  b.addEventListener('click',()=>show(b.dataset.game));
+  b.addEventListener('keydown',e=>{
+   if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+   e.preventDefault();
+   const tabs=[...document.querySelectorAll('.guide-tab')],i=tabs.indexOf(b);
+   const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+   show(tabs[next].dataset.game);tabs[next].focus();
+  });
+ });
  document.querySelectorAll('.evo-stage').forEach(b=>b.addEventListener('click',()=>details(records.find(r=>Number(r.id)===Number(b.dataset.evo)))));
  show(games[0]);
  if(!$('#detail').open)$('#detail').showModal();
+ $('#detail').scrollTop=0;
 }
 async function init(){
  try{
@@ -119,6 +135,8 @@ async function init(){
   $('#grid').textContent='無法載入圖鑑資料，請重新整理頁面。';
  }
 }
+$('#clear-search').addEventListener('click',()=>{$('#q').value='';render();$('#q').focus();});
+$('#reset-filters').addEventListener('click',()=>{$('#q').value='';$('#type').value='';$('#order').value='asc';render();$('#q').focus();});
 $('#q').addEventListener('input',render);
 $('#type').addEventListener('change',render);
 $('#order').addEventListener('change',render);
