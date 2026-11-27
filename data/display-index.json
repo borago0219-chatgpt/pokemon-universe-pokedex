@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-27",
   "entries": [
     {
       "national_id": 1,
@@ -47,160 +47,162 @@
       ]
     }
   ],
-  "facts": [
-    {
-      "national_id": 1,
-      "guide_key": "1:pokemon-go:capture",
-      "guide_checked_at": "2026-11-25",
-      "game": "pokemon-go",
-      "match_path": "confirmed_historical.0",
-      "match_value": {
-        "method": "野外大量出現",
-        "date": "2022-01-22",
-        "region": "全球",
-        "event": "Community Day Classic",
-        "status": "ended"
-      },
-      "label": "歷史取得",
-      "text": "2022 年 1 月 22 日社群日經典回顧，妙蛙種子於活動時段較常在野外出現。活動已結束，不能視為台灣目前的取得方式。",
-      "source_url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
-      "verified_at": "2026-11-25"
-    },
-    {
-      "national_id": 1,
-      "guide_key": "1:lets-go:capture",
-      "guide_checked_at": "2026-11-24",
-      "game": "lets-go",
-      "match_path": "methods.0",
-      "match_value": {
-        "type": "wild",
-        "location": "常青森林",
-        "condition": "低機率特殊出現；官方確認可在森林遇見",
-        "status": "verified"
-      },
-      "label": "野外取得",
-      "text": "《Let's Go, Pikachu!／Eevee!》的常青森林有機會遇見野生妙蛙種子；實際出現機率與贈送取得條件仍待查核。",
-      "source_url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
-      "verified_at": "2026-11-25"
-    }
-  ],
+  "facts": [],
   "reviewed_guides": [
     {
       "national_id": 1,
       "key": "1:main:profile",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
       "fingerprint": "5714548b:1251"
+    },
+    {
+      "national_id": 1,
+      "key": "1:main-series:availability",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "ad7ca121:5687"
     },
     {
       "national_id": 1,
       "key": "1:scarlet-violet:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "42e530bb:1115"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "dda8ad4e:1626"
+    },
+    {
+      "national_id": 1,
+      "key": "1:pokemon-go:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "1b72e359:3410"
     },
     {
       "national_id": 1,
       "key": "1:pokemon-go:moveset",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
       "fingerprint": "7f5ec754:1659"
     },
     {
       "national_id": 1,
-      "key": "1:red-blue-yellow:moveset",
+      "key": "1:scarlet-violet:moveset",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "2b7d7e8b:1100"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "918359e7:1483"
+    },
+    {
+      "national_id": 1,
+      "key": "1:red-blue-yellow:moveset",
+      "decision": "failed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "6e618d63:1544",
+      "suppress_previous_versions": true,
+      "reason": "2026-11-26 新版配招的招式列表與等級敘述對照矛盾；暫停舊版展示，修正後只重審變更部分。"
     },
     {
       "national_id": 1,
       "key": "1:lets-go:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "20108f45:979"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "12d485dd:1300"
     },
     {
       "national_id": 1,
       "key": "1:bdsp:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
       "fingerprint": "1295a759:773"
     },
     {
       "national_id": 1,
       "key": "1:sword-shield:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "d1ce231b:902"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "a804a17e:1655"
     },
     {
       "national_id": 1,
       "key": "1:legends-za:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "ed5eb226:1413"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "11eafc21:2778"
     },
     {
       "national_id": 1,
       "key": "1:gold-silver-crystal:capture",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
       "fingerprint": "ff7354f9:1025"
     },
     {
       "national_id": 1,
       "key": "1:gold-silver-crystal:moveset",
       "decision": "passed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "guide_blob_sha": "a67113bf671d9c8ed14bff9ebce76c8b163970df",
-      "fingerprint": "0f88b3ee:923"
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "83331ba2:1500"
     },
     {
       "national_id": 1,
-      "key": "1:main-series:availability",
-      "decision": "failed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "reason": "39 個版本項仍未逐版核實。",
-      "fingerprint": "3a13a6ce:4615"
+      "key": "1:red-green-blue-yellow:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "e5cdde8c:1220"
     },
     {
       "national_id": 1,
-      "key": "1:pokemon-go:capture",
-      "decision": "failed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "reason": "台灣當期取得渠道未核實；已核歷史活動另外顯示。",
-      "fingerprint": "edeee27d:2539"
+      "key": "1:firered-leafgreen:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "fa044945:734"
     },
     {
       "national_id": 1,
-      "key": "1:scarlet-violet:moveset",
-      "decision": "failed",
-      "reviewed_at": "2026-11-25",
-      "review_ref": "reviews/2026-11-25.md",
-      "reason": "推薦配招缺少道具及玩法論證。",
-      "fingerprint": "c521f8a0:847"
+      "key": "1:heartgold-soulsilver:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "861d83ad:725"
+    },
+    {
+      "national_id": 1,
+      "key": "1:x-y:capture",
+      "decision": "passed",
+      "reviewed_at": "2026-11-26",
+      "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/work/builder-main-rescue-20261126/reviews/2026-11-26.md",
+      "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+      "fingerprint": "cca61081:733"
     }
   ],
   "artworks": [
@@ -212,5 +214,1264 @@
       "approved_on": "2026-11-24",
       "note": "專案內部使用批准；第三方權利狀態另見圖片 metadata。"
     }
-  ]
+  ],
+  "guide_snapshots": [
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-25",
+      "status": "draft",
+      "key": "1:main:profile",
+      "game": "main",
+      "topic": "profile",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "national_id": 1,
+        "name_zh": "妙蛙種子",
+        "name_en": "Bulbasaur",
+        "name_ja": "フシギダネ",
+        "category": "種子寶可夢",
+        "types": [
+          "草",
+          "毒"
+        ],
+        "height_m": 0.7,
+        "weight_kg": 6.9,
+        "abilities": {
+          "regular": [
+            "茂盛 Overgrow"
+          ],
+          "hidden": [
+            "葉綠素 Chlorophyll"
+          ]
+        },
+        "base_stats_from_generation_2": {
+          "hp": 45,
+          "attack": 49,
+          "defense": 49,
+          "special_attack": 65,
+          "special_defense": 65,
+          "speed": 45,
+          "total": 318
+        },
+        "generation_1_stat_note": "第 1 代只有單一「特殊」種族值 65，不應套用現行特攻／特防雙欄。",
+        "evolution": "妙蛙種子等級 16 進化妙蛙草；妙蛙草等級 32 進化妙蛙花（主系列常規規則）。",
+        "form_note": "本身沒有單獨核實的地區型態；妙蛙花的超級進化／超極巨化不能當作妙蛙種子的型態。",
+        "verification_required": [
+          "各版本特性、進化與型態例外逐版核實"
+        ],
+        "field_verification": {
+          "official_taiwan_pokedex": "編號、繁中名稱、草／毒、分類、身高體重、茂盛、進化鏈及無不同樣子已核；隱藏特性、種族值與進化等級依社群資料，仍待逐版本覆核"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.pokemon.com/us/pokedex/bulbasaur",
+          "title": "官方 Bulbasaur 圖鑑",
+          "type": "official_pokedex",
+          "version": "national",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子資料",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://tw.portal-pokemon.com/pokedex/0001/",
+          "title": "台灣寶可夢官方圖鑑 #0001",
+          "type": "official_pokedex",
+          "version": "national/Taiwan",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-26",
+      "status": "needs_review",
+      "key": "1:main-series:availability",
+      "game": "main-series",
+      "topic": "availability",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "coverage": "按目前已發售主系列作品逐版整理；細節以資料庫交叉核對，非所有版本取得條件均由官方逐項確認。歷史活動、跨代轉入、交換、野生、贈送和不支援分開標示。",
+        "verified_versions": [
+          {
+            "generation": 1,
+            "versions": [
+              "Red",
+              "Green (Japan)",
+              "Blue (Japan)",
+              "Blue (International)"
+            ],
+            "method": "真新鎮大木博士提供的三選一初始寶可夢",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 1,
+            "versions": [
+              "Yellow"
+            ],
+            "method": "華藍市居民贈送；夥伴皮卡丘親密度至少 147",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 2,
+            "versions": [
+              "Gold",
+              "Silver",
+              "Crystal"
+            ],
+            "method": "與第 1 代透過時光膠囊交換；歷史活動另計，遊戲內沒有一般野生捕捉",
+            "availability": "transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 3,
+            "versions": [
+              "Ruby",
+              "Sapphire",
+              "Emerald"
+            ],
+            "method": "與相容遊戲交換或歷史活動；沒有已核實的本篇野生點",
+            "availability": "trade_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 3,
+            "versions": [
+              "FireRed",
+              "LeafGreen"
+            ],
+            "method": "真新鎮大木博士提供的三選一初始寶可夢",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 4,
+            "versions": [
+              "Diamond",
+              "Pearl",
+              "Platinum"
+            ],
+            "method": "與相容作品交換；跨世代移入可經帕爾公園，非本篇野生",
+            "availability": "trade_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 4,
+            "versions": [
+              "HeartGold",
+              "SoulSilver"
+            ],
+            "method": "擊敗赤紅後，於真新鎮接受大木博士贈送的關都初始寶可夢之一",
+            "availability": "postgame_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 5,
+            "versions": [
+              "Black",
+              "White"
+            ],
+            "method": "《黑／白》本作無已核實一般野生點。通關取得全國圖鑑後，可在 15 號道路的寶可傳送研究所，以兩台 DS 與《鑽石／珍珠／白金／心金／魂銀》從第 4 代移入；屬本地跨代移入，不等同已停用的網路贈送。日本 Pokémon Pia Global Link 贈送妙蛙種子為 2010-10-14 至 2011-05-31 歷史活動，當時轉到夢境世界並於連入之森捕捉，現不可當作新申領方法。",
+            "availability": "postgame_local_transfer_or_ended_japan_event",
+            "status": "community_crosschecked_official_service_end"
+          },
+          {
+            "generation": 5,
+            "versions": [
+              "Black 2",
+              "White 2"
+            ],
+            "method": "寶可傳送從前代移入；歷史活動另計，非本篇野生",
+            "availability": "transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 6,
+            "versions": [
+              "X",
+              "Y"
+            ],
+            "method": "密阿雷市布拉塔諾博士贈送關都初始寶可夢之一",
+            "availability": "in_game_gift",
+            "status": "verified_community"
+          },
+          {
+            "generation": 6,
+            "versions": [
+              "Omega Ruby",
+              "Alpha Sapphire"
+            ],
+            "method": "與相容作品交換或歷史活動；無已核實本地野生點",
+            "availability": "trade_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Sun",
+              "Moon"
+            ],
+            "method": "與相容作品交換／轉入；非已核實野生捕捉",
+            "availability": "trade_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Ultra Sun",
+              "Ultra Moon"
+            ],
+            "method": "週五於美樂美樂島 2 號道路使用島嶼掃描遇見",
+            "availability": "island_scan_wild",
+            "status": "verified_community"
+          },
+          {
+            "generation": 7,
+            "versions": [
+              "Let's Go, Pikachu!",
+              "Let's Go, Eevee!"
+            ],
+            "method": "常青森林野生；華藍市可另獲一次贈送",
+            "availability": "wild_and_gift",
+            "status": "official_wild_community_gift"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Sword",
+              "Shield"
+            ],
+            "method": "《鎧之孤島》武館一次性贈送；可經相容 HOME／交換轉入；曠野地帶新聞和 HOME 贈送屬歷史活動",
+            "availability": "dlc_gift_transfer_or_historical_event",
+            "status": "verified_community"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Brilliant Diamond",
+              "Shining Pearl"
+            ],
+            "method": "取得全國圖鑑後，地下大洞窟的草原空洞、日光洞窟、沼澤／河岸／靜水等空洞可遇見",
+            "availability": "postgame_wild",
+            "status": "official_and_community"
+          },
+          {
+            "generation": 8,
+            "versions": [
+              "Legends: Arceus"
+            ],
+            "method": "該作不可取得妙蛙種子；不能因其他作品可移入 HOME 就推定可進入本作",
+            "availability": "unsupported",
+            "status": "cross_checked_community"
+          },
+          {
+            "generation": 9,
+            "versions": [
+              "Scarlet",
+              "Violet"
+            ],
+            "method": "《藍之圓盤》海岸區生物多樣性升級後，在海岸區及火把迷宮野生遇見；亦可在相容條件下交換／HOME 轉入",
+            "availability": "dlc_wild_or_transfer",
+            "status": "verified_community"
+          },
+          {
+            "generation": 9,
+            "versions": [
+              "Legends: Z-A"
+            ],
+            "method": "支線任務 22 可在寶可夢研究所獲贈；野生區域 20 可遇見；《超次元爆湧》另有特定超次元區域",
+            "availability": "gift_wild_and_dlc",
+            "status": "verified_community"
+          }
+        ],
+        "not_yet_verified": [
+          "各版本活動贈送的有效期間與地區",
+          "第 2～7 代硬體／服務現況及跨世代交換可行性",
+          "地下大洞窟各空洞的具體生成條件／機率",
+          "《傳說 Z-A》DLC 精確掃描條件",
+          "每一版本的專屬配招與玩法",
+          "40 個列舉版本標籤是清單計數，並非 40 版已逐項獨立核實；日本／國際《藍》已拆列，仍須逐版核來源與服務相容性。",
+          "《黑／白》寶可傳送的個別卡匣與兩台主機今日能否實際運作未實機測試；網路贈送已結束，不能把官方 Wi-Fi 服務停止推成所有本地機制均停止。"
+        ],
+        "version_count_listed": 40
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur",
+          "title": "Bulbapedia：妙蛙種子主系列遊戲地點表",
+          "type": "community_game_database",
+          "version": "Generations I–IX",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur",
+          "title": "Pokémon Database：各版本取得地點交叉核對",
+          "type": "community_game_database",
+          "version": "Generations I–IX",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/",
+          "title": "Serebii：《劍／盾》與地下大洞窟地點",
+          "type": "community_game_database",
+          "version": "Sword/Shield, BDSP",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://diamondpearl.pokemon.com/en-us/trainersguide/grandunderground/",
+          "title": "官方《晶燦鑽石／明亮珍珠》地下大洞窟指南",
+          "type": "official_game_guide",
+          "version": "Brilliant Diamond/Shining Pearl",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
+          "title": "官方《Let's Go》常青森林妙蛙種子介紹",
+          "type": "official_game_guide",
+          "version": "Let's Go Pikachu/Eevee",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii：《朱／紫》與《傳說 Z-A》地點",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet, Legends: Z-A",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-bw/001.shtml",
+          "title": "Serebii 妙蛙種子第 5 代地點與取得",
+          "type": "community_game_database",
+          "version": "Black/White",
+          "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://www.serebii.net/blackwhite/pokeshifter.shtml",
+          "title": "Serebii 黑白寶可傳送前置、道路與雙 DS",
+          "type": "community_game_guide",
+          "version": "Black/White",
+          "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://www.serebii.net/events/dex/001.shtml",
+          "title": "Serebii #001 歷史 Global Link 活動期間",
+          "type": "community_event_database",
+          "version": "Black/White Japan 2010–2011",
+          "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/6026/p/50/c/120",
+          "title": "任天堂 Wi-Fi Connection 2014 停止說明",
+          "type": "official_support",
+          "version": "Nintendo DS online historical",
+          "checked_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-25",
+      "status": "needs_review",
+      "key": "1:scarlet-violet:capture",
+      "game": "scarlet-violet",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Scarlet",
+          "Violet"
+        ],
+        "base_game": "本篇沒有已核實的野生捕捉點；可由相容來源經 Pokémon HOME 轉入或與其他玩家交換。",
+        "dlc": "《零之秘寶 後篇：藍之圓盤》",
+        "method": "解鎖海岸區生物多樣性後，在藍莓學園生態巨蛋的海岸區／火把迷宮尋找野生妙蛙種子。",
+        "unlock": "《藍之圓盤》進入聯盟社並可使用支援板後，選「海岸區增加最初夥伴寶可夢」升級，社群版本資料表列費用 3,000 BP。完成該區升級後，妙蛙種子可在生態巨蛋海岸區野生出現；官方個別數字頁面尚未核得。",
+        "location_note": "Serebii 同時列海岸區及火把迷宮；兩個地點的生成機率、等級、時間／天氣差異未取得可靠逐格資料，不推定相同或固定數值。",
+        "status_note": "DLC 野生取得與 HOME／交換為不同方法，不能把原版轉入當作本篇野生。",
+        "verification_required": [
+          "海岸區／火把迷宮各點位生成率、等級與環境差異：需遊戲內紀錄或具數值的版本資料；目前只主張可出現",
+          "是否存在特殊太晶或活動的額外取得例外：須有具體活動與期限來源才另列，不作現行常駐方法"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子《朱／紫》地點",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.com/uk/pokemon-video-games/pokemon-scarlet-and-pokemon-violet",
+          "title": "官方《朱／紫》DLC 與 HOME 支援",
+          "type": "official_product",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.gamepur.com/GUIDES/ALL-LEAGUE-CLUB-SUPPORT-BOARD-REWARDS-BP-COSTS-IN-POKEMON-INDIGO-DISK",
+          "title": "Gamepur 聯盟社升級成本",
+          "type": "community_guide",
+          "version": "Indigo Disk",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/scarletviolet/terariumstarters.shtml",
+          "title": "Serebii 生態巨蛋最初夥伴與海岸區",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/scarletviolet/leagueclub.shtml",
+          "title": "Serebii 聯盟社支援板費用",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet Indigo Disk",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-26",
+      "status": "needs_review",
+      "key": "1:pokemon-go:capture",
+      "game": "pokemon-go",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "current_availability": "截至 2026-11-26（台灣）：官方 Twilight Trails 賽季至 12 月 1 日 10:00（當地時間）；Leek Duck 當季田野調查清單仍列「強化寶可夢 3 次」可能遇見妙蛙種子。這是社群整理的可嘗試渠道，非官方保證每個台灣補給站有該任務／獎勵；取得後以遊戲內獎勵畫面確認。官方本季資料及現有來源不足以保證台灣當日野外、蛋、一般團體戰、極巨或暗影妙蛙種子，這些渠道記未知，不寫成不存在。",
+        "confirmed_historical": [
+          {
+            "method": "野外大量出現",
+            "date": "2022-01-22",
+            "region": "全球",
+            "event": "Community Day Classic",
+            "status": "ended"
+          },
+          {
+            "method": "指定場地野外與薰香較常出現",
+            "region": "台灣台中／高雄／新北指定 Pokémon RUN 30 場地",
+            "dates": [
+              "2026-10-17/18",
+              "2026-10-31–11-01",
+              "2026-11-14/15"
+            ],
+            "status": "ended",
+            "note": "官方公告所列台灣指定場地活動均已結束；不可當作當前台灣取得渠道。"
+          }
+        ],
+        "other_historical_channels": "Serebii 記錄多次特殊調查及限時調查相遇；每項需核對活動、地區與日期後才能列為現況。",
+        "evolution": "25 顆妙蛙種子糖果進化為妙蛙草；妙蛙草再需 100 顆進化為妙蛙花（社群圖鑑）。",
+        "note": "2022 社群日、2024 極巨首登場及 2026 年台灣指定 Pokémon RUN 30 場地活動均為歷史事件；日本 ANA 指定機場活動有地區限制，不代表台灣可取得。",
+        "verification_required": [
+          "若要主張台灣特定補給站當日必定可領妙蛙種子，須該補給站遊戲內任務與獎勵畫面；本篇未作此主張"
+        ],
+        "confirmed_regional_current": [
+          {
+            "method": "指定機場團體戰",
+            "region": "日本 ANA 合作機場",
+            "period": "2026-09-18 至 2027-08-31",
+            "note": "官方公告妙蛙種子團體戰及特別背景；僅指定日本機場，不代表台灣可打。"
+          }
+        ],
+        "forest_biome_guidance": "官方一般說明以妙蛙種子作森林生態區例子，亦指出季節、天氣和活動會影響出現；不據此保證台灣任一地點當日野生生成。",
+        "dynamax_history": [
+          {
+            "method": "一星極巨對戰",
+            "period": "2024-09-10 至 2024-09-15",
+            "status": "ended",
+            "note": "官方公告確認 2024 年活動中，從極巨對戰相遇並捕獲的妙蛙種子及其進化形可於極巨對戰中極巨化；此公告未排除後續其他取得途徑，亦不能把普通野生個體自動視為極巨個體。",
+            "other_confirmed_historical_method": "同一 2024-09-10 至 2024-09-15 活動的田野調查可遇妙蛙種子；這是歷史活動，不代表目前台灣田野調查。"
+          }
+        ],
+        "current_community_field_research": {
+          "task": "強化寶可夢 3 次",
+          "possible_encounter": "妙蛙種子",
+          "period": "Twilight Trails 賽季：2026-09-08 10:00 至 2026-12-01 10:00（當地時間）",
+          "scope": "Leek Duck 當季社群清單；各台灣補給站任務需實際遊戲內核對",
+          "checked_at": "2026-11-26",
+          "status": "seasonal_community_listing_possible_reward_local_task_unverified"
+        },
+        "long_term_updates": [
+          "台灣野外、蛋、一般團體戰、極巨與暗影輪替有具體當期來源時再更新；未知不阻擋已核的田野調查可能渠道及歷史資料",
+          "日本 ANA 合作機場後續參與地點依官方新階段公告維護"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
+          "title": "官方 2022 妙蛙種子社群日經典回顧",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/001.shtml",
+          "title": "Serebii 妙蛙種子 GO 圖鑑",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/pokemon-run-30-2026",
+          "title": "Pokémon GO 官方 Pokémon RUN 30 場地活動",
+          "type": "official_announcement",
+          "version": "Pokémon GO Taiwan historical",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/2026_ana_green",
+          "title": "Pokémon GO 官方 ANA 綠色寶可夢飛機合作",
+          "type": "official_announcement",
+          "version": "Pokémon GO Japan regional current",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://niantic.helpshift.com/hc/en/6-pokemon-go/faq/2345-how-do-i-find-specific-pokemon/",
+          "title": "Pokémon GO 官方支援：附近、森林生態區與圖鑑提醒",
+          "type": "official_help",
+          "version": "Pokémon GO general",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/go-big-dynamax",
+          "title": "Pokémon GO 官方：2024 極巨化首度登場",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://pokemongo.com/seasons/twilight-trails",
+          "title": "Pokémon GO 官方 Twilight Trails 賽季期間",
+          "type": "official_season",
+          "version": "Pokémon GO 2026 season",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://leekduck.com/research/",
+          "title": "Leek Duck 當季田野調查獎勵表",
+          "type": "community_current_research",
+          "version": "Pokémon GO 2026 Twilight Trails",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "national_id": 1,
+      "checked_at": "2026-11-25",
+      "status": "draft",
+      "key": "1:pokemon-go:moveset",
+      "game": "pokemon-go",
+      "topic": "moveset",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "一般妙蛙種子；暗影／淨化招式另列",
+        "fast_attacks": [
+          "Vine Whip（藤鞭）",
+          "Tackle（撞擊）"
+        ],
+        "charged_attacks": [
+          "Seed Bomb（種子炸彈）",
+          "Power Whip（強力鞭打）",
+          "Sludge Bomb（污泥炸彈）"
+        ],
+        "special_form_moves": {
+          "shadow": "Frustration（遷怒）",
+          "purified": "Return（報恩）"
+        },
+        "pve": {
+          "community_suggested": "藤鞭＋強力鞭打，僅是妙蛙種子自身的草系輸出組合；未進化形態不宜當作頂級團體戰攻擊手。",
+          "source_scope": "GO Hub 計算器"
+        },
+        "pvp": {
+          "community_suggested": "GO Hub 當前超級聯盟社群模擬建議：藤鞭＋強力鞭打＋種子炸彈。屬會隨招式平衡與賽季變動的社群模型，非官方保證；原先標為 PvPoke 的藤鞭＋種子炸彈＋污泥炸彈組合已撤回。",
+          "scope": "超級聯盟參考；GO Hub 頁面目前未列妙蛙種子為高級或大師聯盟的 PvPoke 排名，不能推導為這兩個聯盟的推薦；特殊盃需依當期規則另核。"
+        },
+        "limited_move_caution": "瘋狂植物是 2022 活動期間進化為妙蛙花的招式，並非妙蛙種子可學的招式。",
+        "verification_required": [
+          "2026 年當季招式平衡、各聯盟與特殊盃用途",
+          "暗影、淨化與極巨化差異",
+          "普通與特殊招式當前取得及招式學習器限制"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(GO)",
+          "title": "Bulbapedia GO 招式表",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/001.shtml",
+          "title": "Serebii GO 招式表",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/1",
+          "title": "Pokémon GO Hub 妙蛙種子 PvE 組合",
+          "type": "community_calculator",
+          "version": "Pokémon GO",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemongo.com/news/community-day-classic-bulbasaur-jan22",
+          "title": "官方 2022 社群日限定招式說明",
+          "type": "official_announcement",
+          "version": "Pokémon GO historical",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/1/pvp",
+          "title": "GO Hub 妙蛙種子 PvP 招式與聯盟分析",
+          "type": "community_simulation",
+          "version": "Pokémon GO Great League",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "key": "1:scarlet-violet:moveset",
+      "national_id": 1,
+      "game": "scarlet-violet",
+      "topic": "moveset",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "《朱／紫》含《藍之圓盤》；保留 #001 未進化的劇情／休閒單打建議。未評估正式賽事或雙打環境，不將本配置跨作套用。",
+        "proposed_moves": [
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Giga Drain（終極吸取）",
+          "Protect（守住）"
+        ],
+        "rationale": "本專案原創的耐久干擾組合：催眠粉爭取回合（命中非必然），寄生種子消耗與回復，終極吸取輸出兼回復，守住配合寄生種子爭取回合。四招的《朱／紫》習得來源分別是 Lv.15、Lv.9、TM111、TM07；推薦用途是依招式效果作的推論，不是官方或社群賽事排名。",
+        "ability": "茂盛；日照隊可另評估隱藏特性葉綠素，但取得條件待核。",
+        "item_nature_evs": "可選進化奇石 Eviolite（仍可進化的妙蛙種子提高物防及特防），大膽 Bold（提高物防、降低未使用的物攻）；若刻意作休閒單打努力值培養，可採 HP 252／物防 252／特防 4。劇情不要求此分配，沒道具也能使用上述招式。此為本專案用途建議，非來源宣稱的標準賽事配方。",
+        "competitive_status": "僅通過招式合法性與道具效果的資料庫核對；未驗證正式競技強度，不能宣稱某聯盟或賽季最優。雙打另需依規則評估，現在不提供雙打推薦。",
+        "verification_required": [],
+        "long_term_updates": [
+          "若日後提供正式單打／雙打建議，需指定規則、合法性及當期對戰證據；此非本篇劇情／休閒單打建議的前置"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii《朱／紫》妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/9",
+          "title": "Pokémon Database 第 9 代妙蛙種子習得表",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://pokemondb.net/item/eviolite",
+          "title": "Pokémon Database 進化奇石效果與朱紫適用",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-26"
+        },
+        {
+          "url": "https://serebii.net/itemdex/eviolite.shtml",
+          "title": "Serebii 進化奇石效果",
+          "type": "community_game_database",
+          "version": "Scarlet/Violet",
+          "checked_at": "2026-11-26"
+        }
+      ],
+      "checked_at": "2026-11-26",
+      "status": "needs_review"
+    },
+    {
+      "key": "1:lets-go:capture",
+      "national_id": 1,
+      "game": "lets-go",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Let's Go, Pikachu!",
+          "Let's Go, Eevee!"
+        ],
+        "methods": [
+          {
+            "type": "wild",
+            "location": "常青森林",
+            "condition": "低機率特殊出現；官方確認可在森林遇見",
+            "status": "verified"
+          },
+          {
+            "type": "gift",
+            "location": "華藍市寶可夢中心旁民宅",
+            "condition": "華藍市寶可夢中心旁民宅，需達累計捕捉門檻；Serebii 贈送總表寫「超過 30」，其華藍市地點表寫「捕捉 30 隻」。故 30 整是否可領尚未證實，建議累計至少 31 隻再嘗試，並以遊戲內 30／31 臨界測試定稿。",
+            "level": 12,
+            "status": "needs_review"
+          }
+        ],
+        "verification_required": [
+          "贈送門檻：同一資料庫兩頁對 30 整的措詞不一，需實機以 30 與 31 隻各測或官方逐字門檻",
+          "常青森林野生生成率及連鎖捕捉對特殊出現的影響：需版本資料或實測；目前只主張可遇見"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.pokemon.com/us/pokemon-news/lets-go-for-a-test-run",
+          "title": "官方《Let's Go》試玩指南",
+          "type": "official_game_guide",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Gift_Pok%C3%A9mon",
+          "title": "Bulbapedia 贈送寶可夢表",
+          "type": "community_game_database",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/letsgopikachueevee/gift.shtml",
+          "title": "Serebii《Let's Go》贈送表",
+          "type": "community_game_database",
+          "version": "Let's Go",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/kanto/ceruleancity.shtml",
+          "title": "Serebii 華藍市地點表（30 隻措詞）",
+          "type": "community_game_database",
+          "version": "Let's Go Pikachu/Eevee",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "needs_review"
+    },
+    {
+      "key": "1:bdsp:capture",
+      "national_id": 1,
+      "game": "bdsp",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Brilliant Diamond",
+          "Shining Pearl"
+        ],
+        "method": "取得全國圖鑑後，於地下大洞窟寶可夢棲息地遇見並捕捉。",
+        "locations": [
+          "草原空洞",
+          "日光洞窟",
+          "沼澤空洞",
+          "河岸空洞",
+          "靜水空洞",
+          "泥濘洞窟"
+        ],
+        "location_note": "官方指南直接列草原、日光、河岸與靜水類棲息地有妙蛙種子；完整六處由 Serebii 版本表補充。",
+        "level_range": "Serebii 列 16–63；等級依進度變化，實際生成率未核。",
+        "verification_required": [
+          "各棲息地的生成率／進度差異",
+          "六個繁中地名與遊戲內官方譯名核對"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://diamondpearl.pokemon.com/en-us/trainersguide/grandunderground/",
+          "title": "官方地下大洞窟指南",
+          "type": "official_game_guide",
+          "version": "BDSP",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/locations.shtml",
+          "title": "Serebii BDSP 妙蛙種子地點表",
+          "type": "community_game_database",
+          "version": "BDSP",
+          "checked_at": "2026-11-24"
+        }
+      ],
+      "checked_at": "2026-11-24",
+      "status": "draft"
+    },
+    {
+      "key": "1:sword-shield:capture",
+      "national_id": 1,
+      "game": "sword-shield",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Sword",
+          "Shield"
+        ],
+        "methods": [
+          {
+            "type": "dlc_gift",
+            "location": "《鎧之孤島》武館",
+            "condition": "持有《鎧之孤島》擴充內容，完成馬士德武館第一項試煉後由蜜葉提供妙蛙種子與傑尼龜二選一；獲得的妙蛙種子帶超極巨化因子，待進化到妙蛙花後才可超極巨化。",
+            "status": "community_verified"
+          },
+          {
+            "type": "home_or_trade",
+            "condition": "與相容來源經 Pokémon HOME 或玩家交換取得；需符合遊戲更新及相容限制。",
+            "status": "community_verified"
+          },
+          {
+            "type": "historical_event",
+            "condition": "2021-06-17 至 2021-06-30 全球 Pokémon HOME 更新紀念配布曾提供帶超極巨化因子的妙蛙種子；這是已結束的歷史贈送，不是目前固定取得方式。另有曠野地帶新聞紀錄，但本篇尚未核實具體活動區域與日期，不將其列成已確認的捕捉途徑。",
+            "status": "historical"
+          }
+        ],
+        "verification_required": [
+          "曠野地帶新聞涉及妙蛙種子的確切活動日期、區域及遭遇條件：找到原活動頁後才能增列",
+          "目前 HOME→《劍／盾》的版號、連線與來源相容條件：查官方 HOME 支援或實機後補，不把 2021 配布當現行"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/bulbasaur/",
+          "title": "Serebii《劍／盾》妙蛙種子地點",
+          "type": "community_game_database",
+          "version": "Sword/Shield",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://swordshield.pokemon.com/en-us/expansionpass/the-isle-of-armor/",
+          "title": "官方《鎧之孤島》介紹",
+          "type": "official_product",
+          "version": "Sword/Shield",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/swordshield/gift.shtml",
+          "title": "Serebii 武館第一試煉贈送",
+          "type": "community_game_database",
+          "version": "Sword/Shield Isle of Armor",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/galar/masterdojo.shtml",
+          "title": "Serebii 武館蜜葉贈送表",
+          "type": "community_game_database",
+          "version": "Sword/Shield Isle of Armor",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokemonhome/giftpokemon.shtml",
+          "title": "Serebii HOME 歷史贈送期間",
+          "type": "community_game_database",
+          "version": "Sword/Shield historical 2021",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "needs_review"
+    },
+    {
+      "key": "1:legends-za:capture",
+      "national_id": 1,
+      "game": "legends-za",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Legends: Z-A"
+        ],
+        "methods": [
+          {
+            "type": "gift",
+            "location": "密阿雷市寶可夢研究所",
+            "condition": "支線任務 22「茉蜜姬的來電」：主線任務 8 進入決定升級賽階段後，圖鑑登錄 30 種並前往寶可夢中心接到來電；到研究所從妙蛙種子／小火龍／傑尼龜中選一隻 Lv.5。這是一次三選一的贈送，該禮物不能是色違；野生妙蛙種子另可出現色違，不與贈送混同。",
+            "status": "community_verified"
+          },
+          {
+            "type": "wild",
+            "location": "野生區域 20",
+            "condition": "野生區域 20 於主線任務 39 開始開放；資料庫列妙蛙種子 Lv.53–54，頭目出現機率 5%（不是妙蛙種子總生成率）。未列僅限日或夜；一般固定點可飛離再返回或坐長椅切換日夜刷新，捕獲後有較長的實際時間冷卻，不保證每次刷新都出現。",
+            "status": "community_verified"
+          },
+          {
+            "type": "dlc_wild",
+            "location": "《超次元爆湧》超次元密阿雷的草／毒型區域",
+            "condition": "《超次元爆湧》一般毒系異次元野生區 1／3 星、草系 2／3／5 星的相應生成組合可見妙蛙種子；需按當輪區域與生成組合核對，不保證每次出現。支線 188 後每 25,000 點的「特殊掃描」是另一種特別區域機制，非上述一般區域遇見妙蛙種子的共同前置。",
+            "status": "needs_review"
+          }
+        ],
+        "mechanics_note": "《傳說 Z-A》戰鬥及招式機制與回合制作品不同，配招需獨立研究。",
+        "verification_required": []
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Bulbasaur",
+          "title": "Bulbapedia 主系列地點表",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子《傳說 Z-A》地點",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-24"
+        },
+        {
+          "url": "https://www.pokemon.co.jp/ex/legends_z-a/tc/characters/250722_03/",
+          "title": "《寶可夢傳說 Z-A》官方繁中人物頁：茉蜜姬",
+          "type": "official_character_page",
+          "version": "Legends: Z-A Traditional Chinese",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/sidemissions/acallfrommable.shtml",
+          "title": "Serebii 支線任務 22 前置與三選一",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Pok%C3%A9mon_Legends%3A_Z-A",
+          "title": "Bulbapedia Z-A 支線贈送與色違限制",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/wildzones.shtml",
+          "title": "Serebii 野生區域 20 開放條件",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokearth/lumiosecity/wildzone20.shtml",
+          "title": "Serebii 野生區域 20 妙蛙種子等級與頭目率",
+          "type": "community_game_database",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/wildpokemon.shtml",
+          "title": "Serebii 野生刷新機制",
+          "type": "community_mechanics_guide",
+          "version": "Legends: Z-A",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/bulbasaur/",
+          "title": "Serebii 妙蛙種子 Z-A DLC 星級地點表",
+          "type": "community_game_database",
+          "version": "Legends: Z-A Mega Dimension",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/legendsz-a/hyperspacelumiose.shtml",
+          "title": "Serebii 特殊掃描與一般異次元區域區分",
+          "type": "community_mechanics_guide",
+          "version": "Legends: Z-A Mega Dimension",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "needs_review"
+    },
+    {
+      "key": "1:gold-silver-crystal:capture",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "capture",
+      "checked_at": "2026-11-25",
+      "status": "draft",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "Gold",
+          "Silver",
+          "Crystal"
+        ],
+        "normal_wild_capture": "三版均未列一般野生捕捉；可由第 1 代紅／綠／藍／皮卡丘透過時光膠囊交換取得。歷史活動另列，不能冒稱現況。",
+        "time_capsule_unlock": "在圓朱市寶可夢中心遇見阿正（Bill）後，按遊戲內時間等待約 24 小時開啟時光膠囊；交換時須遵守第 1／2 代相容規則。",
+        "availability_type": "historical_cross_generation_trade",
+        "historical_event_note": "資料庫另記歷史活動，但活動地區、期限與領取條件尚未逐項核實，未列為常規取得。",
+        "verification_required": [
+          "原版與虛擬主機版的現行硬體／交換相容性逐項核實",
+          "歷史活動配布的地區、日期與條件"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子三版取得表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/gs/timecapsule.shtml",
+          "title": "Serebii 時光膠囊開啟與限制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Time_Capsule",
+          "title": "Bulbapedia 時光膠囊機制",
+          "type": "community_mechanics_guide",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "key": "1:gold-silver-crystal:moveset",
+      "national_id": 1,
+      "game": "gold-silver-crystal",
+      "topic": "moveset",
+      "checked_at": "2026-11-25",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "scope": "第 2 代金／銀／水晶劇情向妙蛙種子本體；未經正式競技環境評分，不套用現代機制。",
+        "proposed_moves": [
+          "Razor Leaf（飛葉快刀）",
+          "Sleep Powder（催眠粉）",
+          "Leech Seed（寄生種子）",
+          "Synthesis（光合作用）"
+        ],
+        "legality_note": "兩份第 2 代習得表支持妙蛙種子本體在 Lv.7 學寄生種子、Lv.15 學催眠粉、Lv.20 學飛葉快刀、Lv.39 學光合作用；若提早進化，須另查進化形態的習得等級，不能直接沿用本體表。",
+        "rationale": "原創劇情向組合：飛葉快刀輸出、催眠粉控場、寄生種子及光合作用續航；是否為各版本最佳組合尚未驗證。",
+        "mechanics_note": "第 2 代沒有現代特性與性格；努力值與現代分配機制不同。道具及對戰環境推薦待單獨研究。",
+        "verification_required": [
+          "持有道具及正式競技格式：本篇僅為未進化 #001 劇情向組合，尚無依特定對戰規則核實的道具／替代招式方案；需指定規則及社群戰術來源後另評，不作已推薦對戰配招"
+        ],
+        "evolution_timing": "此配招以不進化的 #001 為對象：本體 Lv.7 寄生種子、Lv.15 催眠粉、Lv.20 飛葉快刀、Lv.39 光合作用。若在 Lv.16 進化，前兩招可在進化前學到；妙蛙草的升級表則是 Lv.22 飛葉快刀、Lv.47 光合作用（《金／銀／水晶》），不能照搬本體 Lv.20／39 的時點。"
+      },
+      "sources": [
+        {
+          "url": "https://pokemondb.net/pokedex/bulbasaur/moves/2",
+          "title": "Pokémon Database 第 2 代三版等級招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-gs/001.shtml",
+          "title": "Serebii 第 2 代妙蛙種子招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/ivysaur/moves/2",
+          "title": "Pokémon Database 第 2 代進化形態招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-gs/002.shtml",
+          "title": "Serebii 第 2 代進化形態招式表",
+          "type": "community_game_database",
+          "version": "Gold/Silver/Crystal",
+          "checked_at": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "key": "1:red-green-blue-yellow:capture",
+      "national_id": 1,
+      "game": "red-green-blue-yellow",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "version_methods": [
+          {
+            "versions": [
+              "Red",
+              "Green (Japan)",
+              "Blue (Japan)",
+              "Blue (International)"
+            ],
+            "availability": "starter_gift",
+            "location": "真新鎮大木博士研究所",
+            "condition": "遊戲開頭從妙蛙種子／小火龍／傑尼龜中選一，妙蛙種子 Lv.5；若未選妙蛙種子，須另行交換，不能在本版一般野外捕捉。",
+            "status": "community_cross_checked"
+          },
+          {
+            "versions": [
+              "Yellow"
+            ],
+            "availability": "one_time_gift",
+            "location": "華藍市",
+            "condition": "夥伴皮卡丘親密度至少 147 時，從女子處領取 Lv.10 妙蛙種子；不是《紅／藍》那種初始三選一，亦非一般野生捕捉。",
+            "status": "community_cross_checked"
+          }
+        ],
+        "version_note": "日本《藍》與國際《藍》分開列名；上述妙蛙種子的取得大類相同，不推定其他野生分布相同。",
+        "verification_required": [
+          "原版與虛擬主機版交換現行可行性及語言限制另核"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Generation_I",
+          "title": "Bulbapedia 第 1 代遊戲內贈送",
+          "type": "community_game_database",
+          "version": "Red/Green/Blue/Yellow",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex/001.shtml",
+          "title": "Serebii 第 1 代妙蛙種子地點表",
+          "type": "community_game_database",
+          "version": "Red/Green/Blue/Yellow",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Friendship",
+          "title": "Bulbapedia 皮卡丘版親密度門檻",
+          "type": "community_game_database",
+          "version": "Yellow",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "draft"
+    },
+    {
+      "key": "1:firered-leafgreen:capture",
+      "national_id": 1,
+      "game": "firered-leafgreen",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "FireRed",
+          "LeafGreen"
+        ],
+        "availability": "starter_gift",
+        "location": "真新鎮大木博士研究所",
+        "condition": "遊戲開頭從三隻關都初始寶可夢中選妙蛙種子，Lv.5；若選其他初始寶可夢，須另行交換，不能在本版一般野外捕捉。",
+        "version_difference": "妙蛙種子的這項初始贈送方法兩版相同。",
+        "verification_required": [
+          "跨第三代作品交換的實際前置與現行硬體條件另核"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/fireredleafgreen/gift.shtml",
+          "title": "Serebii 火紅／葉綠贈送表",
+          "type": "community_game_database",
+          "version": "FireRed/LeafGreen",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Kanto_first_partner_Pok%C3%A9mon",
+          "title": "Bulbapedia 關都初始寶可夢取得總表",
+          "type": "community_game_database",
+          "version": "FireRed/LeafGreen",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "draft"
+    },
+    {
+      "key": "1:heartgold-soulsilver:capture",
+      "national_id": 1,
+      "game": "heartgold-soulsilver",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "HeartGold",
+          "SoulSilver"
+        ],
+        "availability": "postgame_gift",
+        "location": "真新鎮大木博士研究所",
+        "condition": "集齊城都與關都共 16 枚徽章、打敗赤紅後，拜訪大木博士，從妙蛙種子／小火龍／傑尼龜中選一；非野生捕捉。",
+        "version_difference": "此關都初始寶可夢贈送條件在心金／魂銀相同。",
+        "verification_required": [
+          "具體贈送等級與跨代轉入限制另核"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/heartgoldsoulsilver/gift.shtml",
+          "title": "Serebii 心金／魂銀贈送表",
+          "type": "community_game_database",
+          "version": "HeartGold/SoulSilver",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://www.serebii.net/heartgoldsoulsilver/starters.shtml",
+          "title": "Serebii 心金／魂銀初始寶可夢取得",
+          "type": "community_game_database",
+          "version": "HeartGold/SoulSilver",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "draft"
+    },
+    {
+      "key": "1:x-y:capture",
+      "national_id": 1,
+      "game": "x-y",
+      "topic": "capture",
+      "content": {
+        "display_name": "妙蛙種子 Bulbasaur",
+        "versions": [
+          "X",
+          "Y"
+        ],
+        "availability": "in_game_gift",
+        "location": "密阿雷市布拉塔諾博士處",
+        "condition": "與布拉塔諾博士對戰並取勝後，從關都初始寶可夢妙蛙種子／小火龍／傑尼龜選一，Lv.10；這與冒險起點的卡洛斯初始寶可夢是不同選擇。",
+        "version_difference": "X／Y 此贈送途徑相同；未選妙蛙種子者可另行交換，歷史配布需按地區與日期另列。",
+        "verification_required": [
+          "歷史配布與跨作品交換當前可行性另核"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/xy/gift.shtml",
+          "title": "Serebii X／Y 關都初始寶可夢贈送",
+          "type": "community_game_database",
+          "version": "X/Y",
+          "checked_at": "2026-11-25"
+        },
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/List_of_in-game_event_Pok%C3%A9mon_in_Pok%C3%A9mon_X_and_Y",
+          "title": "Bulbapedia X／Y 贈送條件",
+          "type": "community_game_database",
+          "version": "X/Y",
+          "checked_at": "2026-11-25"
+        }
+      ],
+      "checked_at": "2026-11-25",
+      "status": "draft"
+    }
+  ],
+  "guide_snapshot_source": {
+    "repository": "borago0219-chatgpt/pokemon-universe-pokedex",
+    "branch": "work/builder-main-rescue-20261126",
+    "path": "data/guides.json",
+    "blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4",
+    "reviewed_at": "2026-11-26",
+    "selected_at": "2026-11-27",
+    "scope": "僅含 16 篇已通過的固定版本展示副本；不覆蓋研究資料。"
+  }
 }

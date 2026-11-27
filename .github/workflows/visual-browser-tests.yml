@@ -76,21 +76,29 @@ jobs:
                   assert page.locator(".evo-stage").count() == 3
                   page.locator('.guide-tab[data-game="pokemon-go"]').click()
                   go_text = page.locator("#guide-content").inner_text()
-                  assert "2022 年 1 月 22 日" in go_text, "Verified historical GO event should appear"
+                  assert "2022-01-22" in go_text and "強化寶可夢 3 次" in go_text, "Reviewed historical and dated seasonal GO channels should appear"
                   assert "藤鞭" in go_text and "PvP" in go_text, "Approved GO moveset should appear"
-                  assert "未通過 1 篇" in go_text, "Unapproved current capture guide must stay separate"
-                  assert "ANA 合作機場" not in go_text, "Failed capture guide body must not appear"
+                  assert page.locator("#guide-content .approved-guide").count() == 2, "Both reviewed GO guides should appear"
+                  assert "僅指定日本機場" in go_text and "2026-11-26" in go_text, "Regional and date limitations must remain visible"
                   page.locator('.guide-tab[data-game="lets-go"]').click()
                   assert "常青森林" in page.locator("#guide-content").inner_text()
                   assert "內容審核：過" in page.locator("#guide-content").inner_text()
                   page.locator('.guide-tab[data-game="scarlet-violet"]').click()
                   sv_text = page.locator("#guide-content").inner_text()
-                  assert "海岸區" in sv_text and "未通過 1 篇" in sv_text
-                  assert "Sleep Powder" not in sv_text, "Unapproved moveset must not appear"
+                  assert "海岸區" in sv_text and page.locator("#guide-content .approved-guide").count() == 2
+                  assert "Sleep Powder" in sv_text and "休閒單打" in sv_text, "Reviewed SV moveset should include its purpose"
                   page.locator('.guide-tab[data-game="main-series"]').click()
-                  assert "未通過 1 篇" in page.locator("#guide-content").inner_text()
+                  assert page.locator("#guide-content .approved-guide").count() == 1 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability matrix should appear"
                   page.locator('.guide-tab[data-game="gold-silver-crystal"]').click()
                   assert page.locator("#guide-content .approved-guide").count() == 2
+                  for game, expected in [("red-green-blue-yellow", "147"), ("firered-leafgreen", "真新鎮"), ("heartgold-soulsilver", "赤紅"), ("x-y", "10")]:
+                      page.locator(f'.guide-tab[data-game="{game}"]').click()
+                      assert page.locator("#guide-content .approved-guide").count() == 1, f"Reviewed {game} capture should appear"
+                      assert expected in page.locator("#guide-content").inner_text(), f"Missing capture condition for {game}"
+                  page.locator('.guide-tab[data-game="red-blue-yellow"]').click()
+                  assert "未通過 1 篇" in page.locator("#guide-content").inner_text()
+                  assert page.locator("#guide-content .approved-guide").count() == 0, "Superseded RBY approval must not expose old body"
+                  assert "等級 16" in page.locator(".profile-section").inner_text() and "等級 32" in page.locator(".profile-section").inner_text()
                   page.locator(".evo-stage[data-evo='2']").click()
                   assert "#0002" in page.locator("#detailbody").inner_text()
                   page.locator("#close").click()
@@ -109,6 +117,20 @@ jobs:
                   assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Unexpected horizontal overflow"
                   print(f"PASS viewport {width}x{height}")
                   page.close()
+              # Changed/unapproved snapshots must fail closed, even if inserted into the display index.
+              import json
+              payload = json.load(open("data/display-index.json"))
+              snapshot = next(g for g in payload["guide_snapshots"] if g["key"] == "1:x-y:capture")
+              snapshot["content"]["condition"] = "UNREVIEWED_SENTINEL"
+              payload["guide_snapshots"].append({"key":"1:invented:capture","national_id":1,"game":"invented","topic":"capture","content":{"method":"UNAPPROVED_SENTINEL"}})
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              page.locator('.poke[data-id="1"]').click()
+              assert page.locator('.guide-tab[data-game="x-y"]').count() == 0, "Modified snapshot must not load"
+              assert page.locator('.guide-tab[data-game="invented"]').count() == 0, "Unapproved snapshot must not load"
+              assert "UNREVIEWED_SENTINEL" not in page.locator("#detailbody").inner_text()
+              page.close()
               browser.close()
           server.shutdown()
           PY
