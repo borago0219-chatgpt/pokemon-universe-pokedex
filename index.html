@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#10162d">
 <title>PokéVerse｜跨遊戲寶可夢圖鑑</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261127-ui2">
 </head>
 <body>
 <header class="top"><a class="brand" href="#">◈ <span>PokéVerse</span><small>跨遊戲圖鑑</small></a><nav><a href="#pokedex">圖鑑</a><a href="#about">關於</a></nav></header>
@@ -20,8 +20,9 @@
 </section>
 <section id="pokedex" class="section">
 <div class="sectionhead"><div><div class="eyebrow">DATABASE</div><h2>全國圖鑑</h2><p>搜尋名稱、編號，或以屬性篩選。點選卡片查看詳細資料。</p></div><div class="last" id="updated">資料載入中…</div></div>
-<div class="controls"><label class="search">⌕ <input id="q" type="search" placeholder="搜尋：皮卡丘、Pikachu、25…" autocomplete="off"></label><select id="type" aria-label="屬性篩選"><option value="">全部屬性</option></select><select id="order" aria-label="圖鑑編號排序"><option value="asc">編號：由小到大</option><option value="desc">編號：由大到小</option></select></div>
-<div id="grid" class="grid" aria-live="polite"></div><div class="empty" id="empty" hidden>沒有符合條件的寶可夢。</div>
+<div class="controls"><div class="search"><span aria-hidden="true">⌕</span><label class="sr-only" for="q">搜尋寶可夢名稱或全國編號</label><input id="q" type="search" placeholder="搜尋名稱或 #0001…" autocomplete="off" aria-keyshortcuts="/"><span class="search-key" aria-hidden="true">/</span><button id="clear-search" type="button" aria-label="清除搜尋文字" hidden>×</button></div><select id="type" aria-label="18 種屬性篩選"><option value="">全部屬性</option></select><select id="order" aria-label="圖鑑編號排序"><option value="asc">編號：由小到大</option><option value="desc">編號：由大到小</option></select></div>
+<div class="results-toolbar"><p id="result-count" role="status" aria-live="polite">正在載入圖鑑…</p><div class="filter-actions"><button id="favorites-only" class="favorite-filter" type="button" aria-pressed="false">★ 只看收藏 · 0</button><button id="reset-filters" class="quiet-button" type="button" disabled>重設篩選 ↺</button></div></div><p id="saved-status" class="save-status" role="status" aria-live="polite"></p>
+<div id="grid" class="grid"></div><div class="empty" id="empty" hidden>沒有符合條件的寶可夢。</div>
 </section>
 <section id="about" class="about">
 <div class="eyebrow">A LIVING PROJECT</div><h2>一座持續成長的圖鑑</h2>
@@ -29,7 +30,7 @@
 </section>
 </main>
 <footer>PokéVerse 為非官方粉絲資料整理企劃，與 Nintendo、The Pokémon Company 或 Pokémon GO 相關公司無關。角色名稱和相關商標屬其權利人。<br>基礎資料：<a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a>；遊戲攻略依逐篇審核狀態顯示。</footer>
-<dialog id="detail"><button id="close" class="close" aria-label="關閉">×</button><div id="detailbody"></div></dialog>
-<script src="app.js"></script>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-actions"><span>POKÉVERSE / 圖鑑詳情</span><div class="dialog-tools"><button id="detail-top" class="quiet-button" type="button" aria-label="回到詳情頂部">↑ 頂部</button><button id="close" class="close" aria-label="關閉詳情">×</button></div></div><div id="detailbody"></div></dialog>
+<script src="app.js?v=20261127-ui2"></script>
 </body>
 </html>
