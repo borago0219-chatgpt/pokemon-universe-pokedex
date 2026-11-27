@@ -70,18 +70,58 @@ const gameNames={'red-green-blue-yellow':'紅／綠／藍／皮卡丘取得','fi
 const guideFieldNames={coverage:'涵蓋範圍',verified_versions:'版本取得總覽',not_yet_verified:'尚未核實',version_count_listed:'列舉版本標籤數',generation:'世代',version_methods:'各版取得方法',version_note:'版本差異',availability:'可取得性',version_difference:'版本差異',evolution:'進化條件',evolution_timing:'進化時點',other_historical_channels:'其他歷史渠道',current_community_field_research:'當季社群田野調查清單',task:'調查任務',possible_encounter:'可能遭遇',period:'適用期間',region:'適用地區',dates:'日期',date:'日期',event:'活動',checked_at:'查核日期',long_term_updates:'後續更新',ability:'特性建議',item_nature_evs:'道具、性格與努力值',competitive_status:'適用玩法與競技限制',versions:'適用版本',base_game:'遊戲本篇',dlc:'追加內容',method:'取得方法',methods:'取得途徑',unlock:'解鎖條件',location_note:'地點補充',status_note:'版本注意',scope:'適用範圍',proposed_moves:'建議招式',rationale:'配招思路',caution:'限制與注意',verification_required:'仍須補充',fast_attacks:'一般招式',charged_attacks:'特殊招式',special_form_moves:'特殊形態招式',pve:'PvE',pvp:'PvP',limited_move_caution:'限定招式提醒',normal_wild_capture:'一般野外捕捉',time_capsule_unlock:'時光膠囊解鎖',availability_type:'取得類型',historical_event_note:'歷史活動提醒',legality_note:'合法性說明',mechanics_note:'世代機制',locations:'地點',level_range:'等級範圍',community_suggested:'社群參考',source_scope:'資料範圍',shadow:'暗影',purified:'淨化',condition:'條件',location:'地點',type:'類型',status:'狀態',note:'備註',current_availability:'目前取得',confirmed_historical:'歷史取得',forest_biome_guidance:'森林生態區通則',dynamax_history:'極巨歷史',confirmed_regional_current:'地區限定現況'};
 const topicNames={capture:'捕捉與取得',moveset:'招式與配招',availability:'版本總覽',profile:'基本資料'};
 function safeUrl(s){try{const u=new URL(s);return u.protocol==='https:'?u.href:null}catch{return null}}
+
+Object.assign(guideFieldNames,{"version_groups":"各世代劇情配招","moves":"推薦招式","name":"招式","level":"習得等級","use":"使用方式","mode":"適用玩法","competitive_note":"對戰適用範圍","acquisition_preconditions_note":"取得前置提醒","abilities":"特性","regular":"一般特性","hidden":"隱藏特性","base_stats_from_generation_2":"第 2 代起的種族值","category":"分類","height_m":"身高（公尺）","weight_kg":"體重（公斤）","name_zh":"中文名","name_en":"英文名","name_ja":"日文名","national_id":"全國編號","generation_1_stat_note":"第 1 代種族值說明","form_note":"型態說明","other_confirmed_historical_method":"其他已確認歷史途徑","hp":"HP","attack":"攻擊","defense":"防禦","special_attack":"特攻","special_defense":"特防","speed":"速度","total":"合計","not_yet_verified":"尚未確認的延伸資訊","long_term_updates":"後續追蹤","availability":"取得類型"});
+const versionNames={"Red":"紅","Green (Japan)":"綠（日版）","Blue (Japan)":"藍（日版）","Blue (International)":"藍（國際版）","Yellow":"皮卡丘","Gold":"金","Silver":"銀","Crystal":"水晶","Ruby":"紅寶石","Sapphire":"藍寶石","Emerald":"綠寶石","FireRed":"火紅","LeafGreen":"葉綠","Diamond":"鑽石","Pearl":"珍珠","Platinum":"白金","HeartGold":"心金","SoulSilver":"魂銀","Black":"黑","White":"白","Black 2":"黑2","White 2":"白2","X":"X","Y":"Y","Omega Ruby":"歐米加紅寶石","Alpha Sapphire":"阿爾法藍寶石","Sun":"太陽","Moon":"月亮","Ultra Sun":"究極之日","Ultra Moon":"究極之月","Let's Go, Pikachu!":"Let's Go 皮卡丘","Let's Go, Eevee!":"Let's Go 伊布","Sword":"劍","Shield":"盾","Brilliant Diamond":"晶燦鑽石","Shining Pearl":"明亮珍珠","Legends: Arceus":"傳說 阿爾宙斯","Scarlet":"朱","Violet":"紫","Legends: Z-A":"傳說 Z-A"};
+const uiValueNames={"Overgrow":"茂盛","Chlorophyll":"葉綠素","story_single":"單機劇情","not_applicable":"不適用","ended":"已結束","historical":"歷史紀錄","unsupported":"本作不支援","wild":"野外遭遇","gift":"贈送","one_time_gift":"一次性贈送","starter_gift":"初始寶可夢贈送","dlc_gift":"追加內容贈送","dlc_wild":"追加內容野外遭遇","home_or_trade":"HOME 轉入或交換","historical_event":"已結束活動","historical_cross_generation_trade":"歷史跨世代交換","cross_game_trade":"跨作品交換","cross_game_trade_or_historical_bank_transfer":"跨作品交換；Bank 為歷史途徑","in_game_gift":"遊戲內贈送","transfer_or_historical_event":"轉入或歷史活動","trade_or_historical_event":"交換或歷史活動","trade_or_transfer":"交換或轉入","postgame_gift":"通關後贈送","postgame_wild":"通關後野外遭遇","postgame_pal_park_transfer":"通關後經帕爾公園移入","postgame_local_poke_transfer":"通關後本地寶可傳送","postgame_local_transfer_or_ended_japan_event":"通關後本地轉入；日本活動已結束","island_scan_wild":"島嶼掃描野外遭遇","wild_and_gift":"野外遭遇或贈送","gift_wild_and_dlc":"贈送、野外或追加內容途徑","dlc_gift_transfer_or_historical_event":"追加內容贈送、轉入或歷史活動","dlc_wild_or_transfer":"追加內容野外或相容轉入","Leech Seed":"寄生種子","Sleep Powder":"催眠粉","Razor Leaf":"飛葉快刀","Growth":"生長","Seed Bomb":"種子炸彈","Synthesis":"光合作用","Community Day Classic":"社群日經典回顧"};
+const researchFields=new Set(['verification_required','field_verification']);
+const extensionFields=new Set(['not_yet_verified','long_term_updates']);
+function displayText(value){
+ const text=String(value??'');
+ return versionNames[text]||uiValueNames[text]||text.replaceAll('劇情向原創草稿','劇情向原創建議').replaceAll('以上是劇情向草稿','以上為劇情向配招建議');
+}
+function visibleField(key,value){
+ if(researchFields.has(key))return false;
+ if(key==='status')return ['ended','historical','not_applicable','unsupported'].includes(value);
+ return true;
+}
 function valueHtml(v,depth=0){
- if(v==null)return '待確認';
- if(depth>4)return '詳情待整理';
- if(Array.isArray(v))return '<ul>'+v.slice(0,50).map(x=>'<li>'+valueHtml(x,depth+1)+'</li>').join('')+'</ul>';
- if(typeof v==='object')return '<dl>'+Object.entries(v).slice(0,50).map(([k,x])=>'<dt>'+escapeHTML(guideFieldNames[k]||k.replaceAll('_',' '))+'</dt><dd>'+valueHtml(x,depth+1)+'</dd>').join('')+'</dl>';
- return escapeHTML(v);
+ if(v==null)return '未確認';
+ if(depth>6)return '<span class="small">此項內容尚未整理</span>';
+ if(Array.isArray(v))return v.length?'<ul>'+v.slice(0,50).map(x=>'<li>'+valueHtml(x,depth+1)+'</li>').join('')+'</ul>':'<span class="small">未提供</span>';
+ if(typeof v==='object'){
+  const fields=Object.entries(v).filter(([k,x])=>visibleField(k,x));
+  return '<dl>'+fields.slice(0,50).map(([k,x])=>'<dt>'+escapeHTML(guideFieldNames[k]||'補充資訊')+'</dt><dd>'+valueHtml(x,depth+1)+'</dd>').join('')+'</dl>';
+ }
+ return escapeHTML(typeof v==='boolean'?(v?'是':'否'):displayText(v));
+}
+function versionHeading(row){
+ const versions=Array.isArray(row.versions)?row.versions:[];
+ return versions.map(displayText).join('／')||'版本未列出';
+}
+function renderAvailability(rows){
+ if(!Array.isArray(rows))return '';
+ return '<div class="version-list">'+rows.filter(r=>r&&typeof r==='object').map(row=>'<section class="version-entry"><div class="version-heading"><span class="generation-label">第 '+escapeHTML(row.generation)+' 代</span><h5>'+escapeHTML(versionHeading(row))+'</h5></div><p>'+escapeHTML(row.method||'取得方式尚未確認')+'</p></section>').join('')+'</div>';
+}
+function renderMovesetGroups(rows){
+ if(!Array.isArray(rows))return '';
+ return '<div class="moveset-groups">'+rows.filter(r=>r&&typeof r==='object').map(row=>{
+  const moves=Array.isArray(row.moves)?row.moves:[];
+  const unsupported=row.mode==='not_applicable';
+  const list=moves.length?'<ul class="move-list">'+moves.map(move=>'<li><span>'+escapeHTML(displayText(move.name))+'</span><span class="move-level">'+(move.level!=null?'Lv. '+escapeHTML(move.level):'習得方式未列出')+'</span></li>').join('')+'</ul>':'';
+  const ability=!unsupported&&row.ability&&row.ability!=='not_applicable'?'<p class="small">特性：'+escapeHTML(displayText(row.ability))+'</p>':'';
+  return '<section class="moveset-group"><div class="version-heading"><span class="generation-label">第 '+escapeHTML(row.generation)+' 代</span><h5>'+escapeHTML(versionHeading(row))+'</h5></div>'+(unsupported?'<p class="not-applicable">'+escapeHTML(row.use||'此版本不支援，配招不適用。')+'</p>':list+'<p>'+escapeHTML(row.use||'用途未列出')+'</p>'+ability+'<span class="mode-label">'+escapeHTML(displayText(row.mode||'適用玩法未列出'))+'</span>')+'</section>';
+ }).join('')+'</div>';
 }
 function renderApprovedGuide(g){
- const decision=reviewedGuides.find(r=>r.key===g.key&&r.decision==='passed');
- const sources=(g.sources||[]).map(s=>{const url=safeUrl(s.url);return url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(s.title||url)+'</a>':''}).filter(Boolean).join(' · ');
- const fields=Object.entries(g.content||{}).filter(([k])=>k!=='display_name').map(([k,v])=>'<dt>'+escapeHTML(guideFieldNames[k]||k.replaceAll('_',' '))+'</dt><dd>'+valueHtml(v)+'</dd>').join('');
- return '<article class="guide-card approved-guide"><div class="section-title"><h4>'+escapeHTML(topicNames[g.topic]||g.topic)+'</h4><span class="review-pill">內容審核：過</span></div><dl class="guide-data">'+fields+'</dl><p class="small">資料查核：'+escapeHTML(g.checked_at||'未註明')+'；審核決定：'+escapeHTML(decision?.reviewed_at||'未註明')+'；來源：'+(sources||'未列出')+'</p></article>';
+ const decision=reviewedGuides.find(r=>r.key===g.key&&Number(r.national_id)===Number(g.national_id)&&r.decision==='passed');
+ const sourceItems=(g.sources||[]).map(s=>{const url=safeUrl(s.url);return url?'<li><a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(s.title||new URL(url).hostname)+'</a></li>':''}).filter(Boolean);
+ const c=g.content||{};
+ const fields=Object.entries(c).filter(([k,v])=>!['display_name','verified_versions','version_groups'].includes(k)&&!extensionFields.has(k)&&visibleField(k,v)).map(([k,v])=>'<dt>'+escapeHTML(guideFieldNames[k]||'補充資訊')+'</dt><dd>'+valueHtml(v)+'</dd>').join('');
+ const extras=Object.entries(c).filter(([k,v])=>extensionFields.has(k)&&v!=null&&(!Array.isArray(v)||v.length)).map(([k,v])=>'<h5>'+escapeHTML(guideFieldNames[k])+'</h5>'+valueHtml(v)).join('');
+ const extensions=extras?'<details class="guide-extension"><summary>適用範圍與後續更新</summary>'+extras+'</details>':'';
+ const sources=sourceItems.length?'<details class="guide-sources"><summary>資料來源（'+sourceItems.length+'）</summary><ul>'+sourceItems.join('')+'</ul></details>':'<p class="small">來源未列出</p>';
+ return '<article class="guide-card approved-guide"><div class="section-title"><h4>'+escapeHTML(topicNames[g.topic]||'攻略資訊')+'</h4><span class="review-pill">內容審核：過</span></div><dl class="guide-data">'+fields+'</dl>'+renderAvailability(c.verified_versions)+renderMovesetGroups(c.version_groups)+extensions+'<p class="small guide-updated">資料查核：'+escapeHTML(g.checked_at||'未註明')+' · 審核：'+escapeHTML(decision?.reviewed_at||'未註明')+'</p>'+sources+'</article>';
 }
 function guideFingerprint(g){let s=JSON.stringify({content:g.content,sources:g.sources,checked_at:g.checked_at,status:g.status}),h=2166136261;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619);return (h>>>0).toString(16).padStart(8,'0')+':'+s.length;}
 function approvedReview(g){

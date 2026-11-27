@@ -30,7 +30,10 @@ jobs:
           python - <<'PY'
           from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
           from threading import Thread
+          from pathlib import Path
           from playwright.sync_api import sync_playwright
+          evidence = Path("visual-evidence")
+          evidence.mkdir(exist_ok=True)
           
           server = ThreadingHTTPServer(("127.0.0.1", 0), SimpleHTTPRequestHandler)
           Thread(target=server.serve_forever, daemon=True).start()
@@ -66,6 +69,8 @@ jobs:
                   assert favorite.get_attribute("aria-pressed") == "true"
                   page.locator("#favorites-only").click()
                   assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="1"]').count() == 1
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"favorites-{width}.png"))
                   page.reload(wait_until="networkidle")
                   page.wait_for_selector(".poke")
                   assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "true", "Favorite should survive reload"
@@ -144,6 +149,21 @@ jobs:
                   assert "Sleep Powder" in sv_text and "休閒單打" in sv_text, "Reviewed SV moveset should include its purpose"
                   page.locator("#game-select").select_option("main-series")
                   assert page.locator("#guide-content .approved-guide").count() == 2 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability and generation movesets should appear"
+                  assert page.locator("#guide-content .version-entry").count() == 19
+                  assert page.locator("#guide-content .moveset-group").count() == 7
+                  assert "寄生種子" in page.locator("#guide-content .moveset-groups").inner_text()
+                  assert "Lv. 39" in page.locator("#guide-content .moveset-groups").inner_text()
+                  page.locator(".moveset-group").first.scroll_into_view_if_needed()
+                  assert page.locator("#close").is_visible(), "Close control must remain reachable in long guides"
+                  page.screenshot(path=str(evidence / f"guide-cards-{width}.png"))
+                  assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), "Guide must not overflow the dialog"
+                  for game in page.locator("#game-select option").evaluate_all("(els) => els.map(el => el.value)"):
+                      page.locator("#game-select").select_option(game)
+                      body = page.locator("#guide-content").inner_text()
+                      for raw in ["story_single", "not_applicable", "competitive note", "verification_required", "仍須補充", "請獨立審核"]:
+                          assert raw not in body, f"Raw/internal text {raw} remains in {game}"
+                      assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), f"Dialog overflow in {game}"
+
                   page.locator("#game-select").select_option("gold-silver-crystal")
                   assert page.locator("#guide-content .approved-guide").count() == 2
                   for game, expected in [("red-green-blue-yellow", "147"), ("firered-leafgreen", "真新鎮"), ("heartgold-soulsilver", "赤紅"), ("x-y", "10")]:
@@ -190,6 +210,14 @@ jobs:
               browser.close()
           server.shutdown()
           PY
+      - name: Save desktop and mobile evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: visual-evidence
+          path: visual-evidence/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Check unauthenticated site response
         run: |
           python - <<'PY'

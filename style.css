@@ -115,3 +115,21 @@ dialog{padding:0;width:min(760px,94vw);border-radius:22px;scrollbar-color:#5a759
 /* All 18 standard types share the same readable label and color token. */
 .type-tag{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--type-color);border-color:color-mix(in srgb,var(--type-color) 45%,transparent);background:#26364b;background:color-mix(in srgb,var(--type-color) 14%,#16233b);color:#eef4ff}
 .type-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--type-color);flex:none}
+
+/* Human-readable guide cards, replacing raw research-object layouts. */
+.version-list,.moveset-groups{display:grid;gap:12px;margin:16px 0}
+.version-entry,.moveset-group{min-width:0;border:1px solid #415b73;border-radius:12px;padding:15px;background:#15253d}
+.version-heading{display:grid;gap:6px;margin-bottom:10px}
+.version-heading h5{font-size:15px;line-height:1.65;margin:0;color:#e6f4f3;overflow-wrap:anywhere}
+.generation-label{color:#9edfcf;font-size:11px;font-weight:700;letter-spacing:1px}
+.version-entry p,.moveset-group p{font-size:13px;line-height:1.85;margin:8px 0;color:#c4d3e4;overflow-wrap:anywhere}
+.move-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0;margin:12px 0;list-style:none}
+.move-list li{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;border:1px solid #4b6375;border-radius:9px;background:#233b4d;padding:10px;font-size:13px}
+.move-list li>span:first-child{overflow-wrap:anywhere}.move-level{flex:none;font-variant-numeric:tabular-nums;color:#bde7ce;font-size:12px}
+.mode-label{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;background:#2b4652;color:#c0e7df}
+.not-applicable{border-left:3px solid #8da5bb;padding-left:12px}
+.guide-sources,.guide-extension{margin-top:14px;border-top:1px solid #42566d;padding-top:12px;font-size:12px;color:#b6c9de;line-height:1.8;overflow-wrap:anywhere}
+.guide-sources summary,.guide-extension summary{cursor:pointer;color:#a1e6d9;font-weight:700}
+.guide-sources ul{padding-left:20px}.guide-extension h5{font-size:12px;margin:12px 0 4px}
+.guide-updated{margin:15px 0 6px}.guide-data:empty{display:none}
+@media(max-width:480px){.version-entry,.moveset-group{padding:12px}.move-list{grid-template-columns:1fr}.version-heading h5{font-size:14px}}
