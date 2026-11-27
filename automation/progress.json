@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "PokéVerse",
-  "last_research_run": "2026-11-26",
-  "last_successful_write": "2026-11-26",
+  "last_research_run": "2026-11-27",
+  "last_successful_write": "2026-11-27",
   "daily_limits": {
     "max_distinct_national_ids": 1,
     "image_prompts_per_focus": 1,
@@ -328,32 +328,29 @@
     }
   ],
   "daily_focus": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "national_id": 1,
     "name_zh": "妙蛙種子",
     "name_en": "Bulbasaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "fixed_scope_v1_17_guides_19_groups_partial_3_blocking_areas_updated",
+    "research_status": "fixed_scope_v1_C3_C4_researched_awaiting_independent_review",
     "image_status": "candidate_generated_pending_quality_and_rights_review",
     "preview_status": "work_cloud_browser_reached_cloudflare_access_login_only",
-    "review_status": "2026-11-25_report_read_fixed_scope_v1_2026-11-26_new_blob_pending_independent_review",
+    "review_status": "2026-11-26_independent_review_C1_C2_C5_C6_C7_pass_C3_C4_C8_fail_2026-11-27_edits_pending_review",
     "publication_status": "main_source_changed_live_deployment_unverified",
     "missing_sections": [
-      "C2 版本可取得性：G01–G19 已列 19 組／40 個版本標籤，並修 G08《黑／白》寶可傳送與日本歷史活動；其他組仍需依固定表驗主要途徑與來源，不能把標籤數當已核版本數。",
-      "C3 各版本取得：已有 11／19 組獨立指南，固定表允許共享機制合併；其餘組的關鍵地點／前置仍須核，精確生成率及細微譯名屬非阻擋長期更新。",
-      "C4 主系列配招：第 1 代兩組、第 2 代及《朱／紫》有未進化本體草稿；本輪修《朱／紫》劇情／休閒單打合法招式與用途，其餘適用遊戲組仍缺可核對建議；正式競技及每個替代道具非本輪必修。",
-      "C5 Pokémon GO：當季社群田野調查提供可能遭遇渠道，台灣特定補給站須遊戲內確認；台灣當日野外、蛋、團體戰、極巨／暗影未知，不可冒稱沒有或保證有；本輪新證據待審核。",
-      "C7 來源與更新：核心取得、配招需依固定範圍逐組映射來源與日期；本輪補 G08、GO、朱紫配招來源，不每日重開已通過且未變動的欄位。",
-      "C8 網站：建設者未操作 Visit；Work 私人預覽的搜尋、詳情、版本切換、指南與可展示圖片仍缺實測，交視覺化 AI。",
-      "當日獨立審核：固定表 v1 已讀；2026-11-26 新指南 blob 尚無當日整體無重大缺漏報告，不能換號。"
+      "C3：固定表 G04／G06／G09／G11／G12／G13 的主要取得前置已在原 availability key 補來源；G08 先前已補。2026-11-27 新版仍待獨立審核，不能先報通過。",
+      "C4：第 3–8 代未進化妙蛙種子劇情向分組配招已新增 1:main-series:moveset；第 1 代原 key 的等級對照已修，兩篇及完整 C4 仍待獨立審核。",
+      "C8：建設者不得操作 Visit 或部署；Work 私人預覽的搜尋、詳情、版本切換、合法可展示圖片仍須視覺化任務提供實測與存取證據。",
+      "當日獨立審核：2026-11-26 報告已核實，當時 C3／C4／C8 沒過；2026-11-27 新資料尚無獨立報告。#001 未完成，不換號。"
     ],
-    "source_checked_at": "2026-11-26",
+    "source_checked_at": "2026-11-27",
     "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
     "handoff": {
       "construction": {
-        "status": "fixed_scope_v1_three_blocking_areas_researched_saved_on_nonmain",
-        "last_updated_at": "2026-11-26",
+        "status": "fixed_scope_v1_C3_C4_edits_saved_nonmain_pending_review",
+        "last_updated_at": "2026-11-27",
         "guide_keys": [
           "1:main:profile",
           "1:main-series:availability",
@@ -371,10 +368,11 @@
           "1:red-green-blue-yellow:capture",
           "1:firered-leafgreen:capture",
           "1:heartgold-soulsilver:capture",
-          "1:x-y:capture"
+          "1:x-y:capture",
+          "1:main-series:moveset"
         ],
-        "verified_versions": "11_of_19_groups_capture_guides_partial",
-        "notes": "沿用 #001 且只寫非 main 的 work/builder-main-rescue-20261126；按固定表 v1 與舊報告比對，C2 修 G08 黑白本地轉入及已結束日本 Global Link，C5 列當季社群田野調查可能獎勵與台灣實機界線，C4 修朱紫劇情／休閒單打合法建議並刪無來源的 Smogon 否定斷言。C1、C6 舊版已有核心通過證據，未擴張必修。",
+        "verified_versions": "19_of_19_groups_availability_prior_review_passed; G04_G06_G09_G11_G12_G13_details_revised_pending_review",
+        "notes": "沿用 #001。2026-11-27 僅改 1:main-series:availability、1:red-blue-yellow:moveset，並新增 1:main-series:moveset；2026-11-27 審核交接確認昨日 16 key 過，其中 15 key 的內容保持不變。修正原 key 等級對照，補 6 組取得前置與第 3–8 代分組劇情配招。現行服務與硬體運作未實測，不將當年機制保證成今日可用。",
         "commits": [
           "887fad03d4bcad2a621d27a5b26671b05307a677",
           "e185c49730f60e6ebd34b05980d1eab0bc285a90",
@@ -400,25 +398,24 @@
           "3bac5ce293ab0ae907b72552f4cd6390c38d25d3",
           "22624d12ab327b27d499d3d61f3081d4e447143a"
         ],
-        "guide_commit": "22624d12ab327b27d499d3d61f3081d4e447143a",
-        "source_checked_at": "2026-11-26",
+        "guide_commit": "c366da170cb39fa1b206c420919e36f4760bc647",
+        "source_checked_at": "2026-11-27",
         "publication_items": {
           "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
-          "bulbasaur_guides": "10_of_13_prior_blob_passed_3_failed_latest_17_guides_need_fingerprint_review",
+          "bulbasaur_guides": "15_prior_approved_keys_unchanged; 2_prior_keys_modified_and_1_new_key_pending_review; branch_only_not_published",
           "bulbasaur_image": "internal_quality_approved_public_github_and_rights_block_display"
         },
         "review_gap_keys_updated": [
-          "1:scarlet-violet:capture",
-          "1:sword-shield:capture",
-          "1:lets-go:capture",
-          "1:red-blue-yellow:moveset",
-          "1:gold-silver-crystal:moveset",
           "1:main-series:availability",
-          "1:pokemon-go:capture",
-          "1:scarlet-violet:moveset"
+          "1:red-blue-yellow:moveset",
+          "1:main-series:moveset"
         ],
-        "review_gap_keys_pending": [],
-        "review_gap_note": "固定範圍 v1 取代舊報告泛化待補；GO 配招與 BDSP 取得此前按核心範圍已過，不因可選細節重開。本輪三組真正阻擋的內容更新待獨立審核。",
+        "review_gap_keys_pending": [
+          "1:main-series:availability",
+          "1:red-blue-yellow:moveset",
+          "1:main-series:moveset"
+        ],
+        "review_gap_note": "2026-11-26 固定範圍審核 16／17 原 key 過；其餘 15 個已過 key 未動。C3、C4 新版請審核員只驗變動部分；C8 由視覺化任務驗。",
         "fixed_scope": {
           "path": "reviews/001-fixed-scope-2026-11-26.md",
           "blob_sha": "dcb59bb523e36ce2b16e0e228fae8f6d622fab38",
@@ -426,7 +423,7 @@
           "focus_id": 1,
           "branch": "work/builder-main-rescue-20261126"
         },
-        "guide_blob_sha": "ef67316c5a32cc1e0f7c4301be7a458aa7ed90d4"
+        "guide_blob_sha": "00faf1f53dd7cf72775f7222da1b21988a3c7b65"
       },
       "image": {
         "status": "candidate_saved_pending_review",
@@ -456,17 +453,17 @@
         ],
         "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
       },
-      "next_day_action": "維持 #001；按 reviews/001-fixed-scope-2026-11-26.md v1 接續真正未過的 G01–G19 主要途徑與適用作品配招，最多三組阻擋項；已過欄位關閉，可選數值移長期更新。審核員按本分支最新指南 SHA 核對；視覺化員另驗 C8。建設者不得碰 main／Visit。"
+      "next_day_action": "維持 #001，先讀本分支固定表及新審核報告；只核 2026-11-27 變動 key 的 C3/C4 結果並交視覺化驗 C8。未獨立通過八項不得換號；不得碰 main／Visit。"
     },
     "completion_checks": {
-      "profile": "prior_review_passed_core_fixed_scope_C1",
-      "main_series_availability": "partial_fixed_scope_C2_G08_updated",
-      "version_capture": "partial_fixed_scope_C3_11_of_19_independent_guides",
-      "main_series_movesets": "partial_fixed_scope_C4_SV_story_set_updated",
-      "pokemon_go": "partial_fixed_scope_C5_seasonal_research_possible_channel",
-      "generated_image": "passed_candidate_exists_quality_approved_blob_bd82571241715f5f9c1c29dff978cb60dab347bf",
-      "website_private_preview": "blocked_not_tested_by_builder",
-      "independent_review": "pending_2026_11_26_latest_blob"
+      "profile": "passed_2026_11_26_review_C1",
+      "main_series_availability": "passed_2026_11_26_review_C2_prior_blob; revised_acquisition_rows_pending_review",
+      "version_capture": "C3_researched_2026_11_27_pending_independent_review",
+      "main_series_movesets": "C4_researched_2026_11_27_pending_independent_review",
+      "pokemon_go": "passed_2026_11_26_review_C5",
+      "generated_image": "passed_2026_11_26_review_C6_candidate_blob_bd82571241715f5f9c1c29dff978cb60dab347bf",
+      "website_private_preview": "C8_not_verified_by_visualization",
+      "independent_review": "2026_11_26_report_C3_C4_C8_failed; 2026_11_27_edits_pending_review"
     }
   },
   "focus_policy": {
