@@ -1,0 +1,22 @@
+# 視覺化晚間接力 — 2026-11-27（Asia/Taipei）
+
+唯一焦點：#0001 妙蛙種子。已讀 main 與建設分支最新檔案、圖片 metadata、審核與固定表 v2；不自行換號。
+
+## 正式站與內容
+- main HEAD 本輪讀取為 `770eee699e3844d12c214e03fc4975b2d6998336`；網站程式仍是 [已發布 16 篇的 5e3e13f](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/5e3e13f62db925407db44ef258fd0ff08abf2cc3) 版本。GitHub 的 Workers Builds 對該提交回報 success；既有 [Chromium 45975782756](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/45975782756) success，限該已測版本。
+- 已接入 #0001 批准 JPEG（blob `bd82571241715f5f9c1c29dff978cb60dab347bf`）、身高體重、特性、種族值、進化與昨天通過的 16 篇指南。今天新增的 #0004 圖片是生圖任務成果，本輪不接入、不改網站焦點。
+- 建設分支的 `data/guides.json` blob `00faf1f53dd7cf72775f7222da1b21988a3c7b65` 有取得方法／配招新草稿，仍未見對應新版審核裁決。原 C3 六組已有補寫，請只審變更，不重做已具備資料；原始研究與進度未被視覺化覆蓋。
+
+## 本輪候選程式
+- 使用者已指定閒置時優先美編／便利功能，並暫緩小測驗。主要發布項目已接入；新研究等待審核、候選介面等待下次驗收，本輪不因此擴大研究或重測。
+- 候選分支 `work/visual-polish-001-20261127` 原 [c92935a](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/c92935abb7a80e10ca694d2c0276b727db89eafc) 已有手機雙欄、屬性色卡片、搜尋數量／清除／重設、固定關閉列及版本下拉選單，未合併 main。
+- 本次再補原已審 profile 的分類、日文名、第 1 代單一「特殊」種族值說明及型態注意，依完整 profile 指紋通過才呈現。只改 app.js 和既有測試候選斷言，不新增素材或改研究正文。完整內容批准仍沿用 2026-11-26 的固定版。
+- 實際新增檢查：Work 雲端 node --check 通過；隔離渲染確認上述欄位、0.7 m／6.9 kg 可見，以及改動 profile 後不顯示新增欄位。這些是語法／邏輯檢查，不是瀏覽器或畫面驗收。
+
+## 一次測試與 C8
+- 今天已有上述 Chromium 與 Access 登入門檻觀察；依使用者每日最多一次規則，本輪不再啟動 Work／Actions 瀏覽器，不把先前測試套到新候選版。候選介面未測，不合併 main、不宣稱 Visit 顯示。
+- 固定表 v2 已將 C8 技術問題與內容達標／次日換號分開。登入後正式畫面本日仍未實測；不得因此追加建設研究或重判已過 C1–C7。是否換號由建設者依最新獨立審核於次日核實，視覺化不自行改進度。
+- 下一個台灣日期可將最新候選必要程式及測試斷言整合到既有測試分支，在當日一次完整驗收內確認手機／桌面、版本選單、清除／重設、固定關閉列、新基本欄位和原審核隔離。通過對應技術與品質條件後，只發布網站必要檔案並核對建置與 Visit。
+- 本輪收束原因：今日驗收次數已使用；主要新研究尚待裁決，候選介面已完成可保存的程式／靜態檢查與交接。沒有對當日失敗反覆重跑，沒有停用任何長期排程。
+
+候選程式本次提交：[7f8378015002fbb991d6c6908cce1acc5dd8c7fa](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/7f8378015002fbb991d6c6908cce1acc5dd8c7fa)。
