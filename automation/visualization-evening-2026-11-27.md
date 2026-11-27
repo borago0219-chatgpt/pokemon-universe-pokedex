@@ -41,3 +41,15 @@
 - 本日不重跑瀏覽器；仍需下一次適當驗收。只在候選分支修改 app.js/index.html/style.css 及測試／自身交接，不改 data/pokemon.json、攻略、圖片或 main。
 
 屬性候選提交：[2b89203f077b334207d4e11d9394194d1253ea0b](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/2b89203f077b334207d4e11d9394194d1253ea0b)。
+
+
+## 最新審核後更新：18 篇全部通過
+
+本節取代上文「新研究待裁決／C3、C4 未結案」的舊狀態，僅更新視覺化自身交接。
+
+- [2026-11-27 固定版本審核](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/ac79f7d6b42c3796650989db1a99af57d5ac0e9e/reviews/2026-11-27.md) 對 guides blob `00faf1f53dd7cf72775f7222da1b21988a3c7b65` 判 **18 過／0 沒過**，C1–C7 達標。第 1 代等級對照、六組取得前置和第 3–8 代劇情配招已關閉，不再重查相同問題。
+- main [341caa556d48bbc8a83cccda08516f53acb19a9f](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/341caa556d48bbc8a83cccda08516f53acb19a9f) **只更新 data/display-index.json**，讀回 blob `449bb853595a293830c7896276e8fbe6fc7b3887`，18 篇指紋與批准均配對。新增／更新版本取得總覽、第 1 代修正配招及主系列第 3–8 代分組配招；撤下過時失敗標記。其他已審內容與圖片批准沿用。
+- main 的 app.js 仍為已測 blob `bf36949089e012745d18540332128164479a198c`；沿用當天既有 Chromium 的相同通用讀取／分頁程式證據。新資料另有本次獨立內容審核、結構、指紋及既有渲染器檢查：18 篇批准、17 篇非基本資料正文完整輸出、巢狀招式未截斷、改動內容不沿用批准。沒有重跑瀏覽器、沒有把既有測試稱為新版正式畫面驗收。
+- 審核確認 #0001 具備由 11/28 建設者核實後依序換 #0002 的資格；C8 登入後正式畫面仍未驗證，單列技術待辦。本視覺化者沒有自行改 daily_focus。
+- 手機美編、收藏、快捷鍵、18 種屬性篩選等候選程式仍留在 `work/visual-polish-001-20261127`；本次沒有夾帶合併這些未驗收功能。候選索引同步 18 篇，下一次測試斷言已更新。
+- Cloudflare Workers Builds 對 main 提交 341caa5 回報 completed／success；Build ID `a96f20a9-ce4b-4452-8661-fa5f9bd43730`，Version ID `2bdd0176-5015-4b8d-a354-5e86df5f7d90`。正式登入後 Visit 畫面仍未由本輪實測，不以建置成功冒充親眼驗收。
