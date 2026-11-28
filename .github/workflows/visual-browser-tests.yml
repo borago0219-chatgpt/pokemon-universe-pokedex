@@ -50,6 +50,30 @@ jobs:
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
                   import json
                   catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  labels = json.load(open("data/display-index.json"))["catalog_labels"]
+                  expected_names = {label["national_id"]: label["name_zh"] for label in labels}
+                  import re
+                  for record in catalog:
+                      expected_name = expected_names.get(record["id"], record["name_zh"])
+                      title = page.locator(f'.poke[data-id="{record["id"]}"] h3').inner_text()
+                      assert title == expected_name and re.search(r"[\u3400-\u9fff]", title), f"Missing/mismatched localized name for {record['id']}"
+                  page.locator("#q").fill("火恐龍")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="5"]').count() == 1
+                  assert page.locator(".poke .en").inner_text() == "Charmeleon", "English name should remain available"
+                  assert page.locator('.poke[data-id="5"] .tag').inner_text() == "火"
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"charmeleon-name-{width}.png"))
+                  page.locator('.poke[data-id="5"]').click()
+                  assert "火恐龍" in page.locator("#detail-title").inner_text()
+                  assert page.locator(".identity-source a").get_attribute("href") == "https://tw.portal-pokemon.com/pokedex/0005/"
+                  assert page.locator("#detailbody .detail-artwork").count() == 0, "Unmade #005 image must not be invented"
+                  page.locator("#close").click()
+                  page.locator("#q").fill("Charmeleon")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="5"]').count() == 1
+                  for label in labels:
+                      page.locator("#q").fill(label["name_zh"])
+                      assert page.locator(f'.poke[data-id="{label["national_id"]}"]').count() == 1, "Localized search should find the correct ID"
+                  page.locator("#q").fill("")
                   canonical_types = {"normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"}
                   options = page.locator("#type option").evaluate_all("(els) => els.map(el => ({value:el.value,label:el.textContent}))")
                   assert {o["value"] for o in options} == canonical_types | {""}, "All 18 type filters must exist"
@@ -206,6 +230,21 @@ jobs:
               assert page.locator('.guide-tab[data-game="x-y"]').count() == 0, "Modified snapshot must not load"
               assert page.locator('.guide-tab[data-game="invented"]').count() == 0, "Unapproved snapshot must not load"
               assert "UNREVIEWED_SENTINEL" not in page.locator("#detailbody").inner_text()
+              page.close()
+              # Display labels must match ID/English identity and an official source; duplicates fail closed.
+              label_payload = json.load(open("data/display-index.json"))
+              label_payload["catalog_labels"] = [
+                  {"national_id": 2, "name_en": "Charmeleon", "name_zh": "錯誤名稱", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0002/"},
+                  {"national_id": 3, "name_en": "Venusaur", "name_zh": "錯誤來源", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "javascript:alert(1)"},
+                  {"national_id": 5, "name_en": "Charmeleon", "name_zh": "重複甲", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0005/"},
+                  {"national_id": 5, "name_en": "Charmeleon", "name_zh": "重複乙", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0005/"},
+              ]
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(label_payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              for label_id, original in [(2,"Ivysaur"), (3,"Venusaur"), (5,"Charmeleon")]:
+                  assert page.locator(f'.poke[data-id="{label_id}"] h3').inner_text() == original, "Invalid labels must not replace catalog identity"
+              assert page.locator('.poke[data-id="1"] h3').inner_text() == "妙蛙種子"
               page.close()
               browser.close()
           server.shutdown()

@@ -160,14 +160,34 @@ function renderFact(f){
  const url=safeUrl(f.source_url);
  return '<article class="guide-card verified-fact"><h4>'+escapeHTML(f.label)+'</h4><p>'+escapeHTML(f.text)+'</p><p class="small">核對：'+escapeHTML(f.verified_at)+'；'+(url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">查看來源</a>':'來源待補')+'</p></article>';
 }
+// Display-only localization: preserve the Actions-owned catalog and reviewed gameplay data.
+function applyCatalogLabels(pokemon,labels){
+ const byId=new Map(),duplicates=new Set();
+ for(const label of Array.isArray(labels)?labels:[]){
+  const id=Number(label?.national_id);
+  if(!Number.isInteger(id)||id<1||label.verification!=='official_name_matched'||typeof label.name_zh!=='string'||!/[\u3400-\u9fff]/u.test(label.name_zh)||label.name_zh.length>20||typeof label.name_en!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(label.checked_at||''))continue;
+  const source=safeUrl(label.source_url);
+  if(source!=='https://tw.portal-pokemon.com/pokedex/'+String(id).padStart(4,'0')+'/')continue;
+  if(byId.has(id))duplicates.add(id);
+  byId.set(id,label);
+ }
+ return pokemon.map(p=>{
+  const label=byId.get(Number(p.id)),name=String(p.name_zh||'');
+  if(!label||duplicates.has(Number(p.id))||String(p.name_en||'').toLowerCase()!==label.name_en.toLowerCase()||/[\u3400-\u9fff]/u.test(name))return p;
+  return {...p,name_zh:label.name_zh,catalog_name_source:label.source_url,catalog_name_checked_at:label.checked_at};
+ });
+}
+
 function details(p){
  if(!p)return;
  const relevant=guideRecords.filter(g=>Number(g.national_id)===Number(p.id)&&g.topic!=='profile');
  const games=[...new Set(['pokemon-go','main-series',...relevant.map(g=>g.game)])];
  const tabs=games.map((game,i)=>'<button type="button" class="guide-tab" id="guide-tab-'+i+'" role="tab" aria-controls="guide-content" tabindex="'+(i===0?'0':'-1')+'" aria-selected="'+(i===0?'true':'false')+'" data-game="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</button>').join('');
  const options=games.map(game=>'<option value="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</option>').join('');
+ const nameSource=safeUrl(p.catalog_name_source);
+ const identitySource=nameSource?'<p class="small identity-source">中文名稱核對：'+escapeHTML(p.catalog_name_checked_at)+' · <a href="'+escapeHTML(nameSource)+'" target="_blank" rel="noopener noreferrer">台灣寶可夢官方圖鑑</a></p>':'';
  const image=artworks.has(Number(p.id))?'<img class="detail-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'';
- $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
+ $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+identitySource+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
  const show=game=>{
   document.querySelectorAll('.guide-tab').forEach(b=>{const selected=b.dataset.game===game;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;if(selected)$('#guide-content').setAttribute('aria-labelledby',b.id);});
   $('#game-select').value=game;
@@ -203,7 +223,7 @@ async function init(){
   records=Array.isArray(data.pokemon)?data.pokemon:[];
   try{
    const [gr,dr]=await Promise.all([fetch('./data/guides.json',{cache:'no-store'}),fetch('./data/display-index.json',{cache:'no-store'})]);
-   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);await loadApprovedArtwork(index);}
+   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);records=applyCatalogLabels(records,index.catalog_labels);await loadApprovedArtwork(index);}
   }catch{guideRecords=[];displayEntries=[];displayFacts=[];reviewedGuides=[];}
   $('#total').textContent=records.length;
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');

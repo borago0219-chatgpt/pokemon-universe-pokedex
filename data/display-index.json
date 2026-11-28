@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "entries": [
     {
       "national_id": 1,
@@ -1867,5 +1867,167 @@
     "selected_at": "2026-11-27",
     "scope": "18 篇均經固定表 v2 審核通過；展示副本不覆蓋研究資料。",
     "review_ref": "https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/blob/ac79f7d6b42c3796650989db1a99af57d5ac0e9e/reviews/2026-11-27.md"
-  }
+  },
+  "catalog_labels": [
+    {
+      "national_id": 2,
+      "name_en": "Ivysaur",
+      "name_zh": "妙蛙草",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0002/"
+    },
+    {
+      "national_id": 3,
+      "name_en": "Venusaur",
+      "name_zh": "妙蛙花",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0003/"
+    },
+    {
+      "national_id": 5,
+      "name_en": "Charmeleon",
+      "name_zh": "火恐龍",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0005/"
+    },
+    {
+      "national_id": 6,
+      "name_en": "Charizard",
+      "name_zh": "噴火龍",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0006/"
+    },
+    {
+      "national_id": 8,
+      "name_en": "Wartortle",
+      "name_zh": "卡咪龜",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0008/"
+    },
+    {
+      "national_id": 9,
+      "name_en": "Blastoise",
+      "name_zh": "水箭龜",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0009/"
+    },
+    {
+      "national_id": 11,
+      "name_en": "Metapod",
+      "name_zh": "鐵甲蛹",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0011/"
+    },
+    {
+      "national_id": 12,
+      "name_en": "Butterfree",
+      "name_zh": "巴大蝶",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0012/"
+    },
+    {
+      "national_id": 13,
+      "name_en": "Weedle",
+      "name_zh": "獨角蟲",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0013/"
+    },
+    {
+      "national_id": 14,
+      "name_en": "Kakuna",
+      "name_zh": "鐵殼蛹",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0014/"
+    },
+    {
+      "national_id": 15,
+      "name_en": "Beedrill",
+      "name_zh": "大針蜂",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0015/"
+    },
+    {
+      "national_id": 17,
+      "name_en": "Pidgeotto",
+      "name_zh": "比比鳥",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0017/"
+    },
+    {
+      "national_id": 18,
+      "name_en": "Pidgeot",
+      "name_zh": "大比鳥",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0018/"
+    },
+    {
+      "national_id": 19,
+      "name_en": "Rattata",
+      "name_zh": "小拉達",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0019/"
+    },
+    {
+      "national_id": 20,
+      "name_en": "Raticate",
+      "name_zh": "拉達",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0020/"
+    },
+    {
+      "national_id": 21,
+      "name_en": "Spearow",
+      "name_zh": "烈雀",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0021/"
+    },
+    {
+      "national_id": 22,
+      "name_en": "Fearow",
+      "name_zh": "大嘴雀",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0022/"
+    },
+    {
+      "national_id": 23,
+      "name_en": "Ekans",
+      "name_zh": "阿柏蛇",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0023/"
+    },
+    {
+      "national_id": 24,
+      "name_en": "Arbok",
+      "name_zh": "阿柏怪",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0024/"
+    },
+    {
+      "national_id": 26,
+      "name_en": "Raichu",
+      "name_zh": "雷丘",
+      "verification": "official_name_matched",
+      "checked_at": "2026-11-28",
+      "source_url": "https://tw.portal-pokemon.com/pokedex/0026/"
+    }
+  ]
 }
