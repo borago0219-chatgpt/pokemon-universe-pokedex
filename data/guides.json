@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "guides": [
     {
       "key": "25:pokemon-go:capture",
@@ -1886,6 +1886,544 @@
           "type": "community_game_database",
           "version": "Generation 8",
           "checked_at": "2026-11-27"
+        }
+      ]
+    },
+    {
+      "key": "2:main:profile",
+      "national_id": 2,
+      "game": "main",
+      "topic": "profile",
+      "checked_at": "2026-11-28",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙草 Ivysaur",
+        "national_id": 2,
+        "name_zh": "妙蛙草",
+        "name_en": "Ivysaur",
+        "name_ja": "フシギソウ",
+        "category": "種子寶可夢",
+        "types": [
+          "grass",
+          "poison"
+        ],
+        "height_m": 1,
+        "weight_kg": 13,
+        "abilities": {
+          "regular": [
+            "Overgrow（茂盛）"
+          ],
+          "hidden": [
+            "Chlorophyll（葉綠素）"
+          ],
+          "mechanics_note": "第 1／2 代及 Let's Go 等不使用現代特性機制；不能把特性欄套到這些作品。"
+        },
+        "base_stats_from_generation_2": {
+          "hp": 60,
+          "attack": 62,
+          "defense": 63,
+          "special_attack": 80,
+          "special_defense": 80,
+          "speed": 60,
+          "total": 405
+        },
+        "generation_1_stat_note": "第 1 代單一特殊種族值 80，尚未分特攻／特防。",
+        "evolution": "妙蛙種子達 Lv.16 進化為妙蛙草；妙蛙草達 Lv.32 進化為妙蛙花（具體進化操作依作品機制）。",
+        "form_note": "官方一般圖鑑將妙蛙草列為無不同形態；Pokémon GO 限時服裝外觀與進化後妙蛙花的超級／極巨型態不可冒稱 #002 本體常駐型態。",
+        "data_discrepancy": "GitHub Actions 專管的 data/pokemon.json 目前 #2 name_zh 為 Ivysaur，與官方中文名妙蛙草不符；本建設任務不修改該檔，交其管理流程修正。"
+      },
+      "sources": [
+        {
+          "url": "https://sg.portal-pokemon.com/play/pokedex/2/",
+          "title": "官方圖鑑 #0002 屬性、身高、體重、分類、普通特性與形態",
+          "type": "official_pokedex",
+          "version": "current main profile",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/ivysaur",
+          "title": "Pokémon Database 多語名稱、隱藏特性、種族值與進化等級",
+          "type": "community_game_database",
+          "version": "Generations I–IX",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/ivysaur/",
+          "title": "Serebii 妙蛙草特性與形態交叉核對",
+          "type": "community_game_database",
+          "version": "Generation VIII",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        }
+      ]
+    },
+    {
+      "key": "2:main-series:availability",
+      "national_id": 2,
+      "game": "main-series",
+      "topic": "availability",
+      "checked_at": "2026-11-28",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙草 Ivysaur",
+        "coverage": "固定查核表 G01–G19；每組列主要途徑及前置。這是社群資料庫交叉整理，未逐一實機測試；從 #001 進化與直接捕捉 #002 分開。",
+        "evolution_rule": "多數適用主系列作品中，妙蛙種子達 Lv.16 進化為妙蛙草；各作需遵照當作的進化操作與個體可用性。",
+        "version_groups": [
+          {
+            "group": "G01",
+            "generation": 1,
+            "versions": [
+              "Red",
+              "Green (Japan)",
+              "Blue (Japan)",
+              "Blue (International)"
+            ],
+            "availability": "evolve_bulbasaur",
+            "method": "於可選妙蛙種子的初始版本，將 #001 提升至 Lv.16 進化；未核實本體一般野生點。",
+            "limits": "各版初始選擇只能三選一；其他選項需交換。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G02",
+            "generation": 1,
+            "versions": [
+              "Yellow"
+            ],
+            "availability": "evolve_bulbasaur",
+            "method": "於華藍市取得贈送的妙蛙種子後，提升至 Lv.16 進化。",
+            "limits": "不是本體野生捕捉。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G03",
+            "generation": 2,
+            "versions": [
+              "Gold",
+              "Silver",
+              "Crystal"
+            ],
+            "availability": "time_capsule_or_evolve",
+            "method": "從第 1 代經時光膠囊交換妙蛙草，或交換妙蛙種子後提升至 Lv.16；亦可與相容同代玩家交換。",
+            "limits": "本篇無已核實通常野生點；時光膠囊是歷史卡匣機制，今日設備可行性未測。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G04",
+            "generation": 3,
+            "versions": [
+              "Ruby",
+              "Sapphire",
+              "Emerald"
+            ],
+            "availability": "trade_or_evolve",
+            "method": "由《火紅／葉綠》跨作交換妙蛙草，或先交換妙蛙種子後提升至 Lv.16；火紅／葉綠須完成七之島紅／藍寶石交付以解除與豐緣版交換限制。",
+            "limits": "本篇無已核實通常野生點；卡匣與連線設備現況未測。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G05",
+            "generation": 3,
+            "versions": [
+              "FireRed",
+              "LeafGreen"
+            ],
+            "availability": "evolve_bulbasaur",
+            "method": "真新鎮大木博士三選一取得妙蛙種子後提升至 Lv.16。",
+            "limits": "不是本體野生捕捉。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G06",
+            "generation": 4,
+            "versions": [
+              "Diamond",
+              "Pearl",
+              "Platinum"
+            ],
+            "availability": "pal_park_or_trade",
+            "method": "取得全國圖鑑後，以 221 號道路帕爾公園從相容 GBA 版本移入妙蛙草／妙蛙種子；後者再提升至 Lv.16。也可在相容第 4 代遊戲間交換。",
+            "limits": "帕爾公園不是本篇通常野生點；今日設備未測。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G07",
+            "generation": 4,
+            "versions": [
+              "HeartGold",
+              "SoulSilver"
+            ],
+            "availability": "postgame_evolve_or_pal_park",
+            "method": "擊敗赤紅後在真新鎮向大木博士三選一領妙蛙種子，再提升至 Lv.16；另可用相容跨作交換／帕爾公園。",
+            "limits": "贈送屬通關後；不是直接贈送妙蛙草。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G08",
+            "generation": 5,
+            "versions": [
+              "Black",
+              "White"
+            ],
+            "availability": "poke_transfer_or_trade",
+            "method": "通關取得全國圖鑑後，在 15 號道路寶可傳送研究所用兩台相容 DS 從第 4 代單向移入妙蛙草或妙蛙種子；後者可提升至 Lv.16。",
+            "limits": "本篇無已核實通常野生點；歷史網路活動不算今日現行來源，硬體未測。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G09",
+            "generation": 5,
+            "versions": [
+              "Black 2",
+              "White 2"
+            ],
+            "availability": "poke_transfer_or_trade",
+            "method": "通關取得全國圖鑑後，在 15 號道路寶可傳送研究所從相容第 4 代卡匣移入妙蛙草或妙蛙種子；後者可提升至 Lv.16。",
+            "limits": "非本篇通常野生；硬體未測。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G10",
+            "generation": 6,
+            "versions": [
+              "X",
+              "Y"
+            ],
+            "availability": "friend_safari_wild_or_evolve",
+            "method": "在可進入奇楠市朋友狩獵區、且有對應草屬性朋友的條件下可直接遇見 Lv.30 妙蛙草；另可將密阿雷市布拉塔諾博士贈送的妙蛙種子提升至 Lv.16。",
+            "limits": "朋友狩獵區的朋友組合有條件；不保證任意存檔立刻可遇見。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G11",
+            "generation": 6,
+            "versions": [
+              "Omega Ruby",
+              "Alpha Sapphire"
+            ],
+            "availability": "trade_or_evolve",
+            "method": "從《X／Y》交換妙蛙草，或交換布拉塔諾博士贈送的妙蛙種子後提升至 Lv.16；Pokémon Bank 曾支援相容轉入，今日服務現況未核。",
+            "limits": "本篇無已核實通常野生點。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G12",
+            "generation": 7,
+            "versions": [
+              "Sun",
+              "Moon"
+            ],
+            "availability": "trade_or_historical_bank_transfer",
+            "method": "與《究極之日／究極之月》等相容作品交換妙蛙草或妙蛙種子；後者提升至 Lv.16。Pokémon Bank 歷來可轉入相容個體，今日服務現況未核。",
+            "limits": "不要把《究極》版本的 2 號道路島嶼掃描誤寫成《太陽／月亮》直接捕捉。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G13",
+            "generation": 7,
+            "versions": [
+              "Ultra Sun",
+              "Ultra Moon"
+            ],
+            "availability": "evolve_island_scan_bulbasaur",
+            "method": "週五於美樂美樂島累積 100 QR 點數，用島嶼掃描在 2 號道路遇見 Lv.10 妙蛙種子，再提升至 Lv.16；亦可交換相容妙蛙草。",
+            "limits": "2 號道路掃描目標是妙蛙種子，非直接野生妙蛙草。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G14",
+            "generation": 7,
+            "versions": [
+              "Let's Go, Pikachu!",
+              "Let's Go, Eevee!"
+            ],
+            "availability": "evolve_bulbasaur",
+            "method": "在常青森林取得野生妙蛙種子，或從華藍市獲贈妙蛙種子，再提升至 Lv.16 進化。",
+            "limits": "妙蛙草本體無已核實通常野生點；此作不套用普通特性與培育規則。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G15",
+            "generation": 8,
+            "versions": [
+              "Sword",
+              "Shield"
+            ],
+            "availability": "crown_tundra_direct_or_isle_of_armor_evolve",
+            "method": "《冠之雪原》擴充內容的極巨巢穴冒險可直接遭遇／帶出妙蛙草；《鎧之孤島》武館贈送妙蛙種子，提升至 Lv.16 亦可取得。相容 HOME／交換另計。",
+            "limits": "2020／2021 曠野地帶新聞極巨團體戰是已結束活動，不能當常態野生。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G16",
+            "generation": 8,
+            "versions": [
+              "Brilliant Diamond",
+              "Shining Pearl"
+            ],
+            "availability": "postgame_evolve_bulbasaur",
+            "method": "取得全國圖鑑後，在地下大洞窟適用空洞取得野生妙蛙種子，再提升至 Lv.16。",
+            "limits": "不是直接在同地點捕捉野生妙蛙草。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G17",
+            "generation": 8,
+            "versions": [
+              "Legends: Arceus"
+            ],
+            "availability": "unsupported",
+            "method": "妙蛙草不支援本作；進化／轉入在本作不適用。",
+            "limits": "不能因 Pokémon HOME 其他作可存放而推定可進本作。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G18",
+            "generation": 9,
+            "versions": [
+              "Scarlet",
+              "Violet"
+            ],
+            "availability": "dlc_evolve_or_transfer",
+            "method": "《藍之圓盤》生物多樣性升級後取得妙蛙種子並提升至 Lv.16；也可在相容條件下由 HOME／交換取得妙蛙草。",
+            "limits": "本篇基本版無已核實一般野生妙蛙草；DLC 地點與升級條件依 #001 對應指南。",
+            "source_status": "community_crosschecked_2026-11-28"
+          },
+          {
+            "group": "G19",
+            "generation": 9,
+            "versions": [
+              "Legends: Z-A"
+            ],
+            "availability": "base_evolve_or_mega_dimension_direct",
+            "method": "本篇由支線 22 寶可夢研究所贈送或野生區域 20 取得妙蛙種子，提升至 Lv.16 進化；《超次元爆湧》另在密阿雷超次元 3★／4★ 草或毒屬性野生區直接遇見妙蛙草。",
+            "limits": "DLC 直接野生與本篇由前階段進化分開；未查實精確出現率。",
+            "source_status": "community_crosschecked_2026-11-28"
+          }
+        ],
+        "listed_group_count": 19,
+        "verification_required": [
+          "各版本硬體／Pokémon Bank／HOME 在 2026-11-28 的實際連線狀態未實機驗證；本表僅說明作品機制。",
+          "G19 DLC 各 3★／4★ 超次元地區的生成率未知；不作保證。",
+          "X／Y 朋友狩獵區需實際符合草屬性朋友配置；本表不保證每位玩家目前可重現。"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://bulbapedia.bulbagarden.net/wiki/Ivysaur",
+          "title": "Bulbapedia 妙蛙草主系列逐代遊戲地點與途徑",
+          "type": "community_game_database",
+          "version": "Generations I–IX",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://pokemondb.net/pokedex/ivysaur",
+          "title": "Pokémon Database 各版本取得概要與 Lv.16 進化",
+          "type": "community_game_database",
+          "version": "Generations I–IX",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-xy/002.shtml",
+          "title": "X/Y 朋友狩獵區與 ORAS 交換來源",
+          "type": "community_game_database",
+          "version": "Generation VI",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/xy/friendsafari.shtml",
+          "title": "朋友狩獵區地點及妙蛙草 Lv.30 出現條件",
+          "type": "community_game_guide",
+          "version": "X/Y",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-swsh/ivysaur/",
+          "title": "劍盾鎧之孤島進化與冠之雪原極巨巢穴冒險",
+          "type": "community_game_database",
+          "version": "Sword/Shield DLC",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/swordshield/dynamaxadventurespokemon.shtml",
+          "title": "極巨巢穴冒險可租用／帶出妙蛙草",
+          "type": "community_game_database",
+          "version": "Crown Tundra",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokedex-sv/ivysaur/",
+          "title": "朱紫與傳說 Z-A 妙蛙草途徑",
+          "type": "community_game_database",
+          "version": "Generation IX",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/diamondpearl/palpark.shtml",
+          "title": "帕爾公園 221 號道路與全國圖鑑前置",
+          "type": "community_game_guide",
+          "version": "Diamond/Pearl/Platinum",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/blackwhite/pokeshifter.shtml",
+          "title": "黑白寶可傳送 15 號道路、全國圖鑑與兩台 DS",
+          "type": "community_game_guide",
+          "version": "Black/White",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/black2white2/compatibility.shtml",
+          "title": "黑2白2寶可傳送前置",
+          "type": "community_game_guide",
+          "version": "Black 2/White 2",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/ultrasunultramoon/islandscan.shtml",
+          "title": "究極日月週五美樂美樂島島嶼掃描妙蛙種子",
+          "type": "community_game_guide",
+          "version": "Ultra Sun/Ultra Moon",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/fireredleafgreen/compatibility.shtml",
+          "title": "火紅葉綠跨紅藍寶石交換前置",
+          "type": "community_game_guide",
+          "version": "FireRed/LeafGreen → Ruby/Sapphire/Emerald",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        }
+      ]
+    },
+    {
+      "key": "2:pokemon-go:capture",
+      "national_id": 2,
+      "game": "pokemon-go",
+      "topic": "capture",
+      "checked_at": "2026-11-28",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙草 Ivysaur",
+        "region": "Taiwan",
+        "current_availability": "截至 2026-11-28，已核實遊戲機制可將妙蛙種子用 25 顆妙蛙種子糖果進化為妙蛙草；當季台灣野外、團體戰、田野調查、極巨戰是否直接提供妙蛙草，尚無足夠當期官方證據，不保證。",
+        "normal_channels": [
+          "社群圖鑑列一般野生妙蛙草可能出現，但未核實本週台灣地區／季節輪替。",
+          "由當前持有且可進化的妙蛙種子消耗 25 顆同系糖果取得；再以 100 顆同系糖果進化為妙蛙花。"
+        ],
+        "historical_confirmed": [
+          "官方 2025-07-01 至 2025-07-06 九週年活動曾介紹戴派對帽的妙蛙草登場；該活動已結束，不能當 2026-11-28 現況。",
+          "社群資料庫記錄妙蛙草在過往團體戰／特殊調查／限時調查出現；未逐一核對所有活動的時間、地區及服裝進化限制，作歷史線索而非現行保證。"
+        ],
+        "egg_note": "Serebii 一般資料列妙蛙草不在蛋池；當季蛋池仍需依當期官方清單核對，不以此推定永久不可能。",
+        "costumes_and_variants": "普通、派對帽與皮卡丘遮陽帽等外觀需按個別活動及能否進化核實；不將限時服裝視為常駐來源。",
+        "verification_required": [
+          "當季台灣野外、團體戰、田野調查、極巨與暗影個別取得池未由當期官方清單證實；只標未知。"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/002.shtml",
+          "title": "Serebii GO 妙蛙草取得機制、服裝與蛋池資料",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "region": "Taiwan availability unverified",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/evolution.shtml",
+          "title": "Serebii GO 25／100 顆糖果進化表",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.pokemon.com/uk/news/ivysaur-wearing-a-party-hat-debuts-in-pokemon-gos-ninth-anniversary-event",
+          "title": "官方 2025 九週年戴派對帽妙蛙草歷史活動",
+          "type": "official_event",
+          "version": "Pokémon GO 2025 event",
+          "region": "global local-time historical",
+          "checked_at": "2026-11-28"
+        }
+      ]
+    },
+    {
+      "key": "2:pokemon-go:moveset",
+      "national_id": 2,
+      "game": "pokemon-go",
+      "topic": "moveset",
+      "checked_at": "2026-11-28",
+      "status": "needs_review",
+      "content": {
+        "display_name": "妙蛙草 Ivysaur",
+        "scope": "2026-11-28 社群資料庫核對的普通形態；非官方公布永久排名，賽季調整後需重查。",
+        "fast_attacks": [
+          "Vine Whip（藤鞭）",
+          "Razor Leaf（飛葉快刀）"
+        ],
+        "charged_attacks": [
+          "Power Whip（強力鞭打）",
+          "Sludge Bomb（污泥炸彈）",
+          "Solar Beam（日光束）"
+        ],
+        "limited_move_note": "本次兩個社群資料庫未把普通妙蛙草的上述招式標為限時專屬；暗影形態的 Frustration 與淨化後 Return 屬個別形態限制，不能當普通招式池。若有新活動限定招式需另核。",
+        "pve": {
+          "recommended": [
+            "Vine Whip",
+            "Power Whip"
+          ],
+          "use": "草系團體戰／道館的可用過渡配招；社群資料評估火力與最終進化妙蛙花相比有限，不宣稱頂級輸出。"
+        },
+        "pvp": {
+          "great_league": [
+            "Vine Whip",
+            "Power Whip",
+            "Sludge Bomb"
+          ],
+          "use": "社群建議的超級聯盟草／毒型牽制；第二蓄力招式需另解鎖。高級聯盟與大師聯盟未取得足夠當期證據，不給排名。"
+        },
+        "dynamax_note": "社群圖鑑列極巨化妙蛙草可用 Max Overgrowth；極巨能力取決於是否為可極巨個體，不可把普通個體直接視為可極巨。",
+        "verification_required": [
+          "當期賽季 PvP 實戰評級與極巨戰最優用途未由官方逐項確認；本篇只提供有來源的基礎用途。"
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://db.pokemongohub.net/pokemon/2/moves",
+          "title": "GO Hub 妙蛙草普通／特殊招式池與配招比較",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://db.pokemongohub.net/pokemon/2",
+          "title": "GO Hub PvE／PvP 用途社群建議",
+          "type": "community_strategy",
+          "version": "Pokémon GO",
+          "region": "all",
+          "checked_at": "2026-11-28"
+        },
+        {
+          "url": "https://www.serebii.net/pokemongo/pokemon/002.shtml",
+          "title": "Serebii GO 招式池、暗影與極巨形態限制交叉核對",
+          "type": "community_game_database",
+          "version": "Pokémon GO",
+          "region": "all",
+          "checked_at": "2026-11-28"
         }
       ]
     }
