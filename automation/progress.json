@@ -292,6 +292,19 @@
         "1:x-y:capture"
       ],
       "notes": "17 #001 guides total; 11 of 19 game groups now have dedicated capture guides; 40 listed labels not all verified; new content pending independent review."
+    },
+    {
+      "run_id": "2026-11-28-work-build-focus-transition-001-to-002",
+      "date": "2026-11-28",
+      "action": "advance_content_focus_after_fixed_scope_review",
+      "national_id": 1,
+      "next_national_id": 2,
+      "review_path": "reviews/2026-11-27.md",
+      "review_blob_sha": "3e50568c6fb87df38ed9dd0dfecc864d38590f15",
+      "guide_blob_sha": "00faf1f53dd7cf72775f7222da1b21988a3c7b65",
+      "content_checks": "C1-C7 passed; 18/18 #001 guides passed",
+      "c8": "not_verified_technical_backlog_does_not_block_next_day_focus_per_fixed_scope_v2",
+      "note": "#001 content and independent review accepted; candidate image quality passed. C8 private website preview remains unverified and is not reported complete."
     }
   ],
   "blockers": [
@@ -328,142 +341,58 @@
     }
   ],
   "daily_focus": {
-    "date": "2026-11-27",
-    "national_id": 1,
-    "name_zh": "妙蛙種子",
-    "name_en": "Bulbasaur",
+    "date": "2026-11-28",
+    "national_id": 2,
+    "name_zh": "妙蛙草",
+    "name_en": "Ivysaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "fixed_scope_v1_C3_C4_researched_awaiting_independent_review",
-    "image_status": "candidate_generated_pending_quality_and_rights_review",
-    "preview_status": "work_cloud_browser_reached_cloudflare_access_login_only",
-    "review_status": "2026-11-26_independent_review_C1_C2_C5_C6_C7_pass_C3_C4_C8_fail_2026-11-27_edits_pending_review",
-    "publication_status": "main_source_changed_live_deployment_unverified",
+    "research_status": "fixed_scope_v1_read_research_not_started",
+    "image_status": "awaiting_download_role_verification",
+    "preview_status": "awaiting_visualization_role",
+    "review_status": "fixed_scope_v1_prepared_no_002_content_review",
+    "publication_status": "not_published_by_builder",
     "missing_sections": [
-      "C3：固定表 G04／G06／G09／G11／G12／G13 的主要取得前置已在原 availability key 補來源；G08 先前已補。2026-11-27 新版仍待獨立審核，不能先報通過。",
-      "C4：第 3–8 代未進化妙蛙種子劇情向分組配招已新增 1:main-series:moveset；第 1 代原 key 的等級對照已修，兩篇及完整 C4 仍待獨立審核。",
-      "C8：建設者不得操作 Visit 或部署；Work 私人預覽的搜尋、詳情、版本切換、合法可展示圖片仍須視覺化任務提供實測與存取證據。",
-      "當日獨立審核：2026-11-26 報告已核實，當時 C3／C4／C8 沒過；2026-11-27 新資料尚無獨立報告。#001 未完成，不換號。"
+      "C1 #002 基本資料待按固定表研究",
+      "C2–C3 G01–G19 各版本主要可取得性與取得前置待研究",
+      "C4 #002 適用版本與玩法配招待研究",
+      "C5 Pokémon GO #002 取得、招式、用途待研究",
+      "C6 #002 候選圖片須由下載及品質審核角色核對固定檔案／SHA，建設者不冒稱合格",
+      "C7 新研究的來源與查核日期待保存",
+      "C8 網站私人預覽交視覺化任務每日最多一次驗收；失敗記技術待辦，不單獨卡次日換號",
+      "#002 尚無完成後的獨立審核報告"
     ],
-    "source_checked_at": "2026-11-27",
-    "selected_reason": "依使用者最新規則，主流程從全國圖鑑 #001 開始；舊 #025/#133 草稿與圖像保留，不視為主流程完成",
+    "source_checked_at": null,
+    "selected_reason": "2026-11-27 #001 independent review C1–C7 pass; 2026-11-28 follows national_id +1 under fixed-scope v2 C8 technical exception",
     "handoff": {
       "construction": {
-        "status": "fixed_scope_v1_C3_C4_edits_saved_nonmain_pending_review",
-        "last_updated_at": "2026-11-27",
-        "guide_keys": [
-          "1:main:profile",
-          "1:main-series:availability",
-          "1:scarlet-violet:capture",
-          "1:pokemon-go:capture",
-          "1:pokemon-go:moveset",
-          "1:scarlet-violet:moveset",
-          "1:red-blue-yellow:moveset",
-          "1:lets-go:capture",
-          "1:bdsp:capture",
-          "1:sword-shield:capture",
-          "1:legends-za:capture",
-          "1:gold-silver-crystal:capture",
-          "1:gold-silver-crystal:moveset",
-          "1:red-green-blue-yellow:capture",
-          "1:firered-leafgreen:capture",
-          "1:heartgold-soulsilver:capture",
-          "1:x-y:capture",
-          "1:main-series:moveset"
-        ],
-        "verified_versions": "19_of_19_groups_availability_prior_review_passed; G04_G06_G09_G11_G12_G13_details_revised_pending_review",
-        "notes": "沿用 #001。2026-11-27 僅改 1:main-series:availability、1:red-blue-yellow:moveset，並新增 1:main-series:moveset；2026-11-27 審核交接確認昨日 16 key 過，其中 15 key 的內容保持不變。修正原 key 等級對照，補 6 組取得前置與第 3–8 代分組劇情配招。現行服務與硬體運作未實測，不將當年機制保證成今日可用。",
-        "commits": [
-          "887fad03d4bcad2a621d27a5b26671b05307a677",
-          "e185c49730f60e6ebd34b05980d1eab0bc285a90",
-          "a1f98e5250e7314336fdf1e25bee65a1a0d4a90a"
-        ],
-        "version_count": "40_listed_not_verified",
-        "preview_branch": "work/bulbasaur-001-private-preview-20261124",
-        "preview_test": "建設者遵守最新限制，未操作 Visit 或部署；C8 交視覺化獨立驗收。",
-        "new_commits": [
-          "f663c240d325f52d852aae313af961394e3484f4",
-          "fc9cd65a0cf02273a5a44918c44698e27d05b9ac",
-          "87d7fc604cb96e516ead64d2d3dd89545db38c22",
-          "ca1a602ac1cdc118f3aef337271bbe13d2e982bd",
-          "fb246666d5b815c7e5e4580c42b61a1a5ccaa8fd",
-          "d22bd3fdf9f70ec30b8ae41af27698b569148446",
-          "22ec5c402d3a3a8baa99f5363855aa7f51445313",
-          "6d73dfcfcd2d49d70e91f67d8fadd9275e25c581",
-          "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6",
-          "9cbd1976ccf26566c7f04cae6be92e12ef53172d",
-          "2ab0d0521484055917a63b4868541dac19f5ac8e",
-          "638968dbc61ff23250f3381e51dfaa661118805e",
-          "9c1c250391e2451b2c59c140792885a36acac6f5",
-          "3bac5ce293ab0ae907b72552f4cd6390c38d25d3",
-          "22624d12ab327b27d499d3d61f3081d4e447143a"
-        ],
-        "guide_commit": "c366da170cb39fa1b206c420919e36f4760bc647",
-        "source_checked_at": "2026-11-27",
-        "publication_items": {
-          "general_ui": "reviewer_approved_specific_branch_logic_main_deployment_unverified",
-          "bulbasaur_guides": "15_prior_approved_keys_unchanged; 2_prior_keys_modified_and_1_new_key_pending_review; branch_only_not_published",
-          "bulbasaur_image": "internal_quality_approved_public_github_and_rights_block_display"
-        },
-        "review_gap_keys_updated": [
-          "1:main-series:availability",
-          "1:red-blue-yellow:moveset",
-          "1:main-series:moveset"
-        ],
-        "review_gap_keys_pending": [
-          "1:main-series:availability",
-          "1:red-blue-yellow:moveset",
-          "1:main-series:moveset"
-        ],
-        "review_gap_note": "2026-11-26 固定範圍審核 16／17 原 key 過；其餘 15 個已過 key 未動。C3、C4 新版請審核員只驗變動部分；C8 由視覺化任務驗。",
+        "status": "002_fixed_scope_read_research_to_start_nonmain",
+        "last_updated_at": "2026-11-28",
         "fixed_scope": {
-          "path": "reviews/001-fixed-scope-2026-11-26.md",
-          "blob_sha": "dcb59bb523e36ce2b16e0e228fae8f6d622fab38",
+          "path": "reviews/002-fixed-scope-2026-11-28.md",
+          "blob_sha": "9e69b7752809aa1896a3fd5740e46d53b778d133",
           "version": "v1",
-          "focus_id": 1,
+          "focus_id": 2,
           "branch": "work/builder-main-rescue-20261126"
         },
-        "guide_blob_sha": "00faf1f53dd7cf72775f7222da1b21988a3c7b65"
+        "prior_review": {
+          "path": "reviews/2026-11-27.md",
+          "blob_sha": "3e50568c6fb87df38ed9dd0dfecc864d38590f15"
+        },
+        "notes": "Builder alone locked #002 on non-main branch after next-day review verification. C8 #001 remains technical backlog; no Visit/main/deployment operation. Official-image download role and visualization role have separate handoffs."
       },
-      "image": {
-        "status": "candidate_saved_pending_review",
-        "last_updated_at": "2026-11-24",
-        "national_id": 1,
-        "asset": "assets/generated/001-bulbasaur-stepping-01.jpg",
-        "metadata_file": "assets/generated/001-bulbasaur-stepping-01.json",
-        "blob_sha": "bd82571241715f5f9c1c29dff978cb60dab347bf",
-        "source_url": "https://app.leonardo.ai/generation/image/single-bulbasaur-pok%C3%A9mon-001-unmistakably-small-5a2b5dee-8036-45dc-8061-707d70d3e80d",
-        "format": "JPEG",
-        "resolution": "1024x1024",
-        "tool": "Leonardo.Ai",
-        "model": "Lucid Origin",
-        "free_tokens_spent": 8,
-        "quality_note": "畫面可辨認妙蛙種子；背部種子偏黃綠、背景較提示詞簡化，待獨立品質審核判定是否合格。",
-        "rights_review": "required",
-        "website_use": "not_approved",
-        "for_review": "22:00 品質審核請核對真實圖檔、角色特徵、畫質與權利狀態；建設者次日核實後再更新完成門檻。",
-        "for_preview": "僅供建設者在合規私人預覽中評估，未核准前不得放入正式網站。"
-      },
-      "review": {
-        "status": "reports_read_specific_defects_partially_fixed",
-        "last_updated_at": "2026-11-25",
-        "source_reports": [
-          "reviews/2026-11-24.md",
-          "reviews/2026-11-25.md"
-        ],
-        "needs_recheck_commit": "5998a0e8c64b478fccce8b4b4e93be1edb9a3ae6"
-      },
-      "next_day_action": "維持 #001，先讀本分支固定表及新審核報告；只核 2026-11-27 變動 key 的 C3/C4 結果並交視覺化驗 C8。未獨立通過八項不得換號；不得碰 main／Visit。"
+      "next_day_action": "接續 #002 固定表 C1–C7 尚缺項；獨立審核未過不得換 #003。C8 每日一次網站驗收失敗僅記技術待辦。"
     },
     "completion_checks": {
-      "profile": "passed_2026_11_26_review_C1",
-      "main_series_availability": "passed_2026_11_26_review_C2_prior_blob; revised_acquisition_rows_pending_review",
-      "version_capture": "C3_researched_2026_11_27_pending_independent_review",
-      "main_series_movesets": "C4_researched_2026_11_27_pending_independent_review",
-      "pokemon_go": "passed_2026_11_26_review_C5",
-      "generated_image": "passed_2026_11_26_review_C6_candidate_blob_bd82571241715f5f9c1c29dff978cb60dab347bf",
-      "website_private_preview": "C8_not_verified_by_visualization",
-      "independent_review": "2026_11_26_report_C3_C4_C8_failed; 2026_11_27_edits_pending_review"
+      "profile": "pending",
+      "main_series_availability": "pending",
+      "version_capture": "pending",
+      "main_series_movesets": "pending",
+      "pokemon_go": "pending",
+      "generated_or_saved_candidate_image": "pending_download_role_verification",
+      "sources": "pending",
+      "website_private_preview": "pending_visualization_technical",
+      "independent_review": "pending"
     }
   },
   "focus_policy": {
@@ -472,10 +401,13 @@
     "max_distinct_national_ids_per_day": 1,
     "sequence": "ascending_national_pokedex_without_skips",
     "last_completed_national_id": 0,
-    "locked_until_all_completion_checks_pass": true,
+    "locked_until_all_completion_checks_pass": false,
     "advance_only_on_next_taiwan_calendar_day": true,
-    "on_unfinished_next_day": "carry_same_national_id",
+    "on_unfinished_next_day": "carry_same_national_id unless only C8 technical preview check remains after C1-C7 and independent content review pass",
     "on_finished_same_day": "stop_without_selecting_next",
-    "backfill_rule": "舊寶可夢因版本更新而需修訂時，只記入 update_backfill 待辦，保留原始主流程編號；三個主流程排程不得因此跳號或同日處理第二隻。回補需另行安排不破壞主流程的處理時段。"
+    "backfill_rule": "舊寶可夢因版本更新而需修訂時，只記入 update_backfill 待辦，保留原始主流程編號；三個主流程排程不得因此跳號或同日處理第二隻。回補需另行安排不破壞主流程的處理時段。",
+    "last_content_completed_national_id": 1,
+    "last_advanced_national_id": 1,
+    "advance_condition": "C1-C7 and independent content review pass; C8 alone may remain a tracked technical backlog under fixed-scope v2"
   }
 }
