@@ -26,3 +26,17 @@
 - Node 11 項題庫與模擬 DOM 互動檢查通過：完整 1,025 題庫、拒絕錯配記錄、抽樣不重複、完整雙屬性／部分／多選判分、空答案／重複提交、10 題生命週期、100 組種子抽樣；UI 選擇限制、錯題回顧、重玩、來源待核／載入失敗／儲存失敗。
 - 這些不是瀏覽器或手機畫面驗收。今日既有一次網站驗收與使用者為第一代卡片明確加開的一次均已完成，本新功能還沒有瀏覽器證據；不沿用舊卡片測試冒稱新遊戲已過。
 - 候選分支 work/visual-type-quiz-20261128。尚未合併 main、未部署遊戲。若使用者對本版本允許再做一次遊戲驗收，通過後按既有發布授權只整合必要網站檔案並核對 Cloudflare；否則留待下一個可驗收日期。不停用或改動排程。
+
+
+## 使用者加開授權與實際通過結果（取代上文待驗收／未發布狀態）
+- 使用者針對候選 `5c1a89a84ef240e8442d2bdfff425f3aa41b0e06` 回覆「允許再驗收一次並發布」。本次只依這項單次授權啟動額外完整驗收，沒有放寬每日一次的長期規則。
+- [Chromium run 46101826275](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/46101826275) 對測試提交 `9021ada78e6c9bf923add51ea0e343be8b85e288` completed/success；browser job `140845766971`，11 項邏輯／控制器檢查、1440×900 及 390×844 全部 PASS。
+- 瀏覽器實際走完每局 10 題、ID 不重複、題目與當下 1,025 卡片資料逐題對照、完整雙屬性判分、選擇上限、正解顯示、防重複計分、錯題圖鑑、重新開始、重整保留最佳紀錄；封鎖 localStorage 的新頁也能玩完 10 題並得到 10/10。原搜尋、篩選、詳情、圖片解碼、指南／批准隔離、1,025 卡片及手機溢出回歸通過。
+- Screenshot artifact `visual-evidence` ID `15246285794`，digest `sha256:8098f760dbb0e3748b84fbb95d3cde39695c72195bd2b659466eef22c3e73730`，保存 3 天。已下載核對 digest，實際查看桌面題目、手機題目／雙屬性回饋與 9/10 錯題成績畫面；未把這些測試站截圖冒充正式 Visit。
+- 正式程式提交：[d89315fbf815b8422e73df2f5eef0a211dd21fdd](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/d89315fbf815b8422e73df2f5eef0a211dd21fdd)，僅合併 app.js、index.html、style.css、type-quiz-engine.js、type-quiz.js。寫入前重新核對 main 程式／索引／目錄無並行變更，保留所有原資料與圖片。沒有把測試、workflow 或候選交接檔夾帶至這次程式發布。
+- 發布後逐檔讀回與測試來源一致：app `fa834d6542b02ce9fc33a76a58f4acd7ad5abc9e`、HTML `67d20477bab2ab22afc98e2ca747163d7683efeb`、CSS `cf856d883d2af20650ca6ef961d325c9dfbcda0c`、engine `ffdbc94dd41783322f266fb738c310ecd74cea33`、UI `c505d96d10d7884034602e1dfa732728a6490cc2`。
+- 正式入口為 https://pokemon-universe-pokedex.boragodragonfruit.workers.dev/#type-quiz ，首頁「玩屬性測驗」與頂部「屬性測驗」連結均已接入。題庫與來源以當下已核對卡片載入，不新增網路記分、帳號、外部依賴或未批准素材。
+- 本輪正式網址未登入請求 HTTP 403；沿用既有 Work 的 Access 登入門檻觀察，同一設定未改，未繞過或關閉保護。允許身份名單與登入後正式畫面仍未由本輪實測，不能以建置或測試站截圖當成親眼確認正式 Visit。
+
+- Cloudflare 對正式程式提交 `d89315fbf815b8422e73df2f5eef0a211dd21fdd` 回報 completed/success（check `140846831044`）；Build ID `04f411e1-124d-4223-b09a-ce3316fe78c3`，Version ID `5887312f-6cd8-4304-9d17-3cc0fce0135d`。這是正式建置／版本證據，與登入後親眼畫面分開記錄。
+- 本次收束：使用者指定測驗程式、11 項檢查、明確授權的一次額外桌面／手機驗收、截圖檢視、main 整合及正式建置均完成。後續沿用此同版結果，不因既有資料或圖片未齊而重做測驗批准；若有具體新錯誤才處理差異。未修改排程、每日焦點或研究範圍。
