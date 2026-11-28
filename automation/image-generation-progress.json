@@ -272,6 +272,18 @@
         }
       ],
       "free_tokens_spent": 64
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 6,
+      "name_zh": "噴火龍",
+      "status": "blocked_insufficient_tokens_before_generation",
+      "generated": false,
+      "downloaded": false,
+      "uploaded": false,
+      "remaining_tokens_displayed": 38,
+      "blocker": "Leonardo.Ai displayed You don't have enough tokens when attempting generation with Auto Image.",
+      "note": "Five-new-character daily target: 1 saved, four remaining (#006–#009). Resume #006."
     }
   ]
 }
