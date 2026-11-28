@@ -3153,13 +3153,962 @@
         "psychic"
       ],
       "updated_at": "2026-11-28"
+    },
+    {
+      "id": 152,
+      "name_zh": "菊草葉",
+      "name_en": "Chikorita",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 153,
+      "name_zh": "月桂葉",
+      "name_en": "Bayleef",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 154,
+      "name_zh": "大竺葵",
+      "name_en": "Meganium",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 155,
+      "name_zh": "火球鼠",
+      "name_en": "Cyndaquil",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 156,
+      "name_zh": "火岩鼠",
+      "name_en": "Quilava",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 157,
+      "name_zh": "火爆獸",
+      "name_en": "Typhlosion",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 158,
+      "name_zh": "小鋸鱷",
+      "name_en": "Totodile",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 159,
+      "name_zh": "藍鱷",
+      "name_en": "Croconaw",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 160,
+      "name_zh": "大力鱷",
+      "name_en": "Feraligatr",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 161,
+      "name_zh": "尾立",
+      "name_en": "Sentret",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 162,
+      "name_zh": "大尾立",
+      "name_en": "Furret",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 163,
+      "name_zh": "咕咕",
+      "name_en": "Hoothoot",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 164,
+      "name_zh": "貓頭夜鷹",
+      "name_en": "Noctowl",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 165,
+      "name_zh": "芭瓢蟲",
+      "name_en": "Ledyba",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 166,
+      "name_zh": "安瓢蟲",
+      "name_en": "Ledian",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 167,
+      "name_zh": "圓絲蛛",
+      "name_en": "Spinarak",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 168,
+      "name_zh": "阿利多斯",
+      "name_en": "Ariados",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 169,
+      "name_zh": "叉字蝠",
+      "name_en": "Crobat",
+      "types": [
+        "poison",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 170,
+      "name_zh": "燈籠魚",
+      "name_en": "Chinchou",
+      "types": [
+        "water",
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 171,
+      "name_zh": "電燈怪",
+      "name_en": "Lanturn",
+      "types": [
+        "water",
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 172,
+      "name_zh": "皮丘",
+      "name_en": "Pichu",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 173,
+      "name_zh": "皮寶寶",
+      "name_en": "Cleffa",
+      "types": [
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 174,
+      "name_zh": "寶寶丁",
+      "name_en": "Igglybuff",
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 175,
+      "name_zh": "波克比",
+      "name_en": "Togepi",
+      "types": [
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 176,
+      "name_zh": "波克基古",
+      "name_en": "Togetic",
+      "types": [
+        "fairy",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 177,
+      "name_zh": "天然雀",
+      "name_en": "Natu",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 178,
+      "name_zh": "天然鳥",
+      "name_en": "Xatu",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 179,
+      "name_zh": "咩利羊",
+      "name_en": "Mareep",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 180,
+      "name_zh": "茸茸羊",
+      "name_en": "Flaaffy",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 181,
+      "name_zh": "電龍",
+      "name_en": "Ampharos",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 182,
+      "name_zh": "美麗花",
+      "name_en": "Bellossom",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 183,
+      "name_zh": "瑪力露",
+      "name_en": "Marill",
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 184,
+      "name_zh": "瑪力露麗",
+      "name_en": "Azumarill",
+      "types": [
+        "water",
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 185,
+      "name_zh": "樹才怪",
+      "name_en": "Sudowoodo",
+      "types": [
+        "rock"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 186,
+      "name_zh": "蚊香蛙皇",
+      "name_en": "Politoed",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 187,
+      "name_zh": "毽子草",
+      "name_en": "Hoppip",
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 188,
+      "name_zh": "毽子花",
+      "name_en": "Skiploom",
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 189,
+      "name_zh": "毽子棉",
+      "name_en": "Jumpluff",
+      "types": [
+        "grass",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 190,
+      "name_zh": "長尾怪手",
+      "name_en": "Aipom",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 191,
+      "name_zh": "向日種子",
+      "name_en": "Sunkern",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 192,
+      "name_zh": "向日花怪",
+      "name_en": "Sunflora",
+      "types": [
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 193,
+      "name_zh": "蜻蜻蜓",
+      "name_en": "Yanma",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 194,
+      "name_zh": "烏波",
+      "name_en": "Wooper",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 195,
+      "name_zh": "沼王",
+      "name_en": "Quagsire",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 196,
+      "name_zh": "太陽伊布",
+      "name_en": "Espeon",
+      "types": [
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 197,
+      "name_zh": "月亮伊布",
+      "name_en": "Umbreon",
+      "types": [
+        "dark"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 198,
+      "name_zh": "黑暗鴉",
+      "name_en": "Murkrow",
+      "types": [
+        "dark",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 199,
+      "name_zh": "呆呆王",
+      "name_en": "Slowking",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 200,
+      "name_zh": "夢妖",
+      "name_en": "Misdreavus",
+      "types": [
+        "ghost"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 201,
+      "name_zh": "未知圖騰",
+      "name_en": "Unown",
+      "types": [
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 202,
+      "name_zh": "果然翁",
+      "name_en": "Wobbuffet",
+      "types": [
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 203,
+      "name_zh": "麒麟奇",
+      "name_en": "Girafarig",
+      "types": [
+        "normal",
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 204,
+      "name_zh": "榛果球",
+      "name_en": "Pineco",
+      "types": [
+        "bug"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 205,
+      "name_zh": "佛烈托斯",
+      "name_en": "Forretress",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 206,
+      "name_zh": "土龍弟弟",
+      "name_en": "Dunsparce",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 207,
+      "name_zh": "天蠍",
+      "name_en": "Gligar",
+      "types": [
+        "ground",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 208,
+      "name_zh": "大鋼蛇",
+      "name_en": "Steelix",
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 209,
+      "name_zh": "布魯",
+      "name_en": "Snubbull",
+      "types": [
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 210,
+      "name_zh": "布魯皇",
+      "name_en": "Granbull",
+      "types": [
+        "fairy"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 211,
+      "name_zh": "千針魚",
+      "name_en": "Qwilfish",
+      "types": [
+        "water",
+        "poison"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 212,
+      "name_zh": "巨鉗螳螂",
+      "name_en": "Scizor",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 213,
+      "name_zh": "壺壺",
+      "name_en": "Shuckle",
+      "types": [
+        "bug",
+        "rock"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 214,
+      "name_zh": "赫拉克羅斯",
+      "name_en": "Heracross",
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 215,
+      "name_zh": "狃拉",
+      "name_en": "Sneasel",
+      "types": [
+        "dark",
+        "ice"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 216,
+      "name_zh": "熊寶寶",
+      "name_en": "Teddiursa",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 217,
+      "name_zh": "圈圈熊",
+      "name_en": "Ursaring",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 218,
+      "name_zh": "熔岩蟲",
+      "name_en": "Slugma",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 219,
+      "name_zh": "熔岩蝸牛",
+      "name_en": "Magcargo",
+      "types": [
+        "fire",
+        "rock"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 220,
+      "name_zh": "小山豬",
+      "name_en": "Swinub",
+      "types": [
+        "ice",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 221,
+      "name_zh": "長毛豬",
+      "name_en": "Piloswine",
+      "types": [
+        "ice",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 222,
+      "name_zh": "太陽珊瑚",
+      "name_en": "Corsola",
+      "types": [
+        "water",
+        "rock"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 223,
+      "name_zh": "鐵炮魚",
+      "name_en": "Remoraid",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 224,
+      "name_zh": "章魚桶",
+      "name_en": "Octillery",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 225,
+      "name_zh": "信使鳥",
+      "name_en": "Delibird",
+      "types": [
+        "ice",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 226,
+      "name_zh": "巨翅飛魚",
+      "name_en": "Mantine",
+      "types": [
+        "water",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 227,
+      "name_zh": "盔甲鳥",
+      "name_en": "Skarmory",
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 228,
+      "name_zh": "戴魯比",
+      "name_en": "Houndour",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 229,
+      "name_zh": "黑魯加",
+      "name_en": "Houndoom",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 230,
+      "name_zh": "刺龍王",
+      "name_en": "Kingdra",
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 231,
+      "name_zh": "小小象",
+      "name_en": "Phanpy",
+      "types": [
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 232,
+      "name_zh": "頓甲",
+      "name_en": "Donphan",
+      "types": [
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 233,
+      "name_zh": "多邊獸Ⅱ",
+      "name_en": "Porygon2",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 234,
+      "name_zh": "驚角鹿",
+      "name_en": "Stantler",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 235,
+      "name_zh": "圖圖犬",
+      "name_en": "Smeargle",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 236,
+      "name_zh": "無畏小子",
+      "name_en": "Tyrogue",
+      "types": [
+        "fighting"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 237,
+      "name_zh": "戰舞郎",
+      "name_en": "Hitmontop",
+      "types": [
+        "fighting"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 238,
+      "name_zh": "迷唇娃",
+      "name_en": "Smoochum",
+      "types": [
+        "ice",
+        "psychic"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 239,
+      "name_zh": "電擊怪",
+      "name_en": "Elekid",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 240,
+      "name_zh": "鴨嘴寶寶",
+      "name_en": "Magby",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 241,
+      "name_zh": "大奶罐",
+      "name_en": "Miltank",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 242,
+      "name_zh": "幸福蛋",
+      "name_en": "Blissey",
+      "types": [
+        "normal"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 243,
+      "name_zh": "雷公",
+      "name_en": "Raikou",
+      "types": [
+        "electric"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 244,
+      "name_zh": "炎帝",
+      "name_en": "Entei",
+      "types": [
+        "fire"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 245,
+      "name_zh": "水君",
+      "name_en": "Suicune",
+      "types": [
+        "water"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 246,
+      "name_zh": "幼基拉斯",
+      "name_en": "Larvitar",
+      "types": [
+        "rock",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 247,
+      "name_zh": "沙基拉斯",
+      "name_en": "Pupitar",
+      "types": [
+        "rock",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 248,
+      "name_zh": "班基拉斯",
+      "name_en": "Tyranitar",
+      "types": [
+        "rock",
+        "dark"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 249,
+      "name_zh": "洛奇亞",
+      "name_en": "Lugia",
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 250,
+      "name_zh": "鳳王",
+      "name_en": "Ho-Oh",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 251,
+      "name_zh": "時拉比",
+      "name_en": "Celebi",
+      "types": [
+        "psychic",
+        "grass"
+      ],
+      "updated_at": "2026-11-28"
     }
   ],
   "catalog_card_source": {
     "provider": "PokéAPI",
     "checked_at": "2026-11-28",
     "revision": "de6760be38b60a3024f1d9054330ff265f0dc619",
-    "scope": "Generation 1 default-form identity and current types only",
+    "scope": "Generations 1–2 default-form identity and current types only",
     "display_status": "basic_metadata_verified",
     "fields": [
       "id",
@@ -3189,6 +4138,14 @@
         "url": "https://github.com/PokeAPI/pokeapi/blob/de6760be38b60a3024f1d9054330ff265f0dc619/data/v2/csv/pokemon_species.csv"
       }
     },
-    "note": "使用者指定先新增基本卡片；不代表完整攻略、圖片或角色八項完成。保留 Actions 原目錄，原目錄同編號優先，新增資料只作展示補集。"
+    "note": "使用者指定先新增前兩代基本卡片；不代表完整攻略、圖片或角色八項完成。保留 Actions 原目錄，原目錄同編號優先，新增資料只作展示補集。",
+    "generations": [
+      1,
+      2
+    ],
+    "national_id_range": {
+      "from": 1,
+      "to": 251
+    }
   }
 }
