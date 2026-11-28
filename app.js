@@ -1,7 +1,7 @@
 const typeNames={normal:'一般',fire:'火',water:'水',electric:'電',grass:'草',ice:'冰',fighting:'格鬥',poison:'毒',ground:'地面',flying:'飛行',psychic:'超能力',bug:'蟲',rock:'岩石',ghost:'幽靈',dragon:'龍',dark:'惡',steel:'鋼',fairy:'妖精'};
 const colors={normal:'#9da8a2',fire:'#fd9b56',water:'#62b9ff',electric:'#ffdb69',grass:'#8bda95',ice:'#8de6e7',fighting:'#e99179',poison:'#b58de9',ground:'#d4b578',flying:'#9bb8f8',psychic:'#ed8cab',bug:'#a4cf6b',rock:'#b9b19a',ghost:'#a4a0e9',dragon:'#8f9aff',dark:'#8c94a3',steel:'#a1c1cb',fairy:'#f4aad9'};
 let records=[],guideRecords=[],displayEntries=[],displayFacts=[],reviewedGuides=[];
-const artworks=new Map();
+const artworks=new Map(),artworkInfo=new Map();
 let favoriteIds=new Set(),favoritesOnly=false;
 const favoritesStorageKey='pokeverse:favorites:v1';
 function restoreFavorites(){
@@ -13,19 +13,43 @@ function restoreFavorites(){
 function persistFavorites(){
  try{localStorage.setItem(favoritesStorageKey,JSON.stringify([...favoriteIds]));return true;}catch{return false;}
 }
+function approvedArtworkEntry(entry,index){
+ const id=Number(entry?.national_id),asset=entry?.asset;
+ if(!Number.isInteger(id)||id<1||!records.some(p=>Number(p.id)===id)||typeof asset!=='string'||!/^[0-9a-f]{40}$/.test(entry.blob_sha||''))return null;
+ if(entry.kind==='official_reference'){
+  const match=asset.match(/^assets\/reference\/([0-9]{3,4})-[a-z0-9-]+-official\.png$/);
+  const assessment=(Array.isArray(index.artwork_assessments)?index.artwork_assessments:[]).find(a=>a?.id===entry.rights_assessment_id);
+  if(!match||Number(match[1])!==id||entry.display_decision!=='approved_reference_context'||entry.project_approval?.quality!=='approved'||entry.project_approval?.private_pokedex_use!=='approved'||assessment?.decision!=='contextual_reference_use'||!['low','conditional'].includes(assessment.risk_level))return null;
+  const source='https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/'+id+'.png';
+  if(entry.source_url!==source||!/^[0-9a-f]{40}$/.test(entry.metadata_blob_sha||''))return null;
+  return {id,asset,kind:'official_reference',source_url:source,copyright:'©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.'};
+ }
+ const match=asset.match(/^assets\/generated\/([0-9]{3,4})-[a-z0-9-]+\.(?:jpg|jpeg|png|webp)$/);
+ return match&&Number(match[1])===id?{id,asset,kind:'generated'}:null;
+}
 async function loadApprovedArtwork(index){
- const entries=Array.isArray(index?.artworks)?index.artworks:[];
+ const entries=Array.isArray(index?.artworks)?index.artworks:[],counts=new Map();
+ artworks.clear();artworkInfo.clear();
+ for(const e of entries)counts.set(Number(e?.national_id),(counts.get(Number(e?.national_id))||0)+1);
  await Promise.all(entries.map(async entry=>{
-  const id=Number(entry.national_id),asset=entry.asset;
-  if(!Number.isInteger(id)||id<1||!records.some(p=>Number(p.id)===id)||typeof asset!=='string'||!/^assets\/generated\/[0-9]{3,4}-[a-z0-9-]+\.(?:jpg|jpeg|png|webp)$/.test(asset)||!entry.blob_sha||!/^[0-9a-f]{40}$/.test(entry.blob_sha))return;
+  const approved=approvedArtworkEntry(entry,index);if(!approved||counts.get(approved.id)!==1)return;
+  const {id,asset,kind}=approved;
   try{
    const response=await fetch('./'+asset.replace(/\.(?:jpg|jpeg|png|webp)$/i,'.json'),{cache:'no-store'});
    if(!response.ok)return;
    const metadata=await response.json();
-   if(Number(metadata.national_id)===id&&metadata.asset===asset&&metadata.blob_sha===entry.blob_sha&&metadata.project_approval?.quality==='approved'&&metadata.project_approval?.private_pokedex_use==='approved')artworks.set(id,'./'+asset);
+   const matches=kind==='official_reference'?
+    Number(metadata.national_id)===id&&metadata.file===asset&&metadata.source_git_blob_sha===entry.blob_sha&&metadata.source===approved.source_url&&metadata.category==='official_artwork_reference'&&metadata.generated_by_ai===false:
+    Number(metadata.national_id)===id&&metadata.asset===asset&&metadata.blob_sha===entry.blob_sha&&metadata.project_approval?.quality==='approved'&&metadata.project_approval?.private_pokedex_use==='approved';
+   if(matches){artworks.set(id,'./'+asset);artworkInfo.set(id,approved);}
   }catch{}
  }));
 }
+function artworkCredit(id){
+ const info=artworkInfo.get(Number(id));if(info?.kind!=='official_reference')return '';
+ return '<p class="artwork-credit">官方角色參考圖 · '+escapeHTML(info.copyright)+' · <a href="'+escapeHTML(info.source_url)+'" target="_blank" rel="noopener noreferrer">圖片來源</a></p>';
+}
+
 const $=s=>document.querySelector(s);
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function knownTypes(p){
@@ -205,7 +229,7 @@ function details(p){
  const catalogNotice=p.catalog_basic?'<p class="detailnote basic-card-note">基本卡片：已收錄編號、名稱與屬性；專屬圖片與各版本攻略尚待補齊。<br>資料查核：'+escapeHTML(p.updated_at)+' · '+(catalogSource?'<a href="'+escapeHTML(catalogSource)+'" target="_blank" rel="noopener noreferrer">PokéAPI 資料來源</a>':'來源未列出')+'</p>':'';
  const identitySource=nameSource?'<p class="small identity-source">中文名稱核對：'+escapeHTML(p.catalog_name_checked_at)+' · <a href="'+escapeHTML(nameSource)+'" target="_blank" rel="noopener noreferrer">台灣寶可夢官方圖鑑</a></p>':'';
  const image=artworks.has(Number(p.id))?'<img class="detail-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'';
- $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+identitySource+catalogNotice+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
+ $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+identitySource+catalogNotice+image+artworkCredit(p.id)+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
  const show=game=>{
   document.querySelectorAll('.guide-tab').forEach(b=>{const selected=b.dataset.game===game;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;if(selected)$('#guide-content').setAttribute('aria-labelledby',b.id);});
   $('#game-select').value=game;
@@ -248,6 +272,7 @@ async function init(){
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');
   $('#type').innerHTML=typeOptions(records);
   render();
+  if(quizCatalog)quizCatalog.artworks=[...artworkInfo.values()].filter(a=>a.kind==='official_reference').map(a=>({national_id:a.id,src:artworks.get(a.id),source_url:a.source_url,copyright:a.copyright}));
   document.dispatchEvent(new CustomEvent(quizCatalog?'pokeverse:catalog-ready':'pokeverse:catalog-unavailable',{detail:quizCatalog}));
  }catch(error){
   document.dispatchEvent(new CustomEvent('pokeverse:catalog-unavailable'));

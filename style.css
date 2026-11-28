@@ -184,3 +184,7 @@ dialog{padding:0;width:min(760px,94vw);border-radius:22px;scrollbar-color:#5a759
 .quiz-art-caption{color:#b6c7d8;font-size:14px;line-height:1.4}
 .quiz-artwork{display:block;width:100%;height:100%;object-fit:contain;background:#fffdf8}
 @media(max-width:480px){.quiz-art-slot{width:148px;margin:16px auto 18px}.quiz-art-symbol{width:68px;height:68px;font-size:30px}}
+
+.artwork-credit,#quiz-art-credit{font-size:12px;line-height:1.7;color:#a8bdd2;overflow-wrap:anywhere;margin:10px auto 18px;max-width:560px}
+.artwork-credit a,#quiz-art-credit a{color:#a1e2d7;text-decoration:underline;text-underline-offset:3px}
+.quiz-artwork{padding:5px}

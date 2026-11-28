@@ -1,0 +1,18 @@
+{
+  "national_id": 6,
+  "name": "噴火龍",
+  "english_name": "charizard",
+  "category": "official_artwork_reference",
+  "file": "assets/reference/006-charizard-official.png",
+  "format": "PNG",
+  "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/6.png",
+  "source_repository": "https://github.com/PokeAPI/sprites",
+  "source_git_blob_sha": "4c4fb9175e8eacfa83d4f64b47fdbb92cf09f902",
+  "rights_holder": "The Pokémon Company（來源儲存庫之圖片版權聲明）",
+  "license": "未確認取得個別授權；不可宣稱圖片適用來源儲存庫程式碼的 CC0",
+  "rights_status": "有版權；使用者規劃非商業圖鑑說明用途，合理使用須依具體情況判斷",
+  "visibility": "公開 GitHub 分支",
+  "status": "來源參考素材；未接入網站",
+  "retrieved_date": "2026-11-28",
+  "generated_by_ai": false
+}
