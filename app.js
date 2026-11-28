@@ -233,6 +233,7 @@ function details(p){
  $('#detail').scrollTop=0;
 }
 async function init(){
+ let quizCatalog=null;
  restoreFavorites();
  try{
   const response=await fetch('./data/pokemon.json',{cache:'no-store'});
@@ -241,17 +242,23 @@ async function init(){
   records=Array.isArray(data.pokemon)?data.pokemon:[];
   try{
    const [gr,dr]=await Promise.all([fetch('./data/guides.json',{cache:'no-store'}),fetch('./data/display-index.json',{cache:'no-store'})]);
-   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);records=applyCatalogLabels(mergeCatalogCards(records,index.catalog_cards,index.catalog_card_source),index.catalog_labels);await loadApprovedArtwork(index);}
+   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);records=applyCatalogLabels(mergeCatalogCards(records,index.catalog_cards,index.catalog_card_source),index.catalog_labels);const qs=index.catalog_card_source;if(qs?.provider==='PokéAPI'&&qs.display_status==='basic_metadata_verified'&&/^[0-9a-f]{40}$/.test(qs.revision||'')&&/^\d{4}-\d{2}-\d{2}$/.test(qs.checked_at||''))quizCatalog={records,source:qs};await loadApprovedArtwork(index);}
   }catch{guideRecords=[];displayEntries=[];displayFacts=[];reviewedGuides=[];}
   $('#total').textContent=records.length;
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');
   $('#type').innerHTML=typeOptions(records);
   render();
+  document.dispatchEvent(new CustomEvent(quizCatalog?'pokeverse:catalog-ready':'pokeverse:catalog-unavailable',{detail:quizCatalog}));
  }catch(error){
+  document.dispatchEvent(new CustomEvent('pokeverse:catalog-unavailable'));
   $('#updated').textContent='資料載入失敗';
   $('#grid').textContent='無法載入圖鑑資料，請重新整理頁面。';
  }
 }
+document.addEventListener('pokeverse:open-entry',event=>{
+ const id=event.detail?.national_id;
+ if(Number.isInteger(id)&&id>0&&id<=9999)details(records.find(p=>Number(p.id)===id));
+});
 $('#clear-search').addEventListener('click',()=>{$('#q').value='';render();$('#q').focus();});
 $('#reset-filters').addEventListener('click',()=>{$('#q').value='';$('#type').value='';$('#order').value='asc';favoritesOnly=false;render();$('#q').focus();});
 $('#favorites-only').addEventListener('click',()=>{favoritesOnly=!favoritesOnly;render();});

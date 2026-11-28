@@ -1,0 +1,406 @@
+name: Visual browser checks
+on:
+  push:
+    branches:
+      - work/visual-bulbasaur-art-release-20261125
+permissions:
+  contents: read
+concurrency:
+  group: visual-browser-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install browser test dependencies
+        run: |
+          python -m pip install 'playwright==1.49.1'
+          python -m playwright install --with-deps chromium
+      - name: Check JavaScript syntax
+        run: node --check app.js
+      - name: Check quiz logic and controller
+        run: node --test tests/type-quiz.test.cjs tests/type-quiz-ui.test.cjs
+      - name: Check search, filter, detail and layout
+        run: |
+          python - <<'PY'
+          from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+          from threading import Thread
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          evidence = Path("visual-evidence")
+          evidence.mkdir(exist_ok=True)
+          
+          server = ThreadingHTTPServer(("127.0.0.1", 0), SimpleHTTPRequestHandler)
+          Thread(target=server.serve_forever, daemon=True).start()
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              for width, height in [(1440, 900), (390, 844)]:
+                  page = browser.new_page(viewport={"width": width, "height": height})
+                  errors, requests = [], []
+                  page.on("pageerror", lambda error: errors.append(str(error)))
+                  page.on("request", lambda request: requests.append(request.url))
+                  page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+                  page.wait_for_selector(".poke")
+                  ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
+                  assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
+                  import json
+                  base_catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  card_index = json.load(open("data/display-index.json"))
+                  catalog_by_id = {record["id"]: record for record in card_index["catalog_cards"]}
+                  catalog_by_id.update({record["id"]: record for record in base_catalog})
+                  catalog = sorted(catalog_by_id.values(), key=lambda p: p["id"])
+                  assert len(catalog) == 1025 and set(ids) == set(range(1,1026)), "All verified national card IDs should remain present"
+                  assert len(ids) == len(set(ids)), "No duplicate cards"
+                  assert page.locator("#total").inner_text() == "1025"
+                  assert page.locator(".card-stage").count() == len(card_index["catalog_cards"]) == 993, "Supplemental cards need a basic-only label"
+                  page.locator("#q").fill("穿山鼠")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="27"]').count() == 1
+                  assert "地面" in page.locator(".poke .tags").inner_text()
+                  page.locator(".poke").click()
+                  assert page.locator(".basic-card-note").is_visible()
+                  assert "尚待補齊" in page.locator(".basic-card-note").inner_text()
+                  assert page.locator(".basic-card-note a").get_attribute("href").startswith("https://github.com/PokeAPI/pokeapi/tree/")
+                  assert page.locator(".approved-guide").count() == 0 and page.locator(".detail-artwork").count() == 0, "Basic cards cannot inherit #001 approved guides or art"
+                  page.locator("#close").click()
+                  page.locator("#q").fill("夢幻")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="151"]').count() == 1
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"new-mew-card-{width}.png"))
+                  for query, record_id in [("尼多蘭",29),("尼多朗",32),("Nidoran♀",29),("Mr. Mime",122),("遠古測試不存在",None)]:
+                      page.locator("#q").fill(query)
+                      if record_id is None:
+                          assert page.locator("#empty").is_visible()
+                      else:
+                          assert page.locator(f'.poke[data-id="{record_id}"]').count() == 1
+                  page.locator("#q").fill("")
+
+                  labels = json.load(open("data/display-index.json"))["catalog_labels"]
+                  expected_names = {label["national_id"]: label["name_zh"] for label in labels}
+                  import re
+                  for record in catalog:
+                      expected_name = expected_names.get(record["id"], record["name_zh"])
+                      title = page.locator(f'.poke[data-id="{record["id"]}"] h3').inner_text()
+                      assert title == expected_name and re.search(r"[\u3400-\u9fff]", title), f"Missing/mismatched localized name for {record['id']}"
+                  page.locator("#q").fill("火恐龍")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="5"]').count() == 1
+                  assert page.locator(".poke .en").inner_text() == "Charmeleon", "English name should remain available"
+                  assert page.locator('.poke[data-id="5"] .tag').inner_text() == "火"
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"charmeleon-name-{width}.png"))
+                  page.locator('.poke[data-id="5"]').click()
+                  assert "火恐龍" in page.locator("#detail-title").inner_text()
+                  assert page.locator(".identity-source a").get_attribute("href") == "https://tw.portal-pokemon.com/pokedex/0005/"
+                  assert page.locator("#detailbody .detail-artwork").count() == 0, "Unmade #005 image must not be invented"
+                  page.locator("#close").click()
+                  page.locator("#q").fill("Charmeleon")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="5"]').count() == 1
+                  for label in labels:
+                      page.locator("#q").fill(label["name_zh"])
+                      assert page.locator(f'.poke[data-id="{label["national_id"]}"]').count() == 1, "Localized search should find the correct ID"
+                  page.locator("#q").fill("")
+                  canonical_types = {"normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"}
+                  options = page.locator("#type option").evaluate_all("(els) => els.map(el => ({value:el.value,label:el.textContent}))")
+                  assert {o["value"] for o in options} == canonical_types | {""}, "All 18 type filters must exist"
+                  for option in options:
+                      if option["value"]:
+                          count = sum(option["value"] in record.get("types", []) for record in catalog)
+                          assert option["label"].endswith(f"（{count}）"), "Type count should match catalog"
+                  zero_type = next((t for t in canonical_types if not any(t in record.get("types", []) for record in catalog)), None)
+                  if zero_type:
+                      page.locator("#type").select_option(zero_type)
+                      assert page.locator(".poke").count() == 0
+                      assert "尚未收錄" in page.locator("#empty").inner_text(), "Empty type must be described as uncollected"
+                      page.locator("#type").select_option("")
+
+                  favorite = page.locator('.favorite-button[data-favorite="1"]')
+                  favorite.click()
+                  assert favorite.get_attribute("aria-pressed") == "true"
+                  page.locator("#favorites-only").click()
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="1"]').count() == 1
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"favorites-{width}.png"))
+                  page.reload(wait_until="networkidle")
+                  page.wait_for_selector(".poke")
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "true", "Favorite should survive reload"
+                  page.locator('.favorite-button[data-favorite="1"]').click()
+                  assert page.locator('.favorite-button[data-favorite="1"]').get_attribute("aria-pressed") == "false"
+
+                  page.keyboard.press("/")
+                  assert page.locator("#q").evaluate("(el) => document.activeElement === el"), "Slash shortcut should focus search"
+                  page.locator("#q").press("/")
+                  assert page.locator("#q").input_value() == "/", "Typing in search must not be intercepted"
+                  page.locator("#clear-search").click()
+                  page.locator("#order").select_option("desc")
+                  descending = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
+                  assert descending == sorted(ids, reverse=True), "Descending order should reverse all card IDs"
+                  page.locator("#order").select_option("asc")
+                  assert "顯示" in page.locator("#result-count").inner_text()
+                  page.locator("#q").fill("no-match-polish")
+                  assert page.locator("#empty").is_visible()
+                  page.locator("#clear-search").click()
+                  assert page.locator("#q").input_value() == ""
+                  assert page.locator(".poke").count() == len(ids)
+                  page.locator("#type").select_option("grass")
+                  page.locator("#order").select_option("desc")
+                  page.locator("#reset-filters").click()
+                  assert page.locator("#type").input_value() == ""
+                  assert page.locator("#order").input_value() == "asc"
+                  assert page.locator(".poke").count() == len(ids)
+                  page.locator("#q").fill("#0001")
+                  assert page.locator(".poke").count() == 1, "Padded ID search must find #001"
+                  page.locator("#q").fill("妙蛙種子")
+                  assert page.locator(".poke").count() == 1, "Search must find #001"
+                  image = page.locator('.poke[data-id="1"] .poke-artwork')
+                  assert image.is_visible(), "Approved artwork should be visible"
+                  image.scroll_into_view_if_needed()
+                  page.wait_for_function("""() => {
+                    const image = document.querySelector('.poke[data-id="1"] .poke-artwork');
+                    return image && image.complete && image.naturalWidth > 0 && image.naturalHeight > 0;
+                  }""")
+                  size = image.evaluate("(image) => ({width:image.naturalWidth,height:image.naturalHeight})")
+                  assert size["width"] == 1024 and size["height"] == 1024, f"Unexpected image size: {size}"
+                  page.locator(".poke").first.click()
+                  assert page.locator("#detail").is_visible(), "Details should open"
+                  page.locator("#detail").evaluate("(el) => el.scrollTop = 200")
+                  page.locator("#detail-top").click()
+                  page.wait_for_function("document.querySelector('#detail').scrollTop < 2")
+
+                  assert "#0001" in page.locator("#detailbody").inner_text()
+                  detail_image = page.locator("#detailbody .detail-artwork")
+                  assert detail_image.is_visible() and detail_image.evaluate("(image) => image.complete && image.naturalWidth === 1024"), "Detail artwork must decode"
+                  assert page.locator(".profile-facts").is_visible(), "Verified profile should render"
+                  assert page.locator("#detailbody > .tags .type-tag").count() == 2
+                  assert page.locator("#detailbody > .tags .type-tag").all_text_contents() == ["草", "毒"]
+
+                  assert "0.7 m" in page.locator(".profile-facts").inner_text()
+                  assert "6.9 kg" in page.locator(".profile-facts").inner_text()
+                  assert "種子寶可夢" in page.locator(".profile-facts").inner_text()
+                  assert "フシギダネ" in page.locator(".profile-facts").inner_text()
+                  assert "第 1 代只有單一" in page.locator(".profile-section").inner_text()
+                  assert "妙蛙花的超級進化" in page.locator(".profile-section").inner_text()
+                  assert page.locator(".stat-row").count() == 6
+                  assert "318" in page.locator(".profile-section").inner_text()
+                  assert page.locator(".stat-radar").count() == 1
+                  assert page.locator(".evo-stage").count() == 3
+                  page.locator("#game-select").select_option("pokemon-go")
+                  go_text = page.locator("#guide-content").inner_text()
+                  assert "2022-01-22" in go_text and "強化寶可夢 3 次" in go_text, "Reviewed historical and dated seasonal GO channels should appear"
+                  assert "藤鞭" in go_text and "PvP" in go_text, "Approved GO moveset should appear"
+                  assert page.locator("#guide-content .approved-guide").count() == 2, "Both reviewed GO guides should appear"
+                  assert "僅指定日本機場" in go_text and "2026-11-26" in go_text, "Regional and date limitations must remain visible"
+                  page.locator("#game-select").select_option("lets-go")
+                  assert "常青森林" in page.locator("#guide-content").inner_text()
+                  assert "內容審核：過" in page.locator("#guide-content").inner_text()
+                  page.locator("#game-select").select_option("scarlet-violet")
+                  sv_text = page.locator("#guide-content").inner_text()
+                  assert "海岸區" in sv_text and page.locator("#guide-content .approved-guide").count() == 2
+                  assert "Sleep Powder" in sv_text and "休閒單打" in sv_text, "Reviewed SV moveset should include its purpose"
+                  page.locator("#game-select").select_option("main-series")
+                  assert page.locator("#guide-content .approved-guide").count() == 2 and "寶可傳送" in page.locator("#guide-content").inner_text(), "Reviewed availability and generation movesets should appear"
+                  assert page.locator("#guide-content .version-entry").count() == 19
+                  assert page.locator("#guide-content .moveset-group").count() == 7
+                  assert "寄生種子" in page.locator("#guide-content .moveset-groups").inner_text()
+                  assert "Lv. 39" in page.locator("#guide-content .moveset-groups").inner_text()
+                  page.locator(".moveset-group").first.scroll_into_view_if_needed()
+                  assert page.locator("#close").is_visible(), "Close control must remain reachable in long guides"
+                  page.screenshot(path=str(evidence / f"guide-cards-{width}.png"))
+                  assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), "Guide must not overflow the dialog"
+                  for game in page.locator("#game-select option").evaluate_all("(els) => els.map(el => el.value)"):
+                      page.locator("#game-select").select_option(game)
+                      body = page.locator("#guide-content").inner_text()
+                      for raw in ["story_single", "not_applicable", "competitive note", "verification_required", "仍須補充", "請獨立審核"]:
+                          assert raw not in body, f"Raw/internal text {raw} remains in {game}"
+                      assert page.locator("#detail").evaluate("(el) => el.scrollWidth <= el.clientWidth + 1"), f"Dialog overflow in {game}"
+
+                  page.locator("#game-select").select_option("gold-silver-crystal")
+                  assert page.locator("#guide-content .approved-guide").count() == 2
+                  for game, expected in [("red-green-blue-yellow", "147"), ("firered-leafgreen", "真新鎮"), ("heartgold-soulsilver", "赤紅"), ("x-y", "10")]:
+                      page.locator("#game-select").select_option(game)
+                      assert page.locator("#guide-content .approved-guide").count() == 1, f"Reviewed {game} capture should appear"
+                      assert expected in page.locator("#guide-content").inner_text(), f"Missing capture condition for {game}"
+                  page.locator("#game-select").select_option("red-blue-yellow")
+                  assert page.locator("#guide-content .approved-guide").count() == 1, "Corrected and reviewed RBY moveset should appear"
+                  assert "寄生種子 Lv.7、飛葉快刀 Lv.27、生長 Lv.34、催眠粉 Lv.41" in page.locator("#guide-content").inner_text()
+                  assert "未通過" not in page.locator("#guide-content").inner_text()
+                  assert "等級 16" in page.locator(".profile-section").inner_text() and "等級 32" in page.locator(".profile-section").inner_text()
+                  page.locator(".evo-stage[data-evo='2']").click()
+                  assert "#0002" in page.locator("#detailbody").inner_text()
+                  page.locator("#close").click()
+                  assert not page.locator("#detail").is_visible(), "Details should close"
+                  page.locator("#q").fill("")
+                  page.locator("#type").select_option("grass")
+                  assert page.locator('.poke[data-id="1"]').count() == 1, "Grass should include #001"
+                  assert page.locator('.poke[data-id="2"] .poke-artwork').count() == 0, "Unapproved #002 art must remain hidden"
+                  page.locator("#q").fill("no-such-pokemon-987654")
+                  assert page.locator("#empty").is_visible(), "Empty search should be visible"
+                  assert any("/data/guides.json" in u for u in requests), "Guides should be loaded by national ID"
+                  assert any("/data/display-index.json" in u for u in requests), "Verified field index must load"
+                  assert any("/assets/generated/001-bulbasaur-stepping-01.json" in u for u in requests), "Approved metadata must load"
+                  assert not any("/assets/generated/002-ivysaur-climbing-01.json" in u for u in requests), "Unapproved art metadata must not load"
+                  assert not errors, f"Page errors: {errors}"
+                  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Unexpected horizontal overflow"
+                  # New quiz: match every question against the actual verified catalog.
+                  page.locator("#q").fill("")
+                  page.locator("#type").select_option("")
+                  page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+                  assert "1,025" in page.locator("#quiz-availability").inner_text()
+                  assert page.locator("#quiz-options .quiz-choice").count() == 18
+                  page.locator("#type-quiz").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"quiz-intro-{width}.png"))
+                  page.locator("#quiz-start").click()
+                  seen_quiz_ids = []
+                  for question_index in range(10):
+                      question_id = int(page.locator("#quiz-number").inner_text().split("#")[-1])
+                      assert question_id not in seen_quiz_ids
+                      seen_quiz_ids.append(question_id)
+                      expected = catalog_by_id[question_id]["types"]
+                      assert page.locator("#quiz-name").inner_text() == expected_names.get(question_id, catalog_by_id[question_id]["name_zh"])
+                      assert page.locator("#quiz-options .is-answer").count() == 0, "No answer highlights before submission"
+                      assert page.locator("#quiz-submit").is_disabled()
+                      if question_index == 0:
+                          choices = page.locator("#quiz-options .quiz-choice").evaluate_all("(els) => els.map(el => el.dataset.type)")
+                          for selected_type in choices[:3]:
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                          assert page.locator('#quiz-options [aria-pressed="true"]').count() == 2
+                          assert "最多選 2" in page.locator("#quiz-feedback").inner_text()
+                          for selected_type in choices[:2]:
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                          wrong_type = next(t for t in choices if t not in expected)
+                          page.locator(f'#quiz-options [data-type="{wrong_type}"]').click()
+                          page.locator("#quiz-name").scroll_into_view_if_needed()
+                          page.screenshot(path=str(evidence / f"quiz-question-{width}.png"))
+                      else:
+                          for selected_type in reversed(expected):
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                      page.locator("#quiz-submit").click()
+                      assert page.locator("#quiz-feedback").is_visible()
+                      assert page.locator("#quiz-options .is-answer").count() == len(expected)
+                      assert page.locator("#quiz-options .quiz-choice:disabled").count() == 18
+                      assert page.locator("#quiz-score").inner_text() == f"答對 {question_index} 題"
+                      page.locator("#quiz-submit").evaluate("(el) => el.click()")
+                      assert page.locator("#quiz-score").inner_text() == f"答對 {question_index} 題", "Submitting again cannot add a point"
+                      if question_index == 1:
+                          page.locator("#quiz-feedback").scroll_into_view_if_needed()
+                          page.screenshot(path=str(evidence / f"quiz-feedback-{width}.png"))
+                      assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Quiz must not overflow"
+                      page.locator("#quiz-next").click()
+                  assert page.locator("#quiz-final-score").inner_text() == "9 / 10"
+                  assert page.locator("#quiz-review li").count() == 1
+                  assert "9 / 10" in page.locator("#quiz-best").inner_text()
+                  assert page.locator("#quiz-intro").is_hidden() and page.locator("#quiz-play").is_hidden()
+                  page.locator("#quiz-review button").click()
+                  assert f'#{seen_quiz_ids[0]:04d}' in page.locator("#detailbody").inner_text()
+                  page.locator("#close").click()
+                  assert page.locator("#quiz-results").is_visible()
+                  page.locator("#quiz-results").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"quiz-results-{width}.png"))
+                  page.reload(wait_until="networkidle")
+                  page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+                  assert "9 / 10" in page.locator("#quiz-best").inner_text(), "Local best score survives reload"
+                  page.locator("#quiz-start").click()
+                  page.locator("#quiz-restart").click()
+                  assert page.locator("#quiz-step").inner_text() == "第 1 / 10 題"
+                  assert page.locator("#quiz-score").inner_text() == "答對 0 題"
+                  assert not errors, f"Quiz page errors: {errors}"
+                  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
+                  print(f"PASS viewport {width}x{height}")
+                  page.close()
+              # Changed/unapproved snapshots must fail closed, even if inserted into the display index.
+              import json
+              payload = json.load(open("data/display-index.json"))
+              snapshot = next(g for g in payload["guide_snapshots"] if g["key"] == "1:x-y:capture")
+              snapshot["content"]["condition"] = "UNREVIEWED_SENTINEL"
+              payload["guide_snapshots"].append({"key":"1:invented:capture","national_id":1,"game":"invented","topic":"capture","content":{"method":"UNAPPROVED_SENTINEL"}})
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              page.locator('.poke[data-id="1"]').click()
+              assert page.locator('.guide-tab[data-game="x-y"]').count() == 0, "Modified snapshot must not load"
+              assert page.locator('.guide-tab[data-game="invented"]').count() == 0, "Unapproved snapshot must not load"
+              assert "UNREVIEWED_SENTINEL" not in page.locator("#detailbody").inner_text()
+              page.close()
+              # Display labels must match ID/English identity and an official source; duplicates fail closed.
+              label_payload = json.load(open("data/display-index.json"))
+              label_payload["catalog_labels"] = [
+                  {"national_id": 2, "name_en": "Charmeleon", "name_zh": "錯誤名稱", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0002/"},
+                  {"national_id": 3, "name_en": "Venusaur", "name_zh": "錯誤來源", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "javascript:alert(1)"},
+                  {"national_id": 5, "name_en": "Charmeleon", "name_zh": "重複甲", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0005/"},
+                  {"national_id": 5, "name_en": "Charmeleon", "name_zh": "重複乙", "verification": "official_name_matched", "checked_at": "2026-11-28", "source_url": "https://tw.portal-pokemon.com/pokedex/0005/"},
+              ]
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(label_payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              for label_id, original in [(2,"Ivysaur"), (3,"Venusaur"), (5,"Charmeleon")]:
+                  assert page.locator(f'.poke[data-id="{label_id}"] h3').inner_text() == original, "Invalid labels must not replace catalog identity"
+              assert page.locator('.poke[data-id="1"] h3').inner_text() == "妙蛙種子"
+              page.close()
+              # Supplemental card rows cannot override primary records or inject unsafe IDs/types.
+              card_payload = json.load(open("data/display-index.json"))
+              example = next(record for record in card_payload["catalog_cards"] if record["id"] == 27)
+              card_payload["catalog_cards"] = [
+                  {**example, "id": 1, "name_zh": "錯誤覆蓋", "types": ["fire"]},
+                  {**example, "name_zh": "重複甲"},
+                  {**example, "name_zh": "重複乙"},
+                  {**example, "id": 28, "types": ["made-up"]},
+                  {**example, "id": 29, "name_en": "<img src=x onerror=alert(1)>", "name_zh": "安全文字<script>alert(1)</script>"},
+                  {**example, "id": '30" onclick="alert(1)'},
+              ]
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(card_payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              assert page.locator('.poke[data-id="1"] h3').inner_text() == "妙蛙種子"
+              assert "".join(page.locator('.poke[data-id="1"] .tags').inner_text().split()) == "草毒"
+              assert page.locator('.poke[data-id="27"]').count() == 0 and page.locator('.poke[data-id="28"]').count() == 0
+              assert page.locator('.poke[data-id="29"] h3').inner_text() == "安全文字<script>alert(1)</script>"
+              assert page.locator('.poke[data-id="29"] script').count() == 0 and page.locator('.poke[data-id="29"] .en img').count() == 0
+              assert page.locator('.poke[data-id="30"]').count() == 0
+              page.close()
+              # Browser storage can be blocked without taking down the game.
+              page = browser.new_page(viewport={"width":390,"height":844})
+              page.add_init_script("Object.defineProperty(window, 'localStorage', {get(){throw new Error('storage disabled')}})")
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+              page.locator("#quiz-start").click()
+              for _ in range(10):
+                  ident = int(page.locator("#quiz-number").inner_text().split("#")[-1])
+                  for type_id in catalog_by_id[ident]["types"]:
+                      page.locator(f'#quiz-options [data-type="{type_id}"]').click()
+                  page.locator("#quiz-submit").click()
+                  page.locator("#quiz-next").click()
+              assert page.locator("#quiz-final-score").inner_text() == "10 / 10"
+              page.locator(".quiz-rules").evaluate("(el) => el.open = true")
+              assert "這次瀏覽期間" in page.locator("#quiz-storage-note").inner_text()
+              page.close()
+              browser.close()
+          server.shutdown()
+          PY
+      - name: Save desktop and mobile evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: visual-evidence
+          path: visual-evidence/
+          retention-days: 3
+          if-no-files-found: ignore
+      - name: Check unauthenticated site response
+        run: |
+          python - <<'PY'
+          from urllib.request import build_opener
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import urlparse
+          url = "https://pokemon-universe-pokedex.boragodragonfruit.workers.dev/"
+          try:
+              response = build_opener().open(url, timeout=20)
+              final = urlparse(response.geturl())
+              print("ACCESS_OBSERVATION final_host=" + str(final.hostname) + " status=" + str(response.status))
+              print("ACCESS_OBSERVATION login_host=" + str(bool(final.hostname and final.hostname.endswith(".cloudflareaccess.com"))).lower())
+          except (HTTPError, URLError, TimeoutError) as error:
+              print("ACCESS_OBSERVATION unavailable=" + type(error).__name__ + " code=" + str(getattr(error, "code", "none")))
+          PY
