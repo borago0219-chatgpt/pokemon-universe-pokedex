@@ -6,7 +6,8 @@
  if(!engine){$('quiz-availability').textContent='測驗程式暫時無法載入，請重新整理。';return;}
  const storageKey='pokeverse:typequiz:best:v1';
  let pool=[],source=null,round=null,roundSource=null,selected=new Set(),best=null;
- const typeButtons=new Map();
+ const typeButtons=new Map(),officialArtworks=new Map();
+ let artworkEpoch=0;
  function readBest(){
   try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');return Number.isInteger(v)&&v>=0&&v<=10?v:null;}catch{return null;}
  }
@@ -40,13 +41,39 @@
   $('quiz-selection').textContent='已選 '+selected.size+' 種'+(selected.size?'：'+label([...selected]):'');
   $('quiz-submit').disabled=selected.size===0||Boolean(result);
  }
+ function showQuestionArtwork(p){
+  const image=$('quiz-artwork'),placeholder=$('quiz-art-placeholder'),credit=$('quiz-art-credit'),caption=$('quiz-art-caption');
+  const epoch=++artworkEpoch;image.onload=null;image.onerror=null;image.hidden=true;image.removeAttribute('src');image.alt='';
+  placeholder.hidden=false;caption.textContent='圖片準備中';credit.hidden=true;credit.replaceChildren();
+  const entry=officialArtworks.get(p.id);if(!entry)return;
+  image.onload=()=>{
+   if(epoch!==artworkEpoch)return;
+   if(!image.naturalWidth||!image.naturalHeight)return;
+   image.hidden=false;placeholder.hidden=true;
+   const text=document.createElement('span'),link=document.createElement('a');
+   text.textContent='官方角色參考圖 · ©Pokémon · ';link.textContent='圖片來源';link.href=entry.source_url;link.target='_blank';link.rel='noopener noreferrer';
+   credit.replaceChildren(text,link);credit.hidden=false;
+  };
+  image.onerror=()=>{if(epoch!==artworkEpoch)return;image.hidden=true;placeholder.hidden=false;caption.textContent='圖片暫時無法載入';credit.hidden=true;};
+  image.alt=p.name_zh+'官方角色插畫';image.src=entry.src;
+ }
+ function acceptOfficialArtworks(entries){
+  officialArtworks.clear();const counts=new Map(),items=Array.isArray(entries)?entries:[];
+  for(const e of items)counts.set(e?.national_id,(counts.get(e?.national_id)||0)+1);
+  for(const e of items){
+   if(!Number.isInteger(e?.national_id)||e.national_id<2||counts.get(e.national_id)!==1||typeof e.src!=='string')continue;
+   const match=e.src.match(/^\.\/assets\/reference\/([0-9]{3,4})-[a-z0-9-]+-official\.png$/);
+   const source='https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/'+e.national_id+'.png';
+   if(match&&Number(match[1])===e.national_id&&e.source_url===source)officialArtworks.set(e.national_id,{src:e.src,source_url:source});
+  }
+ }
  function displayQuestion(){
   const p=round.questions[round.cursor];selected=new Set();clearFeedback();
   $('quiz-step').textContent='第 '+(round.cursor+1)+' / '+round.questions.length+' 題';
   $('quiz-score').textContent='答對 '+round.score+' 題';
   $('quiz-progress').value=round.answers.length;
   $('quiz-number').textContent='NATIONAL DEX #'+String(p.id).padStart(4,'0');
-  $('quiz-name').textContent=p.name_zh;$('quiz-english').textContent=p.name_en;
+  $('quiz-name').textContent=p.name_zh;$('quiz-english').textContent=p.name_en;showQuestionArtwork(p);
   $('quiz-submit').hidden=false;$('quiz-next').hidden=true;renderChoices(null);
   $('quiz-name').focus();
  }
@@ -106,9 +133,9 @@
  document.addEventListener('pokeverse:catalog-ready',event=>{
   const data=event.detail;
   if(!sourceLink(data?.source))return;
-  pool=engine.buildPool(data.records,data.source.national_id_range);source=data.source;
+  pool=engine.buildPool(data.records,data.source.national_id_range);source=data.source;acceptOfficialArtworks(data.artworks);
   $('quiz-start').disabled=pool.length<10;
-  $('quiz-availability').textContent=pool.length>=10?'題庫已就緒 · '+pool.length.toLocaleString('zh-TW')+' 隻寶可夢':'完整且已核對的資料不足 10 筆，暫時無法出題。';
+  $('quiz-availability').textContent=pool.length>=10?'題庫已就緒 · '+pool.length.toLocaleString('zh-TW')+' 隻寶可夢 · '+officialArtworks.size+' 張官方圖':'完整且已核對的資料不足 10 筆，暫時無法出題。';
   $('quiz-pool-size').textContent=pool.length.toLocaleString('zh-TW');
   if(!round)showSource(source);
  });
