@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "timezone": "Asia/Taipei",
-  "updated_on": "2026-11-27",
+  "updated_on": "2026-11-28",
   "next_national_id": 5,
   "completed_contiguous": [
     {
@@ -146,6 +146,40 @@
       "rights_review": "third_party_character_rights_not_verified",
       "website_use": "not_approved",
       "note": "Signature-like text at lower right; downstream display decision needed."
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 2,
+      "name_zh": "妙蛙草",
+      "status": "replacement_candidate_pending_review",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "asset": "assets/generated/002-ivysaur-meadow-02.jpg",
+      "metadata": "assets/generated/002-ivysaur-meadow-02.json",
+      "blob_sha": "2a7512fbaa56e4b4d534df66e664d9fe7dbd8e42",
+      "source_url": "https://app.leonardo.ai/generation/image/ivysaur-pok%C3%A9mon-002-large-prominent-closed-pink-7037f707-aa6e-42a7-8feb-d88d304f17ee",
+      "old_blob_sha": "9debb308399ec300690905a9009d63ac50db42dc",
+      "review_source": "reviews/2026-11-28-image-batch-002-006.md",
+      "attempts": [
+        {
+          "source_url": "https://app.leonardo.ai/generation/image/ivysaur-pok%C3%A9mon-002-stocky-quadrupedal-blue-green-5b04d173-34ae-4b6f-89b5-67499bdea5eb",
+          "result": "signature-like text"
+        },
+        {
+          "source_url": "https://app.leonardo.ai/generation/image/ivysaur-pok%C3%A9mon-002-recognizable-blue-green-4ae2a75e-329c-4e23-8561-21c7cd227c9a",
+          "result": "flower bud insufficient"
+        },
+        {
+          "source_url": "https://app.leonardo.ai/generation/image/ivysaur-pok%C3%A9mon-002-four-legged-teal-amphibian-red-26235cfc-79c4-49d2-bf1e-780cbb4365c0",
+          "result": "flower stem incorrect and text at edge"
+        },
+        {
+          "source_url": "https://app.leonardo.ai/generation/image/ivysaur-pok%C3%A9mon-002-large-prominent-closed-pink-7037f707-aa6e-42a7-8feb-d88d304f17ee",
+          "result": "replacement candidate"
+        }
+      ],
+      "free_tokens_spent": 32
     }
   ]
 }
