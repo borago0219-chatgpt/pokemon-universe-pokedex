@@ -21,6 +21,18 @@
 - 卡片與詳情讀同一索引；詳情列來源／權利標示。測驗只接受該 loader 通過的官方圖路徑，顯示在名字上方；處理載入中、缺圖、載入失敗與舊題圖片晚到。未接入圖片的編號仍保留佔位圖，題庫與計分不變。
 - 來源 metadata／PNG 原樣複用；所有原 18 篇快照／審核、1,025 卡片、原目錄及 #0001 圖片批准保持。
 - Work 雲端 PNG 解碼、Git SHA、Node loader 的錯配／批准／來源／路徑／重複拒絕檢查通過；測驗 12 項題庫／控制器測試通過，新增圖片成功／失敗／舊題載入的處理。這些不是新瀏覽器證據。
-- 既有免費 Chromium workflow 候選已準備：10 張實圖與 metadata SHA、475 解碼、卡片／詳情／測驗來源與顯示、手機／桌面、失敗回復及原 1,025 卡片／攻略／測驗回歸。尚未啟動額外網站驗收，也未發布新圖片功能。
+- 使用者於本對話另准本批一次桌面／手機驗收並發布。既有免費 Chromium [run 46105026223](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/46105026223) 已 completed/success，job 140855736506；測試提交 `bfebfdfc64d1743557c2dae8b2d054b12c1acfef`，對應候選程式 `693ff362d22817ed782b381e445ffa8a9a8ab7bf`。全部 10 圖 SHA／metadata／解碼、卡片／詳情／測驗／來源、桌面 1440 與手機 390、圖片失敗佔位及 1,025 卡片／攻略／收藏／測驗回歸通過。已檢視手機與桌面截圖，未重跑同版驗收。
 
-候選分支 work/visual-official-art-002-011-20261128。按使用者每日一次驗收規則，完成本可審閱版本後才詢問本批新的必要圖片驗收；通過與發布條件滿足才只整合必要檔案，不冒稱尚未做過的測試或部署。
+候選分支 work/visual-official-art-002-011-20261128，已取得本批額外驗收／發布允許並通過，不再詢問相同品質或使用批准。
+
+
+## 正式整合與交接
+- main 程式提交 [4588a323bdd95dfe5706d402edeff9a164050ac2](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/4588a323bdd95dfe5706d402edeff9a164050ac2)。僅 5 個網站檔案（app.js、type-quiz.js、index.html、style.css、data/display-index.json）與 20 個原始 PNG／metadata；未合併測試 workflow、測試檔或下載者進度。
+- 發布前重讀 main `651e1816fef23cfef90600f9f13cc806dd4fe627` 與 5 個來源 SHA，使用 expected_sha 更新，發布後逐個核對 25 個 blob 與測試來源一致；其他既有檔案未變。原始攻略、daily_focus、data/pokemon.json 與其他排程不變。
+- 圖片索引：#0002 妙蛙草、#0003 妙蛙花、#0004 小火龍、#0005 火恐龍、#0006 噴火龍、#0007 傑尼龜、#0008 卡咪龜、#0009 水箭龜、#0010 綠毛蟲、#0011 鐵甲蛹；卡片／詳情與抽到這些題目的測驗顯示實圖。其餘無圖編號仍有佔位，不宣稱全圖鑑已補齊。
+- 測試證據 artifact `15247675388` / visual-evidence，SHA256 `fae9f407be92cd6035776a7a5b46433fdcbc76c28b2e77380c74b74d6a8a4b87`；保存期限 2026-12-01，測試程式和 run 紀錄仍可追溯。截圖 official-card-390／1440、official-detail-390、official-quiz-390／1440 已查看。
+- 正式首頁未登入 HTTP 回應為 403；這項觀察不單獨等同本人 Access 完整政策驗收。沿用既有已記錄登入門檻及使用者維持保護的設定證據；本輪無修改 Access，未繞過登入。正式登入後 Visit 畫面未由本輪親自實測，CI 測的是固定版本測試站。
+- 下一輪先對照建設與審核新資料；目前同版 18 篇已核內容已同步。新資料未通過前不猜填、不把整隻角色宣稱完成；後續官方下載批次沿用共同來源評估，核對差異與固定版本後接入，不自行下載／研究下一隻。
+- 本輪完成指定圖片批次和每日內容優先排程修正；非新的主要研究輪，不增加攻略研究範圍。每日瀏覽器驗收額度依本次追加授權已使用，後續新變更需有適當版本測試才發布。
+
+- Cloudflare Workers Builds 對程式提交 completed/success（check `140857058939`），Build ID `5f38bb33-3509-4d80-a1a9-09cecf6c3a72`，Version ID `8fa83cb6-9b74-4d68-b627-e42ddd048456`。程式整合與正式建置成功；沒有以此冒稱登入後已親眼看到畫面。
