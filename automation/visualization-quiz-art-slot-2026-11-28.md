@@ -9,3 +9,10 @@
 - 對修改後 HTML 實際檢查：位置在名字上方、ID 唯一、圖片元素隱藏且無 URL、無外部素材、既有 hidden 規則；另以未變的測驗控制器跑改後 HTML 的 3 項互動邏輯回歸（題庫載入、選擇／計分／回顧／重玩、儲存／載入失敗）通過。沒有重跑今天的完整網站驗收，也沒有新增測試 workflow。
 - 資料與既有互動程式沒有變動，不把這項低影響靜態調整當成測驗功能重新審核。圖片權利、角色研究、daily_focus、Access、其他排程完全未改。
 - 本次只整合必要 HTML／CSS；正式提交與 Cloudflare 結果於下節補記。新增佔位區的正式畫面未由本輪親自實測，沿用既有私人保護設定證據，不繞過登入。
+
+
+## 正式保存與建置
+- main 提交 [76bd74f4c72c987dd6da3353b13982ed30a6588b](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/76bd74f4c72c987dd6da3353b13982ed30a6588b)，僅 index.html／style.css；更新前讀最新 SHA，發布後讀回 HTML blob `8415fd7b537b7edf5ed303409b6e9c241d7b4146`、CSS blob `7f5f2762808398f12ea324b20756360d35b3f016` 與候選一致。
+- Cloudflare Workers Builds 對該提交 completed/success（check `140849076303`）。Build ID `8bb8b9d3-d09f-436d-b05d-ff188be7e659`；Version ID `14f8433a-122c-498d-8d55-11997f6534fa`。
+- 已完成使用者指定的靜態圖片預留區、結構／控制器回歸、保存及建置核對；沒有聲稱新增佔位區已有手機／桌面畫面實測。正式登入後畫面未由本輪親自實測。
+- 日後正式圖片須設定對應圖檔與可讀替代文字、隱藏 placeholder，再以固定版本核對批准／展示條件及載入解碼。本次不改任何圖片批准，沒有把待審圖先展示。
