@@ -45,7 +45,7 @@ function render(){
  const q=$('#q').value.trim().toLowerCase(),t=$('#type').value,order=$('#order').value;
  const idQuery=/^#?0*\d+$/.test(q)?Number(q.replace(/^#/,'')):null;
  const found=records.filter(p=>(!q||[p.id,p.name_zh,p.name_en].some(x=>String(x??'').toLowerCase().includes(q))||(idQuery!==null&&Number(p.id)===idQuery))&&(!t||knownTypes(p).includes(t))&&(!favoritesOnly||favoriteIds.has(Number(p.id)))).sort((a,b)=>order==='desc'?Number(b.id)-Number(a.id):Number(a.id)-Number(b.id));
- $('#grid').innerHTML=found.map(p=>`<article class="poke-card"><button class="poke" data-id="${p.id}" style="--accent:${colors[knownTypes(p)[0]]||'#6b9ca7'}"><div class="art" style="--shade:${colors[knownTypes(p)[0]]||'#6b9ca7'}33">${artworks.has(Number(p.id))?'<img class="poke-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" loading="lazy" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'<span class="mark" aria-label="插畫尚未完成">✦</span>'}</div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${renderTypeTags(p.types)}</div></button><button class="favorite-button" type="button" data-favorite="${Number(p.id)}" aria-pressed="${favoriteIds.has(Number(p.id))}" aria-label="${favoriteIds.has(Number(p.id))?'取消收藏':'收藏'}${escapeHTML(p.name_zh||p.name_en)}" title="${favoriteIds.has(Number(p.id))?'取消收藏':'加入收藏'}">${favoriteIds.has(Number(p.id))?'★':'☆'}</button></article>`).join('');
+ $('#grid').innerHTML=found.map(p=>`<article class="poke-card"><button class="poke" data-id="${p.id}" style="--accent:${colors[knownTypes(p)[0]]||'#6b9ca7'}"><div class="art" style="--shade:${colors[knownTypes(p)[0]]||'#6b9ca7'}33">${artworks.has(Number(p.id))?'<img class="poke-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" loading="lazy" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'<span class="mark" aria-label="插畫尚未完成">✦</span>'}</div><span class="num">#${String(p.id).padStart(4,'0')}</span><h3>${escapeHTML(p.name_zh||p.name_en)}</h3><span class="en">${escapeHTML(p.name_en)}</span><div class="tags">${renderTypeTags(p.types)}</div>${p.catalog_basic?'<span class="card-stage">基本卡片 · 圖片／攻略待補</span>':''}</button><button class="favorite-button" type="button" data-favorite="${Number(p.id)}" aria-pressed="${favoriteIds.has(Number(p.id))}" aria-label="${favoriteIds.has(Number(p.id))?'取消收藏':'收藏'}${escapeHTML(p.name_zh||p.name_en)}" title="${favoriteIds.has(Number(p.id))?'取消收藏':'加入收藏'}">${favoriteIds.has(Number(p.id))?'★':'☆'}</button></article>`).join('');
  $('#empty').hidden=found.length>0;
  $('#result-count').textContent='顯示 '+found.length+' ／ '+records.length+' 隻寶可夢';
  $('#clear-search').hidden=$('#q').value.length===0;
@@ -160,6 +160,22 @@ function renderFact(f){
  const url=safeUrl(f.source_url);
  return '<article class="guide-card verified-fact"><h4>'+escapeHTML(f.label)+'</h4><p>'+escapeHTML(f.text)+'</p><p class="small">核對：'+escapeHTML(f.verified_at)+'；'+(url?'<a href="'+escapeHTML(url)+'" target="_blank" rel="noopener noreferrer">查看來源</a>':'來源待補')+'</p></article>';
 }
+// Supplemental basic cards never overwrite records owned by the data updater.
+function mergeCatalogCards(primary,extra,source){
+ const result=primary.slice(),ids=new Set(primary.map(p=>Number(p.id)));
+ if(source?.provider!=='PokéAPI'||source.display_status!=='basic_metadata_verified'||!/^[0-9a-f]{40}$/.test(source.revision||'')||!/^\d{4}-\d{2}-\d{2}$/.test(source.checked_at||''))return result;
+ const rows=Array.isArray(extra)?extra:[],counts=new Map();
+ for(const p of rows)if(Number.isInteger(p?.id))counts.set(p.id,(counts.get(p.id)||0)+1);
+ for(const p of rows){
+  if(!Number.isInteger(p?.id)||p.id<1||p.id>9999||ids.has(p.id)||counts.get(p.id)!==1)continue;
+  if(typeof p.name_zh!=='string'||!/[\u3400-\u9fff]/u.test(p.name_zh)||p.name_zh.length>30||typeof p.name_en!=='string'||!p.name_en.trim()||p.name_en.length>60)continue;
+  if(!Array.isArray(p.types)||p.types.length<1||p.types.length>2||new Set(p.types).size!==p.types.length||!p.types.every(t=>Object.hasOwn(typeNames,t)))continue;
+  result.push({id:p.id,name_zh:p.name_zh,name_en:p.name_en,types:[...p.types],updated_at:source.checked_at,catalog_basic:true,catalog_source_url:'https://github.com/PokeAPI/pokeapi/tree/'+source.revision+'/data/v2/csv'});
+  ids.add(p.id);
+ }
+ return result;
+}
+
 // Display-only localization: preserve the Actions-owned catalog and reviewed gameplay data.
 function applyCatalogLabels(pokemon,labels){
  const byId=new Map(),duplicates=new Set();
@@ -185,9 +201,11 @@ function details(p){
  const tabs=games.map((game,i)=>'<button type="button" class="guide-tab" id="guide-tab-'+i+'" role="tab" aria-controls="guide-content" tabindex="'+(i===0?'0':'-1')+'" aria-selected="'+(i===0?'true':'false')+'" data-game="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</button>').join('');
  const options=games.map(game=>'<option value="'+escapeHTML(game)+'">'+escapeHTML(gameNames[game]||game)+'</option>').join('');
  const nameSource=safeUrl(p.catalog_name_source);
+ const catalogSource=safeUrl(p.catalog_source_url);
+ const catalogNotice=p.catalog_basic?'<p class="detailnote basic-card-note">基本卡片：已收錄編號、名稱與屬性；專屬圖片與各版本攻略尚待補齊。<br>資料查核：'+escapeHTML(p.updated_at)+' · '+(catalogSource?'<a href="'+escapeHTML(catalogSource)+'" target="_blank" rel="noopener noreferrer">PokéAPI 資料來源</a>':'來源未列出')+'</p>':'';
  const identitySource=nameSource?'<p class="small identity-source">中文名稱核對：'+escapeHTML(p.catalog_name_checked_at)+' · <a href="'+escapeHTML(nameSource)+'" target="_blank" rel="noopener noreferrer">台灣寶可夢官方圖鑑</a></p>':'';
  const image=artworks.has(Number(p.id))?'<img class="detail-artwork" src="'+escapeHTML(artworks.get(Number(p.id)))+'" width="1024" height="1024" decoding="async" alt="'+escapeHTML(p.name_zh||p.name_en)+'插畫">':'';
- $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+identitySource+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
+ $('#detailbody').innerHTML='<div class="eyebrow">NATIONAL DEX #'+String(p.id).padStart(4,'0')+'</div><h2 id="detail-title">'+escapeHTML(p.name_zh||p.name_en)+' <small>'+escapeHTML(p.name_en)+'</small></h2><div class="tags">'+renderTypeTags(p.types)+'</div>'+identitySource+catalogNotice+image+renderProfile(p)+'<section class="guide-section"><div class="section-title"><h3>遊戲版本與攻略</h3><span class="review-pill pending">逐篇審核結果</span></div><div class="version-picker"><label for="game-select">快速切換版本</label><select id="game-select">'+options+'</select></div><div class="guide-tabs" role="tablist" aria-label="遊戲版本">'+tabs+'</div><div id="guide-content" role="tabpanel" tabindex="0"></div></section>';
  const show=game=>{
   document.querySelectorAll('.guide-tab').forEach(b=>{const selected=b.dataset.game===game;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;if(selected)$('#guide-content').setAttribute('aria-labelledby',b.id);});
   $('#game-select').value=game;
@@ -223,7 +241,7 @@ async function init(){
   records=Array.isArray(data.pokemon)?data.pokemon:[];
   try{
    const [gr,dr]=await Promise.all([fetch('./data/guides.json',{cache:'no-store'}),fetch('./data/display-index.json',{cache:'no-store'})]);
-   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);records=applyCatalogLabels(records,index.catalog_labels);await loadApprovedArtwork(index);}
+   if(gr.ok&&dr.ok){const [guides,index]=await Promise.all([gr.json(),dr.json()]);guideRecords=Array.isArray(guides.guides)?guides.guides:[];displayEntries=Array.isArray(index.entries)?index.entries:[];displayFacts=Array.isArray(index.facts)?index.facts:[];reviewedGuides=Array.isArray(index.reviewed_guides)?index.reviewed_guides:[];guideRecords=mergeReviewedSnapshots(guideRecords,index.guide_snapshots);records=applyCatalogLabels(mergeCatalogCards(records,index.catalog_cards,index.catalog_card_source),index.catalog_labels);await loadApprovedArtwork(index);}
   }catch{guideRecords=[];displayEntries=[];displayFacts=[];reviewedGuides=[];}
   $('#total').textContent=records.length;
   $('#updated').textContent='資料更新：'+(data.updated_at||'未註明');
