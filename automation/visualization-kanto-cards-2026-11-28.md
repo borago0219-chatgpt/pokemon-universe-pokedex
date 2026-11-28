@@ -19,3 +19,16 @@
 - 來源完整性：151 個唯一第一世代 ID、雙語名稱、預設型態有序屬性均具備；補集剛好 119。
 - Node 邏輯檢查：合併後 IDs=1–151、原 32 記錄與輸入不被改動、來源／非法值／重複列拒絕；原資料流程日後新增同編號時優先且不重複。原展示索引其餘所有鍵值未改。
 - 即將以既有免費 Chromium workflow 進行使用者明確授權的本次一次額外驗收。只在安全測試分支保存測試 workflow，絕不修改或合併資料更新流程。通過後只整合必要網站檔案；實際結果另補記，不提前宣稱。
+
+
+## 最終驗收與正式整合（取代上文待驗收狀態）
+- [Chromium run 46096938389](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/46096938389) completed/success；測試提交 `33474012a1a6aae57bfc076187c0d276713f7c00`，browser job `140830349549`。1440×900 與 390×844 均 PASS，確認 151 張、IDs 1–151 唯一連續、119 張基本卡片標記、全卡中文名稱、18 屬性與實際收錄數、搜尋／排序／收藏、詳情與來源、原攻略／圖片解碼回歸、錯配／重複／惡意資料輸出隔離。這是使用者明確允許的本次額外驗收，不自動放寬後續每日一次。
+- 新卡片不載入 #0001 已批准內容或圖片；重複 ID／無效屬性被拒，原資料流程的 ID 優先。沒有增加攻略研究範圍或把圖鑑完整度標成通過。
+- Artifact `visual-evidence` ID `15243875994`，digest `sha256:2f8fa652b36f784eb5a4584b14ce8d19468e0d5cee5a79bfbd6d09eca7b596fb`，保存 3 天。已下載核對 digest，實際查看手機與桌面 #0151 新卡片截圖；可見夢幻／Mew、超能力、基本卡片待補標示和收藏。這是測試截圖，不是假稱已親見正式 Visit。
+- 正式程式提交：[e132b5fdaf96f567266d321f27aab01212531fc3](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/e132b5fdaf96f567266d321f27aab01212531fc3)。以最新 main `bfe4bbf06b67a78b602168f094ecbe7c115300ce` 為基底，只整合 app.js、index.html、style.css、data/display-index.json。原資料／指南／生圖／審核和其他 AI 剛保存的成果全部保留。
+- 發布後讀回同版 blob：app `deb1bb73f441db21f15e6946cec55020a70d8942`；HTML `a3b3e78d6fad5890dea3d771814acf40d98c4f08`；CSS `b2a9f340cf16d2da5ebfb26c33225cb7ce4fee5d`；展示索引 `5e665b62d2267593edb4707aad05646744b43a27`。與通過測試的來源完全一致。data/pokemon.json 仍為原 blob `c76ef17476285ed0f81c82b41450b6b92c272da6`。
+- 本輪 CI 正式網址未登入請求 HTTP 403；沿用最近 Work 觀察到的 Cloudflare Access 登入門檻，沒有修改／繞過登入或存取設定。身份允許名單與登入後正式頁未由本輪實測，不能以 403 或建置當成已看過正式畫面。
+- 後續圖片與攻略按各自已批准版本逐項接入；卡片存在不等於角色研究完成。不要求建設 AI 立刻研究這 119 隻，不修改 daily_focus、完成狀態或任何排程。
+
+- Cloudflare 對正式程式提交 `e132b5fdaf96f567266d321f27aab01212531fc3` 回報 completed/success（check `140831133717`），Build ID `ab7dc50b-bf45-4541-8036-853f69818ecb`，Version ID `6ec79be6-f3f4-4284-8516-b0b3a4d257fc`。已核對正式建置／版本；登入後 Visit 畫面未由本輪親自實測。
+- 本批收束：使用者指定新增基本卡片的工作已完成資料、通用讀取、一次獲准的額外桌面／手機驗收、同版截圖檢視、main 整合及成功建置。119 張卡片各自缺圖片／攻略的狀態已在畫面明示，未冒稱全角色完成。後續 21:30 沿用本版驗收證據，不再為相同版追加測試；待具備新批准素材或內容時優先逐項接入。
