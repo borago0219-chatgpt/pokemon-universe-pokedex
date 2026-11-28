@@ -1,0 +1,79 @@
+{
+  "updated_at": "2026-11-28",
+  "timezone": "Asia/Taipei",
+  "branch": "work/reference-artwork",
+  "completed": [
+    {
+      "national_id": 2,
+      "name": "妙蛙草",
+      "file": "assets/reference/002-ivysaur-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/2.png",
+      "sha": "bab075ed4ab35f739285dcdf87fd522a6bff2746"
+    },
+    {
+      "national_id": 3,
+      "name": "妙蛙花",
+      "file": "assets/reference/003-venusaur-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/3.png",
+      "sha": "969dae826a15fe2cf11fe9e0f9681d0b78b20fc2"
+    },
+    {
+      "national_id": 4,
+      "name": "小火龍",
+      "file": "assets/reference/004-charmander-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/4.png",
+      "sha": "6b91d79a29d140e3227afb5a9a1a77ba412b362c"
+    },
+    {
+      "national_id": 5,
+      "name": "火恐龍",
+      "file": "assets/reference/005-charmeleon-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/5.png",
+      "sha": "8bf51519ca0e694ccd4e57a4e897784378103485"
+    },
+    {
+      "national_id": 6,
+      "name": "噴火龍",
+      "file": "assets/reference/006-charizard-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/6.png",
+      "sha": "4c4fb9175e8eacfa83d4f64b47fdbb92cf09f902"
+    },
+    {
+      "national_id": 7,
+      "name": "傑尼龜",
+      "file": "assets/reference/007-squirtle-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/7.png",
+      "sha": "299b74d98d9d991355ea162760648a23ffd6ec25"
+    },
+    {
+      "national_id": 8,
+      "name": "卡咪龜",
+      "file": "assets/reference/008-wartortle-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/8.png",
+      "sha": "88d620cea24eef7622b5a25106fbca94b88c4141"
+    },
+    {
+      "national_id": 9,
+      "name": "水箭龜",
+      "file": "assets/reference/009-blastoise-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/9.png",
+      "sha": "7af9de8755f499e243869cba85eb3fdfbfeb6ee5"
+    },
+    {
+      "national_id": 10,
+      "name": "綠毛蟲",
+      "file": "assets/reference/010-caterpie-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/10.png",
+      "sha": "b9a9b71dc52ec35e2f79342a99b2b42cbf7d63e2"
+    },
+    {
+      "national_id": 11,
+      "name": "鐵甲蛹",
+      "file": "assets/reference/011-metapod-official.png",
+      "source": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/11.png",
+      "sha": "2294193865563479d6245064d3b765c801c4b919"
+    }
+  ],
+  "next_national_id": 12,
+  "per_run": 10
+}
