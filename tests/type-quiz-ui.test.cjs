@@ -8,7 +8,7 @@ class Element{
  set className(v){this.classes=new Set(v.split(/\s+/).filter(Boolean));}get className(){return [...this.classes].join(' ');}
  set textContent(v){this._text=String(v);this.children=[];}get textContent(){return this._text+this.children.map(c=>c.textContent).join('');}
  append(...children){this.children.push(...children);}replaceChildren(...children){this._text='';this.children=[...children];}
- setAttribute(k,v){this.attrs[k]=String(v);}getAttribute(k){return this.attrs[k]??null;}
+ setAttribute(k,v){this.attrs[k]=String(v);}getAttribute(k){return this.attrs[k]??null;}removeAttribute(k){delete this.attrs[k];if(k==='src')this.src='';}
  addEventListener(k,fn){(this.listeners[k]??=[]).push(fn);}click(){if(this.disabled)return;for(const fn of this.listeners.click||[])fn({target:this});}
  querySelector(selector){const name=selector.slice(1);for(const c of this.children){if(c.classes.has(name))return c;const n=c.querySelector(selector);if(n)return n;}return null;}
  focus(){this.focused=true;}
@@ -20,7 +20,7 @@ function mount({stored=null,brokenStorage=false}={}){
  const document={querySelector:s=>s==='#type-quiz'?root:null,createElement:t=>new Element(t),addEventListener:(type,fn)=>(listeners[type]??=[]).push(fn),dispatchEvent:event=>{events.push(event);for(const fn of listeners[event.type]||[])fn(event);}};
  const context={document,CustomEvent:class{constructor(type,opts={}){this.type=type;this.detail=opts.detail;}},PokeVerseTypeQuiz:{...engine,createRound:p=>engine.createRound(p,10,()=>0)},localStorage:{getItem(){if(brokenStorage)throw Error('disabled');return store.value;},setItem(k,v){if(brokenStorage)throw Error('disabled');store.value=v;}}};
  vm.createContext(context);vm.runInContext(fs.readFileSync('type-quiz.js','utf8'),context);
- const ready=()=>document.dispatchEvent({type:'pokeverse:catalog-ready',detail:{records,source:index.catalog_card_source}});
+ const ready=()=>document.dispatchEvent({type:'pokeverse:catalog-ready',detail:{records,source:index.catalog_card_source,artworks:index.artworks.filter(a=>a.kind==='official_reference').map(a=>({national_id:a.national_id,src:'./'+a.asset,source_url:a.source_url}))}});
  const button=t=>nodes.get('quiz-options').children.find(b=>b.dataset.type===t);
  return{nodes,document,ready,button,store,events};
 }
@@ -49,4 +49,18 @@ test('storage failure and loading errors do not break gameplay',()=>{
  ui.ready();ui.nodes.get('quiz-start').click();
  for(let i=0;i<10;i++){for(const t of records[i].types)ui.button(t).click();ui.nodes.get('quiz-submit').click();ui.nodes.get('quiz-next').click();}
  assert.equal(ui.nodes.get('quiz-final-score').textContent,'10 / 10');assert.match(ui.nodes.get('quiz-storage-note').textContent,/這次瀏覽/);assert.equal(ui.nodes.get('quiz-perfect').hidden,false);
+});
+
+test('official quiz pictures load only for the current question, with attribution and fallback',()=>{
+ const ui=mount();ui.ready();ui.nodes.get('quiz-start').click();
+ const image=ui.nodes.get('quiz-artwork'),placeholder=ui.nodes.get('quiz-art-placeholder');
+ assert(image.hidden);assert(!placeholder.hidden);
+ for(const t of records[0].types)ui.button(t).click();ui.nodes.get('quiz-submit').click();ui.nodes.get('quiz-next').click();
+ assert.match(image.src,/002-ivysaur-official.png$/);assert.equal(image.alt,'妙蛙草官方角色插畫');
+ image.naturalWidth=475;image.naturalHeight=475;const oldLoad=image.onload;image.onload();
+ assert(!image.hidden&&placeholder.hidden);assert(!ui.nodes.get('quiz-art-credit').hidden);
+ assert.equal(ui.nodes.get('quiz-art-credit').children[1].href,'https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/2.png');
+ for(const t of records[1].types)ui.button(t).click();ui.nodes.get('quiz-submit').click();ui.nodes.get('quiz-next').click();
+ assert(image.hidden&&!placeholder.hidden);oldLoad();assert(image.hidden&&!placeholder.hidden,'Stale previous load must not replace the current placeholder');
+ image.onerror();assert(image.hidden&&!placeholder.hidden);assert.match(ui.nodes.get('quiz-art-caption').textContent,/暫時無法載入/);
 });

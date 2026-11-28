@@ -26,7 +26,9 @@ jobs:
       - name: Check JavaScript syntax
         run: node --check app.js
       - name: Check quiz logic and controller
-        run: node --test tests/type-quiz.test.cjs tests/type-quiz-ui.test.cjs
+        run: |
+          node tests/artwork-loader.cjs
+          node --test tests/type-quiz.test.cjs tests/type-quiz-ui.test.cjs
       - name: Check search, filter, detail and layout
         run: |
           python - <<'PY'
@@ -81,6 +83,20 @@ jobs:
                           assert page.locator(f'.poke[data-id="{record_id}"]').count() == 1
                   page.locator("#q").fill("")
 
+                  # Exact downloader PNGs and unchanged metadata must match their registered Git objects.
+                  import hashlib, struct
+                  art_entries = [a for a in card_index["artworks"] if a.get("kind") == "official_reference"]
+                  official_ids = {a["national_id"] for a in art_entries}
+                  assert official_ids == set(range(2,max(official_ids)+1))
+                  for art in art_entries:
+                      image_bytes = Path(art["asset"]).read_bytes()
+                      assert image_bytes[:8] == b"\x89PNG\r\n\x1a\n"
+                      assert struct.unpack(">II", image_bytes[16:24]) == (art["width"],art["height"])
+                      assert hashlib.sha1(b"blob "+str(len(image_bytes)).encode()+b"\0"+image_bytes).hexdigest() == art["blob_sha"]
+                      metadata_bytes = Path(art["asset"]).with_suffix(".json").read_bytes()
+                      assert hashlib.sha1(b"blob "+str(len(metadata_bytes)).encode()+b"\0"+metadata_bytes).hexdigest() == art["metadata_blob_sha"]
+                      metadata = json.loads(metadata_bytes)
+                      assert metadata["national_id"] == art["national_id"] and metadata["source_git_blob_sha"] == art["blob_sha"]
                   labels = json.load(open("data/display-index.json"))["catalog_labels"]
                   expected_names = {label["national_id"]: label["name_zh"] for label in labels}
                   import re
@@ -97,7 +113,7 @@ jobs:
                   page.locator('.poke[data-id="5"]').click()
                   assert "火恐龍" in page.locator("#detail-title").inner_text()
                   assert page.locator(".identity-source a").get_attribute("href") == "https://tw.portal-pokemon.com/pokedex/0005/"
-                  assert page.locator("#detailbody .detail-artwork").count() == 0, "Unmade #005 image must not be invented"
+                  assert page.locator("#detailbody .detail-artwork").count() == 1, "Approved official #005 image should appear"
                   page.locator("#close").click()
                   page.locator("#q").fill("Charmeleon")
                   assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="5"]').count() == 1
@@ -237,7 +253,7 @@ jobs:
                   page.locator("#q").fill("")
                   page.locator("#type").select_option("grass")
                   assert page.locator('.poke[data-id="1"]').count() == 1, "Grass should include #001"
-                  assert page.locator('.poke[data-id="2"] .poke-artwork').count() == 0, "Unapproved #002 art must remain hidden"
+                  assert page.locator('.poke[data-id="2"] .poke-artwork').count() == 1, "Approved official #002 art should be visible"
                   page.locator("#q").fill("no-such-pokemon-987654")
                   assert page.locator("#empty").is_visible(), "Empty search should be visible"
                   assert any("/data/guides.json" in u for u in requests), "Guides should be loaded by national ID"
@@ -246,6 +262,24 @@ jobs:
                   assert not any("/assets/generated/002-ivysaur-climbing-01.json" in u for u in requests), "Unapproved art metadata must not load"
                   assert not errors, f"Page errors: {errors}"
                   assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Unexpected horizontal overflow"
+                  page.locator("#q").fill("")
+                  page.locator("#type").select_option("")
+                  for art in art_entries:
+                      art_id = art["national_id"]
+                      picture = page.locator(f'.poke[data-id="{art_id}"] .poke-artwork')
+                      picture.scroll_into_view_if_needed()
+                      page.wait_for_function("(id) => { const im=document.querySelector('.poke[data-id=\"'+id+'\"] .poke-artwork'); return im && im.complete && im.naturalWidth>0 && im.naturalHeight>0; }", arg=art_id)
+                      assert picture.evaluate("(im) => [im.naturalWidth,im.naturalHeight]") == [art["width"],art["height"]]
+                      assert f"/assets/reference/{art_id:03d}-" in picture.get_attribute("src")
+                  page.locator("#q").fill("火恐龍")
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"official-card-{width}.png"))
+                  page.locator('.poke[data-id="5"]').click()
+                  page.wait_for_function("document.querySelector('#detailbody .detail-artwork').naturalWidth===475")
+                  assert page.locator("#detailbody .detail-artwork").is_visible()
+                  assert "官方角色參考圖" in page.locator("#detailbody .artwork-credit").inner_text()
+                  page.screenshot(path=str(evidence / f"official-detail-{width}.png"))
+                  page.locator("#close").click()
                   # New quiz: match every question against the actual verified catalog.
                   page.locator("#q").fill("")
                   page.locator("#type").select_option("")
@@ -377,6 +411,49 @@ jobs:
               assert page.locator("#quiz-final-score").inner_text() == "10 / 10"
               page.locator(".quiz-rules").evaluate("(el) => el.open = true")
               assert "這次瀏覽期間" in page.locator("#quiz-storage-note").inner_text()
+              page.close()
+              # Deterministically inspect the reference image above the name; keep #001 unchanged.
+              for width,height in [(1440,900),(390,844)]:
+                  page = browser.new_page(viewport={"width":width,"height":height})
+                  page.add_init_script("Math.random = () => 0")
+                  page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+                  page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+                  assert f"{len(art_entries)} 張官方圖" in page.locator("#quiz-availability").inner_text()
+                  page.locator("#quiz-start").click()
+                  assert "#0001" in page.locator("#quiz-number").inner_text()
+                  assert page.locator("#quiz-art-placeholder").is_visible() and page.locator("#quiz-artwork").is_hidden()
+                  for selected_type in ["grass","poison"]:
+                      page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                  page.locator("#quiz-submit").click()
+                  page.locator("#quiz-next").click()
+                  assert "#0002" in page.locator("#quiz-number").inner_text()
+                  page.wait_for_function("!document.querySelector('#quiz-artwork').hidden && document.querySelector('#quiz-artwork').naturalWidth===475")
+                  assert page.locator("#quiz-art-placeholder").is_hidden()
+                  assert page.locator("#quiz-artwork").get_attribute("alt") == "妙蛙草官方角色插畫"
+                  assert "Pokémon" in page.locator("#quiz-art-credit").inner_text()
+                  image_box = page.locator("#quiz-art-slot").bounding_box()
+                  title_box = page.locator("#quiz-name").bounding_box()
+                  assert image_box["y"]+image_box["height"] <= title_box["y"]+1
+                  page.locator("#quiz-art-slot").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"official-quiz-{width}.png"))
+                  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
+                  page.close()
+              page = browser.new_page()
+              page.add_init_script("Math.random = () => 0")
+              page.route("**/assets/reference/002-ivysaur-official.png", lambda route: route.abort())
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+              page.locator("#quiz-start").click()
+              for selected_type in ["grass","poison"]:
+                  page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+              page.locator("#quiz-submit").click()
+              page.locator("#quiz-next").click()
+              page.wait_for_function("document.querySelector('#quiz-art-caption').textContent.includes('暫時無法載入')")
+              assert page.locator("#quiz-artwork").is_hidden() and page.locator("#quiz-art-placeholder").is_visible()
+              for selected_type in ["grass","poison"]:
+                  page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+              page.locator("#quiz-submit").click()
+              assert "答對了" in page.locator("#quiz-feedback").inner_text()
               page.close()
               browser.close()
           server.shutdown()

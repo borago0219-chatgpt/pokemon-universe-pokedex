@@ -176,3 +176,15 @@ dialog{padding:0;width:min(760px,94vw);border-radius:22px;scrollbar-color:#5a759
 #quiz-perfect{font-size:16px;line-height:1.8;color:#bde8d5}
 @media(max-width:760px){.quiz-intro{grid-template-columns:1fr}.quiz-intro-art{display:none}.quiz-heading{align-items:flex-start}.quiz-options{grid-template-columns:repeat(3,minmax(0,1fr))}.quiz-card{padding:24px}.quiz-review{grid-template-columns:1fr}}
 @media(max-width:480px){.top{padding-inline:16px;gap:12px}.top .brand{font-size:20px}.top nav{gap:10px;font-size:14px}.brand small{display:none}.quiz-section{padding:36px 5vw 8px}.quiz-heading{gap:14px;flex-wrap:wrap}.quiz-best{text-align:left;display:flex;gap:10px;align-items:center}.quiz-best strong{font-size:20px;margin:0}.quiz-card{padding:20px 16px;border-radius:18px}.quiz-intro h3{font-size:26px}.quiz-round-meta{gap:10px;font-size:14px}.quiz-round-meta .quiz-text-button{padding:7px 9px}.quiz-options{gap:8px}.quiz-choice{font-size:15px;min-height:56px}.quiz-feedback{padding:15px}.quiz-actions .quiz-primary{width:100%}.quiz-final-score{font-size:48px}}
+
+/* Neutral artwork slot; only approved artwork may replace this placeholder later. */
+.quiz-art-slot{width:180px;aspect-ratio:1;margin:18px auto 20px;border:1px solid #496079;border-radius:18px;overflow:hidden;background:#142239}
+.quiz-art-placeholder{display:flex;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:radial-gradient(circle at 50% 35%,#314256,#152239 75%)}
+.quiz-art-symbol{display:grid;place-items:center;width:82px;height:82px;border:6px solid #c5d5e026;border-radius:50%;color:#c8d6e1;font-size:36px;line-height:1}
+.quiz-art-caption{color:#b6c7d8;font-size:14px;line-height:1.4}
+.quiz-artwork{display:block;width:100%;height:100%;object-fit:contain;background:#fffdf8}
+@media(max-width:480px){.quiz-art-slot{width:148px;margin:16px auto 18px}.quiz-art-symbol{width:68px;height:68px;font-size:30px}}
+
+.artwork-credit,#quiz-art-credit{font-size:12px;line-height:1.7;color:#a8bdd2;overflow-wrap:anywhere;margin:10px auto 18px;max-width:560px}
+.artwork-credit a,#quiz-art-credit a{color:#a1e2d7;text-decoration:underline;text-underline-offset:3px}
+.quiz-artwork{padding:5px}

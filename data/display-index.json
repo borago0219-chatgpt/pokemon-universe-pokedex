@@ -238,6 +238,206 @@
       "approval": "owner_private_project_use",
       "approved_on": "2026-11-24",
       "note": "專案內部使用批准；第三方權利狀態另見圖片 metadata。"
+    },
+    {
+      "national_id": 2,
+      "kind": "official_reference",
+      "asset": "assets/reference/002-ivysaur-official.png",
+      "blob_sha": "bab075ed4ab35f739285dcdf87fd522a6bff2746",
+      "metadata_blob_sha": "a147a012690954352db0ab4d0103c3abf3042e0a",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/2.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 3,
+      "kind": "official_reference",
+      "asset": "assets/reference/003-venusaur-official.png",
+      "blob_sha": "969dae826a15fe2cf11fe9e0f9681d0b78b20fc2",
+      "metadata_blob_sha": "2538cd6525cdf1d8c999bd040f11bd86735910a5",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/3.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 4,
+      "kind": "official_reference",
+      "asset": "assets/reference/004-charmander-official.png",
+      "blob_sha": "6b91d79a29d140e3227afb5a9a1a77ba412b362c",
+      "metadata_blob_sha": "119104c3dbc5dbf57a340176ac1c7fda307906e8",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/4.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 5,
+      "kind": "official_reference",
+      "asset": "assets/reference/005-charmeleon-official.png",
+      "blob_sha": "8bf51519ca0e694ccd4e57a4e897784378103485",
+      "metadata_blob_sha": "5f22fdd405a244317827486bc6ef1c4215225ec3",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/5.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 6,
+      "kind": "official_reference",
+      "asset": "assets/reference/006-charizard-official.png",
+      "blob_sha": "4c4fb9175e8eacfa83d4f64b47fdbb92cf09f902",
+      "metadata_blob_sha": "8ec504453dfb61dda61f7e726bfbad023e4e16c0",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/6.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 7,
+      "kind": "official_reference",
+      "asset": "assets/reference/007-squirtle-official.png",
+      "blob_sha": "299b74d98d9d991355ea162760648a23ffd6ec25",
+      "metadata_blob_sha": "593b14e637bab9b872fa39fd09f42f82f0519b4a",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/7.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 8,
+      "kind": "official_reference",
+      "asset": "assets/reference/008-wartortle-official.png",
+      "blob_sha": "88d620cea24eef7622b5a25106fbca94b88c4141",
+      "metadata_blob_sha": "50bb1a81f5e1741b59947cf696058347dff49015",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/8.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 9,
+      "kind": "official_reference",
+      "asset": "assets/reference/009-blastoise-official.png",
+      "blob_sha": "7af9de8755f499e243869cba85eb3fdfbfeb6ee5",
+      "metadata_blob_sha": "9d8469f156ef55c9dd14b97c1091dbea0e73c286",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/9.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 10,
+      "kind": "official_reference",
+      "asset": "assets/reference/010-caterpie-official.png",
+      "blob_sha": "b9a9b71dc52ec35e2f79342a99b2b42cbf7d63e2",
+      "metadata_blob_sha": "1e636ca94a1a62b75e4e07d7fa46507f1bea759f",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/10.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
+    },
+    {
+      "national_id": 11,
+      "kind": "official_reference",
+      "asset": "assets/reference/011-metapod-official.png",
+      "blob_sha": "2294193865563479d6245064d3b765c801c4b919",
+      "metadata_blob_sha": "5d0451afe3bbc2a1b711ce23e5646fc83a7b2143",
+      "source_url": "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/11.png",
+      "copyright": "©Pokémon. ©Nintendo/Creatures Inc./GAME FREAK inc.",
+      "width": 475,
+      "height": 475,
+      "display_decision": "approved_reference_context",
+      "rights_assessment_id": "official-reference-20261128",
+      "project_approval": {
+        "quality": "approved",
+        "private_pokedex_use": "approved",
+        "approved_by": "project_owner",
+        "approved_on": "2026-11-28",
+        "evidence": "使用者指定從 #0002 起接入下載 AI 已保存官方圖；本輪逐檔解碼、SHA 與角色對照確認"
+      }
     }
   ],
   "guide_snapshots": [
@@ -11539,5 +11739,49 @@
       "https://www.pokemon.com/pokedex/",
       "https://www.pokemon.com/uk/news/the-pokemon-deluxe-character-guide-from-pikachu-press-is-available-now"
     ]
-  }
+  },
+  "artwork_assessments": [
+    {
+      "id": "official-reference-20261128",
+      "risk_level": "conditional",
+      "decision": "contextual_reference_use",
+      "assessed_at": "2026-11-28",
+      "rights_holder": "The Pokémon Company / Nintendo / Creatures / GAME FREAK",
+      "holder_permission_claimed": false,
+      "public_domain_claimed": false,
+      "source_license_url": "https://github.com/PokeAPI/sprites/blob/master/LICENCE.txt",
+      "policy_url": "https://support.pokemon.com/hc/en-us/articles/360000634094-Can-I-use-Pok%C3%A9mon-images-or-materials",
+      "statutory_references": [
+        "https://www.tipo.gov.tw/tw/copyright/694-17672.html",
+        "https://www.tipo.gov.tw/tw/copyright/698-20168.html"
+      ],
+      "purpose": "非商業角色辨識、圖鑑說明與預設型態屬性教學；圖片附屬於名稱／屬性／內容，不作素材下載商品",
+      "factors": {
+        "purpose": "非商業參考與教學，有獨立文字資料、答題與解說",
+        "nature": "官方角色插畫屬創作性著作，這項因素不利；保留權利人",
+        "amount": "每個角色一張既有 475×475 圖，在卡片／詳情／測驗縮放辨識；整張構圖用於角色辨識，仍有引用全圖的風險",
+        "market": "限制為既有 Access 網站的附屬參考展示、不售圖、不作商品或官方替代服務；公眾可讀的 GitHub 素材副本仍有額外散布風險"
+      },
+      "policy_interpretation": "官方 FAQ 沒有提供專案使用許可，PokeAPI 的 CC0 不能當作圖片授權。本次主張是個案參考／教學的合理引用評估，不是取得權利人授權或法律裁定；一般不授權聲明不被改寫成許可，也不單獨代替法定引用的個案判斷。",
+      "visibility": {
+        "github": "公開；來源工作分支已存相同圖檔，main 亦公開，不能稱素材儲存私人",
+        "website": "沿用既有 Cloudflare Access 門檻與未更改設定的證據；不擴大站點受眾",
+        "basis_does_not_depend_on_secrecy": true
+      },
+      "conditions": [
+        "僅既有非商業角色參考／教學脈絡",
+        "標示官方圖、著作權與原始來源",
+        "保留原圖與 metadata，不宣稱 CC0／官方授權",
+        "不得關閉或繞過 Access、不增加商業或批量下載用途",
+        "用途、來源條款或曝光設定實質改變時重評差異"
+      ],
+      "remaining_uncertainty": "使用創作性圖片全圖與公開 GitHub 副本仍有法律不確定性；本條件式風險判斷不是授權或保證",
+      "project_owner_approval": {
+        "decision": "approved",
+        "date": "2026-11-28",
+        "scope": "從 #0002 起使用下載 AI 保存的官方圖接入網站",
+        "evidence": "使用者：從002開始 都用生圖AI下載的官方圖 你把圖加上去就好"
+      }
+    }
+  ]
 }
