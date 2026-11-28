@@ -25,6 +25,8 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Check JavaScript syntax
         run: node --check app.js
+      - name: Check quiz logic and controller
+        run: node --test tests/type-quiz.test.cjs tests/type-quiz-ui.test.cjs
       - name: Check search, filter, detail and layout
         run: |
           python - <<'PY'
@@ -54,10 +56,10 @@ jobs:
                   catalog_by_id = {record["id"]: record for record in card_index["catalog_cards"]}
                   catalog_by_id.update({record["id"]: record for record in base_catalog})
                   catalog = sorted(catalog_by_id.values(), key=lambda p: p["id"])
-                  assert len(catalog) == 151 and set(ids) == set(range(1,152)), "All 151 Kanto card IDs must be present exactly once"
+                  assert len(catalog) == 1025 and set(ids) == set(range(1,1026)), "All verified national card IDs should remain present"
                   assert len(ids) == len(set(ids)), "No duplicate cards"
-                  assert page.locator("#total").inner_text() == "151"
-                  assert page.locator(".card-stage").count() == len(card_index["catalog_cards"]) == 119, "Supplemental cards need a basic-only label"
+                  assert page.locator("#total").inner_text() == "1025"
+                  assert page.locator(".card-stage").count() == len(card_index["catalog_cards"]) == 993, "Supplemental cards need a basic-only label"
                   page.locator("#q").fill("穿山鼠")
                   assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="27"]').count() == 1
                   assert "地面" in page.locator(".poke .tags").inner_text()
@@ -244,6 +246,70 @@ jobs:
                   assert not any("/assets/generated/002-ivysaur-climbing-01.json" in u for u in requests), "Unapproved art metadata must not load"
                   assert not errors, f"Page errors: {errors}"
                   assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Unexpected horizontal overflow"
+                  # New quiz: match every question against the actual verified catalog.
+                  page.locator("#q").fill("")
+                  page.locator("#type").select_option("")
+                  page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+                  assert "1,025" in page.locator("#quiz-availability").inner_text()
+                  assert page.locator("#quiz-options .quiz-choice").count() == 18
+                  page.locator("#type-quiz").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"quiz-intro-{width}.png"))
+                  page.locator("#quiz-start").click()
+                  seen_quiz_ids = []
+                  for question_index in range(10):
+                      question_id = int(page.locator("#quiz-number").inner_text().split("#")[-1])
+                      assert question_id not in seen_quiz_ids
+                      seen_quiz_ids.append(question_id)
+                      expected = catalog_by_id[question_id]["types"]
+                      assert page.locator("#quiz-name").inner_text() == expected_names.get(question_id, catalog_by_id[question_id]["name_zh"])
+                      assert page.locator("#quiz-options .is-answer").count() == 0, "No answer highlights before submission"
+                      assert page.locator("#quiz-submit").is_disabled()
+                      if question_index == 0:
+                          choices = page.locator("#quiz-options .quiz-choice").evaluate_all("(els) => els.map(el => el.dataset.type)")
+                          for selected_type in choices[:3]:
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                          assert page.locator('#quiz-options [aria-pressed="true"]').count() == 2
+                          assert "最多選 2" in page.locator("#quiz-feedback").inner_text()
+                          for selected_type in choices[:2]:
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                          wrong_type = next(t for t in choices if t not in expected)
+                          page.locator(f'#quiz-options [data-type="{wrong_type}"]').click()
+                          page.locator("#quiz-name").scroll_into_view_if_needed()
+                          page.screenshot(path=str(evidence / f"quiz-question-{width}.png"))
+                      else:
+                          for selected_type in reversed(expected):
+                              page.locator(f'#quiz-options [data-type="{selected_type}"]').click()
+                      page.locator("#quiz-submit").click()
+                      assert page.locator("#quiz-feedback").is_visible()
+                      assert page.locator("#quiz-options .is-answer").count() == len(expected)
+                      assert page.locator("#quiz-options .quiz-choice:disabled").count() == 18
+                      assert page.locator("#quiz-score").inner_text() == f"答對 {question_index} 題"
+                      page.locator("#quiz-submit").evaluate("(el) => el.click()")
+                      assert page.locator("#quiz-score").inner_text() == f"答對 {question_index} 題", "Submitting again cannot add a point"
+                      if question_index == 1:
+                          page.locator("#quiz-feedback").scroll_into_view_if_needed()
+                          page.screenshot(path=str(evidence / f"quiz-feedback-{width}.png"))
+                      assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "Quiz must not overflow"
+                      page.locator("#quiz-next").click()
+                  assert page.locator("#quiz-final-score").inner_text() == "9 / 10"
+                  assert page.locator("#quiz-review li").count() == 1
+                  assert "9 / 10" in page.locator("#quiz-best").inner_text()
+                  assert page.locator("#quiz-intro").is_hidden() and page.locator("#quiz-play").is_hidden()
+                  page.locator("#quiz-review button").click()
+                  assert f'#{seen_quiz_ids[0]:04d}' in page.locator("#detailbody").inner_text()
+                  page.locator("#close").click()
+                  assert page.locator("#quiz-results").is_visible()
+                  page.locator("#quiz-results").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"quiz-results-{width}.png"))
+                  page.reload(wait_until="networkidle")
+                  page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+                  assert "9 / 10" in page.locator("#quiz-best").inner_text(), "Local best score survives reload"
+                  page.locator("#quiz-start").click()
+                  page.locator("#quiz-restart").click()
+                  assert page.locator("#quiz-step").inner_text() == "第 1 / 10 題"
+                  assert page.locator("#quiz-score").inner_text() == "答對 0 題"
+                  assert not errors, f"Quiz page errors: {errors}"
+                  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
                   print(f"PASS viewport {width}x{height}")
                   page.close()
               # Changed/unapproved snapshots must fail closed, even if inserted into the display index.
@@ -295,6 +361,22 @@ jobs:
               assert page.locator('.poke[data-id="29"] h3').inner_text() == "安全文字<script>alert(1)</script>"
               assert page.locator('.poke[data-id="29"] script').count() == 0 and page.locator('.poke[data-id="29"] .en img').count() == 0
               assert page.locator('.poke[data-id="30"]').count() == 0
+              page.close()
+              # Browser storage can be blocked without taking down the game.
+              page = browser.new_page(viewport={"width":390,"height":844})
+              page.add_init_script("Object.defineProperty(window, 'localStorage', {get(){throw new Error('storage disabled')}})")
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              page.wait_for_function("!document.querySelector('#quiz-start').disabled")
+              page.locator("#quiz-start").click()
+              for _ in range(10):
+                  ident = int(page.locator("#quiz-number").inner_text().split("#")[-1])
+                  for type_id in catalog_by_id[ident]["types"]:
+                      page.locator(f'#quiz-options [data-type="{type_id}"]').click()
+                  page.locator("#quiz-submit").click()
+                  page.locator("#quiz-next").click()
+              assert page.locator("#quiz-final-score").inner_text() == "10 / 10"
+              page.locator(".quiz-rules").evaluate("(el) => el.open = true")
+              assert "這次瀏覽期間" in page.locator("#quiz-storage-note").inner_text()
               page.close()
               browser.close()
           server.shutdown()
