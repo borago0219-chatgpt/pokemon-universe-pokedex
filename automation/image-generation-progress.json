@@ -196,6 +196,22 @@
       "source_url": "https://app.leonardo.ai/generation/image/venusaur-pok%C3%A9mon-003-large-mature-heavy-broad-aa567181-5ed7-40c2-b684-da5a2a874072",
       "free_tokens_spent": 8,
       "review_source": "reviews/2026-11-28-image-batch-002-006.md"
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 4,
+      "name_zh": "小火龍",
+      "status": "replacement_candidate_pending_review",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "asset": "assets/generated/004-charmander-waving-02.jpg",
+      "metadata": "assets/generated/004-charmander-waving-02.json",
+      "blob_sha": "9e8dd78a4e9ed3b3d267f84f59b0ab353c2b21f3",
+      "old_blob_sha": "df8d472af1691f03b92384f2c12c7edcfb0828d9",
+      "source_url": "https://app.leonardo.ai/generation/image/charmander-pok%C3%A9mon-004-recognizable-orange-bipedal-f63db4f7-6135-4877-a334-ff4c3002426d",
+      "free_tokens_spent": 8,
+      "review_source": "reviews/2026-11-28-image-batch-002-006.md"
     }
   ]
 }
