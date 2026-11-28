@@ -133,3 +133,5 @@ dialog{padding:0;width:min(760px,94vw);border-radius:22px;scrollbar-color:#5a759
 .guide-sources ul{padding-left:20px}.guide-extension h5{font-size:12px;margin:12px 0 4px}
 .guide-updated{margin:15px 0 6px}.guide-data:empty{display:none}
 @media(max-width:480px){.version-entry,.moveset-group{padding:12px}.move-list{grid-template-columns:1fr}.version-heading h5{font-size:14px}}
+
+.card-stage{display:block;margin-top:10px;color:#91a9c2;font-size:11px;line-height:1.6;font-weight:500}

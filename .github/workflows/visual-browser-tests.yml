@@ -49,7 +49,36 @@ jobs:
                   ids = [int(x) for x in page.locator(".poke").evaluate_all("(els) => els.map(el => el.dataset.id)")]
                   assert ids == sorted(ids) and 1 in ids, "Cards should contain #001 and be sorted"
                   import json
-                  catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  base_catalog = json.load(open("data/pokemon.json"))["pokemon"]
+                  card_index = json.load(open("data/display-index.json"))
+                  catalog_by_id = {record["id"]: record for record in card_index["catalog_cards"]}
+                  catalog_by_id.update({record["id"]: record for record in base_catalog})
+                  catalog = sorted(catalog_by_id.values(), key=lambda p: p["id"])
+                  assert len(catalog) == 151 and set(ids) == set(range(1,152)), "All 151 Kanto card IDs must be present exactly once"
+                  assert len(ids) == len(set(ids)), "No duplicate cards"
+                  assert page.locator("#total").inner_text() == "151"
+                  assert page.locator(".card-stage").count() == len(card_index["catalog_cards"]) == 119, "Supplemental cards need a basic-only label"
+                  page.locator("#q").fill("穿山鼠")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="27"]').count() == 1
+                  assert "地面" in page.locator(".poke .tags").inner_text()
+                  page.locator(".poke").click()
+                  assert page.locator(".basic-card-note").is_visible()
+                  assert "尚待補齊" in page.locator(".basic-card-note").inner_text()
+                  assert page.locator(".basic-card-note a").get_attribute("href").startswith("https://github.com/PokeAPI/pokeapi/tree/")
+                  assert page.locator(".approved-guide").count() == 0 and page.locator(".detail-artwork").count() == 0, "Basic cards cannot inherit #001 approved guides or art"
+                  page.locator("#close").click()
+                  page.locator("#q").fill("夢幻")
+                  assert page.locator(".poke").count() == 1 and page.locator('.poke[data-id="151"]').count() == 1
+                  page.locator("#pokedex").scroll_into_view_if_needed()
+                  page.screenshot(path=str(evidence / f"new-mew-card-{width}.png"))
+                  for query, record_id in [("尼多蘭",29),("尼多朗",32),("Nidoran♀",29),("Mr. Mime",122),("遠古測試不存在",None)]:
+                      page.locator("#q").fill(query)
+                      if record_id is None:
+                          assert page.locator("#empty").is_visible()
+                      else:
+                          assert page.locator(f'.poke[data-id="{record_id}"]').count() == 1
+                  page.locator("#q").fill("")
+
                   labels = json.load(open("data/display-index.json"))["catalog_labels"]
                   expected_names = {label["national_id"]: label["name_zh"] for label in labels}
                   import re
@@ -245,6 +274,27 @@ jobs:
               for label_id, original in [(2,"Ivysaur"), (3,"Venusaur"), (5,"Charmeleon")]:
                   assert page.locator(f'.poke[data-id="{label_id}"] h3').inner_text() == original, "Invalid labels must not replace catalog identity"
               assert page.locator('.poke[data-id="1"] h3').inner_text() == "妙蛙種子"
+              page.close()
+              # Supplemental card rows cannot override primary records or inject unsafe IDs/types.
+              card_payload = json.load(open("data/display-index.json"))
+              example = next(record for record in card_payload["catalog_cards"] if record["id"] == 27)
+              card_payload["catalog_cards"] = [
+                  {**example, "id": 1, "name_zh": "錯誤覆蓋", "types": ["fire"]},
+                  {**example, "name_zh": "重複甲"},
+                  {**example, "name_zh": "重複乙"},
+                  {**example, "id": 28, "types": ["made-up"]},
+                  {**example, "id": 29, "name_en": "<img src=x onerror=alert(1)>", "name_zh": "安全文字<script>alert(1)</script>"},
+                  {**example, "id": '30" onclick="alert(1)'},
+              ]
+              page = browser.new_page()
+              page.route("**/data/display-index.json", lambda route: route.fulfill(status=200, content_type="application/json", body=json.dumps(card_payload)))
+              page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
+              assert page.locator('.poke[data-id="1"] h3').inner_text() == "妙蛙種子"
+              assert "".join(page.locator('.poke[data-id="1"] .tags').inner_text().split()) == "草毒"
+              assert page.locator('.poke[data-id="27"]').count() == 0 and page.locator('.poke[data-id="28"]').count() == 0
+              assert page.locator('.poke[data-id="29"] h3').inner_text() == "安全文字<script>alert(1)</script>"
+              assert page.locator('.poke[data-id="29"] script').count() == 0 and page.locator('.poke[data-id="29"] .en img').count() == 0
+              assert page.locator('.poke[data-id="30"]').count() == 0
               page.close()
               browser.close()
           server.shutdown()

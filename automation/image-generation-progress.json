@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Taipei",
   "updated_on": "2026-11-28",
-  "next_national_id": 5,
+  "next_national_id": 6,
   "completed_contiguous": [
     {
       "national_id": 1,
@@ -47,6 +47,17 @@
       "mime_type": "image/jpeg",
       "verified_on": "2026-11-27",
       "note": "Signature-like text at lower right; downstream display decision needed."
+    },
+    {
+      "national_id": 5,
+      "name_zh": "火恐龍",
+      "name_en": "Charmeleon",
+      "asset": "assets/generated/005-charmeleon-running-01.jpg",
+      "metadata": "assets/generated/005-charmeleon-running-01.json",
+      "blob_sha": "4b333452c1383829f0f0c8949d8711c3b2549441",
+      "mime_type": "image/jpeg",
+      "verified_on": "2026-11-28",
+      "note": "Candidate, independent review pending."
     }
   ],
   "preexisting_out_of_sequence": [
@@ -196,6 +207,83 @@
       "source_url": "https://app.leonardo.ai/generation/image/venusaur-pok%C3%A9mon-003-large-mature-heavy-broad-aa567181-5ed7-40c2-b684-da5a2a874072",
       "free_tokens_spent": 8,
       "review_source": "reviews/2026-11-28-image-batch-002-006.md"
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 4,
+      "name_zh": "小火龍",
+      "status": "replacement_candidate_pending_review",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "asset": "assets/generated/004-charmander-waving-02.jpg",
+      "metadata": "assets/generated/004-charmander-waving-02.json",
+      "blob_sha": "9e8dd78a4e9ed3b3d267f84f59b0ab353c2b21f3",
+      "old_blob_sha": "df8d472af1691f03b92384f2c12c7edcfb0828d9",
+      "source_url": "https://app.leonardo.ai/generation/image/charmander-pok%C3%A9mon-004-recognizable-orange-bipedal-f63db4f7-6135-4877-a334-ff4c3002426d",
+      "free_tokens_spent": 8,
+      "review_source": "reviews/2026-11-28-image-batch-002-006.md"
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 5,
+      "name_zh": "火恐龍",
+      "name_en": "Charmeleon",
+      "status": "uploaded_candidate_pending_review",
+      "generated": true,
+      "downloaded": true,
+      "uploaded": true,
+      "asset": "assets/generated/005-charmeleon-running-01.jpg",
+      "metadata": "assets/generated/005-charmeleon-running-01.json",
+      "blob_sha": "4b333452c1383829f0f0c8949d8711c3b2549441",
+      "source_url": "https://app.leonardo.ai/generation/image/charmeleon-pok%C3%A9mon-005-red-bipedal-lizard-cream-3345d505-79f1-46f3-a049-7cd8b43f3b46",
+      "attempts": [
+        {
+          "generation_id": "8dca1872-b6c7-4e36-a9f2-20788663e261",
+          "result": "paired horns"
+        },
+        {
+          "generation_id": "a36cd1e6-6caf-4f4d-9b89-0e8f64ac90a8",
+          "result": "signature-like text"
+        },
+        {
+          "generation_id": "abf8824b-43a6-4910-95b5-e25ff51daa44",
+          "result": "quadrupedal anatomy"
+        },
+        {
+          "generation_id": "49c90d8f-9652-4017-b649-2868735c18fc",
+          "result": "abnormal hands and head marking"
+        },
+        {
+          "generation_id": "4d6c62ff-52d2-47d2-929a-6555877004a4",
+          "result": "signature-like text"
+        },
+        {
+          "generation_id": "5ec1cd3c-6c7b-4501-843b-32e6a342d699",
+          "result": "corner mark uncertain"
+        },
+        {
+          "generation_id": "53f73293-e213-4fc0-9638-95e83084bcad",
+          "result": "signature-like text"
+        },
+        {
+          "generation_id": "3345d505-79f1-46f3-a049-7cd8b43f3b46",
+          "result": "candidate"
+        }
+      ],
+      "free_tokens_spent": 64
+    },
+    {
+      "date": "2026-11-28",
+      "national_id": 6,
+      "name_zh": "噴火龍",
+      "status": "blocked_insufficient_tokens_before_generation",
+      "generated": false,
+      "downloaded": false,
+      "uploaded": false,
+      "remaining_tokens_displayed": 38,
+      "blocker": "Leonardo.Ai displayed You don't have enough tokens when attempting generation with Auto Image.",
+      "note": "Five-new-character daily target: 1 saved, four remaining (#006–#009). Resume #006."
     }
   ]
 }
