@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "PokéVerse",
-  "last_research_run": "2026-11-27",
-  "last_successful_write": "2026-11-27",
+  "last_research_run": "2026-11-28",
+  "last_successful_write": "2026-11-28",
   "daily_limits": {
     "max_distinct_national_ids": 1,
     "image_prompts_per_focus": 1,
@@ -347,26 +347,26 @@
     "name_en": "Ivysaur",
     "status": "incomplete",
     "completed": false,
-    "research_status": "fixed_scope_v1_read_research_not_started",
+    "research_status": "C1_C2_C3_C5_C7_drafts_saved_awaiting_independent_review",
     "image_status": "awaiting_download_role_verification",
     "preview_status": "awaiting_visualization_role",
     "review_status": "fixed_scope_v1_prepared_no_002_content_review",
     "publication_status": "not_published_by_builder",
     "missing_sections": [
-      "C1 #002 基本資料待按固定表研究",
-      "C2–C3 G01–G19 各版本主要可取得性與取得前置待研究",
-      "C4 #002 適用版本與玩法配招待研究",
-      "C5 Pokémon GO #002 取得、招式、用途待研究",
-      "C6 #002 候選圖片須由下載及品質審核角色核對固定檔案／SHA，建設者不冒稱合格",
-      "C7 新研究的來源與查核日期待保存",
-      "C8 網站私人預覽交視覺化任務每日最多一次驗收；失敗記技術待辦，不單獨卡次日換號",
-      "#002 尚無完成後的獨立審核報告"
+      "C1 妙蛙草基本資料 guide 已依官方圖鑑與社群數值整理，待獨立審核；data/pokemon.json #2 的 name_zh 目前是 Ivysaur，應由 GitHub Actions 管理流程修正，本建設者未改。",
+      "C2–C3 G01–G19 19 組作品的主要可得性、進化或直接捕捉與前置已寫入版本矩陣，待獨立審核；未逐版實機測試 2026 年跨代硬體／服務現況。",
+      "C4 #002 主系列各適用遊戲的合法推薦配招與用途尚未建立；下輪依固定表優先研究，不把 #001 配招直接複製。",
+      "C5 Pokémon GO #002 進化、普通招式、歷史活動及 PvE／超級聯盟基礎用途已建草稿，台灣當季直接取得池仍未知，待獨立審核。",
+      "C6 #002 圖片須由下載與審核角色按實圖／metadata／SHA 核對；歷史 AI 候選不自動視為合格新圖片。",
+      "C7 本輪新來源與查核日已保存，待審核源文與主張對應。",
+      "C8 Work 私人預覽交視覺化角色每日最多一次，未驗證不得報網站功能通過；其技術待辦不單獨阻斷內容完成後次日換號。",
+      "#002 當日獨立完整性審核尚未完成，今日不開始 #003。"
     ],
-    "source_checked_at": null,
+    "source_checked_at": "2026-11-28",
     "selected_reason": "2026-11-27 #001 independent review C1–C7 pass; 2026-11-28 follows national_id +1 under fixed-scope v2 C8 technical exception",
     "handoff": {
       "construction": {
-        "status": "002_fixed_scope_read_research_to_start_nonmain",
+        "status": "002_C1_C2_C3_C5_C7_drafts_saved_nonmain",
         "last_updated_at": "2026-11-28",
         "fixed_scope": {
           "path": "reviews/002-fixed-scope-2026-11-28.md",
@@ -379,20 +379,37 @@
           "path": "reviews/2026-11-27.md",
           "blob_sha": "3e50568c6fb87df38ed9dd0dfecc864d38590f15"
         },
-        "notes": "Builder alone locked #002 on non-main branch after next-day review verification. C8 #001 remains technical backlog; no Visit/main/deployment operation. Official-image download role and visualization role have separate handoffs."
+        "notes": "僅 #002；固定表 v1。特別區分 X/Y 朋友狩獵區、劍盾冠之雪原極巨巢穴冒險、傳說 Z-A DLC 妙蛙草直接取得，與一般 #001 Lv16 進化。GO 台灣當季野外等直接來源未知，歷史 2025 派對帽活動不當現況。C4 主系列配招待補；網站／圖片交其他角色。",
+        "guide_keys": [
+          "2:main:profile",
+          "2:main-series:availability",
+          "2:pokemon-go:capture",
+          "2:pokemon-go:moveset"
+        ],
+        "guide_commit": "433d945461a4625732727622a77833adf2b880eb",
+        "guide_blob_sha": "cf5edf53e3cd2fc8c3d259ba4b6e14dc65103a35",
+        "source_checked_at": "2026-11-28",
+        "coverage": "G01-G19 matrix researched, 19 groups, no per-version hardware test; four #002 draft keys",
+        "review_gap_keys_pending": [
+          "2:main:profile",
+          "2:main-series:availability",
+          "2:pokemon-go:capture",
+          "2:pokemon-go:moveset"
+        ],
+        "preview_test": "建設者未操作 Visit、正式部署或 Work 網站驗收；C8 交視覺化任務。"
       },
-      "next_day_action": "接續 #002 固定表 C1–C7 尚缺項；獨立審核未過不得換 #003。C8 每日一次網站驗收失敗僅記技術待辦。"
+      "next_day_action": "按 #002 固定表與新審核報告優先補 C4 分版本配招；維持 #002 至 C1–C7、圖片及獨立審核達標。C8 技術待辦不無限阻塞但未驗證不得報發布。"
     },
     "completion_checks": {
-      "profile": "pending",
-      "main_series_availability": "pending",
-      "version_capture": "pending",
-      "main_series_movesets": "pending",
-      "pokemon_go": "pending",
+      "profile": "draft_saved_pending_review",
+      "main_series_availability": "G01_G19_matrix_draft_saved_pending_review",
+      "version_capture": "main_routes_draft_saved_pending_review",
+      "main_series_movesets": "missing",
+      "pokemon_go": "capture_moveset_drafts_saved_pending_review",
       "generated_or_saved_candidate_image": "pending_download_role_verification",
-      "sources": "pending",
+      "sources": "draft_sources_saved_pending_review",
       "website_private_preview": "pending_visualization_technical",
-      "independent_review": "pending"
+      "independent_review": "not_yet_performed_on_002"
     }
   },
   "focus_policy": {
