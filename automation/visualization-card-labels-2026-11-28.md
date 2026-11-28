@@ -14,3 +14,16 @@
 - 既有免費 Chromium workflow 將覆蓋 32 卡片、20 中文搜尋、#0005 詳情與來源、未生成圖片隔離、原收藏／篩選／攻略／批准指紋／手機桌面回歸。本日尚無既有測試 run，僅安排本次一次完整驗收，不重試同日失敗。
 - 安全候選分支 work/visual-card-labels-20261128；測試 workflow 僅放既有測試分支，不合併 main，不修改資料更新流程。依使用者既有授權及不產生付費／不改存取政策條件執行。
 - 後續補記實際測試、發布與 Cloudflare 結果；目前不能稱已發布。
+
+
+## 最終結果：取代上文待測／待發布狀態
+- 本日唯一完整驗收：[Actions run 46095943596](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/actions/runs/46095943596)，測試提交 `25fd1ea9c7a1a36e673deef16d77010e3455537b`，browser job `140827170426` completed/success；1440×900 與 390×844 皆 PASS。32 張中文名稱、20 個中文搜尋、英文搜尋、詳情來源與屬性、#0005 無圖不冒填，以及原圖片解碼／收藏／18 屬性／版本攻略／注入與錯配隔離回歸通過。
+- 官方姓名來源為每一列 source_url（例如 https://tw.portal-pokemon.com/pokedex/0005/），本次只核對身份名稱，不把名稱核對冒充完整攻略審核。使用者本輪要求批次補卡片，是此項展示修正的範圍授權。
+- 截圖 artifact `visual-evidence` ID `15242809149`，digest `sha256:343563791eb99c7b3122b7f135626f8dc63d725dc4649743648e8afa7adb62a4`，保留 3 天。已下載核對 digest 並實際檢視桌面與手機火恐龍卡片，顯示中文名／英文名／火屬性與可操作收藏。圖片占位仍在，沒有把它稱為角色實圖。
+- main 程式提交：[9c5402242252952ad24172623a0e0d8331734a88](https://github.com/borago0219-chatgpt/pokemon-universe-pokedex/commit/9c5402242252952ad24172623a0e0d8331734a88)，只修改 app.js、index.html、data/display-index.json。寫入前重讀最新 main `8091320354fd9d55a95feb34f252c48635ea9fcb`，保留生圖者剛保存的新 #0004 圖及其他成果；發布後讀回三檔與測試完全相同。
+- 固定檔案 blob：app `162e1b149b49883f75800cf64559a21063682367`；HTML `f10edc1fe2de1936060ca2a8a1db1cf2c39698ef`；display-index `0663c2dc91ff66098bcd5eddf9492508f773b159`。Actions 專管的 data/pokemon.json 和所有原攻略／圖片 metadata 未改，測試 workflow 沒有進入 main。
+- CI 正式網址未登入請求 HTTP 403；沿用既有 Work 觀察的 Access 登入門檻，未改存取政策、未繞過。這不證明身份允許名單或登入後畫面；**正式畫面未由本輪實測**。
+- 本日完整網站驗收次數已用。21:30 任務須讀本紀錄並沿用同版證據，不對相同版重跑；新的未測功能留安全分支。C8 技術待辦與內容完整度／換號分開，沒有自行更改 daily_focus 或排程。
+
+- Cloudflare 對 main 程式提交 `9c5402242252952ad24172623a0e0d8331734a88` 的 Workers Builds 回報 completed/success（check `140827841715`），Build ID `6efc354d-8521-459c-893f-773860a30693`；Version ID `96ad8d90-c9de-400d-adf2-ebf34e337da6`。已核對正式版本建置，未把它當成登入後 Visit 畫面。
+- 本次收束原因：這項卡片中文名稱修正已完成程式、一次完整測試、同版截圖檢視、正式整合及成功建置；本視覺化角色當下沒有更多已通過品質／展示條件的其他編號新圖片可接入。圖檔生成與固定 SHA 審核由既有圖片流程接續，未完成的攻略不阻擋此項發布。
