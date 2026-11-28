@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "pokemon": [
     {
       "id": 1,
@@ -247,6 +247,52 @@
         "electric"
       ],
       "updated_at": "2026-11-27"
+    },
+    {
+      "id": 27,
+      "name_zh": "Sandshrew",
+      "name_en": "Sandshrew",
+      "types": [
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 28,
+      "name_zh": "Sandslash",
+      "name_en": "Sandslash",
+      "types": [
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 29,
+      "name_zh": "Nidoran♀",
+      "name_en": "Nidoran♀",
+      "types": [
+        "poison"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 30,
+      "name_zh": "Nidorina",
+      "name_en": "Nidorina",
+      "types": [
+        "poison"
+      ],
+      "updated_at": "2026-11-28"
+    },
+    {
+      "id": 31,
+      "name_zh": "Nidoqueen",
+      "name_en": "Nidoqueen",
+      "types": [
+        "poison",
+        "ground"
+      ],
+      "updated_at": "2026-11-28"
     },
     {
       "id": 37,
